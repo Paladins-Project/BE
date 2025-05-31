@@ -1,15 +1,16 @@
 import mongoose from "mongoose";
 import express from "express";
+import dotenv from "dotenv";
 
 const app = express();
-
+dotenv.config();
 //mongoose.connect("mongodb://localhost:27017/ExpressJSBegin").then(() => {
-mongoose.connect("mongodb+srv://nguyenngochoa12112003:9a352960@cluster0.m7yk3bi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/EXE2").then(() => {
+mongoose.connect(process.env.DBCONNECTIONSTRING).then(() => {
     console.log('Connected to MongoDB');
 }).catch((err) => {
     console.log(err);
 });
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Running on port http://localhost:${PORT}`)
+// const PORT = process.env.PORT || 3000;
+app.listen(process.env.PORT, () => {
+    console.log(`Running on port http://localhost:${process.env.PORT}`)
 });
