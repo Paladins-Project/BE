@@ -30,11 +30,23 @@ export const validateUser = (data) => {
                 'any.required': 'Email is required'
             }),
         role: Joi.string()
-            .valid('parent', 'parent and kid', 'kid', 'teacher', 'admin')
+            .valid('parent', 'kid', 'teacher', 'admin')
             .required()
             .messages({
                 'any.only': 'Invalid role',
                 'any.required': 'Role is required'
+            }),
+        address: Joi.string()
+            .optional()
+            .allow('')
+            .messages({
+                'string.base': 'Address must be a string'
+            }),
+        phoneNumber: Joi.string()
+            .pattern(/^[0-9]{10,11}$/)
+            .optional()
+            .messages({
+                'string.pattern.base': 'Invalid phone number format'
             })
     });
 
@@ -55,14 +67,6 @@ export const validateAdmin = (data) => {
             .messages({
                 'string.empty': 'Full name cannot be empty',
                 'any.required': 'Full name is required'
-            }),
-        phoneNumber: Joi.string()
-            .pattern(/^[0-9]{10,11}$/)
-            .required()
-            .messages({
-                'string.pattern.base': 'Invalid phone number format',
-                'string.empty': 'Phone number cannot be empty',
-                'any.required': 'Phone number is required'
             })
     });
 
@@ -123,14 +127,6 @@ export const validateTeacher = (data) => {
             .messages({
                 'string.empty': 'Full name cannot be empty',
                 'any.required': 'Full name is required'
-            }),
-        phoneNumber: Joi.string()
-            .pattern(/^[0-9]{10,11}$/)
-            .required()
-            .messages({
-                'string.pattern.base': 'Invalid phone number format',
-                'string.empty': 'Phone number cannot be empty',
-                'any.required': 'Phone number is required'
             })
     });
 
@@ -163,20 +159,6 @@ export const validateParent = (data) => {
             .messages({
                 'string.empty': 'Gender cannot be empty',
                 'any.required': 'Gender is required'
-            }),
-        address: Joi.string()
-            .required()
-            .messages({
-                'string.empty': 'Address cannot be empty',
-                'any.required': 'Address is required'
-            }),
-        phoneNumber: Joi.string()
-            .pattern(/^[0-9]{10,11}$/)
-            .required()
-            .messages({
-                'string.pattern.base': 'Invalid phone number format',
-                'string.empty': 'Phone number cannot be empty',
-                'any.required': 'Phone number is required'
             })
     });
 

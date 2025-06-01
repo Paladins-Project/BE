@@ -5,5 +5,5 @@ export const getHome = (req, res) => {
         req.session.visited = true;
         res.cookie('name', 'express', { maxAge: 60000 * 60, signed: true });
     }
-    res.send('Haizz - ExpressJS Project Restructured!');
+    res.send('Hehehe chay roi');
 }; 

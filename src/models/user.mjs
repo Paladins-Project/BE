@@ -12,15 +12,25 @@ const userSchema = new mongoose.Schema({
     },
     email: {
         type: String,
-        required: true,
+        required: false,
         unique: true,
+        sparse: true,
         lowercase: true,
         match: [/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/, 'Please enter a valid email']
     },
     role: {
         type: String,
         required: true,
-        enum: ['parent', 'parent and kid', 'kid', 'teacher', 'admin']
+        enum: ['parent', 'kid', 'teacher', 'admin']
+    },
+    address: {
+        type: String,
+        required: false,
+    },
+    phoneNumber: {
+        type: String,
+        required: false,
+        match: [/^[0-9]{10,11}$/, 'Please enter a valid phone number']
     }
 });
 

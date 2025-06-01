@@ -9,11 +9,6 @@ const teacherSchema = new mongoose.Schema({
     fullName: {
         type: String,
         required: true,
-    },
-    phoneNumber: {
-        type: String,
-        required: true,
-        match: [/^[0-9]{10,11}$/, 'Please enter a valid phone number']
     }
 });
 
