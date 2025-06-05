@@ -10,13 +10,18 @@ export const login = (req, res, next) => {
             return next(err);
         }
         if (!user) {
-            return res.status(401).json({ message: 'Authentication failed' });
+            return res.status(401).json({ message: 'Wrong username or password' });
         }
         req.logIn(user, (err) => {
             if (err) {
                 return next(err);
             }
-            return res.status(200).json(user);
+            // Create user object without password
+            const { password, ...userWithoutPassword } = user.toObject();
+            return res.status(200).json({
+                message: 'Login Successfully',
+                user: userWithoutPassword
+            });
         });
     })(req, res, next);
 };
