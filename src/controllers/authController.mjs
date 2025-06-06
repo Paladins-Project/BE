@@ -2,7 +2,7 @@ import passport from 'passport';
 import { User } from '../models/user.mjs';
 import { Parent } from '../models/parent.mjs';
 import { Kid } from '../models/kid.mjs';
-import { hashPassword } from '../utils/helpers.mjs';
+import { hashPassword, comparePassword } from '../utils/helpers.mjs';
 
 export const login = (req, res, next) => {
     passport.authenticate("local", (err, user, info) => {
@@ -10,7 +10,7 @@ export const login = (req, res, next) => {
             return next(err);
         }
         if (!user) {
-            return res.status(401).json({ message: 'Wrong username or password' });
+            return res.status(401).json({ message: 'Account not found!!!' });
         }
         req.logIn(user, (err) => {
             if (err) {
@@ -26,151 +26,12 @@ export const login = (req, res, next) => {
     })(req, res, next);
 };
 
-export const registerParent = async (req, res) => {
-    try {
-        const { username, password, fullName, dateOfBirth, gender, address, phoneNumber, email } = req.body;
-        
-        // Validate required fields
-        if (!username || !password || !fullName || !dateOfBirth || !gender || !email || !phoneNumber) {
-            return res.status(400).json({
-                message: 'Missing required fields!'
-            });
-        }
-
-        // Check if username or email already exists
-        const existingUser = await User.findOne({ 
-            $or: [{ username }, { email }] 
-        });
-        
-        if (existingUser) {
-            return res.status(400).json({ 
-                message: 'Username or email already exists' 
-            });
-        }
-
-        // Hash password
-        const hashedPassword = hashPassword(password);
-
-        // Create user
-        const userData = {
-            username,
-            password: hashedPassword,
-            email,
-            role: 'parent'
-        };
-
-        // Add optional fields if provided
-        if (address) userData.address = address;
-        if (phoneNumber) userData.phoneNumber = phoneNumber;
-
-        const user = new User(userData);
-
-        const savedUser = await user.save();
-
-        // Create parent profile
-        const parent = new Parent({
-            userId: savedUser._id,
-            fullName,
-            dateOfBirth: new Date(dateOfBirth),
-            gender
-        });
-
-        await parent.save();
-
-        res.status(201).json({ 
-            message: 'Parent registered successfully',
-            userId: savedUser._id,
-            username: savedUser.username,
-            role: savedUser.role
-        });
-
-    } catch (error) {
-        console.error('Register parent error:', error);
-        res.status(500).json({ 
-            message: 'Registration failed',
-            error: error.message 
-        });
-    }
-};
-
-export const registerKid = async (req, res) => {
-    try {
-        const { username, password, fullName, dateOfBirth, gender, address, phoneNumber, email } = req.body;
-        
-        // Validate required fields
-        if (!username || !password || !fullName || !dateOfBirth || !gender) {
-            return res.status(400).json({ 
-                message: 'Missing required fields!' 
-            });
-        }
-
-        // Check if username already exists
-        let existingUserQuery = { username };
-        
-        // If email is provided, also check for email uniqueness
-        if (email) {
-            existingUserQuery = { 
-                $or: [{ username }, { email }] 
-            };
-        }
-
-        const existingUser = await User.findOne(existingUserQuery);
-        
-        if (existingUser) {
-            return res.status(400).json({ 
-                message: email ? 'Username or email already exists' : 'Username already exists'
-            });
-        }
-
-        // Hash password
-        const hashedPassword = hashPassword(password);
-
-        // Create user
-        const userData = {
-            username,
-            password: hashedPassword,
-            role: 'kid'
-        };
-
-        // Add optional fields if provided
-        if (email) userData.email = email;
-        if (address) userData.address = address;
-        if (phoneNumber) userData.phoneNumber = phoneNumber;
-
-        const user = new User(userData);
-        const savedUser = await user.save();
-
-        // Create kid profile
-        const kidData = {
-            userId: savedUser._id,
-            fullName,
-            dateOfBirth: new Date(dateOfBirth),
-            gender
-        };
-
-        const kid = new Kid(kidData);
-        await kid.save();
-
-        res.status(201).json({ 
-            message: 'Kid registered successfully',
-            userId: savedUser._id,
-            username: savedUser.username,
-            role: savedUser.role
-        });
-
-    } catch (error) {
-        console.error('Register kid error:', error);
-        res.status(500).json({ 
-            message: 'Registration failed',
-            error: error.message 
-        });
-    }
-};
-
 export const getAuthStatus = (req, res) => {
     console.log(req.user);
     if (req.user) {
-        return res.status(200).json(req.user);
+        // Create user object without password
+        const { password, ...userWithoutPassword } = req.user.toObject();
+        return res.status(200).json(userWithoutPassword);
     }
     return res.status(401).json({ message: 'Unauthorized' });
 };
@@ -185,6 +46,57 @@ export const logout = (req, res) => {
         }
         res.status(200).json({ message: 'Logout successfully' });
     });
+};
+
+export const changePassword = async (req, res) => {
+    try {
+        // Check if user is authenticated
+        if (!req.user) {
+            return res.status(401).json({ message: 'Unauthorized' });
+        }
+
+        const { currentPassword, newPassword } = req.body;
+
+        // Validate input
+        if (!currentPassword || !newPassword) {
+            return res.status(400).json({ 
+                message: 'Current password and new password are required' 
+            });
+        }
+
+        // Find user in database
+        const user = await User.findById(req.user._id);
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        // Verify current password
+        const isCurrentPasswordValid = await comparePassword(currentPassword, user.password);
+        if (!isCurrentPasswordValid) {
+            return res.status(400).json({ message: 'Current password is incorrect' });
+        }
+        // Validate new password
+        // if (newPassword.length < 6) {
+        //     return res.status(400).json({ 
+        //         message: 'New password must be at least 6 characters long' 
+        //     });
+        // }
+
+        // Hash new password and update
+        const hashedNewPassword = hashPassword(newPassword);
+        user.password = hashedNewPassword;
+        await user.save();
+
+        return res.status(200).json({ 
+            message: 'Password changed successfully' 
+        });
+
+    } catch (error) {
+        console.error('Error changing password:', error);
+        return res.status(500).json({ 
+            message: 'Internal server error' 
+        });
+    }
 };
 
 // export const discordAuth = passport.authenticate("discord");

@@ -5,7 +5,7 @@ dotenv.config();
 
 const connectDB = async () => {
     try {
-        //const mongoURI = "mongodb://localhost:27017/ExpressJSBegin";
+        //const mongoURI = "mongodb://localhost:27017/xxx";
         const mongoURI = process.env.DBCONNECTIONSTRING;
         
         await mongoose.connect(mongoURI);

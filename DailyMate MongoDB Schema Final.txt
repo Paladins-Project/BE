@@ -1,0 +1,52 @@
+{
+  "User": {
+    "_id": "ObjectId",
+    "password": "String (hashed, required)",
+    "email": "String (unique, required)" (USE EMAIL TO LOGIN INSTEAD OF USERNAME),
+    "role": "String (enum: ['parent', 'kid', 'teacher', 'admin'], required)",
+    "isActive": "Boolean (default: true)",
+    "isVerified": "Boolean (default: false)"
+  },
+  "Parent": {
+    "_id": "ObjectId",
+    "userId": "ObjectId (ref: User, role=parent, required)",
+    "fullName": "String (required)",
+    "dateOfBirth": "Date",
+    "gender": "String (enum: ['male', 'female'], required)",
+    “image”: “String”,
+    "address": "String",
+    "phoneNumber": "String",
+    "subscriptionType": "String (enum: ['free', 'premium'], default: 'free')",
+    "subscriptionExpiry": "Date"
+  },
+  "Kid": {
+    "_id": "ObjectId",
+    "userId": "ObjectId (ref: User, role=kid, required)",
+    "fullName": "String (required)",
+    "dateOfBirth": "Date (required)",
+    "gender": "String (enum: ['male', 'female'], required)",
+    "points": "Number (default: 0, điểm thưởng tích lũy)",
+    "level": "Number (default: 0, cấp độ học tập)",
+    "avatar": "String (current avatar ID/URL)",
+    "unlockedAvatars": ["String (danh sách avatar đã mở khóa)"],
+    "achievements": ["ObjectId (ref: Achievement)"],
+    "streak": {
+      "current": "Number (default: 0, chuỗi ngày học liên tiếp)",
+      "longest": "Number (default: 0, chuỗi dài nhất từng đạt được)"
+    }
+  },
+  "Teacher": {
+    "_id": "ObjectId",
+    "userId": "ObjectId (ref: User, role=teacher, required)",
+    "fullName": "String (required)",
+    "phoneNumber": "String",
+    "specializations": ["String (lĩnh vực chuyên môn)"],
+    "bio": "String (giới thiệu bản thân)",
+    "coursesCreated": ["ObjectId (ref: Lesson)"],    
+  },
+  "Admin": {
+    "_id": "ObjectId",
+    "userId": "ObjectId (ref: User, role=admin, required)",
+    "fullName": "String (required)",
+    "phoneNumber": "String",
+  },
