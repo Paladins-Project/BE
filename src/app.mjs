@@ -3,9 +3,17 @@ import cookieParser from 'cookie-parser';
 import session from 'express-session';
 import dotenv from 'dotenv';
 import passport from './config/passport.mjs';
+import cors from 'cors';
 
 dotenv.config();
 const app = express();
+
+// Enable CORS for all origins
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 // Basic middleware setup
 app.use(express.json());
