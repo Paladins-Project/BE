@@ -5,19 +5,45 @@ import { Kid } from '../models/kid.mjs';
 import { hashPassword, comparePassword } from '../utils/helpers.mjs';
 
 export const login = (req, res, next) => {
+    console.log('\n🚀 === LOGIN REQUEST START ===');
+    console.log('📥 Request body:', {
+        email: req.body.email,
+        password: req.body.password ? '***' + req.body.password.slice(-2) : 'No password'
+    });
+    console.log('🌐 Request headers:', {
+        'content-type': req.headers['content-type'],
+        'user-agent': req.headers['user-agent']
+    });
+    console.log('🍪 Session ID:', req.sessionID);
+    
     passport.authenticate("local", (err, user, info) => {
+        console.log('\n📋 === PASSPORT AUTHENTICATE CALLBACK ===');
+        console.log('❗ Error:', err ? err.message : 'No error');
+        console.log('👤 User:', user ? { id: user._id, email: user.email } : 'No user');
+        console.log('ℹ️ Info:', info);
+        
         if (err) {
+            console.log('❌ Authentication failed with error:', err.message);
+            console.log('Error stack:', err.stack);
             return next(err);
         }
         if (!user) {
+            console.log('❌ Authentication failed: No user returned');
             return res.status(401).json({ message: 'Account not found!!!' });
         }
+        
+        console.log('✅ Authentication successful, proceeding to login...');
         req.logIn(user, (err) => {
             if (err) {
+                console.log('❌ Login failed:', err.message);
                 return next(err);
             }
+            console.log('✅ User logged in successfully');
+            
             // Create user object without password
             const { password, ...userWithoutPassword } = user.toObject();
+            console.log('📤 Sending response with user:', { id: userWithoutPassword._id, email: userWithoutPassword.email });
+            
             return res.status(200).json({
                 message: 'Login Successfully',
                 user: userWithoutPassword
