@@ -1,6 +1,7 @@
 import { User } from '../models/user.mjs';
 import { Kid } from '../models/kid.mjs';
 import { hashPassword } from '../utils/helpers.mjs';
+import { validateUser, validateKid } from '../utils/validators.mjs';
 
 export const createKidAsync = async (kidData) => {
     try {
@@ -12,21 +13,29 @@ export const createKidAsync = async (kidData) => {
             gender
         } = kidData;
         
-        // Validate required fields theo schema
+        // Validate required fields according to schema
         if (!email || !password || !fullName || !dateOfBirth || !gender) {
             return {
                 success: false,
                 status: 400,
-                message: 'Missing required fields: email, password, fullName, dateOfBirth, gender'
+                message: 'Missing required fields!!!'
             };
         }
 
-        // Validate gender enum
-        if (!['male', 'female'].includes(gender)) {
+        // Validate user data
+        const userValidation = validateUser({
+            email,
+            password,
+            role: 'kid',
+            isActive: true,
+            isVerified: false
+        });
+
+        if (userValidation.error) {
             return {
                 success: false,
                 status: 400,
-                message: 'Gender must be either male or female'
+                message: userValidation.error.details[0].message
             };
         }
 
@@ -40,21 +49,18 @@ export const createKidAsync = async (kidData) => {
             };
         }
 
-        // Create user with role='kid'
+        // Create user data with hashed password
         const userData = {
-            email,
-            password: hashPassword(password),
-            role: 'kid',
-            isActive: true,
-            isVerified: false
+            ...userValidation.value,
+            password: hashPassword(password)
         };
 
         const user = new User(userData);
         const savedUser = await user.save();
 
-        // Create kid profile
+        // Prepare kid profile data
         const kidProfileData = {
-            userId: savedUser._id,
+            userId: savedUser._id.toString(), // Convert ObjectId to string
             fullName,
             dateOfBirth: new Date(dateOfBirth),
             gender,
@@ -69,6 +75,19 @@ export const createKidAsync = async (kidData) => {
             }
         };
 
+        // Validate kid data
+        const kidValidation = validateKid(kidProfileData);
+        if (kidValidation.error) {
+            // If kid validation fails, remove the created user
+            await User.findByIdAndDelete(savedUser._id);
+            return {
+                success: false,
+                status: 400,
+                message: kidValidation.error.details[0].message
+            };
+        }
+
+        // Create kid profile
         const kid = new Kid(kidProfileData);
         const savedKid = await kid.save();
 

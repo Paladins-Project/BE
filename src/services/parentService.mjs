@@ -25,8 +25,8 @@ export const createParentAsync = async (parentData) => {
             };
         }
 
-        // Validate user data
-        const userData = validateUser({
+        // Validate trước khi xử lý để tránh hash password không cần thiết
+        const userValidation = validateUser({
             email,
             password,
             role: 'parent',
@@ -34,7 +34,7 @@ export const createParentAsync = async (parentData) => {
             isVerified: false
         });
 
-        if (userData.error) {
+        if (userValidation.error) {
             return {
                 success: false,
                 status: 400,
@@ -51,19 +51,24 @@ export const createParentAsync = async (parentData) => {
                 message: 'Email already exists'
             };
         }
-        userData.password = hashPassword(password);
+
+        // Chỉ hash password sau khi validate thành công
+        const userData = {
+            ...userValidation.value,
+            password: hashPassword(password)
+        };
+
         const user = new User(userData);
         const savedUser = await user.save();
 
         // Prepare parent profile data
         const parentProfileData = {
-            userId: savedUser._id,
+            userId: savedUser._id.toString(),
             fullName,
             gender,
             subscriptionType: 'free',
             subscriptionExpiry: null
         };
-
         // Add optional fields if provided
         if (dateOfBirth) parentProfileData.dateOfBirth = new Date(dateOfBirth);
         if (image) parentProfileData.image = image;

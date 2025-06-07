@@ -1,9 +1,8 @@
 import { createKidAsync } from '../services/kidService.mjs';
 
 export const createKid = async (req, res) => {
-        try {
+    try {
         const result = await createKidAsync(req.body);
-
         // Handle service response
         if (result.success) {
             return res.status(result.status).json({

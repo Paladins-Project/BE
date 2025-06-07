@@ -101,6 +101,7 @@ export const validateParent = (data) => {
         subscriptionExpiry: Joi.date()
             .min('now')
             .optional()
+            .allow(null)
             .messages({
                 'date.base': 'Invalid subscription expiry date format',
                 'date.min': 'Subscription expiry date cannot be in the past'
