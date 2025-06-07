@@ -10,6 +10,7 @@ connectDB().then(async () => {
     // Configure session store after DB connection
     const mongoStore = MongoStore.create({
         client: mongoose.connection.getClient(),
+        dbName: 'EXE2', // Chỉ định database name để tránh tạo database "test"
     });
 
     await configureSession(mongoStore);
