@@ -2,7 +2,7 @@
   "User": {
     "_id": "ObjectId",
     "password": "String (hashed, required)",
-    "email": "String (unique, required)" (USE EMAIL TO LOGIN INSTEAD OF USERNAME),
+    "email": "String (unique, required)" (USE EMAIL TO LOGIN INSTEAD OF USERNAME, and always ends with @gmail.com),
     "role": "String (enum: ['parent', 'kid', 'teacher', 'admin'], required)",
     "isActive": "Boolean (default: true)",
     "isVerified": "Boolean (default: false)"
@@ -17,7 +17,7 @@
     "address": "String",
     "phoneNumber": "String",
     "subscriptionType": "String (enum: ['free', 'premium'], default: 'free')",
-    "subscriptionExpiry": "Date"
+    "subscriptionExpiry": "Date (null if subscriptionType is free)"
   },
   "Kid": {
     "_id": "ObjectId",

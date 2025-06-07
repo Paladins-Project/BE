@@ -10,9 +10,10 @@ const app = express();
 
 // Enable CORS for all origins
 app.use(cors({
-  origin: '*',
+  origin: `http://localhost:${process.env.FE_PORT}`,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
 }));
 
 // Basic middleware setup
