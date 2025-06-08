@@ -9,3 +9,4 @@ export const hashPassword = (passport) => {
 export const comparePassword = (plain, hash) =>{
     return bcrypt.compare(plain, hash);
 };
+

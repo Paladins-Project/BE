@@ -1,37 +1,53 @@
 import passport from 'passport';
 import { User } from '../models/user.mjs';
-import { Parent } from '../models/parent.mjs';
-import { Kid } from '../models/kid.mjs';
 import { hashPassword, comparePassword } from '../utils/helpers.mjs';
+import { getUserDetailsByRole } from '../services/authService.mjs';
 
 export const login = (req, res, next) => {
-    passport.authenticate("local", (err, user, info) => {
+    passport.authenticate("local", async (err, user, info) => {
         if (err) {
             return next(err);
         }
         if (!user) {
-            return res.status(401).json({ message: 'Account not found!!!' });
+            return res.status(401).json({ message: info?.message || 'Wrong email or password' });
         }
-        req.logIn(user, (err) => {
+        req.logIn(user, async (err) => {
             if (err) {
                 return next(err);
+            }            
+            try {
+                // Get user details with role-specific data
+                const userWithDetails = await getUserDetailsByRole(user);                
+                return res.status(200).json({
+                    message: 'Login Successfully',
+                    user: userWithDetails
+                });
+            } catch (error) {
+                console.error('Error getting user details:', error);
+                // Fallback to basic user info without password
+                const { password, ...userWithoutPassword } = user.toObject();
+                return res.status(200).json({
+                    message: 'Login Successfully',
+                    user: userWithoutPassword
+                });
             }
-            // Create user object without password
-            const { password, ...userWithoutPassword } = user.toObject();
-            return res.status(200).json({
-                message: 'Login Successfully',
-                user: userWithoutPassword
-            });
         });
     })(req, res, next);
 };
 
-export const getAuthStatus = (req, res) => {
+export const getAuthStatus = async (req, res) => {
     console.log(req.user);
     if (req.user) {
-        // Create user object without password
-        const { password, ...userWithoutPassword } = req.user.toObject();
-        return res.status(200).json(userWithoutPassword);
+        try {
+            // Get user details with role-specific data
+            const userWithDetails = await getUserDetailsByRole(req.user);
+            return res.status(200).json(userWithDetails);
+        } catch (error) {
+            console.error('Error getting user details:', error);
+            // Fallback to basic user info without password
+            const { password, ...userWithoutPassword } = req.user.toObject();
+            return res.status(200).json(userWithoutPassword);
+        }
     }
     return res.status(401).json({ message: 'Unauthorized' });
 };
