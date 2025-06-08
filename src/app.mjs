@@ -4,7 +4,7 @@ import session from 'express-session';
 import dotenv from 'dotenv';
 import passport from './config/passport.mjs';
 import cors from 'cors';
-
+import { errorHandler, notFoundHandler, jsonParsingErrorHandler, textPlainJsonHandler } from './middleware/errorHandler.mjs';
 dotenv.config();
 const app = express();
 
@@ -17,28 +17,15 @@ app.use(cors({
 }));
 
 // Basic middleware setup
-app.use(express.json());
+app.use(express.json({
+    limit: '10mb'
+}));
+
+// JSON parsing error handler
+app.use(jsonParsingErrorHandler);
 
 // Middleware to handle JSON sent with text/plain content-type
-app.use((req, res, next) => {
-    if (req.headers['content-type'] === 'text/plain' && req.method === 'POST') {
-        let data = '';
-        req.on('data', chunk => {
-            data += chunk;
-        });
-        req.on('end', () => {
-            try {
-                req.body = JSON.parse(data);
-            } catch (error) {
-                console.error('Error parsing JSON from text/plain:', error);
-                req.body = {};
-            }
-            next();
-        });
-    } else {
-        next();
-    }
-});
+app.use(textPlainJsonHandler);
 
 app.use(cookieParser(process.env.COOKIE_SECRET));
 
@@ -61,6 +48,10 @@ export const configureSession = async (mongoStore) => {
     // Routes (after session and passport setup)
     const routes = await import('./routes/index.mjs');
     app.use(routes.default);
+
+    // Error handling middleware (must be after routes)
+    app.use(notFoundHandler);
+    app.use(errorHandler);
 };
 
 export default app; 

@@ -15,11 +15,12 @@ passport.deserializeUser(async (id, done) => {
     try{
         const findUser = await User.findById(id);
         if(!findUser) {
-            throw new Error('User not found');
+            return done(null, false);
         }
         done(null, findUser);
     }catch(err) {
-        done(err, null);
+        console.error('Deserialize user error:', err);
+        done(null, false);
     }
 });
 
@@ -35,6 +36,7 @@ export default passport.use(new Strategy({usernameField: "email"}, async (email,
             }
         done(null, findUser);
     }catch(error) {
-        done(error, null);
+        console.error('Local strategy error:', error);
+        done(null, false, { message: 'Authentication error occurred' });
     } 
 }));

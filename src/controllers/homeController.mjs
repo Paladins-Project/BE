@@ -5,5 +5,11 @@ export const getHome = (req, res) => {
         req.session.visited = true;
         res.cookie('name', 'express', { maxAge: 60000 * 60, signed: true });
     }
-    res.send('Hehehe chay roi');
+    res.status(200).json({
+        success: true,
+        message: 'API is running successfully',
+        data: {
+            session: req.session ? 'Active' : 'Not active'
+        }
+    });
 }; 

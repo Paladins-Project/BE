@@ -6,11 +6,13 @@ export const createKid = async (req, res) => {
         // Handle service response
         if (result.success) {
             return res.status(result.status).json({
+                success: true,
                 message: result.message,
                 data: result.data
             });
         } else {
             return res.status(result.status).json({
+                success: false,
                 message: result.message,
                 error: result.error
             });
@@ -18,6 +20,7 @@ export const createKid = async (req, res) => {
     } catch (error) {
         console.error('Kid controller error:', error);
         res.status(500).json({ 
+            success: false,
             message: 'Internal server error',
             error: error.message 
         });
