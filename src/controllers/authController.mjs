@@ -1,7 +1,7 @@
 import passport from 'passport';
 import { User } from '../models/user.mjs';
 import { hashPassword, comparePassword } from '../utils/helpers.mjs';
-import { getUserDetailsByRole } from '../services/authService.mjs';
+import { getUserDetailsByRole, sendEmailAsync, receiveEmailAsync, forgotPasswordAsync } from '../services/authService.mjs';
 
 export const login = (req, res, next) => {
     passport.authenticate("local", async (err, user, info) => {
@@ -111,6 +111,99 @@ export const changePassword = async (req, res) => {
         console.error('Error changing password:', error);
         return res.status(500).json({ 
             message: 'Internal server error' 
+        });
+    }
+};
+
+/**
+ * Send verification email endpoint
+ */
+export const sendVerificationEmail = async (req, res) => {
+    try {
+        const { email, forgotPassword = false } = req.body;
+
+        if (!email) {
+            return res.status(400).json({
+                success: false,
+                message: 'Email is required'
+            });
+        }
+
+        const result = await sendEmailAsync(email, forgotPassword);
+        
+        if (result.success) {
+            return res.status(200).json(result);
+        } else {
+            return res.status(400).json(result);
+        }
+
+    } catch (error) {
+        console.error('Error in sendVerificationEmail controller:', error);
+        return res.status(500).json({
+            success: false,
+            message: 'Internal server error'
+        });
+    }
+};
+
+/**
+ * Verify email endpoint
+ */
+export const verifyEmail = async (req, res) => {
+    try {
+        const { email, verifyCode } = req.body;
+
+        if (!email || !verifyCode) {
+            return res.status(400).json({
+                success: false,
+                message: 'Email and verification code are required'
+            });
+        }
+
+        const result = await receiveEmailAsync(email, verifyCode);
+        
+        if (result.success) {
+            return res.status(200).json(result);
+        } else {
+            return res.status(400).json(result);
+        }
+
+    } catch (error) {
+        console.error('Error in verifyEmail controller:', error);
+        return res.status(500).json({
+            success: false,
+            message: 'Internal server error'
+        });
+    }
+};
+
+/**
+ * Forgot password endpoint
+ */
+export const forgotPassword = async (req, res) => {
+    try {
+        const { email, verifyCode, newPassword } = req.body;
+
+        if (!email || !verifyCode || !newPassword) {
+            return res.status(400).json({
+                success: false,
+                message: 'Email, verification code and new password are required'
+            });
+        }
+
+        const result = await forgotPasswordAsync(email, verifyCode, newPassword);
+        
+        if (result.success) {
+            return res.status(200).json(result);
+        } else {
+            return res.status(400).json(result);
+        }
+
+    } catch (error) {
+        console.error('Error in forgotPassword controller:', error);
+        return res.status(500).json({
+            success: false,
+            message: 'Internal server error'
         });
     }
 };

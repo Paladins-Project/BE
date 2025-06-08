@@ -18,6 +18,28 @@ app.use(cors({
 
 // Basic middleware setup
 app.use(express.json());
+
+// Middleware to handle JSON sent with text/plain content-type
+app.use((req, res, next) => {
+    if (req.headers['content-type'] === 'text/plain' && req.method === 'POST') {
+        let data = '';
+        req.on('data', chunk => {
+            data += chunk;
+        });
+        req.on('end', () => {
+            try {
+                req.body = JSON.parse(data);
+            } catch (error) {
+                console.error('Error parsing JSON from text/plain:', error);
+                req.body = {};
+            }
+            next();
+        });
+    } else {
+        next();
+    }
+});
+
 app.use(cookieParser(process.env.COOKIE_SECRET));
 
 // Session configuration function (to be called after DB connection)
