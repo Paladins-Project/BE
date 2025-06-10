@@ -1,8 +1,15 @@
 {
+   "Verify" (Only used for sending verification code): {
+    "_id": "ObjectId",
+    "email": "String (unique, required)",
+    "code": "String (unique, required)",
+    "createdDate": "Date",
+    "expiryDate": "Date (10 minutes after createdDate, using TTL in MongoDB to auto detele)",
+  },
   "User": {
     "_id": "ObjectId",
     "password": "String (hashed, required)",
-    "email": "String (unique, required)" (USE EMAIL TO LOGIN INSTEAD OF USERNAME, and always ends with @gmail.com),
+    "email": "String (unique, required)" (USE EMAIL TO LOGIN INSTEAD OF USERNAME),
     "role": "String (enum: ['parent', 'kid', 'teacher', 'admin'], required)",
     "isActive": "Boolean (default: true)",
     "isVerified": "Boolean (default: false)"
@@ -17,7 +24,7 @@
     "address": "String",
     "phoneNumber": "String",
     "subscriptionType": "String (enum: ['free', 'premium'], default: 'free')",
-    "subscriptionExpiry": "Date (null if subscriptionType is free)"
+    "subscriptionExpiry": "Date"
   },
   "Kid": {
     "_id": "ObjectId",
@@ -50,3 +57,114 @@
     "fullName": "String (required)",
     "phoneNumber": "String",
   },
+  "Course": {
+    "_id": "ObjectId",
+    "title": "String (required)",
+    "description": "String (required)",
+    "category": "String (required)",
+    "ageGroup": "String (enum: ['5-10', '10-15'], required)",
+    "thumbnailUrl": "String",
+    "pointsEarned": "Number (điểm thưởng nhận được)",
+    "isPremium": "Boolean (default: false, required)",
+    "instructor": "ObjectId (ref: Teacher)",
+    "isPublished": "Boolean (default: false)",
+    "createdAt": "Date (default: Date.now)",
+    "updatedAt": "Date (default: Date.now)"
+  },
+  "Lesson": {
+    "_id": "ObjectId",
+    "courseId": "ObjectId (ref: Course, required)",
+    "title": "String (required)",
+    "description": "String (required)",
+    "content": "Mixed (nội dung bài học: text, images, videos, etc.)",
+    "duration": "Number (phút, thời lượng dự kiến)",
+    "order": "Number (thứ tự trong khóa học)",
+    "isPublished": "Boolean (default: true)",
+    "createdBy": "ObjectId (ref: Teacher hoặc admin)",
+    "createdAt": "Date (default: Date.now)",
+    "updatedAt": "Date (default: Date.now)"
+  },
+  "Test": {
+    "_id": "ObjectId",
+    "lessonId": "ObjectId (ref: Lesson, required)",
+    "title": "String (required)",
+    "description": "String",
+    "timeLimit": "Number (phút, 0 = không giới hạn thời gian)",
+    "passingScore": "Number (điểm tối thiểu để pass)",
+    "attempts": "Number (số lần làm bài tối đa, 0 = không giới hạn)",
+    "questions": [
+      {
+        "questionText": "String (required)",
+        "questionType": "String (enum: ['multiple-choice', 'true-false', 'fill-blank', 'matching', 'ordering'], required)",
+        "options": ["String (cho multiple-choice)"],
+        "correctAnswer": "Mixed (đáp án đúng)",
+        "explanation": "String (giải thích đáp án)",
+        "points": "Number (điểm cho câu hỏi, default: 10)",
+        "imageUrl": "String (ảnh minh họa)",
+        "audioUrl": "String (âm thanh)",
+        "videoUrl": "String (video minh họa)"
+      }
+    ],
+    "totalPoints": "Number (tổng điểm bài test)",
+    "createdBy": "ObjectId (ref: Teacher hoặc admin)",
+    "createdAt": "Date (default: Date.now)",
+    "updatedAt": "Date (default: Date.now)"
+  },
+  {
+  "CourseProgress": {
+    "_id": "ObjectId",
+    "courseId": "ObjectId (ref: Course, required)",
+    "kidId": "ObjectId (ref: Kid, required)",
+    "status": "Boolean (default: false, required)",
+    "testResults": [
+      {
+        "testId": "ObjectId (ref: Test)",
+        "score": "Number",
+        "passed": "Boolean"
+      }
+    ],
+    "lessonCompleted": [
+      {
+        "lessonId": "ObjectId (ref: Lesson)"
+      }
+    ],
+    "createdAt": "Date (default: Date.now)",
+    "updatedAt": "Date (default: Date.now)"
+  },
+  
+}
+
+
+  // =================== DỮ LIỆU MẪU (SAMPLE DATA) ===================
+  LESSON:
+  {
+  "_id": "ObjectId('125')",
+  "courseId": "ObjectId('456')",
+  "title": "Thí nghiệm khoa học: Nước sôi",
+  "description": "Tìm hiểu về quá trình nước sôi",
+  "content": {
+    "introduction": "Nước sôi ở 100°C ở điều kiện áp suất tiêu chuẩn.",
+    "steps": [
+      {
+        "step": 1,
+        "description": "Đun nước trong nồi",
+        "image": "https://example.com/images/boiling1.jpg"
+      },
+      {
+        "step": 2,
+        "description": "Quan sát bọt khí",
+        "video": "https://example.com/videos/boiling.mp4"
+      }
+    ],
+    "summary": "Quá trình sôi là sự chuyển từ lỏng sang khí."
+  },
+  "videoUrl": "https://example.com/main-video.mp4",
+  "audioUrl": null,
+  "imageUrl": "https://example.com/images/boiling-thumbnail.jpg",
+  "duration": 25,
+  "order": 3,
+  "isPublished": true,
+  "createdBy": "ObjectId('789')",
+  "createdAt": "2025-06-09T18:09:00Z",
+  "updatedAt": "2025-06-09T18:09:00Z"
+}
