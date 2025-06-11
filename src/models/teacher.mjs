@@ -21,7 +21,7 @@ const teacherSchema = new mongoose.Schema({
   },
   coursesCreated: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Lesson'
+    ref: 'Course'
   }]
 }, {
   timestamps: true

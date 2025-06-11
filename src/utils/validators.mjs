@@ -479,6 +479,24 @@ export const validateLesson = (data) => {
             .messages({
                 'object.base': 'Content must be an object'
             }),
+        videoUrl: Joi.string()
+            .uri()
+            .optional()
+            .messages({
+                'string.uri': 'Video URL must be a valid URL'
+            }),
+        audioUrl: Joi.string()
+            .uri()
+            .optional()
+            .messages({
+                'string.uri': 'Audio URL must be a valid URL'
+            }),
+        imageUrl: Joi.string()
+            .uri()
+            .optional()
+            .messages({
+                'string.uri': 'Image URL must be a valid URL'
+            }),
         duration: Joi.number()
             .min(0)
             .default(0)
@@ -502,12 +520,6 @@ export const validateLesson = (data) => {
             .optional()
             .messages({
                 'string.base': 'Created by must be a valid ID'
-            }),
-        createdByModel: Joi.string()
-            .valid('Teacher', 'Admin')
-            .optional()
-            .messages({
-                'any.only': 'Created by model must be either Teacher or Admin'
             })
     });
 

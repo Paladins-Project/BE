@@ -18,6 +18,15 @@ const lessonSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.Mixed,
     default: {}
   },
+  videoUrl: {
+    type: String
+  },
+  audioUrl: {
+    type: String
+  },
+  imageUrl: {
+    type: String
+  },
   duration: {
     type: Number,
     default: 0
@@ -31,12 +40,7 @@ const lessonSchema = new mongoose.Schema({
     default: true
   },
   createdBy: {
-    type: mongoose.Schema.Types.ObjectId,
-    refPath: 'createdByModel'
-  },
-  createdByModel: {
-    type: String,
-    enum: ['Teacher', 'Admin']
+    type: mongoose.Schema.Types.ObjectId
   }
 }, {
   timestamps: true
