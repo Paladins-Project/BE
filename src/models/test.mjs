@@ -67,11 +67,7 @@ const testSchema = new mongoose.Schema({
   },
   createdBy: {
     type: mongoose.Schema.Types.ObjectId,
-    refPath: 'createdByModel'
-  },
-  createdByModel: {
-    type: String,
-    enum: ['Teacher', 'Admin']
+    ref: 'Teacher'
   }
 }, {
   timestamps: true

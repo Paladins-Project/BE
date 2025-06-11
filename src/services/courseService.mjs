@@ -1,5 +1,5 @@
 import { Course } from '../models/course.mjs';
-import { validateCourse } from '../utils/validators.mjs';
+import { validateCourse, validateObjectIdParam } from '../utils/validators.mjs';
 import mongoose from 'mongoose';
 
 // Create a new course
@@ -13,16 +13,6 @@ export const createCourseAsync = async (courseData) => {
                 status: 400,
                 message: validation.error.details[0].message
             };
-        }
-        // Check if instructor exists if provided
-        if (courseData.instructor) {
-            if (!mongoose.Types.ObjectId.isValid(courseData.instructor)) {
-                return {
-                    success: false,
-                    status: 400,
-                    message: 'Invalid instructor ID format'
-                };
-            }
         }
         // Create new course
         const course = new Course(validation.value);
@@ -59,7 +49,6 @@ export const getAllCoursesAsync = async (filters = {}, pagination = {}) => {
             isPublished,
             instructor
         } = filters;
-
         const {
             page = 1,
             limit = 10,
@@ -67,32 +56,49 @@ export const getAllCoursesAsync = async (filters = {}, pagination = {}) => {
             sortOrder = 'desc'
         } = pagination;
 
-        // Build query object
-        const query = {};
-        
-        if (category) query.category = new RegExp(category, 'i');
-        if (ageGroup) query.ageGroup = ageGroup;
-        if (isPremium !== undefined) query.isPremium = isPremium;
-        if (isPublished !== undefined) query.isPublished = isPublished;
-        if (instructor && mongoose.Types.ObjectId.isValid(instructor)) {
-            query.instructor = instructor;
+        // Build query object - if no filters provided, query will be empty {} and return all courses
+        const query = {};                
+        // Age group filter (validate allowed values) - only add if ageGroup has meaningful value
+        if (ageGroup && ageGroup.trim()) {
+            const validAgeGroups = ['5-10', '10-15'];
+            if (validAgeGroups.includes(ageGroup.trim())) {
+                query.ageGroup = ageGroup.trim();
+            }
+        }                
+        // Premium status filter - only add if explicitly set to true or false
+        if (isPremium !== null && isPremium !== undefined) {
+            query.isPremium = Boolean(isPremium);
+        }                
+        // Published status filter - only add if explicitly set to true or false
+        if (isPublished !== null && isPublished !== undefined) {
+            query.isPublished = Boolean(isPublished);
+        }                
+        // Instructor filter (validate ObjectId) - only add if instructor has meaningful value
+        if (instructor && instructor.trim()) {
+            const instructorId = instructor.trim();
+            if (mongoose.Types.ObjectId.isValid(instructorId)) {
+                query.instructor = instructorId;
+            }
         }
+        // Sanitize query to prevent NoSQL injection
+        const sanitizedQuery = mongoose.sanitizeFilter(query);
 
+        // Category filter (case-insensitive) - add after sanitization to preserve RegExp
+        if (category && category.trim()) {
+            sanitizedQuery.category = new RegExp(category.trim(), 'i');
+        }
         // Calculate pagination
         const skip = (page - 1) * limit;
         const sortDirection = sortOrder === 'desc' ? -1 : 1;
-
         // Execute query
-        const courses = await Course.find(query)
+        const courses = await Course.find(sanitizedQuery)
             .populate('instructor', 'fullName specializations')
             .sort({ [sortBy]: sortDirection })
             .skip(skip)
             .limit(parseInt(limit));
-
         // Get total count for pagination
-        const totalCount = await Course.countDocuments(query);
+        const totalCount = await Course.countDocuments(sanitizedQuery);
         const totalPages = Math.ceil(totalCount / limit);
-
         return {
             success: true,
             status: 200,
@@ -109,7 +115,6 @@ export const getAllCoursesAsync = async (filters = {}, pagination = {}) => {
                 }
             }
         };
-
     } catch (error) {
         console.error('Get all courses service error:', error);
         return {
@@ -125,12 +130,9 @@ export const getAllCoursesAsync = async (filters = {}, pagination = {}) => {
 export const getCourseByIdAsync = async (courseId) => {
     try {
         // Validate courseId format
-        if (!mongoose.Types.ObjectId.isValid(courseId)) {
-            return {
-                success: false,
-                status: 400,
-                message: 'Invalid course ID format'
-            };
+        const idValidation = validateObjectIdParam(courseId, 'course ID');
+        if (!idValidation.success) {
+            return idValidation;
         }
 
         // Find course by ID
@@ -165,12 +167,9 @@ export const getCourseByIdAsync = async (courseId) => {
 export const updateCourseAsync = async (courseId, courseData) => {
     try {
         // Validate courseId format
-        if (!mongoose.Types.ObjectId.isValid(courseId)) {
-            return {
-                success: false,
-                status: 400,
-                message: 'Invalid course ID format'
-            };
+        const idValidation = validateObjectIdParam(courseId, 'course ID');
+        if (!idValidation.success) {
+            return idValidation;
         }
         // Check if course exists
         const existingCourse = await Course.findById(courseId);
@@ -189,14 +188,6 @@ export const updateCourseAsync = async (courseId, courseData) => {
                 success: false,
                 status: 400,
                 message: validation.error.details[0].message
-            };
-        }
-        // Check if instructor exists if provided
-        if (courseData.instructor && !mongoose.Types.ObjectId.isValid(courseData.instructor)) {
-            return {
-                success: false,
-                status: 400,
-                message: 'Invalid instructor ID format'
             };
         }
         // Update course
@@ -226,12 +217,9 @@ export const updateCourseAsync = async (courseId, courseData) => {
 export const deleteCourseAsync = async (courseId) => {
     try {
         // Validate courseId format
-        if (!mongoose.Types.ObjectId.isValid(courseId)) {
-            return {
-                success: false,
-                status: 400,
-                message: 'Invalid course ID format'
-            };
+        const idValidation = validateObjectIdParam(courseId, 'course ID');
+        if (!idValidation.success) {
+            return idValidation;
         }
 
         // Check if course exists
@@ -265,70 +253,5 @@ export const deleteCourseAsync = async (courseId) => {
     }
 };
 
-// Get courses by category with pagination
-export const getCoursesByCategoryAsync = async (category, pagination = {}) => {
-    try {
-        if (!category) {
-            return {
-                success: false,
-                status: 400,
-                message: 'Category is required'
-            };
-        }
 
-        const {
-            page = 1,
-            limit = 10,
-            sortBy = 'createdAt',
-            sortOrder = 'desc'
-        } = pagination;
-
-        // Calculate pagination
-        const skip = (page - 1) * limit;
-        const sortDirection = sortOrder === 'desc' ? -1 : 1;
-
-        // Query courses by category (case-insensitive)
-        const query = { 
-            category: new RegExp(category, 'i'),
-            isPublished: true // Only show published courses
-        };
-
-        const courses = await Course.find(query)
-            .populate('instructor', 'fullName specializations')
-            .sort({ [sortBy]: sortDirection })
-            .skip(skip)
-            .limit(parseInt(limit));
-
-        // Get total count for pagination
-        const totalCount = await Course.countDocuments(query);
-        const totalPages = Math.ceil(totalCount / limit);
-
-        return {
-            success: true,
-            status: 200,
-            message: `Courses in category "${category}" retrieved successfully`,
-            data: {
-                courses,
-                category,
-                pagination: {
-                    currentPage: parseInt(page),
-                    totalPages,
-                    totalItems: totalCount,
-                    itemsPerPage: parseInt(limit),
-                    hasNextPage: page < totalPages,
-                    hasPrevPage: page > 1
-                }
-            }
-        };
-
-    } catch (error) {
-        console.error('Get courses by category service error:', error);
-        return {
-            success: false,
-            status: 500,
-            message: 'Failed to retrieve courses by category',
-            error: error.message
-        };
-    }
-};
 

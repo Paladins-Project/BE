@@ -1,6 +1,6 @@
 import { Lesson } from '../models/lesson.mjs';
 import { Course } from '../models/course.mjs';
-import { validateLesson, updateServiceValidator } from '../utils/validators.mjs';
+import { validateLesson, updateServiceValidator, validateObjectIdParam } from '../utils/validators.mjs';
 import mongoose from 'mongoose';
 
 // Create a new lesson
@@ -15,14 +15,6 @@ export const createLessonAsync = async (lessonData) => {
                 message: validation.error.details[0].message
             };
         }
-        // Check if courseId is valid
-        if (!mongoose.Types.ObjectId.isValid(lessonData.courseId)) {
-            return {
-                success: false,
-                status: 400,
-                message: 'Invalid course ID format'
-            };
-        }
         // Check if course exists
         const courseExists = await Course.findById(lessonData.courseId);
         if (!courseExists) {
@@ -31,16 +23,6 @@ export const createLessonAsync = async (lessonData) => {
                 status: 404,
                 message: 'Course not found'
             };
-        }
-        // Check if createdBy exists if provided
-        if (lessonData.createdBy) {
-            if (!mongoose.Types.ObjectId.isValid(lessonData.createdBy)) {
-                return {
-                    success: false,
-                    status: 400,
-                    message: 'Invalid createdBy ID format'
-                };
-            }
         }
         // Create new lesson
         const lesson = new Lesson(validation.value);
@@ -71,12 +53,9 @@ export const createLessonAsync = async (lessonData) => {
 export const updateLessonAsync = async (lessonId, lessonData) => {
     try {
         // Validate lessonId format
-        if (!mongoose.Types.ObjectId.isValid(lessonId)) {
-            return {
-                success: false,
-                status: 400,
-                message: 'Invalid lesson ID format'
-            };
+        const idValidation = validateObjectIdParam(lessonId, 'lesson ID');
+        if (!idValidation.success) {
+            return idValidation;
         }
         // Check if lesson exists
         const existingLesson = await Lesson.findById(lessonId);
@@ -98,13 +77,6 @@ export const updateLessonAsync = async (lessonId, lessonData) => {
         }
         // Check if courseId is valid if provided
         if (lessonData.courseId) {
-            if (!mongoose.Types.ObjectId.isValid(lessonData.courseId)) {
-                return {
-                    success: false,
-                    status: 400,
-                    message: 'Invalid course ID format'
-                };
-            }
             // Check if course exists
             const courseExists = await Course.findById(lessonData.courseId);
             if (!courseExists) {
@@ -114,14 +86,6 @@ export const updateLessonAsync = async (lessonId, lessonData) => {
                     message: 'Course not found'
                 };
             }
-        }
-        // Check if createdBy is valid if provided
-        if (lessonData.createdBy && !mongoose.Types.ObjectId.isValid(lessonData.createdBy)) {
-            return {
-                success: false,
-                status: 400,
-                message: 'Invalid createdBy ID format'
-            };
         }
         // Update lesson
         const updatedLesson = await Lesson.findByIdAndUpdate(
@@ -152,12 +116,9 @@ export const updateLessonAsync = async (lessonId, lessonData) => {
 export const deleteLessonAsync = async (lessonId) => {
     try {
         // Validate lessonId format
-        if (!mongoose.Types.ObjectId.isValid(lessonId)) {
-            return {
-                success: false,
-                status: 400,
-                message: 'Invalid lesson ID format'
-            };
+        const idValidation = validateObjectIdParam(lessonId, 'lesson ID');
+        if (!idValidation.success) {
+            return idValidation;
         }
         // Check if lesson exists
         const lesson = await Lesson.findById(lessonId);
@@ -193,12 +154,9 @@ export const deleteLessonAsync = async (lessonId) => {
 export const getAllLessonsInCourseAsync = async (courseId, pagination = {}) => {
     try {
         // Validate courseId format
-        if (!mongoose.Types.ObjectId.isValid(courseId)) {
-            return {
-                success: false,
-                status: 400,
-                message: 'Invalid course ID format'
-            };
+        const idValidation = validateObjectIdParam(courseId, 'course ID');
+        if (!idValidation.success) {
+            return idValidation;
         }
 
         // Check if course exists
@@ -272,12 +230,9 @@ export const getAllLessonsInCourseAsync = async (courseId, pagination = {}) => {
 export const getLessonByIdAsync = async (lessonId) => {
     try {
         // Validate lessonId format
-        if (!mongoose.Types.ObjectId.isValid(lessonId)) {
-            return {
-                success: false,
-                status: 400,
-                message: 'Invalid lesson ID format'
-            };
+        const idValidation = validateObjectIdParam(lessonId, 'lesson ID');
+        if (!idValidation.success) {
+            return idValidation;
         }
         // Find lesson by ID
         const lesson = await Lesson.findById(lessonId)

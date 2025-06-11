@@ -1,4 +1,30 @@
 import Joi from 'joi';
+import mongoose from 'mongoose';
+
+// Custom Joi extension for ObjectId validation
+const objectIdValidator = (value, helpers) => {
+    if (!mongoose.Types.ObjectId.isValid(value)) {
+        return helpers.error('string.objectId');
+    }
+    return value;
+};
+
+// Custom Joi schema for ObjectId
+const objectIdSchema = () => Joi.string().custom(objectIdValidator).messages({
+    'string.objectId': 'Invalid ID format'
+});
+
+// Validate single ObjectId parameter (e.g., from URL params)
+export const validateObjectIdParam = (id, paramName = 'ID') => {
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return {
+            success: false,
+            status: 400,
+            message: `Invalid ${paramName} format`
+        };
+    }
+    return { success: true };
+};
 
 // Verify Validator  
 export const validateVerify = (data) => {
@@ -70,10 +96,11 @@ export const validateUser = (data) => {
 // Parent Validator
 export const validateParent = (data) => {
     const schema = Joi.object({
-        userId: Joi.string()
+        userId: objectIdSchema()
             .required()
             .messages({
                 'string.empty': 'UserId cannot be empty',
+                'string.objectId': 'Invalid user ID format',
                 'any.required': 'UserId is required'
             }),
         fullName: Joi.string()
@@ -140,10 +167,11 @@ export const validateParent = (data) => {
 // Kid Validator
 export const validateKid = (data) => {
     const schema = Joi.object({
-        userId: Joi.string()
+        userId: objectIdSchema()
             .required()
             .messages({
                 'string.empty': 'UserId cannot be empty',
+                'string.objectId': 'Invalid user ID format',
                 'any.required': 'UserId is required'
             }),
         fullName: Joi.string()
@@ -226,10 +254,11 @@ export const validateKid = (data) => {
 // Teacher Validator
 export const validateTeacher = (data) => {
     const schema = Joi.object({
-        userId: Joi.string()
+        userId: objectIdSchema()
             .required()
             .messages({
                 'string.empty': 'UserId cannot be empty',
+                'string.objectId': 'Invalid user ID format',
                 'any.required': 'UserId is required'
             }),
         fullName: Joi.string()
@@ -263,7 +292,9 @@ export const validateTeacher = (data) => {
                 'string.max': 'Bio cannot exceed 500 characters'
             }),
         coursesCreated: Joi.array()
-            .items(Joi.string())
+            .items(objectIdSchema().messages({
+                'string.objectId': 'Invalid course ID format'
+            }))
             .default([])
             .messages({
                 'array.base': 'Courses created must be an array'
@@ -276,10 +307,11 @@ export const validateTeacher = (data) => {
 // Admin Validator
 export const validateAdmin = (data) => {
     const schema = Joi.object({
-        userId: Joi.string()
+        userId: objectIdSchema()
             .required()
             .messages({
                 'string.empty': 'UserId cannot be empty',
+                'string.objectId': 'Invalid user ID format',
                 'any.required': 'UserId is required'
             }),
         fullName: Joi.string()
@@ -430,10 +462,11 @@ export const validateCourse = (data) => {
                 'boolean.base': 'isPremium must be a boolean value',
                 'any.required': 'isPremium is required'
             }),
-        instructor: Joi.string()
+        instructor: objectIdSchema()
             .optional()
             .messages({
-                'string.base': 'Instructor must be a valid ID'
+                'string.base': 'Instructor must be a valid ID',
+                'string.objectId': 'Invalid instructor ID format'
             }),
         isPublished: Joi.boolean()
             .default(false)
@@ -448,10 +481,11 @@ export const validateCourse = (data) => {
 // Lesson Validator
 export const validateLesson = (data) => {
     const schema = Joi.object({
-        courseId: Joi.string()
+        courseId: objectIdSchema()
             .required()
             .messages({
                 'string.empty': 'Course ID cannot be empty',
+                'string.objectId': 'Invalid course ID format',
                 'any.required': 'Course ID is required'
             }),
         title: Joi.string()
@@ -516,10 +550,11 @@ export const validateLesson = (data) => {
             .messages({
                 'boolean.base': 'isPublished must be a boolean value'
             }),
-        createdBy: Joi.string()
+        createdBy: objectIdSchema()
             .optional()
             .messages({
-                'string.base': 'Created by must be a valid ID'
+                'string.base': 'Created by must be a valid ID',
+                'string.objectId': 'Invalid createdBy ID format'
             })
     });
 
@@ -603,10 +638,11 @@ export const validateQuestion = (data) => {
 // Test Validator
 export const validateTest = (data) => {
     const schema = Joi.object({
-        lessonId: Joi.string()
+        lessonId: objectIdSchema()
             .required()
             .messages({
                 'string.empty': 'Lesson ID cannot be empty',
+                'string.objectId': 'Invalid lesson ID format',
                 'any.required': 'Lesson ID is required'
             }),
         title: Joi.string()
@@ -653,6 +689,7 @@ export const validateTest = (data) => {
             .messages({
                 'array.base': 'Questions must be an array',
                 'array.min': 'Test must have at least 1 question',
+                'array.empty': 'Questions cannot be empty',
                 'any.required': 'Questions are required'
             }),
         totalPoints: Joi.number()
@@ -662,16 +699,11 @@ export const validateTest = (data) => {
                 'number.base': 'Total points must be a number',
                 'number.min': 'Total points cannot be negative'
             }),
-        createdBy: Joi.string()
+        createdBy: objectIdSchema()
             .optional()
             .messages({
-                'string.base': 'Created by must be a valid ID'
-            }),
-        createdByModel: Joi.string()
-            .valid('Teacher', 'Admin')
-            .optional()
-            .messages({
-                'any.only': 'Created by model must be either Teacher or Admin'
+                'string.base': 'Created by must be a valid teacher ID',
+                'string.objectId': 'Invalid teacher ID format'
             })
     });
 
@@ -681,16 +713,18 @@ export const validateTest = (data) => {
 // Course Progress Validator
 export const validateCourseProgress = (data) => {
     const schema = Joi.object({
-        courseId: Joi.string()
+        courseId: objectIdSchema()
             .required()
             .messages({
                 'string.empty': 'Course ID cannot be empty',
+                'string.objectId': 'Invalid course ID format',
                 'any.required': 'Course ID is required'
             }),
-        kidId: Joi.string()
+        kidId: objectIdSchema()
             .required()
             .messages({
                 'string.empty': 'Kid ID cannot be empty',
+                'string.objectId': 'Invalid kid ID format',
                 'any.required': 'Kid ID is required'
             }),
         status: Joi.boolean()
@@ -702,7 +736,9 @@ export const validateCourseProgress = (data) => {
             }),
         testResults: Joi.array()
             .items(Joi.object({
-                testId: Joi.string().optional(),
+                testId: objectIdSchema().optional().messages({
+                    'string.objectId': 'Invalid test ID format'
+                }),
                 score: Joi.number().min(0).default(0),
                 passed: Joi.boolean().default(false)
             }))
@@ -712,7 +748,9 @@ export const validateCourseProgress = (data) => {
             }),
         lessonCompleted: Joi.array()
             .items(Joi.object({
-                lessonId: Joi.string().optional()
+                lessonId: objectIdSchema().optional().messages({
+                    'string.objectId': 'Invalid lesson ID format'
+                })
             }))
             .default([])
             .messages({
@@ -840,6 +878,28 @@ export const updateServiceValidator = (data, entityType = 'lesson') => {
                 return {
                     error: {
                         details: [{ message: 'Content must be an object' }]
+                    }
+                };
+            }
+        }
+
+        // Course ID validation
+        if (data.hasOwnProperty('courseId')) {
+            if (!mongoose.Types.ObjectId.isValid(data.courseId)) {
+                return {
+                    error: {
+                        details: [{ message: 'Invalid course ID format' }]
+                    }
+                };
+            }
+        }
+
+        // Created by validation
+        if (data.hasOwnProperty('createdBy')) {
+            if (data.createdBy && !mongoose.Types.ObjectId.isValid(data.createdBy)) {
+                return {
+                    error: {
+                        details: [{ message: 'Invalid creator ID format' }]
                     }
                 };
             }

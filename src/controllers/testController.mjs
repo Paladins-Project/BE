@@ -1,15 +1,17 @@
 import {
-    createCourseAsync,
-    getAllCoursesAsync,
-    getCourseByIdAsync,
-    updateCourseAsync,
-    deleteCourseAsync
-} from '../services/courseService.mjs';
+    createTestAsync,
+    updateTestAsync,
+    deleteTestAsync,
+    getAllTestsInLessonAsync,
+    getAllTestsInCourseAsync,
+    getTestByIdAsync
+} from '../services/testService.mjs';
 
-// Create a new course
-export const createCourse = async (req, res) => {
+// Create a new test
+export const createTest = async (req, res) => {
     try {
-        const result = await createCourseAsync(req.body);
+        const result = await createTestAsync(req.body);
+        
         // Handle service response
         if (result.success) {
             return res.status(result.status).json({
@@ -25,7 +27,7 @@ export const createCourse = async (req, res) => {
             });
         }
     } catch (error) {
-        console.error('Course controller error:', error);
+        console.error('Test controller error:', error);
         res.status(500).json({
             success: false,
             message: 'Internal server error',
@@ -34,29 +36,80 @@ export const createCourse = async (req, res) => {
     }
 };
 
-// Get all courses with optional filters and pagination
-export const getAllCourses = async (req, res) => {
+// Update test
+export const updateTest = async (req, res) => {
     try {
-        // Extract filters from request body
-        const filtersInput = req.body.filters || {};
-        const filters = {
-            category: filtersInput.category && filtersInput.category.trim() ? filtersInput.category.trim() : undefined,
-            ageGroup: filtersInput.ageGroup && filtersInput.ageGroup.trim() ? filtersInput.ageGroup.trim() : undefined,
-            isPremium: filtersInput.isPremium !== null && filtersInput.isPremium !== undefined ? filtersInput.isPremium : undefined,
-            isPublished: filtersInput.isPublished !== null && filtersInput.isPublished !== undefined ? filtersInput.isPublished : undefined,
-            instructor: filtersInput.instructor && filtersInput.instructor.trim() ? filtersInput.instructor.trim() : undefined
-        };
+        const { testId } = req.params;
+        const result = await updateTestAsync(testId, req.body);
+        
+        // Handle service response
+        if (result.success) {
+            return res.status(result.status).json({
+                success: true,
+                message: result.message,
+                data: result.data
+            });
+        } else {
+            return res.status(result.status).json({
+                success: false,
+                message: result.message,
+                error: result.error
+            });
+        }
+    } catch (error) {
+        console.error('Update test controller error:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Internal server error',
+            error: error.message
+        });
+    }
+};
 
-        // Extract pagination from request body
-        const paginationInput = req.body.pagination || {};
+// Delete test
+export const deleteTest = async (req, res) => {
+    try {
+        const { testId } = req.params;
+        const result = await deleteTestAsync(testId);
+        
+        // Handle service response
+        if (result.success) {
+            return res.status(result.status).json({
+                success: true,
+                message: result.message,
+                data: result.data
+            });
+        } else {
+            return res.status(result.status).json({
+                success: false,
+                message: result.message,
+                error: result.error
+            });
+        }
+    } catch (error) {
+        console.error('Delete test controller error:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Internal server error',
+            error: error.message
+        });
+    }
+};
+
+// Get all tests in a lesson
+export const getAllTestsInLesson = async (req, res) => {
+    try {
+        const { lessonId } = req.params;
+        
         const pagination = {
-            page: paginationInput.page ? parseInt(paginationInput.page) : 1,
-            limit: paginationInput.limit ? parseInt(paginationInput.limit) : 10,
-            sortBy: paginationInput.sortBy || 'createdAt',
-            sortOrder: paginationInput.sortOrder || 'desc'
+            page: req.query.page ? parseInt(req.query.page) : 1,
+            limit: req.query.limit ? parseInt(req.query.limit) : 10,
+            sortBy: req.query.sortBy || 'createdAt',
+            sortOrder: req.query.sortOrder || 'desc'
         };
 
-        const result = await getAllCoursesAsync(filters, pagination);
+        const result = await getAllTestsInLessonAsync(lessonId, pagination);
+        
         // Handle service response
         if (result.success) {
             return res.status(result.status).json({
@@ -72,7 +125,7 @@ export const getAllCourses = async (req, res) => {
             });
         }
     } catch (error) {
-        console.error('Get all courses controller error:', error);
+        console.error('Get all tests in lesson controller error:', error);
         res.status(500).json({
             success: false,
             message: 'Internal server error',
@@ -81,11 +134,20 @@ export const getAllCourses = async (req, res) => {
     }
 };
 
-// Get course by ID
-export const getCourseById = async (req, res) => {
+// Get all tests in a course
+export const getAllTestsInCourse = async (req, res) => {
     try {
         const { courseId } = req.params;
-        const result = await getCourseByIdAsync(courseId);
+        
+        const pagination = {
+            page: req.query.page ? parseInt(req.query.page) : 1,
+            limit: req.query.limit ? parseInt(req.query.limit) : 10,
+            sortBy: req.query.sortBy || 'createdAt',
+            sortOrder: req.query.sortOrder || 'desc'
+        };
+
+        const result = await getAllTestsInCourseAsync(courseId, pagination);
+        
         // Handle service response
         if (result.success) {
             return res.status(result.status).json({
@@ -101,7 +163,7 @@ export const getCourseById = async (req, res) => {
             });
         }
     } catch (error) {
-        console.error('Get course by ID controller error:', error);
+        console.error('Get all tests in course controller error:', error);
         res.status(500).json({
             success: false,
             message: 'Internal server error',
@@ -110,11 +172,12 @@ export const getCourseById = async (req, res) => {
     }
 };
 
-// Update course
-export const updateCourse = async (req, res) => {
+// Get test by ID
+export const getTestById = async (req, res) => {
     try {
-        const { courseId } = req.params;
-        const result = await updateCourseAsync(courseId, req.body);
+        const { testId } = req.params;
+        const result = await getTestByIdAsync(testId);
+        
         // Handle service response
         if (result.success) {
             return res.status(result.status).json({
@@ -130,7 +193,7 @@ export const updateCourse = async (req, res) => {
             });
         }
     } catch (error) {
-        console.error('Update course controller error:', error);
+        console.error('Get test by ID controller error:', error);
         res.status(500).json({
             success: false,
             message: 'Internal server error',
@@ -138,34 +201,3 @@ export const updateCourse = async (req, res) => {
         });
     }
 };
-
-// Delete course
-export const deleteCourse = async (req, res) => {
-    try {
-        const { courseId } = req.params;
-        const result = await deleteCourseAsync(courseId);
-        // Handle service response
-        if (result.success) {
-            return res.status(result.status).json({
-                success: true,
-                message: result.message,
-                data: result.data
-            });
-        } else {
-            return res.status(result.status).json({
-                success: false,
-                message: result.message,
-                error: result.error
-            });
-        }
-    } catch (error) {
-        console.error('Delete course controller error:', error);
-        res.status(500).json({
-            success: false,
-            message: 'Internal server error',
-            error: error.message
-        });
-    }
-};
-
-
