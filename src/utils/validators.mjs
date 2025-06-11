@@ -722,3 +722,139 @@ export const validateCourseProgress = (data) => {
 
     return schema.validate(data);
 };
+
+// Update Service Validator - For validating partial updates without requiring all fields
+export const updateServiceValidator = (data, entityType = 'lesson') => {
+    // Helper function to validate URL
+    const isValidUrl = (url) => {
+        try {
+            new URL(url);
+            return true;
+        } catch (error) {
+            return false;
+        }
+    };
+
+    // Check if any data is provided
+    if (Object.keys(data).length === 0) {
+        return {
+            error: {
+                details: [{ message: 'No data provided for update' }]
+            }
+        };
+    }
+
+    // Validate specific fields based on entity type
+    if (entityType === 'lesson') {
+        // Title validation
+        if (data.hasOwnProperty('title')) {
+            if (typeof data.title !== 'string' || data.title.length < 5 || data.title.length > 200) {
+                return {
+                    error: {
+                        details: [{ message: 'Title must be between 5 and 200 characters' }]
+                    }
+                };
+            }
+        }
+
+        // Description validation
+        if (data.hasOwnProperty('description')) {
+            if (typeof data.description !== 'string' || data.description.length < 10 || data.description.length > 1000) {
+                return {
+                    error: {
+                        details: [{ message: 'Description must be between 10 and 1000 characters' }]
+                    }
+                };
+            }
+        }
+
+        // Video URL validation
+        if (data.hasOwnProperty('videoUrl')) {
+            if (data.videoUrl && (typeof data.videoUrl !== 'string' || !isValidUrl(data.videoUrl))) {
+                return {
+                    error: {
+                        details: [{ message: 'Video URL must be a valid URL' }]
+                    }
+                };
+            }
+        }
+
+        // Audio URL validation
+        if (data.hasOwnProperty('audioUrl')) {
+            if (data.audioUrl && (typeof data.audioUrl !== 'string' || !isValidUrl(data.audioUrl))) {
+                return {
+                    error: {
+                        details: [{ message: 'Audio URL must be a valid URL' }]
+                    }
+                };
+            }
+        }
+
+        // Image URL validation
+        if (data.hasOwnProperty('imageUrl')) {
+            if (data.imageUrl && (typeof data.imageUrl !== 'string' || !isValidUrl(data.imageUrl))) {
+                return {
+                    error: {
+                        details: [{ message: 'Image URL must be a valid URL' }]
+                    }
+                };
+            }
+        }
+
+        // Duration validation
+        if (data.hasOwnProperty('duration')) {
+            if (typeof data.duration !== 'number' || data.duration < 0) {
+                return {
+                    error: {
+                        details: [{ message: 'Duration must be a non-negative number' }]
+                    }
+                };
+            }
+        }
+
+        // Order validation
+        if (data.hasOwnProperty('order')) {
+            if (typeof data.order !== 'number' || data.order < 0) {
+                return {
+                    error: {
+                        details: [{ message: 'Order must be a non-negative number' }]
+                    }
+                };
+            }
+        }
+
+        // isPublished validation
+        if (data.hasOwnProperty('isPublished')) {
+            if (typeof data.isPublished !== 'boolean') {
+                return {
+                    error: {
+                        details: [{ message: 'isPublished must be a boolean value' }]
+                    }
+                };
+            }
+        }
+
+        // Content validation (if provided, should be an object)
+        if (data.hasOwnProperty('content')) {
+            if (data.content !== null && typeof data.content !== 'object') {
+                return {
+                    error: {
+                        details: [{ message: 'Content must be an object' }]
+                    }
+                };
+            }
+        }
+    }
+
+    // Add more entity types here in the future (course, user, etc.)
+    // Example:
+    // if (entityType === 'course') {
+    //     // Course-specific validation rules
+    // }
+
+    // If all validations pass
+    return {
+        error: null,
+        value: data
+    };
+};

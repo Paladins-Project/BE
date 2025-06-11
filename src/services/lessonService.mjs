@@ -1,6 +1,6 @@
 import { Lesson } from '../models/lesson.mjs';
 import { Course } from '../models/course.mjs';
-import { validateLesson } from '../utils/validators.mjs';
+import { validateLesson, updateServiceValidator } from '../utils/validators.mjs';
 import mongoose from 'mongoose';
 
 // Create a new lesson
@@ -15,7 +15,6 @@ export const createLessonAsync = async (lessonData) => {
                 message: validation.error.details[0].message
             };
         }
-
         // Check if courseId is valid
         if (!mongoose.Types.ObjectId.isValid(lessonData.courseId)) {
             return {
@@ -24,7 +23,6 @@ export const createLessonAsync = async (lessonData) => {
                 message: 'Invalid course ID format'
             };
         }
-
         // Check if course exists
         const courseExists = await Course.findById(lessonData.courseId);
         if (!courseExists) {
@@ -34,7 +32,6 @@ export const createLessonAsync = async (lessonData) => {
                 message: 'Course not found'
             };
         }
-
         // Check if createdBy exists if provided
         if (lessonData.createdBy) {
             if (!mongoose.Types.ObjectId.isValid(lessonData.createdBy)) {
@@ -45,7 +42,6 @@ export const createLessonAsync = async (lessonData) => {
                 };
             }
         }
-
         // Create new lesson
         const lesson = new Lesson(validation.value);
         const savedLesson = await lesson.save();
@@ -82,7 +78,6 @@ export const updateLessonAsync = async (lessonId, lessonData) => {
                 message: 'Invalid lesson ID format'
             };
         }
-
         // Check if lesson exists
         const existingLesson = await Lesson.findById(lessonId);
         if (!existingLesson) {
@@ -92,10 +87,8 @@ export const updateLessonAsync = async (lessonId, lessonData) => {
                 message: 'Lesson not found'
             };
         }
-
-        // Validate updated lesson data (exclude system fields from validation)
-        const { _id, __v, createdAt, updatedAt, ...existingData } = existingLesson.toObject();
-        const validation = validateLesson({ ...existingData, ...lessonData });
+        // Validate update data using the update service validator
+        const validation = updateServiceValidator(lessonData, 'lesson');
         if (validation.error) {
             return {
                 success: false,
@@ -103,7 +96,6 @@ export const updateLessonAsync = async (lessonId, lessonData) => {
                 message: validation.error.details[0].message
             };
         }
-
         // Check if courseId is valid if provided
         if (lessonData.courseId) {
             if (!mongoose.Types.ObjectId.isValid(lessonData.courseId)) {
@@ -113,7 +105,6 @@ export const updateLessonAsync = async (lessonId, lessonData) => {
                     message: 'Invalid course ID format'
                 };
             }
-
             // Check if course exists
             const courseExists = await Course.findById(lessonData.courseId);
             if (!courseExists) {
@@ -124,7 +115,6 @@ export const updateLessonAsync = async (lessonId, lessonData) => {
                 };
             }
         }
-
         // Check if createdBy is valid if provided
         if (lessonData.createdBy && !mongoose.Types.ObjectId.isValid(lessonData.createdBy)) {
             return {
@@ -133,7 +123,6 @@ export const updateLessonAsync = async (lessonId, lessonData) => {
                 message: 'Invalid createdBy ID format'
             };
         }
-
         // Update lesson
         const updatedLesson = await Lesson.findByIdAndUpdate(
             lessonId,
@@ -170,7 +159,6 @@ export const deleteLessonAsync = async (lessonId) => {
                 message: 'Invalid lesson ID format'
             };
         }
-
         // Check if lesson exists
         const lesson = await Lesson.findById(lessonId);
         if (!lesson) {
@@ -180,7 +168,6 @@ export const deleteLessonAsync = async (lessonId) => {
                 message: 'Lesson not found'
             };
         }
-
         // Delete lesson
         await Lesson.findByIdAndDelete(lessonId);
 
@@ -223,7 +210,6 @@ export const getAllLessonsInCourseAsync = async (courseId, pagination = {}) => {
                 message: 'Course not found'
             };
         }
-
         const {
             page = 1,
             limit = 10,
@@ -231,24 +217,20 @@ export const getAllLessonsInCourseAsync = async (courseId, pagination = {}) => {
             sortOrder = 'asc',
             isPublished
         } = pagination;
-
         // Build query object
         const query = { courseId };
         if (isPublished !== undefined) {
             query.isPublished = isPublished;
         }
-
         // Calculate pagination
         const skip = (page - 1) * limit;
         const sortDirection = sortOrder === 'desc' ? -1 : 1;
-
         // Execute query
         const lessons = await Lesson.find(query)
             .populate('courseId', 'title category')
             .sort({ [sortBy]: sortDirection })
             .skip(skip)
             .limit(parseInt(limit));
-
         // Get total count for pagination
         const totalCount = await Lesson.countDocuments(query);
         const totalPages = Math.ceil(totalCount / limit);
@@ -297,7 +279,6 @@ export const getLessonByIdAsync = async (lessonId) => {
                 message: 'Invalid lesson ID format'
             };
         }
-
         // Find lesson by ID
         const lesson = await Lesson.findById(lessonId)
             .populate('courseId', 'title category ageGroup');
@@ -309,14 +290,12 @@ export const getLessonByIdAsync = async (lessonId) => {
                 message: 'Lesson not found'
             };
         }
-
         return {
             success: true,
             status: 200,
             message: 'Lesson retrieved successfully',
             data: lesson
         };
-
     } catch (error) {
         console.error('Get lesson by ID service error:', error);
         return {
