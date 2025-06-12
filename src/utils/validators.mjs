@@ -1034,3 +1034,96 @@ export const updateKidValidator = (updateData) => {
         success: true
     };
 };
+
+// Update Parent Validator - For validating partial parent updates
+export const updateParentValidator = (updateData) => {
+    // Check if any data is provided
+    if (Object.keys(updateData).length === 0) {
+        return {
+            success: false,
+            status: 400,
+            message: 'No data provided for update'
+        };
+    }
+
+    // Validate fullName
+    if (updateData.fullName && (typeof updateData.fullName !== 'string' || updateData.fullName.length < 2 || updateData.fullName.length > 100)) {
+        return {
+            success: false,
+            status: 400,
+            message: 'Full name must be between 2 and 100 characters'
+        };
+    }
+    
+    // Validate dateOfBirth
+    if (updateData.dateOfBirth) {
+        const dob = new Date(updateData.dateOfBirth);
+        if (Number.isNaN(dob.getTime()))
+            return { success: false, status: 400, message: 'Date of birth must be a valid date' };
+        if (dob > new Date())
+            return { success: false, status: 400, message: 'Date of birth cannot be in the future' };
+    }
+    
+    // Validate gender
+    if (updateData.gender && !['male', 'female'].includes(updateData.gender)) {
+        return {
+            success: false,
+            status: 400,
+            message: 'Gender must be either male or female'
+        };
+    }
+    
+    // Validate image URL
+    if (updateData.image) {
+        try {
+            new URL(updateData.image);
+        } catch (error) {
+            return {
+                success: false,
+                status: 400,
+                message: 'Image must be a valid URL'
+            };
+        }
+    }
+
+    // Validate address
+    if (updateData.address && (typeof updateData.address !== 'string' || updateData.address.length > 200)) {
+        return {
+            success: false,
+            status: 400,
+            message: 'Address cannot exceed 200 characters'
+        };
+    }
+
+    // Validate phoneNumber
+    if (updateData.phoneNumber && (typeof updateData.phoneNumber !== 'string' || !/^[0-9]{10,15}$/.test(updateData.phoneNumber))) {
+        return {
+            success: false,
+            status: 400,
+            message: 'Phone number must be 10-15 digits'
+        };
+    }
+
+    // Validate subscriptionType
+    if (updateData.subscriptionType && !['free', 'premium'].includes(updateData.subscriptionType)) {
+        return {
+            success: false,
+            status: 400,
+            message: 'Subscription type must be either free or premium'
+        };
+    }
+
+    // Validate subscriptionExpiry
+    if (updateData.subscriptionExpiry) {
+        const expiry = new Date(updateData.subscriptionExpiry);
+        if (Number.isNaN(expiry.getTime()))
+            return { success: false, status: 400, message: 'Subscription expiry must be a valid date' };
+        if (expiry < new Date())
+            return { success: false, status: 400, message: 'Subscription expiry date cannot be in the past' };
+    }
+
+    // If all validations pass
+    return {
+        success: true
+    };
+};
