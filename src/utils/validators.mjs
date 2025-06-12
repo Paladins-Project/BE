@@ -918,3 +918,119 @@ export const updateServiceValidator = (data, entityType = 'lesson') => {
         value: data
     };
 };
+
+// Update Kid Validator - For validating partial kid updates
+export const updateKidValidator = (updateData) => {
+    // Check if any data is provided
+    if (Object.keys(updateData).length === 0) {
+        return {
+            success: false,
+            status: 400,
+            message: 'No data provided for update'
+        };
+    }
+
+    // Validate fullName
+    if (updateData.fullName && (typeof updateData.fullName !== 'string' || updateData.fullName.length < 2 || updateData.fullName.length > 100)) {
+        return {
+            success: false,
+            status: 400,
+            message: 'Full name must be between 2 and 100 characters'
+        };
+    }
+    
+    // Validate dateOfBirth
+    if (updateData.dateOfBirth) {
+        const dob = new Date(updateData.dateOfBirth);
+        if (Number.isNaN(dob.getTime()))
+            return { success: false, status: 400, message: 'Date of birth must be a valid date' };
+        if (dob > new Date())
+            return { success: false, status: 400, message: 'Date of birth cannot be in the future' };
+    }
+    
+    // Validate gender
+    if (updateData.gender && !['male', 'female'].includes(updateData.gender)) {
+        return {
+            success: false,
+            status: 400,
+            message: 'Gender must be either male or female'
+        };
+    }
+    
+    // Validate points
+    if (updateData.points !== undefined && (typeof updateData.points !== 'number' || updateData.points < 0)) {
+        return {
+            success: false,
+            status: 400,
+            message: 'Points must be a non-negative number'
+        };
+    }
+    
+    // Validate level
+    if (updateData.level !== undefined && (typeof updateData.level !== 'number' || updateData.level < 0)) {
+        return {
+            success: false,
+            status: 400,
+            message: 'Level must be a non-negative number'
+        };
+    }
+
+    // Validate avatar
+    if (updateData.avatar !== undefined && typeof updateData.avatar !== 'string') {
+        return {
+            success: false,
+            status: 400,
+            message: 'Avatar must be a string'
+        };
+    }
+
+    // Validate unlockedAvatars
+    if (updateData.unlockedAvatars && (!Array.isArray(updateData.unlockedAvatars) || !updateData.unlockedAvatars.every(item => typeof item === 'string'))) {
+        return {
+            success: false,
+            status: 400,
+            message: 'Unlocked avatars must be an array of strings'
+        };
+    }
+
+    // Validate achievements
+    if (updateData.achievements && (!Array.isArray(updateData.achievements) || !updateData.achievements.every(item => mongoose.Types.ObjectId.isValid(item)))) {
+        return {
+            success: false,
+            status: 400,
+            message: 'Achievements must be an array of valid ObjectIds'
+        };
+    }
+
+    // Validate streak
+    if (updateData.streak) {
+        if (typeof updateData.streak !== 'object' || updateData.streak === null) {
+            return {
+                success: false,
+                status: 400,
+                message: 'Streak must be an object'
+            };
+        }
+        
+        if (updateData.streak.current !== undefined && (typeof updateData.streak.current !== 'number' || updateData.streak.current < 0)) {
+            return {
+                success: false,
+                status: 400,
+                message: 'Current streak must be a non-negative number'
+            };
+        }
+        
+        if (updateData.streak.longest !== undefined && (typeof updateData.streak.longest !== 'number' || updateData.streak.longest < 0)) {
+            return {
+                success: false,
+                status: 400,
+                message: 'Longest streak must be a non-negative number'
+            };
+        }
+    }
+
+    // If all validations pass
+    return {
+        success: true
+    };
+};

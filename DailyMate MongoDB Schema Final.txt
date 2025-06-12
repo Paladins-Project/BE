@@ -10,7 +10,7 @@
     "_id": "ObjectId",
     "password": "String (hashed, required)",
     "email": "String (unique, required)" (USE EMAIL TO LOGIN INSTEAD OF USERNAME),
-    "role": "String (enum: ['parent', 'kid', 'teacher', 'admin'], required)",
+    "role": "String (enum: ['parent', 'kid', 'teacher', 'admin'], required, nếu role = kid tức tài khoản này dành riêng cho kid không có parent)",
     "isActive": "Boolean (default: true)",
     "isVerified": "Boolean (default: false)"
   },
