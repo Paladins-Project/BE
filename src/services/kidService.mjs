@@ -283,4 +283,90 @@ export const getAllKidByParentIdAsync = async (parentId) => {
             error: error.message
         };
     }
+};
+
+// Create kid linked to parent
+export const createKidLinkedToParentAsync = async (kidData) => {
+    try {
+        const { 
+            fullName, 
+            dateOfBirth, 
+            gender, 
+            parentId 
+        } = kidData;        
+        // Validate required fields
+        if (!fullName || !dateOfBirth || !gender || !parentId) {
+            return {
+                success: false,
+                status: 400,
+                message: 'Missing required fields: fullName, dateOfBirth, gender, parentId'
+            };
+        }
+        // Validate parentId format
+        const parentIdValidation = validateObjectIdParam(parentId, 'parent ID');
+        if (!parentIdValidation.success) {
+            return parentIdValidation;
+        }
+        // Check if parent exists by _id
+        const parent = await Parent.findById(parentId);
+        if (!parent) {
+            return {
+                success: false,
+                status: 400,
+                message: 'Parent not found'
+            };
+        }
+        // Prepare kid profile data using parent's userId
+        const kidProfileData = {
+            userId: parent.userId.toString(), // Convert ObjectId to string
+            fullName,
+            dateOfBirth: new Date(dateOfBirth),
+            gender,
+            points: 0,
+            level: 0,
+            avatar: 'img/default', // Always set default avatar
+            unlockedAvatars: [],
+            achievements: [],
+            streak: {
+                current: 0,
+                longest: 0
+            }
+        };
+        // Validate kid data
+        const kidValidation = validateKid(kidProfileData);
+        if (kidValidation.error) {
+            return {
+                success: false,
+                status: 400,
+                message: kidValidation.error.details[0].message
+            };
+        }
+        // Create kid profile
+        const kid = new Kid(kidProfileData);
+        const savedKid = await kid.save();
+        return {
+            success: true,
+            status: 201,
+            message: 'Kid linked to parent successfully',
+            data: {
+                kidId: savedKid._id,
+                fullName: savedKid.fullName,
+                dateOfBirth: savedKid.dateOfBirth,
+                gender: savedKid.gender,
+                points: savedKid.points,
+                level: savedKid.level,
+                avatar: savedKid.avatar,
+                parentId: parentId,
+                userId: savedKid.userId
+            }
+        };
+    } catch (error) {
+        console.error('Create kid linked to parent service error:', error);
+        return {
+            success: false,
+            status: 500,
+            message: 'Kid creation failed',
+            error: error.message
+        };
+    }
 }; 
