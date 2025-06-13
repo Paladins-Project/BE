@@ -60,3 +60,4 @@ export const sendVerificationEmail = async (email, verificationCode) => {
     
     return await sendEmail(email, subject, text, html);
 };
+
