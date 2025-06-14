@@ -13,8 +13,7 @@ import { hashPassword } from '../utils/helpers.mjs';
  * @returns {Object} User object with role-specific data
  */
 export const getUserDetailsByRole = async (user) => {
-    const { password, ...userWithoutPassword } = user.toObject();
-    
+    const { password, ...userWithoutPassword } = user.toObject();    
     try {
         let roleSpecificData = null;        
         switch (user.role) {
@@ -22,7 +21,7 @@ export const getUserDetailsByRole = async (user) => {
                 roleSpecificData = await Parent.findOne({ userId: user._id });
                 break;
             case 'kid':
-                roleSpecificData = await Kid.findOne({ userId: user._id }).populate('achievements');
+                roleSpecificData = await Kid.findOne({ userId: user._id });
                 break;
             case 'teacher':
                 roleSpecificData = await Teacher.findOne({ userId: user._id }).populate('coursesCreated');

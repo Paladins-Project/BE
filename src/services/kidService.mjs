@@ -178,7 +178,7 @@ export const deleteKidAsync = async (kidId) => {
         const userId = kid.userId;
         // Delete associated user account
         await User.findByIdAndDelete(userId);
-        // Delete kid profile first
+        // Delete kid profile 
         await Kid.findByIdAndDelete(kidId);
         return {
             success: true,

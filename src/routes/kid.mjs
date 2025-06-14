@@ -10,8 +10,8 @@ import {
 
 const router = Router();
 
-router.post('/kid', createKid);
 router.get('/kid/parent/:parentId', getAllKidByParentId);
+router.get('/kid/:kidId', getKidById);
 router.post('/kid/parent', createKidLinkedToParent);
 router.put('/kid/:kidId', updateKid);
 router.delete('/kid/:kidId', deleteKid);
