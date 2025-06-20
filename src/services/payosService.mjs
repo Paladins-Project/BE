@@ -21,57 +21,40 @@ const payOS = new PayOS(
 
 // Payment configuration - can be moved to environment variables or database
 const PAYMENT_CONFIG = {
-    PREMIUM_PLAN: {
-        amount: parseInt(process.env.PREMIUM_PLAN_AMOUNT) || 60000,
-        description: process.env.PREMIUM_PLAN_DESCRIPTION || "Premium subscription upgrade",
-        durationDays: parseInt(process.env.PREMIUM_PLAN_DURATION) || 30
+    PRO_PLAN: {
+        amount: 60000,
+        description: "Pro Package - Upgrade Premium Account",
+        durationDays: 30
     },
-    FRONTEND_URL: process.env.FRONTEND_URL || process.env.FE_PORT || 'http://localhost:3000',
-    BACKEND_URL: process.env.BACKEND_URL || 'http://localhost:8000'
+    FRONTEND_URL: process.env.FE_PORT,
+    BACKEND_URL: process.env.PORT
 };
 
 /**
- * Create payment link and transaction record
+ * Create payment link and transaction record for Pro package
  * @param {string} userId - User ID from authenticated request
- * @param {Object} paymentData - Optional payment customization data
  * @returns {Object} Service response object
  */
-export const createPaymentLinkService = async (userId, paymentData = {}) => {
+export const createPaymentLinkService = async (userId) => {
     try {
         // Validate user ID
         const userIdValidation = validateObjectIdParam(userId, 'user ID');
         if (!userIdValidation.success) {
             return userIdValidation;
-        }
-
-        // Validate optional payment data
-        if (Object.keys(paymentData).length > 0) {
-            const validation = validatePaymentRequest(paymentData);
-            if (validation.error) {
-                return {
-                    success: false,
-                    status: 400,
-                    message: validation.error.details[0].message
-                };
-            }
-        }
-
+        }        
         // Generate unique order code
-        const orderCode = parseInt(String(Date.now()).slice(-6));
-
-        // Prepare payment configuration
+        const orderCode = parseInt(String(Date.now()).slice(-6));        
+        // Prepare payment configuration for Pro package
         const paymentConfig = {
-            amount: paymentData.amount || PAYMENT_CONFIG.PREMIUM_PLAN.amount,
-            description: paymentData.description || PAYMENT_CONFIG.PREMIUM_PLAN.description,
+            amount: PAYMENT_CONFIG.PRO_PLAN.amount,
+            description: PAYMENT_CONFIG.PRO_PLAN.description,
             orderCode: orderCode,
-            returnUrl: paymentData.returnUrl || `${PAYMENT_CONFIG.FRONTEND_URL}/payment-success`,
-            cancelUrl: paymentData.cancelUrl || `${PAYMENT_CONFIG.FRONTEND_URL}/payment-cancelled`
-        };
-
+            returnUrl: `${PAYMENT_CONFIG.FRONTEND_URL}/payment-success`,
+            cancelUrl: `${PAYMENT_CONFIG.FRONTEND_URL}/payment-cancelled`
+        };        
         // Start database transaction for atomicity
         const session = await mongoose.startSession();
-        session.startTransaction();
-
+        session.startTransaction();        
         try {
             // Create transaction record
             const newTransaction = new Transaction({
@@ -100,7 +83,6 @@ export const createPaymentLinkService = async (userId, paymentData = {}) => {
                     description: paymentConfig.description
                 }
             };
-
         } catch (error) {
             // Rollback transaction on error
             await session.abortTransaction();
@@ -108,10 +90,8 @@ export const createPaymentLinkService = async (userId, paymentData = {}) => {
         } finally {
             session.endSession();
         }
-
     } catch (error) {
-        console.error('Create payment link service error:', error);
-        
+        console.error('Create payment link service error:', error);        
         // Handle specific PayOS errors
         if (error.code === 'INVALID_PARAMETER') {
             return {
@@ -121,7 +101,6 @@ export const createPaymentLinkService = async (userId, paymentData = {}) => {
                 error: error.message
             };
         }
-
         if (error.code === 'UNAUTHORIZED') {
             return {
                 success: false,
@@ -130,7 +109,6 @@ export const createPaymentLinkService = async (userId, paymentData = {}) => {
                 error: error.message
             };
         }
-
         return {
             success: false,
             status: 500,
@@ -157,7 +135,6 @@ export const handleWebhookService = async (webhookBody, webhookSignature = null)
                 message: `Invalid webhook data: ${validation.error.details[0].message}`
             };
         }
-
         // Verify webhook signature if provided (recommended for production)
         if (webhookSignature && process.env.PAYOS_WEBHOOK_VERIFY === 'true') {
             try {
@@ -178,9 +155,7 @@ export const handleWebhookService = async (webhookBody, webhookSignature = null)
                 };
             }
         }
-
         const { orderCode, code, desc, amount } = webhookBody.data;
-
         // Validate order code
         const orderCodeValidation = validateOrderCode(orderCode);
         if (orderCodeValidation.error) {
@@ -190,7 +165,6 @@ export const handleWebhookService = async (webhookBody, webhookSignature = null)
                 message: orderCodeValidation.error.details[0].message
             };
         }
-
         // Find transaction
         const transaction = await Transaction.findOne({ orderCode });
         if (!transaction) {
@@ -200,7 +174,6 @@ export const handleWebhookService = async (webhookBody, webhookSignature = null)
                 message: 'Transaction not found'
             };
         }
-
         // Skip if already processed
         if (transaction.status === 'SUCCESS' || transaction.status === 'FAILED') {
             return {
@@ -209,34 +182,27 @@ export const handleWebhookService = async (webhookBody, webhookSignature = null)
                 message: 'Transaction already processed'
             };
         }
-
         // Start database transaction for atomicity
         const session = await mongoose.startSession();
         session.startTransaction();
-
         try {
             if (code === "00") {
                 // Payment successful
                 transaction.status = 'SUCCESS';
                 await transaction.save({ session });
-
                 // Update parent subscription
                 const parent = await Parent.findOne({ userId: transaction.userId }).session(session);
                 if (parent) {
                     const newExpiryDate = new Date();
-                    newExpiryDate.setDate(newExpiryDate.getDate() + PAYMENT_CONFIG.PREMIUM_PLAN.durationDays);
-
+                    newExpiryDate.setDate(newExpiryDate.getDate() + PAYMENT_CONFIG.PRO_PLAN.durationDays);
                     parent.subscriptionType = 'premium';
                     parent.subscriptionExpiry = newExpiryDate;
                     await parent.save({ session });
-
                     console.log(`Premium subscription activated for user: ${parent.userId}`);
                 } else {
                     console.warn(`Parent not found for user ID: ${transaction.userId}`);
                 }
-
                 await session.commitTransaction();
-
                 return {
                     success: true,
                     status: 200,
@@ -247,7 +213,6 @@ export const handleWebhookService = async (webhookBody, webhookSignature = null)
                         amount: transaction.amount
                     }
                 };
-
             } else {
                 // Payment failed or cancelled
                 transaction.status = code === "01" ? 'CANCELLED' : 'FAILED';
@@ -266,14 +231,12 @@ export const handleWebhookService = async (webhookBody, webhookSignature = null)
                     }
                 };
             }
-
         } catch (error) {
             await session.abortTransaction();
             throw error;
         } finally {
             session.endSession();
         }
-
     } catch (error) {
         console.error('Webhook handling service error:', error);
         return {
@@ -298,7 +261,6 @@ export const getPaymentStatusService = async (orderCode, userId) => {
         if (!userIdValidation.success) {
             return userIdValidation;
         }
-
         const orderCodeValidation = validateOrderCode(orderCode);
         if (orderCodeValidation.error) {
             return {
@@ -307,13 +269,11 @@ export const getPaymentStatusService = async (orderCode, userId) => {
                 message: orderCodeValidation.error.details[0].message
             };
         }
-
         // Find transaction with user verification
         const transaction = await Transaction.findOne({ 
             orderCode, 
             userId 
         });
-
         if (!transaction) {
             return {
                 success: false,
@@ -321,7 +281,6 @@ export const getPaymentStatusService = async (orderCode, userId) => {
                 message: 'Transaction not found or unauthorized'
             };
         }
-
         return {
             success: true,
             status: 200,
@@ -334,7 +293,6 @@ export const getPaymentStatusService = async (orderCode, userId) => {
                 updatedAt: transaction.updatedAt
             }
         };
-
     } catch (error) {
         console.error('Get payment status service error:', error);
         return {

@@ -5,7 +5,7 @@ import {
 } from "../services/payosService.mjs";
 
 /**
- * Create payment link for premium subscription
+ * Create payment link for Pro package
  */
 export const createPaymentLink = async (req, res) => {
     try {
@@ -16,16 +16,10 @@ export const createPaymentLink = async (req, res) => {
                 message: 'Unauthorized'
             });
         }
-
         // Extract user ID correctly (using _id not id)
         const userId = req.user._id;
-        
-        // Extract optional payment customization from request body
-        const paymentData = req.body || {};
-
-        // Call service
-        const result = await createPaymentLinkService(userId, paymentData);
-
+        // Call service (no need for paymentData as it's hardcoded for Pro package)
+        const result = await createPaymentLinkService(userId);
         // Handle service response
         if (result.success) {
             return res.status(result.status).json({
@@ -40,7 +34,6 @@ export const createPaymentLink = async (req, res) => {
                 error: result.error
             });
         }
-
     } catch (error) {
         console.error('Create payment link controller error:', error);
         return res.status(500).json({
@@ -60,10 +53,8 @@ export const handleWebhook = async (req, res) => {
         const webhookSignature = req.headers['x-payos-signature'] || 
                                 req.headers['payos-signature'] || 
                                 null;
-
         // Call service to handle webhook
         const result = await handleWebhookService(req.body, webhookSignature);
-
         // Always return 200 to PayOS to acknowledge receipt
         // This prevents PayOS from retrying webhook calls
         return res.status(200).json({
@@ -72,10 +63,8 @@ export const handleWebhook = async (req, res) => {
             success: result.success,
             details: result.success ? result.message : result.error
         });
-
     } catch (error) {
-        console.error('Webhook handler controller error:', error);
-        
+        console.error('Webhook handler controller error:', error);        
         // Still return 200 to PayOS to prevent retries
         // Log the error for debugging
         return res.status(200).json({
@@ -98,7 +87,6 @@ export const getPaymentStatus = async (req, res) => {
                 message: 'Unauthorized'
             });
         }
-
         const userId = req.user._id;
         const { orderCode } = req.params;
 
@@ -108,10 +96,8 @@ export const getPaymentStatus = async (req, res) => {
                 message: 'Order code is required'
             });
         }
-
         // Call service
         const result = await getPaymentStatusService(parseInt(orderCode), userId);
-
         // Handle service response
         if (result.success) {
             return res.status(result.status).json({
@@ -126,7 +112,6 @@ export const getPaymentStatus = async (req, res) => {
                 error: result.error
             });
         }
-
     } catch (error) {
         console.error('Get payment status controller error:', error);
         return res.status(500).json({
