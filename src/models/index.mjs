@@ -8,3 +8,4 @@ export { Course } from './course.mjs';
 export { Lesson } from './lesson.mjs';
 export { Test } from './test.mjs';
 export { CourseProgress } from './courseProgress.mjs';
+export { Transaction } from './transaction.mjs';

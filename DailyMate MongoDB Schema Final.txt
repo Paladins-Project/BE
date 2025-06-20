@@ -49,7 +49,7 @@
     "phoneNumber": "String",
     "specializations": ["String (lĩnh vực chuyên môn)"],
     "bio": "String (giới thiệu bản thân)",
-    "coursesCreated": ["ObjectId (ref: Lesson)"],    
+    "coursesCreated": ["ObjectId (ref: Course)"],    
   },
   "Admin": {
     "_id": "ObjectId",
@@ -134,7 +134,15 @@
     "createdAt": "Date (default: Date.now)",
     "updatedAt": "Date (default: Date.now)"
   },
-  
+  "Transaction": {
+    "_id": "ObjectId",
+    "userId": "ObjectId (ref: User, required)",
+    "orderCode": "Number (required, unique)",
+    "amount": "Number (required)",
+    "status": "String (enum: ['PENDING', 'SUCCESS', 'FAILED', 'CANCELLED'], default: 'PENDING')",
+    "createdAt": "Date (default: Date.now)",
+    "updatedAt": "Date (default: Date.now)"
+  },
 }
 
 

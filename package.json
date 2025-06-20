@@ -20,6 +20,7 @@
   "homepage": "https://github.com/Paladins-Project/BE#readme",
   "description": "",
   "dependencies": {
+    "@payos/node": "^1.0.10",
     "@sendgrid/mail": "^8.1.5",
     "bcrypt": "^6.0.0",
     "cloudinary": "^2.6.1",

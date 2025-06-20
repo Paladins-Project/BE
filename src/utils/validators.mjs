@@ -1127,3 +1127,96 @@ export const updateParentValidator = (updateData) => {
         success: true
     };
 };
+
+// PayOS Payment Validators
+export const validatePaymentRequest = (data) => {
+    const schema = Joi.object({
+        amount: Joi.number()
+            .positive()
+            .min(1000)
+            .max(100000000)
+            .optional()
+            .messages({
+                'number.base': 'Amount must be a number',
+                'number.positive': 'Amount must be positive',
+                'number.min': 'Amount must be at least 1,000 VND',
+                'number.max': 'Amount cannot exceed 100,000,000 VND'
+            }),
+        description: Joi.string()
+            .min(5)
+            .max(200)
+            .optional()
+            .messages({
+                'string.min': 'Description must be at least 5 characters long',
+                'string.max': 'Description cannot exceed 200 characters'
+            }),
+        returnUrl: Joi.string()
+            .uri()
+            .optional()
+            .messages({
+                'string.uri': 'Return URL must be a valid URL'
+            }),
+        cancelUrl: Joi.string()
+            .uri()
+            .optional()
+            .messages({
+                'string.uri': 'Cancel URL must be a valid URL'
+            })
+    });
+
+    return schema.validate(data);
+};
+
+export const validateWebhookData = (data) => {
+    const schema = Joi.object({
+        data: Joi.object({
+            orderCode: Joi.number()
+                .required()
+                .messages({
+                    'number.base': 'Order code must be a number',
+                    'any.required': 'Order code is required'
+                }),
+            code: Joi.string()
+                .length(2)
+                .pattern(/^[0-9]+$/)
+                .required()
+                .messages({
+                    'string.length': 'Code must be exactly 2 digits',
+                    'string.pattern.base': 'Code must contain only numbers',
+                    'any.required': 'Code is required'
+                }),
+            desc: Joi.string()
+                .optional(),
+            amount: Joi.number()
+                .positive()
+                .optional()
+                .messages({
+                    'number.base': 'Amount must be a number',
+                    'number.positive': 'Amount must be positive'
+                }),
+            accountNumber: Joi.string()
+                .optional(),
+            reference: Joi.string()
+                .optional()
+        }).required(),
+        signature: Joi.string()
+            .optional()
+    });
+
+    return schema.validate(data);
+};
+
+export const validateOrderCode = (orderCode) => {
+    const schema = Joi.number()
+        .integer()
+        .positive()
+        .required()
+        .messages({
+            'number.base': 'Order code must be a number',
+            'number.integer': 'Order code must be an integer',
+            'number.positive': 'Order code must be positive',
+            'any.required': 'Order code is required'
+        });
+
+    return schema.validate(orderCode);
+};

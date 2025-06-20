@@ -66,8 +66,8 @@ const testSchema = new mongoose.Schema({
     default: 0
   },
   createdBy: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Teacher'
+    type: mongoose.Schema.Types.ObjectId
+    //ref: 'Teacher, Admin'
   }
 }, {
   timestamps: true

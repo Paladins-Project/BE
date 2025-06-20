@@ -134,7 +134,6 @@ export const getCourseByIdAsync = async (courseId) => {
         if (!idValidation.success) {
             return idValidation;
         }
-
         // Find course by ID
         const course = await Course.findById(courseId)
             .populate('instructor', 'fullName specializations bio');
