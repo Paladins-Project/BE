@@ -27,7 +27,6 @@ export const createCourseAsync = async (courseData) => {
             message: 'Course created successfully',
             data: savedCourse
         };
-
     } catch (error) {
         console.error('Create course service error:', error);
         return {

@@ -8,7 +8,8 @@ import teacherRouter from '../routes/teacher.mjs';
 import courseRouter from '../routes/course.mjs';
 import lessonRouter from '../routes/lesson.mjs';
 import testRouter from '../routes/test.mjs';
-import payosRouter from '../routes/payos.mjs'; 
+import payosRouter from '../routes/payos.mjs';
+import transactionRouter from '../routes/transaction.mjs'; 
 
 const router = Router();
 
@@ -21,6 +22,7 @@ router.use('/api', courseRouter);
 router.use('/api', lessonRouter);               
 router.use('/api', testRouter);                 
 router.use('/api', payosRouter);                
+router.use('/api', transactionRouter);          
 //router.use('/api', adminRouter);              
 
 export default router;
