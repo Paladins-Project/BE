@@ -3,6 +3,7 @@ import PayOS from "@payos/node";
 import { Transaction } from '../models/transaction.mjs';
 import { Parent } from '../models/parent.mjs';
 import { validatePaymentRequest, validateWebhookData, validateOrderCode, validateObjectIdParam } from '../utils/validators.mjs';
+import { generateUniqueOrderCode } from '../utils/helpers.mjs';
 import mongoose from 'mongoose';
 
 dotenv.config();
@@ -18,7 +19,7 @@ const payOS = new PayOS(
 const PAYMENT_CONFIG = {
     PRO_PLAN: {
         amount: 60000,
-        description: "Pro Package - Upgrade Premium Account",
+        description: "Pro Package Upgrade",
         durationDays: 30
     },
     FRONTEND_URL: `http://localhost:${process.env.FE_PORT || 3000}`,
@@ -38,7 +39,7 @@ export const createPaymentLinkService = async (userId) => {
             return userIdValidation;
         }        
         // Generate unique order code
-        const orderCode = parseInt(String(Date.now()).slice(-6));        
+        const orderCode = await generateUniqueOrderCode();        
         // Prepare payment configuration for Pro package
         const paymentConfig = {
             amount: PAYMENT_CONFIG.PRO_PLAN.amount,
@@ -138,7 +139,7 @@ export const handleWebhookService = async (webhookBody) => {
                 message: 'Test transaction acknowledged',
                 data: webhookData
             };
-        }x        
+        }        
         // Validate order code
         const orderCodeValidation = validateOrderCode(orderCode);
         if (orderCodeValidation.error) {

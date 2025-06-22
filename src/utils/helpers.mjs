@@ -1,6 +1,8 @@
 import bcrypt from 'bcrypt';
 import dotenv from "dotenv";
 import sgMail from '@sendgrid/mail';
+import { Transaction } from '../models/transaction.mjs';
+
 dotenv.config();
 
 const saltRounds = 10;
@@ -59,5 +61,30 @@ export const sendVerificationEmail = async (email, verificationCode) => {
     `;
     
     return await sendEmail(email, subject, text, html);
+};
+
+/**
+ * Generate unique 6-digit order code by checking database
+ * @returns {Promise<number>} Unique 6-digit order code
+ */
+export const generateUniqueOrderCode = async () => {
+    let orderCode;
+    let isUnique = false;
+    let attempts = 0;
+    while (!isUnique && attempts < 10) {
+        orderCode = Math.floor(Math.random() * 900000) + 100000;        
+        const existingTransaction = await Transaction.findOne({ orderCode });        
+        if (!existingTransaction) {
+            isUnique = true;
+        } else {
+            attempts++;
+            // Add small delay to prevent rapid consecutive duplicates
+            await new Promise(resolve => setTimeout(resolve, 10));
+        }
+    }
+    if (!isUnique) {
+        throw new Error('Failed to generate unique order code after maximum attempts');
+    }
+    return orderCode;
 };
 
