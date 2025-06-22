@@ -7,15 +7,10 @@ import mongoose from 'mongoose';
 
 dotenv.config();
 
-// Validate PayOS configuration
-if (!process.env.PAYOS_CLIENT_ID || !process.env.PAYOS_API_KEY || !process.env.PAYOS_CHECKSUM_KEY) {
-    console.error('PayOS configuration missing. Please check environment variables.');
-    process.exit(1);
-}
-
+// Initialize PayOS instance
 const payOS = new PayOS(
-    process.env.PAYOS_CLIENT_ID,
-    process.env.PAYOS_API_KEY,
+    process.env.PAYOS_CLIENT_ID, 
+    process.env.PAYOS_API_KEY, 
     process.env.PAYOS_CHECKSUM_KEY
 );
 
@@ -26,8 +21,8 @@ const PAYMENT_CONFIG = {
         description: "Pro Package - Upgrade Premium Account",
         durationDays: 30
     },
-    FRONTEND_URL: process.env.FE_PORT,
-    BACKEND_URL: process.env.PORT
+    FRONTEND_URL: `http://localhost:${process.env.FE_PORT || 3000}`,
+    BACKEND_URL: `http://localhost:${process.env.PORT || 8386}`
 };
 
 /**
@@ -65,13 +60,10 @@ export const createPaymentLinkService = async (userId) => {
                 status: 'PENDING'
             });
             await newTransaction.save({ session });
-
             // Create PayOS payment link
             const paymentLink = await payOS.createPaymentLink(paymentConfig);
-
             // Commit transaction
             await session.commitTransaction();
-
             return {
                 success: true,
                 status: 201,
@@ -121,41 +113,32 @@ export const createPaymentLinkService = async (userId) => {
 /**
  * Handle PayOS webhook securely
  * @param {Object} webhookBody - Webhook request body
- * @param {string} webhookSignature - Webhook signature header
  * @returns {Object} Service response object
  */
-export const handleWebhookService = async (webhookBody, webhookSignature = null) => {
+export const handleWebhookService = async (webhookBody) => {
     try {
-        // Validate webhook data structure
-        const validation = validateWebhookData(webhookBody);
-        if (validation.error) {
+        // Verify webhook data using PayOS verification
+        let webhookData;
+        try {
+            webhookData = payOS.verifyPaymentWebhookData(webhookBody);
+        } catch (error) {
+            console.error('Webhook verification error:', error);
             return {
                 success: false,
-                status: 400,
-                message: `Invalid webhook data: ${validation.error.details[0].message}`
+                status: 401,
+                message: 'Webhook signature verification failed'
             };
         }
-        // Verify webhook signature if provided (recommended for production)
-        if (webhookSignature && process.env.PAYOS_WEBHOOK_VERIFY === 'true') {
-            try {
-                const verifiedData = payOS.verifyPaymentWebhookData(webhookBody);
-                if (!verifiedData) {
-                    return {
-                        success: false,
-                        status: 401,
-                        message: 'Webhook signature verification failed'
-                    };
-                }
-            } catch (error) {
-                console.error('Webhook verification error:', error);
-                return {
-                    success: false,
-                    status: 401,
-                    message: 'Webhook signature verification failed'
-                };
-            }
-        }
-        const { orderCode, code, desc, amount } = webhookBody.data;
+        const { orderCode, code, desc, description } = webhookData;        
+        // Handle test transactions (similar to demo)
+        if (description && ["Ma giao dich thu nghiem", "VQRIO123"].includes(description)) {
+            return {
+                success: true,
+                status: 200,
+                message: 'Test transaction acknowledged',
+                data: webhookData
+            };
+        }x        
         // Validate order code
         const orderCodeValidation = validateOrderCode(orderCode);
         if (orderCodeValidation.error) {
@@ -217,9 +200,7 @@ export const handleWebhookService = async (webhookBody, webhookSignature = null)
                 // Payment failed or cancelled
                 transaction.status = code === "01" ? 'CANCELLED' : 'FAILED';
                 await transaction.save({ session });
-
                 await session.commitTransaction();
-
                 return {
                     success: true,
                     status: 200,
@@ -269,11 +250,22 @@ export const getPaymentStatusService = async (orderCode, userId) => {
                 message: orderCodeValidation.error.details[0].message
             };
         }
+        
+        // Get payment information from PayOS
+        let paymentInfo;
+        try {
+            paymentInfo = await payOS.getPaymentLinkInformation(orderCode);
+        } catch (error) {
+            console.log('PayOS API error:', error);
+            // If PayOS fails, fallback to local database
+        }
+        
         // Find transaction with user verification
         const transaction = await Transaction.findOne({ 
             orderCode, 
             userId 
         });
+        
         if (!transaction) {
             return {
                 success: false,
@@ -281,6 +273,29 @@ export const getPaymentStatusService = async (orderCode, userId) => {
                 message: 'Transaction not found or unauthorized'
             };
         }
+        
+        // Sync status from PayOS if available
+        if (paymentInfo && paymentInfo.status) {
+            // Update local transaction status based on PayOS status
+            if (paymentInfo.status === 'PAID' && transaction.status !== 'SUCCESS') {
+                transaction.status = 'SUCCESS';
+                await transaction.save();
+                
+                // Update parent subscription if not already done
+                const parent = await Parent.findOne({ userId: transaction.userId });
+                if (parent && parent.subscriptionType !== 'premium') {
+                    const newExpiryDate = new Date();
+                    newExpiryDate.setDate(newExpiryDate.getDate() + PAYMENT_CONFIG.PRO_PLAN.durationDays);
+                    parent.subscriptionType = 'premium';
+                    parent.subscriptionExpiry = newExpiryDate;
+                    await parent.save();
+                }
+            } else if (paymentInfo.status === 'CANCELLED' && transaction.status === 'PENDING') {
+                transaction.status = 'CANCELLED';
+                await transaction.save();
+            }
+        }
+        
         return {
             success: true,
             status: 200,
@@ -289,6 +304,7 @@ export const getPaymentStatusService = async (orderCode, userId) => {
                 orderCode: transaction.orderCode,
                 amount: transaction.amount,
                 status: transaction.status,
+                payosStatus: paymentInfo?.status,
                 createdAt: transaction.createdAt,
                 updatedAt: transaction.updatedAt
             }

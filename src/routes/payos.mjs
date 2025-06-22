@@ -23,15 +23,12 @@ router.post("/payment/create-link", isAuthenticated, createPaymentLink);
  * Requires: Authentication, valid orderCode parameter
  * Returns: Transaction status, amount, timestamps
  */
-router.get("/payment/status/:orderCode", isAuthenticated, getPaymentStatus);
+router.get("/payment/:orderCode", isAuthenticated, getPaymentStatus);
 
 /**
- * POST /api/payment/webhook
- * Handle PayOS webhook notifications
- * Requires: None (external service callback)
- * Security: Webhook signature verification in service layer
- * Note: Always returns 200 to prevent PayOS retries
+ * POST /api/payment/payos
+ * Alternative webhook endpoint (similar to demo)
  */
-router.post("/payment/webhook", handleWebhook);
+router.post("/payment/payos", handleWebhook);
 
 export default router;

@@ -22,24 +22,30 @@ export const createPaymentLink = async (req, res) => {
         const result = await createPaymentLinkService(userId);
         // Handle service response
         if (result.success) {
-            return res.status(result.status).json({
-                success: true,
-                message: result.message,
-                data: result.data
+            // Return in demo-compatible format
+            return res.json({
+                error: 0,
+                message: "Success",
+                data: {
+                    checkoutUrl: result.data.checkoutUrl,
+                    orderCode: result.data.orderCode,
+                    amount: result.data.amount,
+                    description: result.data.description
+                }
             });
         } else {
             return res.status(result.status).json({
-                success: false,
+                error: -1,
                 message: result.message,
-                error: result.error
+                data: null
             });
         }
     } catch (error) {
         console.error('Create payment link controller error:', error);
         return res.status(500).json({
-            success: false,
+            error: -1,
             message: 'Internal server error',
-            error: error.message
+            data: null
         });
     }
 };
@@ -49,28 +55,30 @@ export const createPaymentLink = async (req, res) => {
  */
 export const handleWebhook = async (req, res) => {
     try {
-        // Extract webhook signature from headers if available
-        const webhookSignature = req.headers['x-payos-signature'] || 
-                                req.headers['payos-signature'] || 
-                                null;
+        console.log("payment webhook handler");        
         // Call service to handle webhook
-        const result = await handleWebhookService(req.body, webhookSignature);
-        // Always return 200 to PayOS to acknowledge receipt
-        // This prevents PayOS from retrying webhook calls
-        return res.status(200).json({
+        const result = await handleWebhookService(req.body);        
+        // PayOS expects error: 0 for success
+        if (result.success) {
+            return res.json({
+                error: 0,
+                message: "Ok",
+                data: result.data || null
+            });
+        } else {
+            // Still return success to PayOS to acknowledge receipt
+            return res.json({
             error: 0,
-            message: "Success",
-            success: result.success,
-            details: result.success ? result.message : result.error
+                message: "Ok",
+                data: null
         });
+        }
     } catch (error) {
         console.error('Webhook handler controller error:', error);        
-        // Still return 200 to PayOS to prevent retries
-        // Log the error for debugging
-        return res.status(200).json({
-            error: 1,
-            message: "Internal error occurred",
-            success: false
+        return res.json({
+            error: -1,
+            message: "failed",
+            data: null,
         });
     }
 };
@@ -83,8 +91,9 @@ export const getPaymentStatus = async (req, res) => {
         // Check if user is authenticated
         if (!req.user) {
             return res.status(401).json({
-                success: false,
-                message: 'Unauthorized'
+                error: -1,
+                message: 'Unauthorized',
+                data: null
             });
         }
         const userId = req.user._id;
@@ -92,32 +101,33 @@ export const getPaymentStatus = async (req, res) => {
 
         if (!orderCode) {
             return res.status(400).json({
-                success: false,
-                message: 'Order code is required'
+                error: -1,
+                message: 'Order code is required',
+                data: null
             });
         }
         // Call service
         const result = await getPaymentStatusService(parseInt(orderCode), userId);
         // Handle service response
         if (result.success) {
-            return res.status(result.status).json({
-                success: true,
-                message: result.message,
+            return res.json({
+                error: 0,
+                message: "ok",
                 data: result.data
             });
         } else {
             return res.status(result.status).json({
-                success: false,
+                error: -1,
                 message: result.message,
-                error: result.error
+                data: null
             });
         }
     } catch (error) {
         console.error('Get payment status controller error:', error);
         return res.status(500).json({
-            success: false,
-            message: 'Internal server error',
-            error: error.message
+            error: -1,
+            message: 'failed',
+            data: null
         });
     }
 };
