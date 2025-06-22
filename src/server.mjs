@@ -16,8 +16,7 @@ connectDB().then(async () => {
     await configureSession(mongoStore);
 
     // Start server
-    const PORT = process.env.PORT;
-
+    const PORT = process.env.PORT || 8386;
     app.listen(PORT, () => {
         console.log(`Running on port http://localhost:${PORT}`);
     });

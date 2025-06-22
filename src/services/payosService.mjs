@@ -22,8 +22,8 @@ const PAYMENT_CONFIG = {
         description: "Pro Package Upgrade",
         durationDays: 30
     },
-    FRONTEND_URL: `http://localhost:${process.env.FE_PORT || 3000}`,
-    BACKEND_URL: `http://localhost:${process.env.PORT || 8386}`
+    FRONTEND_URL: process.env.FRONTEND_URL || `http://localhost:${process.env.FE_PORT || 3000}`,
+    BACKEND_URL: process.env.BACKEND_URL || `http://localhost:${process.env.PORT || 8386}`
 };
 
 /**
