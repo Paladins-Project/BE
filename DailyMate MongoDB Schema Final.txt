@@ -23,7 +23,6 @@
     “image”: “String”,
     "address": "String",
     "phoneNumber": "String",
-    "subscriptionType": "String (enum: ['free', 'premium'], default: 'free')",
     "subscriptionExpiry": "Date"
   },
   "Kid": {

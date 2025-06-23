@@ -236,4 +236,82 @@ export const deleteParentAsync = async (parentId) => {
             error: error.message
         };
     }
+};
+
+// Get all parents with pagination
+export const getAllParentAsync = async (page = 1, limit = 10) => {
+    try {
+        // Convert page and limit to numbers and set defaults
+        const pageNumber = parseInt(page) || 1;
+        const limitNumber = parseInt(limit) || 10;
+        const skip = (pageNumber - 1) * limitNumber;
+
+        // Get total count for pagination info (all parents)
+        const totalParents = await Parent.countDocuments();
+        
+        // Calculate total pages
+        const totalPages = Math.ceil(totalParents / limitNumber);
+        
+        // Find all parents with pagination and populate user data
+        const parents = await Parent.find()
+            .populate({
+                path: 'userId',
+                select: 'email role isActive isVerified',
+                options: { strictPopulate: false } // Allow null references
+            })
+            .select('-__v') // Exclude version field from parent
+            .skip(skip)
+            .limit(limitNumber)
+            .sort({ createdAt: -1 }); // Sort by newest first
+
+        // Transform the data to match requirements: remove timestamps, keep only parentId (not userId)
+        const transformedParents = parents.map(parent => {
+            const parentObj = parent.toObject();
+            const userObj = parentObj.userId;
+            
+            return {
+                parentId: parentObj._id,
+                fullName: parentObj.fullName,
+                dateOfBirth: parentObj.dateOfBirth,
+                gender: parentObj.gender,
+                image: parentObj.image,
+                address: parentObj.address,
+                phoneNumber: parentObj.phoneNumber,
+                subscriptionType: parentObj.subscriptionType,
+                subscriptionExpiry: parentObj.subscriptionExpiry,
+                // User information - if userObj exists, include user data; otherwise set to null
+                email: userObj ? userObj.email : null,
+                role: userObj ? userObj.role : null,
+                isActive: userObj ? userObj.isActive : null,
+                isVerified: userObj ? userObj.isVerified : null
+            };
+        });
+
+        return {
+            success: true,
+            status: 200,
+            message: 'Parents retrieved successfully',
+            data: {
+                parents: transformedParents,
+                pagination: {
+                    currentPage: pageNumber,
+                    totalPages: totalPages,
+                    totalParents: totalParents,
+                    parentsReturned: transformedParents.length,
+                    hasNextPage: pageNumber < totalPages,
+                    hasPreviousPage: pageNumber > 1,
+                    nextPage: pageNumber < totalPages ? pageNumber + 1 : null,
+                    previousPage: pageNumber > 1 ? pageNumber - 1 : null
+                }
+            }
+        };
+    } catch (error) {
+        console.error('Get all parents service error:', error);
+        return {
+            success: false,
+            status: 500,
+            message: 'Failed to retrieve parents',
+            error: error.message
+        };
+    }
 }; 

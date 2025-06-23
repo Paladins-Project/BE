@@ -1,4 +1,5 @@
 import { Course } from '../models/course.mjs';
+import { Teacher } from '../models/teacher.mjs';
 import { validateCourse, validateObjectIdParam } from '../utils/validators.mjs';
 import mongoose from 'mongoose';
 
@@ -13,14 +14,31 @@ export const createCourseAsync = async (courseData) => {
                 status: 400,
                 message: validation.error.details[0].message
             };
-        }
+        }        
+        // Check if instructor is provided and validate teacher exists
+        if (courseData.instructor) {
+            const teacher = await Teacher.findById(courseData.instructor);
+            if (!teacher) {
+                return {
+                    success: false,
+                    status: 404,
+                    message: 'Teacher not found'
+                };
+            }
+        }        
         // Create new course
         const course = new Course(validation.value);
-        const savedCourse = await course.save();
-
+        const savedCourse = await course.save();        
+        // If instructor is provided, add course to teacher's coursesCreated
+        if (courseData.instructor) {
+            await Teacher.findByIdAndUpdate(
+                courseData.instructor,
+                { $push: { coursesCreated: savedCourse._id } },
+                { new: true }
+            );
+        }        
         // Populate instructor details if available
         await savedCourse.populate('instructor', 'fullName specializations');
-
         return {
             success: true,
             status: 201,

@@ -4,7 +4,8 @@ import {
     deleteKidAsync, 
     getKidByIdAsync, 
     getAllKidByParentIdAsync,
-    createKidLinkedToParentAsync
+    createKidLinkedToParentAsync,
+    getAllKidAsync
 } from '../services/kidService.mjs';
 
 export const createKid = async (req, res) => {
@@ -166,6 +167,33 @@ export const createKidLinkedToParent = async (req, res) => {
         }
     } catch (error) {
         console.error('Create kid linked to parent controller error:', error);
+        res.status(500).json({ 
+            success: false,
+            message: 'Internal server error',
+            error: error.message 
+        });
+    }
+};
+
+export const getAllKid = async (req, res) => {
+    try {
+        const { page, limit } = req.query;
+        const result = await getAllKidAsync(page, limit);        
+        if (result.success) {
+            return res.status(result.status).json({
+                success: true,
+                message: result.message,
+                data: result.data
+            });
+        } else {
+            return res.status(result.status).json({
+                success: false,
+                message: result.message,
+                error: result.error
+            });
+        }
+    } catch (error) {
+        console.error('Get all kids controller error:', error);
         res.status(500).json({ 
             success: false,
             message: 'Internal server error',

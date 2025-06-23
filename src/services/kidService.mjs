@@ -110,7 +110,6 @@ export const createKidAsync = async (kidData) => {
     }
 };
 
-// Update kid profile
 export const updateKidAsync = async (kidId, kidData) => {
     try {
         // Validate kidId format
@@ -157,7 +156,6 @@ export const updateKidAsync = async (kidId, kidData) => {
     }
 };
 
-// Delete kid profile and associated user
 export const deleteKidAsync = async (kidId) => {
     try {
         // Validate kidId format
@@ -200,7 +198,6 @@ export const deleteKidAsync = async (kidId) => {
     }
 };
 
-// Get kid by ID
 export const getKidByIdAsync = async (kidId) => {
     try {
         // Validate kidId format
@@ -211,7 +208,6 @@ export const getKidByIdAsync = async (kidId) => {
         // Find kid by ID and populate user information
         const kid = await Kid.findById(kidId)
             .populate('userId', 'email role isActive isVerified createdAt updatedAt');
-
         if (!kid) {
             return {
                 success: false,
@@ -236,7 +232,6 @@ export const getKidByIdAsync = async (kidId) => {
     }
 };
 
-// Get all kids by parent ID
 export const getAllKidByParentIdAsync = async (parentId) => {
     try {
         // Validate parentId format
@@ -285,7 +280,6 @@ export const getAllKidByParentIdAsync = async (parentId) => {
     }
 };
 
-// Create kid linked to parent
 export const createKidLinkedToParentAsync = async (kidData) => {
     try {
         const { 
@@ -366,6 +360,79 @@ export const createKidLinkedToParentAsync = async (kidData) => {
             success: false,
             status: 500,
             message: 'Kid creation failed',
+            error: error.message
+        };
+    }
+};
+
+export const getAllKidAsync = async (page = 1, limit = 10) => {
+    try {
+        // Convert page and limit to numbers and set defaults
+        const pageNumber = parseInt(page) || 1;
+        const limitNumber = parseInt(limit) || 10;
+        const skip = (pageNumber - 1) * limitNumber;
+        // Get total count for pagination info (all kids)
+        const totalKids = await Kid.countDocuments();        
+        // Calculate total pages
+        const totalPages = Math.ceil(totalKids / limitNumber);        
+        // Find all kids with pagination and populate user data
+        const kids = await Kid.find()
+            .populate({
+                path: 'userId',
+                select: 'email role isActive isVerified',
+                options: { strictPopulate: false } // Allow null references
+            })
+            .select('-__v') // Exclude version field from kid
+            .skip(skip)
+            .limit(limitNumber)
+            .sort({ createdAt: -1 }); // Sort by newest first
+        // Transform the data to match requirements: remove timestamps, keep only kidId (not userId)
+        const transformedKids = kids.map(kid => {
+            const kidObj = kid.toObject();
+            const userObj = kidObj.userId;
+            
+            return {
+                kidId: kidObj._id,
+                fullName: kidObj.fullName,
+                dateOfBirth: kidObj.dateOfBirth,
+                gender: kidObj.gender,
+                points: kidObj.points,
+                level: kidObj.level,
+                avatar: kidObj.avatar,
+                unlockedAvatars: kidObj.unlockedAvatars,
+                achievements: kidObj.achievements,
+                streak: kidObj.streak,
+                // User information - if userObj exists, include user data; otherwise set to null
+                email: userObj ? userObj.email : null,
+                role: userObj ? userObj.role : null,
+                isActive: userObj ? userObj.isActive : null,
+                isVerified: userObj ? userObj.isVerified : null
+            };
+        });
+        return {
+            success: true,
+            status: 200,
+            message: 'Kids retrieved successfully',
+            data: {
+                kids: transformedKids,
+                pagination: {
+                    currentPage: pageNumber,
+                    totalPages: totalPages,
+                    totalKids: totalKids,
+                    kidsReturned: transformedKids.length,
+                    hasNextPage: pageNumber < totalPages,
+                    hasPreviousPage: pageNumber > 1,
+                    nextPage: pageNumber < totalPages ? pageNumber + 1 : null,
+                    previousPage: pageNumber > 1 ? pageNumber - 1 : null
+                }
+            }
+        };
+    } catch (error) {
+        console.error('Get all kids service error:', error);
+        return {
+            success: false,
+            status: 500,
+            message: 'Failed to retrieve kids',
             error: error.message
         };
     }

@@ -1220,3 +1220,89 @@ export const validateOrderCode = (orderCode) => {
 
     return schema.validate(orderCode);
 };
+
+// Update Teacher Validator - For validating partial teacher updates
+export const updateTeacherValidator = (updateData) => {
+    // Check if any data is provided
+    if (Object.keys(updateData).length === 0) {
+        return {
+            success: false,
+            status: 400,
+            message: 'No data provided for update'
+        };
+    }
+
+    // Validate fullName
+    if (updateData.fullName && (typeof updateData.fullName !== 'string' || updateData.fullName.length < 2 || updateData.fullName.length > 100)) {
+        return {
+            success: false,
+            status: 400,
+            message: 'Full name must be between 2 and 100 characters'
+        };
+    }
+
+    // Validate phoneNumber
+    if (updateData.phoneNumber && (typeof updateData.phoneNumber !== 'string' || !/^[0-9]{10,15}$/.test(updateData.phoneNumber))) {
+        return {
+            success: false,
+            status: 400,
+            message: 'Phone number must be 10-15 digits'
+        };
+    }
+
+    // Validate specializations
+    if (updateData.specializations) {
+        if (!Array.isArray(updateData.specializations)) {
+            return {
+                success: false,
+                status: 400,
+                message: 'Specializations must be an array'
+            };
+        }
+        
+        for (const spec of updateData.specializations) {
+            if (typeof spec !== 'string' || spec.length < 2 || spec.length > 50) {
+                return {
+                    success: false,
+                    status: 400,
+                    message: 'Each specialization must be between 2 and 50 characters'
+                };
+            }
+        }
+    }
+
+    // Validate bio
+    if (updateData.bio && (typeof updateData.bio !== 'string' || updateData.bio.length > 500)) {
+        return {
+            success: false,
+            status: 400,
+            message: 'Bio cannot exceed 500 characters'
+        };
+    }
+
+    // Validate coursesCreated
+    if (updateData.coursesCreated) {
+        if (!Array.isArray(updateData.coursesCreated)) {
+            return {
+                success: false,
+                status: 400,
+                message: 'Courses created must be an array'
+            };
+        }
+        
+        for (const courseId of updateData.coursesCreated) {
+            if (!mongoose.Types.ObjectId.isValid(courseId)) {
+                return {
+                    success: false,
+                    status: 400,
+                    message: 'Invalid course ID format'
+                };
+            }
+        }
+    }
+
+    // If all validations pass
+    return {
+        success: true
+    };
+};

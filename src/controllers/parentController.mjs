@@ -1,4 +1,4 @@
-import { createParentAsync, updateParentByIdAsync, getParentByIDAsync, deleteParentAsync } from '../services/parentService.mjs';
+import { createParentAsync, updateParentByIdAsync, getParentByIDAsync, deleteParentAsync, getAllParentAsync } from '../services/parentService.mjs';
 
 export const createParent = async (req, res) => {
     try {
@@ -109,6 +109,35 @@ export const deleteParent = async (req, res) => {
         }
     } catch (error) {
         console.error('Delete parent controller error:', error);
+        res.status(500).json({ 
+            success: false,
+            message: 'Internal server error',
+            error: error.message 
+        });
+    }
+};
+
+// Get all parents controller
+export const getAllParent = async (req, res) => {
+    try {
+        const { page, limit } = req.query;
+        const result = await getAllParentAsync(page, limit);
+        
+        if (result.success) {
+            return res.status(result.status).json({
+                success: true,
+                message: result.message,
+                data: result.data
+            });
+        } else {
+            return res.status(result.status).json({
+                success: false,
+                message: result.message,
+                error: result.error
+            });
+        }
+    } catch (error) {
+        console.error('Get all parents controller error:', error);
         res.status(500).json({ 
             success: false,
             message: 'Internal server error',

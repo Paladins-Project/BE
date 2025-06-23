@@ -295,8 +295,7 @@ export const getPaymentStatusService = async (orderCode, userId) => {
                 transaction.status = 'CANCELLED';
                 await transaction.save();
             }
-        }
-        
+        }        
         return {
             success: true,
             status: 200,
