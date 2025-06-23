@@ -1,7 +1,10 @@
 import bcrypt from 'bcrypt';
 import dotenv from "dotenv";
 import sgMail from '@sendgrid/mail';
+import mongoose from 'mongoose';
 import { Transaction } from '../models/transaction.mjs';
+import { Admin } from '../models/admin.mjs';
+import { Teacher } from '../models/teacher.mjs';
 
 dotenv.config();
 
@@ -86,5 +89,35 @@ export const generateUniqueOrderCode = async () => {
         throw new Error('Failed to generate unique order code after maximum attempts');
     }
     return orderCode;
+};
+
+/**
+ * Validate createdBy field by checking if the ID exists in Admin or Teacher collections
+ * @param {string} createdBy - The ObjectId to validate
+ * @returns {Promise<Object>} Validation result with isValid boolean and optional message
+ */
+export const validateCreatedBy = async (createdBy) => {
+    if (!createdBy) {
+        return { isValid: true }; // Optional field
+    }
+    // Check if createdBy is a valid ObjectId
+    if (!mongoose.Types.ObjectId.isValid(createdBy)) {
+        return { 
+            isValid: false, 
+            message: 'Invalid createdBy format' 
+        };
+    }
+    // Check if the ID exists in Admin or Teacher collections
+    const [adminExists, teacherExists] = await Promise.all([
+        Admin.findById(createdBy),
+        Teacher.findById(createdBy)
+    ]);
+    if (!adminExists && !teacherExists) {
+        return { 
+            isValid: false, 
+            message: 'Account not found. (Role must be teacher/admin)' 
+        };
+    }
+    return { isValid: true };
 };
 

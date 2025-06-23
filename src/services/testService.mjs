@@ -3,9 +3,8 @@ import { Lesson } from '../models/lesson.mjs';
 import { Course } from '../models/course.mjs';
 import { Teacher } from '../models/teacher.mjs';
 import { validateTest, validateQuestion, validateObjectIdParam } from '../utils/validators.mjs';
+import { validateCreatedBy } from '../utils/helpers.mjs';
 import mongoose from 'mongoose';
-
-
 
 // Create a new test
 export const createTestAsync = async (testData) => {
@@ -28,14 +27,14 @@ export const createTestAsync = async (testData) => {
                 message: 'Lesson not found'
             };
         }
-        // Check if teacher exists when createdBy is provided
+        // Validate createdBy if provided
         if (testData.createdBy) {
-            const teacherExists = await Teacher.findById(testData.createdBy);
-            if (!teacherExists) {
+            const createdByValidation = await validateCreatedBy(testData.createdBy);
+            if (!createdByValidation.isValid) {
                 return {
                     success: false,
-                    status: 404,
-                    message: 'Teacher not found'
+                    status: 400,
+                    message: createdByValidation.message
                 };
             }
         }
@@ -111,14 +110,14 @@ export const updateTestAsync = async (testId, testData) => {
                 };
             }
         }
-        // Check if teacher exists when createdBy is being updated
+        // Validate createdBy if provided in update data
         if (testData.createdBy) {
-            const teacherExists = await Teacher.findById(testData.createdBy);
-            if (!teacherExists) {
+            const createdByValidation = await validateCreatedBy(testData.createdBy);
+            if (!createdByValidation.isValid) {
                 return {
                     success: false,
-                    status: 404,
-                    message: 'Teacher not found'
+                    status: 400,
+                    message: createdByValidation.message
                 };
             }
         }
@@ -139,7 +138,6 @@ export const updateTestAsync = async (testId, testData) => {
                 return total + (question.points || 10);
             }, 0);
         }
-
         // Update test
         const updatedTest = await Test.findByIdAndUpdate(
             testId,
@@ -149,7 +147,6 @@ export const updateTestAsync = async (testId, testData) => {
             { path: 'lessonId', select: 'title courseId' },
             { path: 'createdBy', select: 'fullName specializations' }
         ]);
-
         return {
             success: true,
             status: 200,

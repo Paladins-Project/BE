@@ -32,7 +32,7 @@ const courseSchema = new mongoose.Schema({
   },
   instructor: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Teacher'
+    //ref: 'Teacher, Admin'
   },
   isPublished: {
     type: Boolean,

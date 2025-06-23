@@ -1,6 +1,7 @@
 import { Course } from '../models/course.mjs';
 import { Teacher } from '../models/teacher.mjs';
 import { validateCourse, validateObjectIdParam } from '../utils/validators.mjs';
+import { validateCreatedBy } from '../utils/helpers.mjs';
 import mongoose from 'mongoose';
 
 // Create a new course
@@ -14,18 +15,18 @@ export const createCourseAsync = async (courseData) => {
                 status: 400,
                 message: validation.error.details[0].message
             };
-        }        
-        // Check if instructor is provided and validate teacher exists
+        }
+        // Validate instructor if provided
         if (courseData.instructor) {
-            const teacher = await Teacher.findById(courseData.instructor);
-            if (!teacher) {
+            const instructorValidation = await validateCreatedBy(courseData.instructor);
+            if (!instructorValidation.isValid) {
                 return {
                     success: false,
-                    status: 404,
-                    message: 'Teacher not found'
+                    status: 400,
+                    message: instructorValidation.message
                 };
             }
-        }        
+        }
         // Create new course
         const course = new Course(validation.value);
         const savedCourse = await course.save();        
@@ -195,6 +196,17 @@ export const updateCourseAsync = async (courseId, courseData) => {
                 status: 404,
                 message: 'Course not found'
             };
+        }
+        // Validate instructor if provided in update data
+        if (courseData.instructor) {
+            const instructorValidation = await validateCreatedBy(courseData.instructor);
+            if (!instructorValidation.isValid) {
+                return {
+                    success: false,
+                    status: 400,
+                    message: instructorValidation.message
+                };
+            }
         }
         // Validate updated course data (exclude system fields from validation)
         const { _id, __v, createdAt, updatedAt, ...existingData } = existingCourse.toObject();

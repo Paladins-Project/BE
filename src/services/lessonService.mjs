@@ -1,6 +1,7 @@
 import { Lesson } from '../models/lesson.mjs';
 import { Course } from '../models/course.mjs';
 import { validateLesson, updateServiceValidator, validateObjectIdParam } from '../utils/validators.mjs';
+import { validateCreatedBy } from '../utils/helpers.mjs';
 import mongoose from 'mongoose';
 
 // Create a new lesson
@@ -14,6 +15,17 @@ export const createLessonAsync = async (lessonData) => {
                 status: 400,
                 message: validation.error.details[0].message
             };
+        }
+        // Validate createdBy if provided
+        if (lessonData.createdBy) {
+            const createdByValidation = await validateCreatedBy(lessonData.createdBy);
+            if (!createdByValidation.isValid) {
+                return {
+                    success: false,
+                    status: 400,
+                    message: createdByValidation.message
+                };
+            }
         }
         // Check if course exists
         const courseExists = await Course.findById(lessonData.courseId);
@@ -74,6 +86,17 @@ export const updateLessonAsync = async (lessonId, lessonData) => {
                 status: 400,
                 message: validation.error.details[0].message
             };
+        }
+        // Validate createdBy if provided in update data
+        if (lessonData.createdBy) {
+            const createdByValidation = await validateCreatedBy(lessonData.createdBy);
+            if (!createdByValidation.isValid) {
+                return {
+                    success: false,
+                    status: 400,
+                    message: createdByValidation.message
+                };
+            }
         }
         // Check if courseId is valid if provided
         if (lessonData.courseId) {
