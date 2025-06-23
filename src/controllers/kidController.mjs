@@ -5,7 +5,9 @@ import {
     getKidByIdAsync, 
     getAllKidByParentIdAsync,
     createKidLinkedToParentAsync,
-    getAllKidAsync
+    getAllKidAsync,
+    getNumberOfKidByMonthAsync,
+    getNumberOfKidByYearAsync
 } from '../services/kidService.mjs';
 
 export const createKid = async (req, res) => {
@@ -194,6 +196,62 @@ export const getAllKid = async (req, res) => {
         }
     } catch (error) {
         console.error('Get all kids controller error:', error);
+        res.status(500).json({ 
+            success: false,
+            message: 'Internal server error',
+            error: error.message 
+        });
+    }
+};
+
+export const getNumberOfKidByMonth = async (req, res) => {
+    try {
+        const { month, year } = req.query;
+        const result = await getNumberOfKidByMonthAsync(month, year);
+        
+        if (result.success) {
+            return res.status(result.status).json({
+                success: true,
+                message: result.message,
+                data: result.data
+            });
+        } else {
+            return res.status(result.status).json({
+                success: false,
+                message: result.message,
+                error: result.error
+            });
+        }
+    } catch (error) {
+        console.error('Get number of kids by month controller error:', error);
+        res.status(500).json({ 
+            success: false,
+            message: 'Internal server error',
+            error: error.message 
+        });
+    }
+};
+
+export const getNumberOfKidByYear = async (req, res) => {
+    try {
+        const { year } = req.query;
+        const result = await getNumberOfKidByYearAsync(year);
+        
+        if (result.success) {
+            return res.status(result.status).json({
+                success: true,
+                message: result.message,
+                data: result.data
+            });
+        } else {
+            return res.status(result.status).json({
+                success: false,
+                message: result.message,
+                error: result.error
+            });
+        }
+    } catch (error) {
+        console.error('Get number of kids by year controller error:', error);
         res.status(500).json({ 
             success: false,
             message: 'Internal server error',

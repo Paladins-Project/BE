@@ -1,6 +1,6 @@
 import { Transaction } from '../models/transaction.mjs';
 
-export const getRevenueByMonth = async (month, year) => {
+export const getRevenueByMonthAsync = async (month, year) => {
     try {
         // Convert to numbers and validate
         const monthNum = parseInt(month, 10);
@@ -37,6 +37,50 @@ export const getRevenueByMonth = async (month, year) => {
         };
     } catch (error) {
         console.error('Get revenue by month service error:', error);
+        return {
+            success: false,
+            status: 500,
+            message: 'Failed to calculate revenue',
+            error: error.message
+        };
+    }
+};
+
+export const getRevenueByYearAsync = async (year) => {
+    try {
+        // Convert to number and validate
+        const yearNum = parseInt(year, 10);        
+        if (isNaN(yearNum) || yearNum < 1900 || yearNum > 3000) {
+            return {
+                success: false,
+                status: 400,
+                message: 'Invalid year. Year must be a valid number'
+            };
+        }
+        // Create date range for the specified year
+        const startDate = new Date(yearNum, 0, 1); // First day of the year
+        const endDate = new Date(yearNum + 1, 0, 1); // First day of next year
+        // Count successful transactions in the specified year
+        const successfulTransactionCount = await Transaction.countDocuments({
+            status: 'SUCCESS',
+            createdAt: {
+                $gte: startDate,
+                $lt: endDate
+            }
+        }); 
+        const revenue = successfulTransactionCount * 60000;
+        return {
+            success: true,
+            status: 200,
+            message: 'Revenue calculated successfully',
+            data: {
+                year: yearNum,
+                successfulTransactions: successfulTransactionCount,
+                revenue
+            }
+        };
+    } catch (error) {
+        console.error('Get revenue by year service error:', error);
         return {
             success: false,
             status: 500,

@@ -1,4 +1,4 @@
-import { createParentAsync, updateParentByIdAsync, getParentByIDAsync, deleteParentAsync, getAllParentAsync } from '../services/parentService.mjs';
+import { createParentAsync, updateParentByIdAsync, getParentByIDAsync, deleteParentAsync, getAllParentAsync, getNumberOfParentByMonthAsync, getNumberOfParentByYearAsync } from '../services/parentService.mjs';
 
 export const createParent = async (req, res) => {
     try {
@@ -138,6 +138,62 @@ export const getAllParent = async (req, res) => {
         }
     } catch (error) {
         console.error('Get all parents controller error:', error);
+        res.status(500).json({ 
+            success: false,
+            message: 'Internal server error',
+            error: error.message 
+        });
+    }
+};
+
+export const getNumberOfParentByMonth = async (req, res) => {
+    try {
+        const { month, year } = req.query;
+        const result = await getNumberOfParentByMonthAsync(month, year);
+        
+        if (result.success) {
+            return res.status(result.status).json({
+                success: true,
+                message: result.message,
+                data: result.data
+            });
+        } else {
+            return res.status(result.status).json({
+                success: false,
+                message: result.message,
+                error: result.error
+            });
+        }
+    } catch (error) {
+        console.error('Get number of parents by month controller error:', error);
+        res.status(500).json({ 
+            success: false,
+            message: 'Internal server error',
+            error: error.message 
+        });
+    }
+};
+
+export const getNumberOfParentByYear = async (req, res) => {
+    try {
+        const { year } = req.query;
+        const result = await getNumberOfParentByYearAsync(year);
+        
+        if (result.success) {
+            return res.status(result.status).json({
+                success: true,
+                message: result.message,
+                data: result.data
+            });
+        } else {
+            return res.status(result.status).json({
+                success: false,
+                message: result.message,
+                error: result.error
+            });
+        }
+    } catch (error) {
+        console.error('Get number of parents by year controller error:', error);
         res.status(500).json({ 
             success: false,
             message: 'Internal server error',
