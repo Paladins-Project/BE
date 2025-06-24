@@ -5,6 +5,12 @@ import mongoose from 'mongoose';
 import { Transaction } from '../models/transaction.mjs';
 import { Admin } from '../models/admin.mjs';
 import { Teacher } from '../models/teacher.mjs';
+import { Kid } from '../models/kid.mjs';
+import { User } from '../models/user.mjs';
+import { Parent } from '../models/parent.mjs';
+import { Lesson } from '../models/lesson.mjs';
+import { Test } from '../models/test.mjs';
+import { validateObjectIdParam } from './validators.mjs';
 
 dotenv.config();
 
@@ -119,5 +125,136 @@ export const validateCreatedBy = async (createdBy) => {
         };
     }
     return { isValid: true };
+};
+
+/**
+ * Check subscription status by kid ID for premium features
+ * @param {string} kidId - The kid's ObjectId
+ * @returns {Promise<Object>} Validation result with success, status, and message
+ */
+export const checkSubcriptionByKidId = async (kidId) => {
+    try {
+        // Validate kidId format
+        const kidIdValidation = validateObjectIdParam(kidId, 'kid ID');
+        if (!kidIdValidation.success) {
+            return kidIdValidation;
+        }
+        // Find kid by ID
+        const kid = await Kid.findById(kidId);
+        if (!kid) {
+            return {
+                success: false,
+                status: 404,
+                message: 'Kid not found'
+            };
+        }
+        // Get userId from kid
+        const userId = kid.userId;
+        // Find user with userId
+        const user = await User.findById(userId);
+        if (!user) {
+            return {
+                success: false,
+                status: 404,
+                message: 'User not found'
+            };
+        }
+        // Check if user role is parent
+        if (user.role !== 'parent') {
+            return {
+                success: false,
+                status: 403,
+                message: 'This course requires a parent account. Please contact your parent.'
+            };
+        }
+        // Find parent with userId
+        const parent = await Parent.findOne({ userId: userId });
+        if (!parent) {
+            return {
+                success: false,
+                status: 404,
+                message: 'Parent profile not found'
+            };
+        }
+        // Check subscription expiry
+        const today = new Date();
+        if (!parent.subscriptionExpiry || parent.subscriptionExpiry <= today) {
+            return {
+                success: false,
+                status: 403,
+                message: 'This course is only for premium members. Please upgrade your subscription.'
+            };
+        }
+        // Valid premium subscription
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error('Check subscription service error:', error);
+        return {
+            success: false,
+            status: 500,
+            message: 'Subscription check failed',
+            error: error.message
+        };
+    }
+};
+
+export const checkLessonExist = async (lessonId) => {
+    try {
+        // Validate lessonId format
+        const idValidation = validateObjectIdParam(lessonId, 'lesson ID');
+        if (!idValidation.success) {
+            return {
+                success: false,
+                message: idValidation.message
+            };
+        }
+        // Check if lesson exists
+        const lesson = await Lesson.findById(lessonId);
+        if (!lesson) {
+            return {
+                success: false,
+                message: 'Lesson not found'
+            };
+        }
+        return { success: true };
+    } catch (error) {
+        console.error('Check lesson exist error:', error);
+        return {
+            success: false,
+            message: 'Failed to check lesson existence',
+            error: error.message
+        };
+    }
+};
+
+export const checkTestExist = async (testId) => {
+    try {
+        // Validate testId format
+        const idValidation = validateObjectIdParam(testId, 'test ID');
+        if (!idValidation.success) {
+            return {
+                success: false,
+                message: idValidation.message
+            };
+        }
+        // Check if test exists
+        const test = await Test.findById(testId);
+        if (!test) {
+            return {
+                success: false,
+                message: 'Test not found'
+            };
+        }
+        return { success: true };
+    } catch (error) {
+        console.error('Check test exist error:', error);
+        return {
+            success: false,
+            message: 'Failed to check test existence',
+            error: error.message
+        };
+    }
 };
 
