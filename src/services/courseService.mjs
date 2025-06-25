@@ -387,5 +387,87 @@ export const getAllKidsProgressEnrolledInCourseAsync = async (courseId, page = 1
     }
 };
 
+// Get 5 top courses with highest enrollment count - Fast version
+export const get5TopCoursesAsync = async () => {
+    try {
+        const topCourses = await CourseProgress.aggregate([
+            {
+                $group: {
+                    _id: "$courseId",
+                    enrollmentCount: { $sum: 1 }
+                }
+            },
+            {
+                $sort: { enrollmentCount: -1 }
+            },
+            {
+                $limit: 5
+            },
+            {
+                $lookup: {
+                    from: "courses",
+                    localField: "_id",
+                    foreignField: "_id",
+                    as: "courseDetails"
+                }
+            },
+            {
+                $unwind: "$courseDetails"
+            },
+            {
+                $project: {
+                    _id: "$courseDetails._id",
+                    title: "$courseDetails.title",
+                    description: "$courseDetails.description",
+                    category: "$courseDetails.category",
+                    ageGroup: "$courseDetails.ageGroup",
+                    thumbnailUrl: "$courseDetails.thumbnailUrl",
+                    pointsEarned: "$courseDetails.pointsEarned",
+                    isPremium: "$courseDetails.isPremium",
+                    isPublished: "$courseDetails.isPublished",
+                    enrollmentCount: 1,
+                    instructorId: "$courseDetails.instructor",
+                    createdAt: "$courseDetails.createdAt",
+                    updatedAt: "$courseDetails.updatedAt"
+                }
+            }
+        ]);
+        // Add rank to each course
+        const rankedCourses = topCourses.map((course, index) => ({
+            rank: index + 1,
+            courseId: course._id,
+            title: course.title,
+            description: course.description,
+            category: course.category,
+            ageGroup: course.ageGroup,
+            thumbnailUrl: course.thumbnailUrl,
+            pointsEarned: course.pointsEarned,
+            isPremium: course.isPremium,
+            isPublished: course.isPublished,
+            enrollmentCount: course.enrollmentCount,
+            instructorId: course.instructorId,
+            createdAt: course.createdAt,
+            updatedAt: course.updatedAt
+        }));
+        return {
+            success: true,
+            status: 200,
+            message: 'Top 5 courses retrieved successfully',
+            data: {
+                courses: rankedCourses,
+                totalReturned: rankedCourses.length
+            }
+        };
+    } catch (error) {
+        console.error('Get top 5 courses service error:', error);
+        return {
+            success: false,
+            status: 500,
+            message: 'Failed to retrieve top courses',
+            error: error.message
+        };
+    }
+};
+
 
 

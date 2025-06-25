@@ -4,7 +4,8 @@ import {
     getCourseByIdAsync,
     updateCourseAsync,
     deleteCourseAsync,
-    getAllKidsProgressEnrolledInCourseAsync
+    getAllKidsProgressEnrolledInCourseAsync,
+    get5TopCoursesAsync
 } from '../services/courseService.mjs';
 
 // Create a new course
@@ -194,6 +195,33 @@ export const getAllKidsProgressEnrolledInCourse = async (req, res) => {
         }
     } catch (error) {
         console.error('Get all kids progress enrolled in course controller error:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Internal server error',
+            error: error.message
+        });
+    }
+};
+
+// Get top 5 courses with highest enrollment count
+export const get5TopCourses = async (req, res) => {
+    try {
+        const result = await get5TopCoursesAsync();
+        if (result.success) {
+            return res.status(result.status).json({
+                success: true,
+                message: result.message,
+                data: result.data
+            });
+        } else {
+            return res.status(result.status).json({
+                success: false,
+                message: result.message,
+                error: result.error
+            });
+        }
+    } catch (error) {
+        console.error('Get top 5 courses controller error:', error);
         res.status(500).json({
             success: false,
             message: 'Internal server error',

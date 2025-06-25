@@ -44,4 +44,8 @@ const courseProgressSchema = new mongoose.Schema({
   timestamps: true
 });
 
+// Add compound index for better aggregation performance
+courseProgressSchema.index({ courseId: 1 });
+courseProgressSchema.index({ kidId: 1, courseId: 1 });
+
 export const CourseProgress = mongoose.model("CourseProgress", courseProgressSchema); 
