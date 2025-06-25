@@ -282,8 +282,8 @@ export const deleteCourseAsync = async (courseId) => {
     }
 };
 
-// Count kids enrolled in a course
-export const countKidsEnrolledInCourseAsync = async (courseId) => {
+// Get all kids progress enrolled in a course with pagination
+export const getAllKidsProgressEnrolledInCourseAsync = async (courseId, page = 1, limit = 10) => {
     try {
         // Validate courseId format
         const idValidation = validateObjectIdParam(courseId, 'course ID');
@@ -299,24 +299,89 @@ export const countKidsEnrolledInCourseAsync = async (courseId) => {
                 message: 'Course not found'
             };
         }
-        // Count enrollment records for this course
-        const enrollmentCount = await CourseProgress.countDocuments({ courseId: courseId });
+
+        // Convert page and limit to numbers and set defaults
+        const pageNumber = parseInt(page) || 1;
+        const limitNumber = parseInt(limit) || 10;
+        const skip = (pageNumber - 1) * limitNumber;
+
+        // Get total count for pagination info
+        const totalEnrollments = await CourseProgress.countDocuments({ courseId: courseId });
+        
+        // Calculate total pages
+        const totalPages = Math.ceil(totalEnrollments / limitNumber);
+
+        // Find all course progress records for this course with pagination and populate kid info
+        const courseProgressRecords = await CourseProgress.find({ courseId: courseId })
+            .populate({
+                path: 'kidId',
+                select: 'fullName dateOfBirth gender points level avatar userId',
+                populate: {
+                    path: 'userId',
+                    select: 'email isActive isVerified'
+                }
+            })
+            .populate('courseId', 'title category')
+            .select('-__v') // Exclude version field
+            .skip(skip)
+            .limit(limitNumber)
+            .sort({ createdAt: -1 }); // Sort by newest first
+
+        // Transform the data to include kid fullName and other details
+        const transformedProgress = courseProgressRecords.map(progress => {
+            const progressObj = progress.toObject();
+            const kidObj = progressObj.kidId;
+            
+            return {
+                progressId: progressObj._id,
+                courseId: progressObj.courseId._id,
+                courseName: progressObj.courseId.title,
+                courseCategory: progressObj.courseId.category,
+                kidId: kidObj ? kidObj._id : null,
+                kidFullName: kidObj ? kidObj.fullName : null,
+                kidDateOfBirth: kidObj ? kidObj.dateOfBirth : null,
+                kidGender: kidObj ? kidObj.gender : null,
+                kidPoints: kidObj ? kidObj.points : null,
+                kidLevel: kidObj ? kidObj.level : null,
+                kidAvatar: kidObj ? kidObj.avatar : null,
+                kidEmail: kidObj && kidObj.userId ? kidObj.userId.email : null,
+                status: progressObj.status,
+                testResults: progressObj.testResults,
+                lessonCompleted: progressObj.lessonCompleted,
+                enrolledAt: progressObj.createdAt,
+                lastUpdated: progressObj.updatedAt
+            };
+        });
+
         return {
             success: true,
             status: 200,
-            message: 'Kid enrollment count retrieved successfully',
+            message: 'Kids progress enrolled in course retrieved successfully',
             data: {
                 courseId: courseId,
                 courseName: course.title,
-                enrollmentCount: enrollmentCount
+                courseCategory: course.category,
+                enrollmentCount: totalEnrollments,
+                progressRecords: transformedProgress,
+                pagination: {
+                    currentPage: pageNumber,
+                    totalPages: totalPages,
+                    totalItems: totalEnrollments,
+                    itemsPerPage: limitNumber,
+                    itemsReturned: transformedProgress.length,
+                    hasNextPage: pageNumber < totalPages,
+                    hasPreviousPage: pageNumber > 1,
+                    nextPage: pageNumber < totalPages ? pageNumber + 1 : null,
+                    previousPage: pageNumber > 1 ? pageNumber - 1 : null
+                }
             }
         };
     } catch (error) {
-        console.error('Count kid enrolled in course service error:', error);
+        console.error('Get all kids progress enrolled in course service error:', error);
         return {
             success: false,
             status: 500,
-            message: 'Failed to count kid enrollment',
+            message: 'Failed to retrieve kids progress enrolled in course',
             error: error.message
         };
     }

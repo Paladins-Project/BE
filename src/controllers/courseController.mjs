@@ -4,7 +4,7 @@ import {
     getCourseByIdAsync,
     updateCourseAsync,
     deleteCourseAsync,
-    countKidsEnrolledInCourseAsync
+    getAllKidsProgressEnrolledInCourseAsync
 } from '../services/courseService.mjs';
 
 // Create a new course
@@ -169,11 +169,15 @@ export const deleteCourse = async (req, res) => {
     }
 };
 
-// Count kids enrolled in course
-export const countKidsEnrolledInCourse = async (req, res) => {
+// Get all kids progress enrolled in course with pagination
+export const getAllKidsProgressEnrolledInCourse = async (req, res) => {
     try {
         const { courseId } = req.params;
-        const result = await countKidsEnrolledInCourseAsync(courseId);
+        // Extract pagination from query parameters or request body
+        const page = req.query.page || req.body.page || 1;
+        const limit = req.query.limit || req.body.limit || 10;
+        
+        const result = await getAllKidsProgressEnrolledInCourseAsync(courseId, page, limit);
         // Handle service response
         if (result.success) {
             return res.status(result.status).json({
@@ -189,7 +193,7 @@ export const countKidsEnrolledInCourse = async (req, res) => {
             });
         }
     } catch (error) {
-        console.error('Count kids enrolled in course controller error:', error);
+        console.error('Get all kids progress enrolled in course controller error:', error);
         res.status(500).json({
             success: false,
             message: 'Internal server error',

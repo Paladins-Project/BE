@@ -371,11 +371,8 @@ export const getAllKidAsync = async (page = 1, limit = 10) => {
         const pageNumber = parseInt(page) || 1;
         const limitNumber = parseInt(limit) || 10;
         const skip = (pageNumber - 1) * limitNumber;
-        // Get total count for pagination info (all kids)
         const totalKids = await Kid.countDocuments();        
-        // Calculate total pages
         const totalPages = Math.ceil(totalKids / limitNumber);        
-        // Find all kids with pagination and populate user data
         const kids = await Kid.find()
             .populate({
                 path: 'userId',
@@ -385,12 +382,10 @@ export const getAllKidAsync = async (page = 1, limit = 10) => {
             .select('-__v') // Exclude version field from kid
             .skip(skip)
             .limit(limitNumber)
-            .sort({ createdAt: -1 }); // Sort by newest first
-        // Transform the data to match requirements: remove timestamps, keep only kidId (not userId)
+            .sort({ createdAt: -1 });
         const transformedKids = kids.map(kid => {
             const kidObj = kid.toObject();
-            const userObj = kidObj.userId;
-            
+            const userObj = kidObj.userId;            
             return {
                 kidId: kidObj._id,
                 fullName: kidObj.fullName,
