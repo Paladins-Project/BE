@@ -3,7 +3,8 @@ import {
     getAllCoursesAsync,
     getCourseByIdAsync,
     updateCourseAsync,
-    deleteCourseAsync
+    deleteCourseAsync,
+    countKidsEnrolledInCourseAsync
 } from '../services/courseService.mjs';
 
 // Create a new course
@@ -160,6 +161,35 @@ export const deleteCourse = async (req, res) => {
         }
     } catch (error) {
         console.error('Delete course controller error:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Internal server error',
+            error: error.message
+        });
+    }
+};
+
+// Count kids enrolled in course
+export const countKidsEnrolledInCourse = async (req, res) => {
+    try {
+        const { courseId } = req.params;
+        const result = await countKidsEnrolledInCourseAsync(courseId);
+        // Handle service response
+        if (result.success) {
+            return res.status(result.status).json({
+                success: true,
+                message: result.message,
+                data: result.data
+            });
+        } else {
+            return res.status(result.status).json({
+                success: false,
+                message: result.message,
+                error: result.error
+            });
+        }
+    } catch (error) {
+        console.error('Count kids enrolled in course controller error:', error);
         res.status(500).json({
             success: false,
             message: 'Internal server error',

@@ -1,5 +1,6 @@
 import { Course } from '../models/course.mjs';
 import { Teacher } from '../models/teacher.mjs';
+import { CourseProgress } from '../models/courseProgress.mjs';
 import { validateCourse, validateObjectIdParam } from '../utils/validators.mjs';
 import { validateCreatedBy } from '../utils/helpers.mjs';
 import mongoose from 'mongoose';
@@ -276,6 +277,45 @@ export const deleteCourseAsync = async (courseId) => {
             success: false,
             status: 500,
             message: 'Course deletion failed',
+            error: error.message
+        };
+    }
+};
+
+// Count kids enrolled in a course
+export const countKidsEnrolledInCourseAsync = async (courseId) => {
+    try {
+        // Validate courseId format
+        const idValidation = validateObjectIdParam(courseId, 'course ID');
+        if (!idValidation.success) {
+            return idValidation;
+        }
+        // Check if course exists
+        const course = await Course.findById(courseId);
+        if (!course) {
+            return {
+                success: false,
+                status: 404,
+                message: 'Course not found'
+            };
+        }
+        // Count enrollment records for this course
+        const enrollmentCount = await CourseProgress.countDocuments({ courseId: courseId });
+        return {
+            success: true,
+            status: 200,
+            message: 'Kid enrollment count retrieved successfully',
+            data: {
+                courseId: courseId,
+                enrollmentCount: enrollmentCount
+            }
+        };
+    } catch (error) {
+        console.error('Count kid enrolled in course service error:', error);
+        return {
+            success: false,
+            status: 500,
+            message: 'Failed to count kid enrollment',
             error: error.message
         };
     }
