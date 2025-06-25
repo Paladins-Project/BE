@@ -307,6 +307,7 @@ export const countKidsEnrolledInCourseAsync = async (courseId) => {
             message: 'Kid enrollment count retrieved successfully',
             data: {
                 courseId: courseId,
+                courseName: course.title,
                 enrollmentCount: enrollmentCount
             }
         };
