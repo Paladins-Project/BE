@@ -1,5 +1,6 @@
 import { User } from '../models/user.mjs';
 import { Teacher } from '../models/teacher.mjs';
+import { Course } from '../models/course.mjs';
 import { hashPassword } from '../utils/helpers.mjs';
 import { validateUser, validateTeacher, updateTeacherValidator, validateObjectIdParam } from '../utils/validators.mjs';
 
@@ -300,6 +301,55 @@ export const getAllTeacherAsync = async (page = 1, limit = 10) => {
             success: false,
             status: 500,
             message: 'Failed to retrieve teachers',
+            error: error.message
+        };
+    }
+};
+
+// Get all courses created by teacher ID
+export const getAllCourseCreatedByTeacherId = async (teacherId) => {
+    try {
+        // Validate teacherId format
+        const idValidation = validateObjectIdParam(teacherId, 'teacher ID');
+        if (!idValidation.success) {
+            return idValidation;
+        }        
+        const teacher = await Teacher.findById(teacherId);
+        if (!teacher) {
+            return {
+                success: false,
+                status: 404,
+                message: 'Teacher not found'
+            };
+        }        
+        // Find all courses where instructor equals teacherId and populate instructor details
+        const courses = await Course.find({ instructor: teacherId })
+            .populate({
+                path: 'instructor',
+                select: '_id fullName',
+                model: 'Teacher'
+            })
+            .select('-__v')
+            .sort({ createdAt: -1 });        
+        return {
+            success: true,
+            status: 200,
+            message: 'Courses retrieved successfully',
+            data: {
+                teacher: {
+                    teacherId: teacher._id,
+                    fullName: teacher.fullName
+                },
+                courses: courses,
+                totalCourses: courses.length
+            }
+        };        
+    } catch (error) {
+        console.error('Get courses by teacher ID service error:', error);
+        return {
+            success: false,
+            status: 500,
+            message: 'Failed to retrieve courses',
             error: error.message
         };
     }

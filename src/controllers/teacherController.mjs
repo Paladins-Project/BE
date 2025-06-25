@@ -3,7 +3,8 @@ import {
     updateTeacherAsync, 
     getTeacherByIDAsync, 
     deleteTeacherAsync, 
-    getAllTeacherAsync 
+    getAllTeacherAsync,
+    getAllCourseCreatedByTeacherId
 } from '../services/teacherService.mjs';
 
 export const createTeacher = async (req, res) => {
@@ -144,6 +145,35 @@ export const getAllTeacher = async (req, res) => {
         }
     } catch (error) {
         console.error('Get all teachers controller error:', error);
+        res.status(500).json({ 
+            success: false,
+            message: 'Internal server error',
+            error: error.message 
+        });
+    }
+};
+
+// Get all courses created by teacher ID controller
+export const getAllCoursesByTeacherId = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const result = await getAllCourseCreatedByTeacherId(id);
+        
+        if (result.success) {
+            return res.status(result.status).json({
+                success: true,
+                message: result.message,
+                data: result.data
+            });
+        } else {
+            return res.status(result.status).json({
+                success: false,
+                message: result.message,
+                error: result.error
+            });
+        }
+    } catch (error) {
+        console.error('Get courses by teacher ID controller error:', error);
         res.status(500).json({ 
             success: false,
             message: 'Internal server error',
