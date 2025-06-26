@@ -10,6 +10,7 @@ import { User } from '../models/user.mjs';
 import { Parent } from '../models/parent.mjs';
 import { Lesson } from '../models/lesson.mjs';
 import { Test } from '../models/test.mjs';
+import { CourseProgress } from '../models/courseProgress.mjs';
 import { validateObjectIdParam } from './validators.mjs';
 
 dotenv.config();
@@ -255,6 +256,61 @@ export const checkTestExist = async (testId) => {
             message: 'Failed to check test existence',
             error: error.message
         };
+    }
+};
+
+export const checkEnrollmentAsync = async (courseId, kidId = null, parentId = null) => {
+    try {
+        if (!courseId || (!kidId && !parentId)) {
+            return false;
+        }
+        let pipeline;        
+        if (kidId) {
+            // Case 1: Có kidId - kiểm tra trực tiếp trong CourseProgress
+            pipeline = [
+                {
+                    $match: {
+                        courseId: new mongoose.Types.ObjectId(courseId),
+                        kidId: new mongoose.Types.ObjectId(kidId)
+                    }
+                },
+                { $limit: 1 }
+            ];
+        } else if (parentId) {
+            // Case 2: Có parentId - dùng aggregation để join qua Kid và Parent
+            pipeline = [
+                {
+                    $lookup: {
+                        from: 'kids',
+                        localField: 'kidId',
+                        foreignField: '_id',
+                        as: 'kid'
+                    }
+                },
+                { $unwind: '$kid' },
+                {
+                    $lookup: {
+                        from: 'parents',
+                        localField: 'kid.userId',
+                        foreignField: 'userId',
+                        as: 'parent'
+                    }
+                },
+                { $unwind: '$parent' },
+                {
+                    $match: {
+                        courseId: new mongoose.Types.ObjectId(courseId),
+                        'parent._id': new mongoose.Types.ObjectId(parentId)
+                    }
+                },
+                { $limit: 1 }
+            ];
+        }        
+        const result = await CourseProgress.aggregate(pipeline);
+        return result.length > 0;        
+    } catch (error) {
+        console.error('Check enrollment error:', error);
+        return false;
     }
 };
 

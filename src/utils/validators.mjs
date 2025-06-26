@@ -1306,3 +1306,147 @@ export const updateTeacherValidator = (updateData) => {
         success: true
     };
 };
+
+// Review Validator
+export const validateReview = (data) => {
+    const schema = Joi.object({
+        courseId: objectIdSchema()
+            .required()
+            .messages({
+                'string.empty': 'Course ID cannot be empty',
+                'string.objectId': 'Invalid course ID format',
+                'any.required': 'Course ID is required'
+            }),
+        kidId: objectIdSchema()
+            .optional()
+            .allow(null)
+            .messages({
+                'string.objectId': 'Invalid kid ID format'
+            }),
+        parentId: objectIdSchema()
+            .optional()
+            .allow(null)
+            .messages({
+                'string.objectId': 'Invalid parent ID format'
+            }),
+        star: Joi.number()
+            .integer()
+            .valid(1, 2, 3, 4, 5)
+            .required()
+            .messages({
+                'number.base': 'Star rating must be a number',
+                'number.integer': 'Star rating must be an integer',
+                'any.only': 'Star rating must be between 1 and 5',
+                'any.required': 'Star rating is required'
+            }),
+        content: Joi.string()
+            .max(1000)
+            .optional()
+            .allow('')
+            .messages({
+                'string.base': 'Content must be a string',
+                'string.max': 'Content cannot exceed 1000 characters'
+            })
+    }).custom((value, helpers) => {
+        // Custom validation: only kidId OR parentId can be filled, not both
+        const hasKidId = value.kidId != null;
+        const hasParentId = value.parentId != null;
+        
+        if (hasKidId && hasParentId) {
+            return helpers.error('object.xor', { 
+                message: 'Only kidId or parentId can be filled, not both' 
+            });
+        }
+        
+        if (!hasKidId && !hasParentId) {
+            return helpers.error('object.missing', { 
+                message: 'Either kidId or parentId must be provided' 
+            });
+        }        
+        return value;
+    }).messages({
+        'object.xor': 'Only kidId or parentId can be filled, not both',
+        'object.missing': 'Either kidId or parentId must be provided'
+    });
+
+    return schema.validate(data);
+};
+
+// Update Review Validator - For validating partial review updates
+export const updateReviewValidator = (updateData) => {
+    // Check if any data is provided
+    if (Object.keys(updateData).length === 0) {
+        return {
+            success: false,
+            status: 400,
+            message: 'No data provided for update'
+        };
+    }
+    // Validate courseId
+    if (updateData.courseId && !mongoose.Types.ObjectId.isValid(updateData.courseId)) {
+        return {
+            success: false,
+            status: 400,
+            message: 'Invalid course ID format'
+        };
+    }
+    // Validate kidId
+    if (updateData.hasOwnProperty('kidId') && updateData.kidId && !mongoose.Types.ObjectId.isValid(updateData.kidId)) {
+        return {
+            success: false,
+            status: 400,
+            message: 'Invalid kid ID format'
+        };
+    }
+    // Validate parentId
+    if (updateData.hasOwnProperty('parentId') && updateData.parentId && !mongoose.Types.ObjectId.isValid(updateData.parentId)) {
+        return {
+            success: false,
+            status: 400,
+            message: 'Invalid parent ID format'
+        };
+    }
+    // Validate star
+    if (updateData.star !== undefined) {
+        if (typeof updateData.star !== 'number' || !Number.isInteger(updateData.star) || updateData.star < 1 || updateData.star > 5) {
+            return {
+                success: false,
+                status: 400,
+                message: 'Star rating must be an integer between 1 and 5'
+            };
+        }
+    }
+    // Validate content
+    if (updateData.content !== undefined) {
+        if (typeof updateData.content !== 'string' || updateData.content.length > 1000) {
+            return {
+                success: false,
+                status: 400,
+                message: 'Content must be a string and cannot exceed 1000 characters'
+            };
+        }
+    }
+    // Custom validation: only kidId OR parentId can be filled, not both
+    if (updateData.hasOwnProperty('kidId') || updateData.hasOwnProperty('parentId')) {
+        const hasKidId = updateData.kidId != null;
+        const hasParentId = updateData.parentId != null;        
+        if (hasKidId && hasParentId) {
+            return {
+                success: false,
+                status: 400,
+                message: 'Only kidId or parentId can be filled, not both'
+            };
+        }
+        if (!hasKidId && !hasParentId) {
+            return {
+                success: false,
+                status: 400,
+                message: 'Either kidId or parentId must be provided'
+            };
+        }
+    }
+    // If all validations pass
+    return {
+        success: true
+    };
+};

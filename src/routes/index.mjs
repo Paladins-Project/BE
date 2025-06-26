@@ -10,7 +10,8 @@ import lessonRouter from '../routes/lesson.mjs';
 import testRouter from '../routes/test.mjs';
 import progressRouter from '../routes/progress.mjs';
 import payosRouter from '../routes/payos.mjs';
-import transactionRouter from '../routes/transaction.mjs'; 
+import transactionRouter from '../routes/transaction.mjs';
+import reviewRouter from '../routes/review.mjs'; 
 
 const router = Router();
 
@@ -25,6 +26,7 @@ router.use('/api', testRouter);
 router.use('/api', progressRouter);             
 router.use('/api', payosRouter);                
 router.use('/api', transactionRouter);          
+router.use('/api', reviewRouter);               
 //router.use('/api', adminRouter);              
 
 export default router;

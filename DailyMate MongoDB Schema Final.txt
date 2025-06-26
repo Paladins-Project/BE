@@ -143,6 +143,18 @@
     "createdAt": "Date (default: Date.now)",
     "updatedAt": "Date (default: Date.now)"
   },
+  {
+  "Review": {
+    "_id": "ObjectId",
+    "courseId": "ObjectId (ref: Course, required)",
+    "kidId": "ObjectId (ref: Kid)",
+    "parentId": "ObjectId (ref: Parent)",
+    "star": "Number (required, enum: [1, 2, 3, 4, 5])",
+    "content": "String",
+    "createdAt": "Date (default: Date.now)",
+    "updatedAt": "Date (default: Date.now)"
+  }--Note: chỉ kidId hoặc parentId được phép điền, cái còn lại phải null. Ví dụ nếu kidId đã tồn tại thì parentId phải để trống. Sử dụng index để tăng tốc độ tìm kiếm bằng courseId.
+}
 }
 
 
