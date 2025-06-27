@@ -9,8 +9,13 @@ dotenv.config();
 const app = express();
 
 // Enable CORS for all origins
+const allowedOrigins = [
+  `http://localhost:${process.env.FE_PORT}`,
+  process.env.FRONTEND_URL
+].filter(Boolean); // Loại bỏ các giá trị undefined/null
+
 app.use(cors({
-  origin: `http://localhost:${process.env.FE_PORT}`,
+  origin: allowedOrigins,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
