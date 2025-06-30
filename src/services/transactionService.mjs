@@ -98,12 +98,15 @@ export const getAllTransactionAsync = async (page = 1, limit = 10) => {
         const pageNumber = parseInt(page) || 1;
         const limitNumber = parseInt(limit) || 10;
         const skip = (pageNumber - 1) * limitNumber;
-        // Get total count for pagination info
-        const totalTransactions = await Transaction.countDocuments();        
+        // Get total count for pagination info (only SUCCESS transactions)
+        const totalTransactions = await Transaction.countDocuments({ status: 'SUCCESS' });        
         // Calculate total pages
         const totalPages = Math.ceil(totalTransactions / limitNumber);
         // Use aggregation to join with User and Parent collections
         const transactions = await Transaction.aggregate([
+            {
+                $match: { status: 'SUCCESS' } // Filter only SUCCESS transactions
+            },
             {
                 $sort: { createdAt: -1 } // Sort by newest first
             },
