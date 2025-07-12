@@ -73,8 +73,9 @@ console.log('=== CORS middleware applied ===');
 
 // Handle preflight requests explicitly
 console.log('=== Setting up preflight CORS ===');
-app.options('*', cors());
-console.log('=== Preflight CORS set ===');
+// Remove the problematic line: app.options('*', cors());
+// Instead, handle preflight in the main CORS configuration
+console.log('=== Preflight CORS handled in main CORS config ===');
 
 // Basic middleware setup
 console.log('=== Setting up JSON middleware ===');
