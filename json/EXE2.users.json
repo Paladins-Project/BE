@@ -1,0 +1,459 @@
+[{
+  "_id": {
+    "$oid": "684300aef8a84affee541277"
+  },
+  "password": "$2b$10$BASM69Jr/S0W83VGi431IOcrp2eN/xiVi9ulTlp2AunJuh/DaJ3gK",
+  "email": "admin@dailymate.com",
+  "role": "admin",
+  "isActive": true,
+  "isVerified": true,
+  "createdAt": {
+    "$date": "2025-06-06T14:52:30.564Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-06T16:03:40.669Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6843bd36d3fdb5258cd0ac9d"
+  },
+  "password": "$2b$10$64uqYsY7.SAZTUVc29U2ReVAbfSBJizc9B39z/k2EP0OOnnUvICKW",
+  "email": "family@dailymate.com",
+  "role": "parent",
+  "isActive": true,
+  "isVerified": true,
+  "createdAt": {
+    "$date": "2025-06-07T04:16:54.163Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-07T04:16:54.163Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6843ef139dd755c94f218426"
+  },
+  "password": "$2b$10$QmgGV0alnBRdtHX3c1.MHebHBCc.4nWGnx6fcT2a0DZOxIiK1SyXC",
+  "email": "parent@gmail.com",
+  "role": "parent",
+  "isActive": true,
+  "isVerified": false,
+  "createdAt": {
+    "$date": "2025-06-07T07:49:39.887Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-07T07:49:39.887Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6843ef289dd755c94f21842b"
+  },
+  "password": "$2b$10$DtG3UM/8v5b0bd4edjroE.sgYGiGy86wycu8dsscbO9JsRHLkED0y",
+  "email": "emma.smith@gmail.com",
+  "role": "kid",
+  "isActive": true,
+  "isVerified": false,
+  "createdAt": {
+    "$date": "2025-06-07T07:50:00.626Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-07T07:50:00.626Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "684505164d38c7079811f471"
+  },
+  "password": "$2b$10$2GxKQNe.Rg8RaGXEHplD3ujP1CsgWqDpwA0Qo4baJ9B1Jzvgpo5Hy",
+  "email": "parent1@gmail.com",
+  "role": "parent",
+  "isActive": true,
+  "isVerified": false,
+  "createdAt": {
+    "$date": "2025-06-08T03:35:50.342Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-08T03:35:50.342Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "684507364d38c7079811f476"
+  },
+  "password": "$2b$10$pm/9l8RX4coKP9uRDtpBmOO6cjJDmj4BBe0RdFpXfmvpl.ycdwoxa",
+  "email": "test123@gmail.com",
+  "role": "parent",
+  "isActive": true,
+  "isVerified": false,
+  "createdAt": {
+    "$date": "2025-06-08T03:44:54.977Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-08T03:44:54.977Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6845094e4d38c7079811f47c"
+  },
+  "password": "$2b$10$XGHv.jXjGEBfm4/GEbi6ZuqPHN3bBi2xPB2MLXbvdvlhZI4HqujOG",
+  "email": "test1234@gmail.com",
+  "role": "parent",
+  "isActive": true,
+  "isVerified": false,
+  "createdAt": {
+    "$date": "2025-06-08T03:53:50.472Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-08T03:53:50.472Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "684509c74d38c7079811f481"
+  },
+  "password": "$2b$10$Q3hWIEOb6cWhXMjs76s2Ruf.kYJFll8Og3KvQAlc9KiRefsarynSe",
+  "email": "test123123@gmail.com",
+  "role": "parent",
+  "isActive": true,
+  "isVerified": false,
+  "createdAt": {
+    "$date": "2025-06-08T03:55:51.951Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-08T03:55:51.951Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68450b944d38c7079811f486"
+  },
+  "password": "$2b$10$Gl/QMG6E3dN5.DzgqIYnweMP2HVhv7gtyAIZ8DFU5pyF7Ee2ncG7K",
+  "email": "test2@gmail.com",
+  "role": "parent",
+  "isActive": true,
+  "isVerified": false,
+  "createdAt": {
+    "$date": "2025-06-08T04:03:32.499Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-08T04:03:32.499Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68450c894d38c7079811f48c"
+  },
+  "password": "$2b$10$/CPKECSIgUn/l3t1IYEM5.bPKAQToiKfLjtdlSHhpPxAnGHJApbKu",
+  "email": "test23@gmail.com",
+  "role": "parent",
+  "isActive": true,
+  "isVerified": false,
+  "createdAt": {
+    "$date": "2025-06-08T04:07:37.859Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-08T04:07:37.859Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68450cb44d38c7079811f491"
+  },
+  "password": "$2b$10$sdHmnAmTEZ561b5RpDts/..P6MgJ51VaWvullSGtc589UHSptE/mq",
+  "email": "test12323@gmail.com",
+  "role": "parent",
+  "isActive": true,
+  "isVerified": false,
+  "createdAt": {
+    "$date": "2025-06-08T04:08:20.348Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-08T04:08:20.348Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68450d7a4d38c7079811f496"
+  },
+  "password": "$2b$10$46D0T3psQAblerh4vNqSu.ukIRgxpUpPaEd8CN2LVMkUAJbP1U4w.",
+  "email": "test22222@gmail.com",
+  "role": "parent",
+  "isActive": true,
+  "isVerified": false,
+  "createdAt": {
+    "$date": "2025-06-08T04:11:38.063Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-08T04:11:38.063Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68450e614d38c7079811f49b"
+  },
+  "password": "$2b$10$BW5SwYfGA057Th3XUfRDs.KoSuk1m2M35xHdaCeWVDAK4y.bVWNva",
+  "email": "test12322222@gmail.com",
+  "role": "parent",
+  "isActive": true,
+  "isVerified": false,
+  "createdAt": {
+    "$date": "2025-06-08T04:15:29.244Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-08T04:15:29.244Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68451f726361cbc88b0d7120"
+  },
+  "password": "$2b$10$IocDgF0SzCja/NKzhlk/SOpml7W/UwripHA3J7v6/Xm4Xhnnra7pO",
+  "email": "teacher@example.com",
+  "role": "teacher",
+  "isActive": true,
+  "isVerified": false,
+  "createdAt": {
+    "$date": "2025-06-08T05:28:18.259Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-08T05:28:18.259Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "684521ae09f72e6d211c61b8"
+  },
+  "password": "$2b$10$3442vBcGSuRDZMgAquDAjueNpbaQ4WXIuoEAz8OPR5mMkM9BK7Hg6",
+  "email": "gao@gmail.com",
+  "role": "parent",
+  "isActive": true,
+  "isVerified": false,
+  "createdAt": {
+    "$date": "2025-06-08T05:37:50.907Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-08T05:37:50.907Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68457cb0a9553222688bcf9f"
+  },
+  "password": "$2b$10$.QYt23Jx9ocz8s61jKHwnOOHSCv6o4ec7pUuY3Y56A6ZFkt9Ug0yK",
+  "email": "nguyenthiminhanh.020903@gmail.com",
+  "role": "parent",
+  "isActive": true,
+  "isVerified": false,
+  "createdAt": {
+    "$date": "2025-06-08T12:06:08.457Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-08T13:21:29.536Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6849b669ad2d201e5e365a25"
+  },
+  "password": "$2b$10$qWL2wSaKchtgTfQw8Y1M/uy3TKz0aa0Cyj7KubXPWySJ8WEB4zm7e",
+  "email": "abc123@gmail.com",
+  "role": "parent",
+  "isActive": true,
+  "isVerified": false,
+  "createdAt": {
+    "$date": "2025-06-11T17:01:29.100Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-11T17:01:29.100Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6849b6a7ad2d201e5e365a2b"
+  },
+  "password": "$2b$10$6Xow4.5KYjPmCu7ISjEtXOzhuhUStLAVKmOpN5zO68LK0UJbXfuzS",
+  "email": "abcadf@gmail.com",
+  "role": "parent",
+  "isActive": true,
+  "isVerified": false,
+  "createdAt": {
+    "$date": "2025-06-11T17:02:31.341Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-11T17:02:31.341Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "684a549652d6f136c00b65c0"
+  },
+  "password": "$2b$10$hmroHKT5he1f.Zbeuq9oAOLRLsU77NICZcDuGmAw5YotAMp1NmtPG",
+  "email": "abc@gmail.com",
+  "role": "parent",
+  "isActive": true,
+  "isVerified": false,
+  "createdAt": {
+    "$date": "2025-06-12T04:16:22.854Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-12T04:16:22.854Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "684a825a0f0b8e1745dc0098"
+  },
+  "password": "$2b$10$rSSTuaHIUGwJ89S68fiZnuq/cxC/OJBBIn0XnmG1IoyDl3/7IwGHS",
+  "email": "trungtrun37a@gmail.com",
+  "role": "parent",
+  "isActive": true,
+  "isVerified": false,
+  "createdAt": {
+    "$date": "2025-06-12T07:31:38.208Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-19T09:18:01.586Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "684abec19606cd01af483ef2"
+  },
+  "password": "$2b$10$XtHJ4tSzyCXYkfz01UEybu8sYpClwgKTHW2IanjSHWhBvJtQOXukO",
+  "email": "phatsilver102@gmail.com",
+  "role": "parent",
+  "isActive": true,
+  "isVerified": true,
+  "createdAt": {
+    "$date": "2025-06-12T11:49:21.433Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-12T03:27:58.215Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "684bc797f1c51f6592e89e35"
+  },
+  "password": "$2b$10$v10YgjpPXncA0bn.cI88iOYf3ctZutYGcON2I96zIcVuYnjb99/Rm",
+  "email": "kid123@example.com",
+  "role": "kid",
+  "isActive": true,
+  "isVerified": false,
+  "createdAt": {
+    "$date": "2025-06-13T06:39:19.697Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-13T06:39:19.697Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6857d50b9c88a288c02efb81"
+  },
+  "password": "$2b$10$aAxlZhojNGnZwi6iIfDioej3/jRLlTFTVrmhIQA1IVzmYzdbEua1e",
+  "email": "ngnghoa1221@gmail.com",
+  "role": "parent",
+  "isActive": true,
+  "isVerified": true,
+  "createdAt": {
+    "$date": "2025-06-22T10:03:55.198Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-22T10:03:55.198Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685a0acf48b93074f74ed153"
+  },
+  "password": "$2b$10$qXXG9HgzFaE9pFlfw0SRBOT5WgY4tUue6qizeBDA4c.1rMst2BPTa",
+  "email": "teacher@dailymate.com",
+  "role": "teacher",
+  "isActive": true,
+  "isVerified": false,
+  "createdAt": {
+    "$date": "2025-06-24T02:17:51.434Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-24T02:17:51.434Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685a1fbd05372834986df9df"
+  },
+  "password": "$2b$10$MmqHR.xsAjb3aSvMQZihAe9S.pKlLi.N01y.0mizXc2sM0tt5GYJa",
+  "email": "trung@dailymate.com",
+  "role": "teacher",
+  "isActive": true,
+  "isVerified": false,
+  "createdAt": {
+    "$date": "2025-06-24T03:47:09.383Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-24T03:47:09.383Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "686645e66af7f6b14e54b1e7"
+  },
+  "password": "$2b$10$LBKIsFHXOjvPs/FLX.op6OetSCJUlUKGbTeiHR3Hu9Km35jLFRAUC",
+  "email": "gaoxm2004@gmail.com",
+  "role": "parent",
+  "isActive": true,
+  "isVerified": true,
+  "createdAt": {
+    "$date": "2025-07-03T08:57:10.209Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-03T08:57:37.899Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6871d758dc1cbf2b42ad0227"
+  },
+  "password": "$2b$10$1ijAuAQd5BSyijGh9T377u39LQ1cZVS0k88Xw2KxMIhfwnCLurXxy",
+  "email": "Dungnttss160303@fpt.edu.vn",
+  "role": "parent",
+  "isActive": true,
+  "isVerified": true,
+  "createdAt": {
+    "$date": "2025-07-12T03:32:40.698Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-12T03:34:12.499Z"
+  },
+  "__v": 0
+}]

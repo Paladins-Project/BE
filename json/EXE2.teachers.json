@@ -1,0 +1,115 @@
+[{
+  "_id": {
+    "$oid": "68451f726361cbc88b0d7122"
+  },
+  "userId": {
+    "$oid": "68451f726361cbc88b0d7120"
+  },
+  "fullName": "Nguyễn Văn A",
+  "phoneNumber": "0123456789",
+  "specializations": [
+    "Math",
+    "Physics"
+  ],
+  "bio": "Experienced teacher with 5 years in education",
+  "coursesCreated": [
+    {
+      "$oid": "68590a46849a8f963c973914"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-06-08T05:28:18.332Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-23T08:03:19.045Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685a0acf48b93074f74ed155"
+  },
+  "userId": {
+    "$oid": "685a0acf48b93074f74ed153"
+  },
+  "fullName": "nguyễn công trung",
+  "phoneNumber": "0867151203",
+  "specializations": [
+    "math",
+    "logical thinking for children"
+  ],
+  "bio": "good teacher",
+  "coursesCreated": [
+    {
+      "$oid": "685a259d05372834986df9f3"
+    },
+    {
+      "$oid": "685a426a05372834986dfb0f"
+    },
+    {
+      "$oid": "685b64c18177b97e0e650fd2"
+    },
+    {
+      "$oid": "685b6b833001edb384467a51"
+    },
+    {
+      "$oid": "685ce85e953bbf3c848fee61"
+    },
+    {
+      "$oid": "685cf063953bbf3c848feed4"
+    },
+    {
+      "$oid": "685cfda2ac771a438d9eb031"
+    },
+    {
+      "$oid": "685d003aac771a438d9eb081"
+    },
+    {
+      "$oid": "685d0073ac771a438d9eb088"
+    },
+    {
+      "$oid": "686343c42ab7b5312cf512d1"
+    },
+    {
+      "$oid": "68634e1c2ab7b5312cf5145d"
+    },
+    {
+      "$oid": "68662fdd6ff52ee865252a74"
+    },
+    {
+      "$oid": "6871f1600bb476e6d1044212"
+    },
+    {
+      "$oid": "6871f22e0bb476e6d1044293"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-06-24T02:17:51.499Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-12T05:27:10.780Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685a1fbd05372834986df9e1"
+  },
+  "userId": {
+    "$oid": "685a1fbd05372834986df9df"
+  },
+  "fullName": "nguyễn công trung 2",
+  "phoneNumber": "0867151203",
+  "specializations": [
+    "match"
+  ],
+  "bio": "ok",
+  "coursesCreated": [],
+  "createdAt": {
+    "$date": "2025-06-24T03:47:09.447Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-24T04:22:51.701Z"
+  },
+  "__v": 0
+}]

@@ -1,0 +1,17 @@
+[{
+  "_id": {
+    "$oid": "684300aef8a84affee541279"
+  },
+  "userId": {
+    "$oid": "684300aef8a84affee541277"
+  },
+  "fullName": "System Administrator",
+  "phoneNumber": "+84123456789",
+  "createdAt": {
+    "$date": "2025-06-06T14:52:30.624Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-06T14:52:30.624Z"
+  },
+  "__v": 0
+}]

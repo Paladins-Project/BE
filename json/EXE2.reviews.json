@@ -1,0 +1,273 @@
+[{
+  "_id": {
+    "$oid": "685d8a62f49897c92672047a"
+  },
+  "courseId": {
+    "$oid": "685cf063953bbf3c848feed4"
+  },
+  "kidId": {
+    "$oid": "684cd8a97a7a5173f0e008c0"
+  },
+  "parentId": null,
+  "star": 5,
+  "content": "Updated: Khóa học thực sự xuất sắc! Rất đáng để đầu tư.",
+  "createdAt": {
+    "$date": "2025-06-26T17:58:58.518Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-26T18:11:19.483Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685de93e50e557c5e260755f"
+  },
+  "courseId": {
+    "$oid": "685d0073ac771a438d9eb088"
+  },
+  "kidId": null,
+  "parentId": {
+    "$oid": "684abec19606cd01af483ef4"
+  },
+  "star": 3,
+  "content": "test",
+  "createdAt": {
+    "$date": "2025-06-27T00:43:42.647Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-27T00:43:42.647Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685debee50e557c5e2608013"
+  },
+  "courseId": {
+    "$oid": "685d0073ac771a438d9eb088"
+  },
+  "kidId": {
+    "$oid": "684cd8a97a7a5173f0e008c0"
+  },
+  "parentId": null,
+  "star": 4,
+  "content": "yehhh",
+  "createdAt": {
+    "$date": "2025-06-27T00:55:10.003Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-27T00:55:10.003Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68622da88aef40ada8fc7e54"
+  },
+  "courseId": {
+    "$oid": "685cfda2ac771a438d9eb031"
+  },
+  "kidId": null,
+  "parentId": {
+    "$oid": "684a825a0f0b8e1745dc009a"
+  },
+  "star": 5,
+  "content": "tốt",
+  "createdAt": {
+    "$date": "2025-06-30T06:24:40.185Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-30T06:24:40.185Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68624fcd649fafdb12c06f79"
+  },
+  "courseId": {
+    "$oid": "685d0073ac771a438d9eb088"
+  },
+  "kidId": null,
+  "parentId": {
+    "$oid": "684abec19606cd01af483ef4"
+  },
+  "star": 4,
+  "content": "Khóa học chất lượng, giúp con em phát triển tư duy logic1.",
+  "createdAt": {
+    "$date": "2025-06-30T08:50:21.428Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-30T08:50:21.428Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6862537b649fafdb12c07007"
+  },
+  "courseId": {
+    "$oid": "685cfda2ac771a438d9eb031"
+  },
+  "kidId": null,
+  "parentId": {
+    "$oid": "684a825a0f0b8e1745dc009a"
+  },
+  "star": 4,
+  "content": "rất tốt, phù hợp với con của tôi vừa học vừa chơi",
+  "createdAt": {
+    "$date": "2025-06-30T09:06:03.016Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-30T09:06:03.016Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6863351d2ab7b5312cf50d62"
+  },
+  "courseId": {
+    "$oid": "685d0073ac771a438d9eb088"
+  },
+  "kidId": {
+    "$oid": "6853d689d5b549738d58e641"
+  },
+  "parentId": null,
+  "star": 4,
+  "content": "em trung thích khóa học này lắm",
+  "createdAt": {
+    "$date": "2025-07-01T01:08:45.589Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-01T01:15:11.962Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68663d3a6ff52ee8652535d6"
+  },
+  "courseId": {
+    "$oid": "685cfda2ac771a438d9eb031"
+  },
+  "kidId": {
+    "$oid": "6853d689d5b549738d58e641"
+  },
+  "parentId": null,
+  "star": 5,
+  "content": "em yêu khóa học này",
+  "createdAt": {
+    "$date": "2025-07-03T08:20:10.158Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-03T08:20:10.158Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "686643496ff52ee865253dfa"
+  },
+  "courseId": {
+    "$oid": "685cfda2ac771a438d9eb031"
+  },
+  "kidId": {
+    "$oid": "6853d689d5b549738d58e641"
+  },
+  "parentId": null,
+  "star": 5,
+  "content": "Khóa học rất sinh động và phù hợp với lứa tuổi của bé, giúp con học mà chơi, chơi mà học!",
+  "createdAt": {
+    "$date": "2025-07-03T08:46:01.839Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-03T08:46:01.839Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "686643f76ff52ee865253e0a"
+  },
+  "courseId": {
+    "$oid": "685cfda2ac771a438d9eb031"
+  },
+  "kidId": {
+    "$oid": "6853d689d5b549738d58e641"
+  },
+  "parentId": null,
+  "star": 5,
+  "content": "Học mà như chơi – đây thực sự là môi trường học tập lý tưởng",
+  "createdAt": {
+    "$date": "2025-07-03T08:48:55.746Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-03T08:48:55.746Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "686644216ff52ee865253e6a"
+  },
+  "courseId": {
+    "$oid": "68662fdd6ff52ee865252a74"
+  },
+  "kidId": {
+    "$oid": "6853ce0bd5b549738d58e4cd"
+  },
+  "parentId": null,
+  "star": 5,
+  "content": "Học mà như chơi – đây thực sự là môi trường học tập lý tưởng",
+  "createdAt": {
+    "$date": "2025-07-03T08:49:37.453Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-03T08:49:37.453Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "686644696ff52ee865253ec1"
+  },
+  "courseId": {
+    "$oid": "68662fdd6ff52ee865252a74"
+  },
+  "kidId": null,
+  "parentId": {
+    "$oid": "684a825a0f0b8e1745dc009a"
+  },
+  "star": 5,
+  "content": "Con đã tiến bộ rõ rệt sau vài tuần học, đặc biệt là khả năng tập trung và phản xạ.",
+  "createdAt": {
+    "$date": "2025-07-03T08:50:49.187Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-03T08:50:49.187Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "686644766ff52ee865253ed1"
+  },
+  "courseId": {
+    "$oid": "68662fdd6ff52ee865252a74"
+  },
+  "kidId": null,
+  "parentId": {
+    "$oid": "684a825a0f0b8e1745dc009a"
+  },
+  "star": 5,
+  "content": "Nội dung học phong phú, không chỉ cung cấp kiến thức mà còn dạy kỹ năng sống quan trọng",
+  "createdAt": {
+    "$date": "2025-07-03T08:51:02.527Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-03T08:51:02.527Z"
+  },
+  "__v": 0
+}]

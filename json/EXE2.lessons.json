@@ -1,0 +1,784 @@
+[{
+  "_id": {
+    "$oid": "68493f6eff0e71d3e9773a5d"
+  },
+  "courseId": {
+    "$oid": "68490d9f43507e546d24a1fd"
+  },
+  "title": "Bài 1 ",
+  "description": "Bài học giúp các em nhận biết những vùng riêng tư trên cơ thể, hiểu thế nào là đụng chạm an toàn và không an toàn, từ đó biết cách phản ứng và kêu cứu khi gặp tình huống nguy hiểm. Các em cũng được hướng dẫn gọi đến Tổng đài 111 hoặc 1022 nhấn phím 6 để được hỗ trợ khi cần.",
+  "content": {
+    "sections": [
+      {
+        "title": "Variables",
+        "text": "JavaScript variables are containers for storing data values."
+      },
+      {
+        "title": "Functions",
+        "text": "JavaScript functions are blocks of code designed to perform a particular task."
+      }
+    ]
+  },
+  "videoUrl": "https://example.com/videos/intro-js.mp4",
+  "audioUrl": "https://example.com/audio/intro-js.mp3",
+  "imageUrl": "https://example.com/images/javascript-logo.png",
+  "duration": 45,
+  "order": 1,
+  "isPublished": true,
+  "createdBy": {
+    "$oid": "60d21b4667d0d8992e610c86"
+  },
+  "createdAt": {
+    "$date": "2025-06-11T08:33:50.498Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-18T16:50:54.169Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68494376ff0e71d3e9773a64"
+  },
+  "courseId": {
+    "$oid": "684939c4ff0e71d3e9773a2e"
+  },
+  "title": "Bài 1",
+  "description": "Phân Loại Chất Thải Tại Nguồn – Chung Tay Vì Thành Phố Xanh Sạch",
+  "content": {
+    "sections": [
+      {
+        "title": "Variables",
+        "text": "JavaScript variables are containers for storing data values."
+      },
+      {
+        "title": "Functions",
+        "text": "JavaScript functions are blocks of code designed to perform a particular task."
+      }
+    ]
+  },
+  "videoUrl": "https://www.youtube.com/watch?v=OWvN5MCBKz0&t=35s",
+  "audioUrl": "https://example.com/audio/intro-js.mp3",
+  "imageUrl": "https://example.com/images/javascript-logo.png",
+  "duration": 45,
+  "order": 1,
+  "isPublished": true,
+  "createdBy": {
+    "$oid": "60d21b4667d0d8992e610c86"
+  },
+  "createdAt": {
+    "$date": "2025-06-11T08:51:02.926Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-18T16:39:15.581Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "684a8d170f0b8e1745dc02c8"
+  },
+  "courseId": {
+    "$oid": "684a8cd80f0b8e1745dc02bd"
+  },
+  "title": "bài 1",
+  "description": "Bài học giúp học sinh hiểu vệ sinh an toàn thực phẩm là gì, vì sao quan trọng và nắm vững 10 nguyên tắc vàng của WHO để đảm bảo sức khỏe mỗi ngày.",
+  "content": {
+    "sections": [
+      {
+        "title": "tao cần kim cương làm cái đéo gì ",
+        "text": "tao cần kim cương làm cái đéo gì "
+      },
+      {
+        "title": "tao cần kim cương làm cái đéo gì ",
+        "text": "tao cần kim cương làm cái đéo gì "
+      }
+    ]
+  },
+  "videoUrl": "https://www.youtube.com/watch?v=QSE-c_9WB-w",
+  "audioUrl": "https://www.youtube.com/watch?v=f3haV5VYHy8",
+  "imageUrl": "https://www.youtube.com/watch?v=f3haV5VYHy8",
+  "duration": 6,
+  "order": 1,
+  "isPublished": false,
+  "createdBy": {
+    "$oid": "60d21b4667d0d8992e610c86"
+  },
+  "createdAt": {
+    "$date": "2025-06-12T08:17:27.894Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-17T14:54:10.179Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "684a92c5f7695594fe106322"
+  },
+  "courseId": {
+    "$oid": "684a9244f7695594fe106314"
+  },
+  "title": "Bài 1",
+  "description": "Description",
+  "content": {
+    "sections": []
+  },
+  "videoUrl": "https://www.youtube.com/watch?v=hRChPS2I6Ws",
+  "audioUrl": "https://www.youtube.com/watch?v=hRChPS2I6Ws",
+  "imageUrl": "https://www.youtube.com/watch?v=hRChPS2I6Ws",
+  "duration": 3,
+  "order": 2,
+  "isPublished": true,
+  "createdBy": {
+    "$oid": "60d21b4667d0d8992e610c86"
+  },
+  "createdAt": {
+    "$date": "2025-06-12T08:41:41.871Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-12T08:41:41.871Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "684a9c78f7695594fe106377"
+  },
+  "courseId": {
+    "$oid": "684a9c06f7695594fe10636c"
+  },
+  "title": "Bài 1 ",
+  "description": "Đội Mũ Bảo Hiểm và Ngồi Sau Xe Máy An Toàn\n",
+  "content": {
+    "sections": [
+      {
+        "title": "Đội Mũ Bảo Hiểm và Ngồi Sau Xe Máy An Toàn",
+        "text": "Phần 1: Vì sao phải đội mũ bảo hiểm?\n Khi đi xe máy, đội mũ bảo hiểm giúp bảo vệ đầu của mình. Nếu chẳng may bị ngã xe, mũ sẽ giảm nguy cơ bị đau đầu hoặc bị thương nặng.\n🔍 Các em nên chọn mũ bảo hiểm có:\nTem CR (chứng nhận đạt chuẩn an toàn)\n\n\nThương hiệu rõ ràng, nhà sản xuất uy tín\n\n\nLớp xốp dày, chắc chắn\n\n\nQuai đeo bền, không dễ rơi\n\n\nMũ vừa với đầu, không lắc lư quá nhiều\n\n\n🎯 Mẹo nhỏ: Nhờ bố mẹ chọn mũ giúp mình để đảm bảo an toàn nhé!\n"
+      }
+    ]
+  },
+  "videoUrl": "https://youtu.be/Skaf8Og171I",
+  "audioUrl": "https://www.youtube.com/watch?v=ZyGrfvExFQE",
+  "imageUrl": "https://www.youtube.com/watch?v=ZyGrfvExFQE",
+  "duration": 6,
+  "order": 1,
+  "isPublished": true,
+  "createdBy": {
+    "$oid": "60d21b4667d0d8992e610c86"
+  },
+  "createdAt": {
+    "$date": "2025-06-12T09:23:04.433Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-17T14:16:10.771Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685226e45aa77d123c2212e0"
+  },
+  "courseId": {
+    "$oid": "685226075aa77d123c2212d5"
+  },
+  "title": "Bài 1",
+  "description": "Bài học giúp các em nhận biết tác hại nghiêm trọng của ma túy, cách phòng tránh và ứng xử khi gặp tình huống có người rủ rê sử dụng ma túy. Qua đó, các em hiểu rằng nói “KHÔNG” với ma túy là lựa chọn đúng đắn để bảo vệ sức khỏe, giữ gìn tương lai và góp phần xây dựng môi trường học đường an toàn, lành mạnh.",
+  "content": {
+    "sections": [
+      {
+        "title": "An toàn Giao Thông của trẻ em",
+        "text": "An toàn Giao Thông của trẻ emAn toàn Giao Thông của trẻ emAn toàn Giao Thông của trẻ emAn toàn Giao Thông của trẻ em"
+      }
+    ]
+  },
+  "videoUrl": "https://res.cloudinary.com/dfkb8qo66/video/upload/v1750322329/todokotlin_MainActivity.kt_todokotlin.app.main_2025-06-16_10-36-45_l63nak.mp4",
+  "audioUrl": "https://res.cloudinary.com/dfkb8qo66/video/upload/v1750214350/700_F_861477017_hpb7dCAUcEsHzvcgmzcSKnqjY3fJuIYX_ST_w93ztc.mp3",
+  "imageUrl": "https://res.cloudinary.com/dfkb8qo66/image/upload/v1750214253/5f23a7699b36d6957c953240ba7605f8_jegk4c.jpg",
+  "duration": 6,
+  "order": 1,
+  "isPublished": false,
+  "createdBy": {
+    "$oid": "60d21b4667d0d8992e610c86"
+  },
+  "createdAt": {
+    "$date": "2025-06-18T02:39:32.101Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-19T08:38:55.410Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6852ea1dd9c80dd8c67891c0"
+  },
+  "courseId": {
+    "$oid": "685226075aa77d123c2212d5"
+  },
+  "title": "tao cần kim cương làm cái đéo ",
+  "description": "tao cần kim cương làm cái đéo tao cần kim cương làm cái đéo tao cần kim cương làm cái đéo ",
+  "content": {
+    "sections": [
+      {
+        "title": "tao cần kim cương làm cái đéo ",
+        "text": "tao cần kim cương làm cái đéo tao cần kim cương làm cái đéo tao cần kim cương làm cái đéo tao cần kim cương làm cái đéo "
+      }
+    ]
+  },
+  "videoUrl": "https://res.cloudinary.com/dfkb8qo66/video/upload/v1750264327/todokotlin_MainActivity.kt_todokotlin.app.main_2025-06-16_10-36-45_xbmuhw.mp4",
+  "audioUrl": "https://res.cloudinary.com/dfkb8qo66/video/upload/v1750264331/p_47789547_31_fnmsjd.mp3",
+  "imageUrl": "https://res.cloudinary.com/dfkb8qo66/image/upload/v1750264329/profileParent.tsx_-_SWP_FE_-_Cursor_6_17_2025_12_20_15_PM_p00acr.png",
+  "duration": 3,
+  "order": 1,
+  "isPublished": false,
+  "createdBy": {
+    "$oid": "60d21b4667d0d8992e610c86"
+  },
+  "createdAt": {
+    "$date": "2025-06-18T16:32:29.877Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-18T16:32:29.877Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685b7a4f3001edb384467aa1"
+  },
+  "courseId": {
+    "$oid": "685b6b833001edb384467a51"
+  },
+  "title": "Create lesson failed: \"createdBy\" is not allowed to be empty",
+  "description": "Create lesson failed: \"createdBy\" is not allowed to be empty",
+  "content": {
+    "sections": [
+      {
+        "title": "Create lesson failed: \"createdBy\" is not allowed to be empty",
+        "text": "Create lesson failed: \"createdBy\" is not allowed to be emptyCreate lesson failed: \"createdBy\" is not allowed to be emptyCreate lesson failed: \"createdBy\" is not allowed to be empty"
+      },
+      {
+        "title": "Create lesson failed: \"createdBy\" is not allowed to be empty",
+        "text": "Create lesson failed: \"createdBy\" is not allowed to be empty"
+      },
+      {
+        "title": "Create lesson failed: \"createdBy\" is not allowed to be empty",
+        "text": "Create lesson failed: \"createdBy\" is not allowed to be empty"
+      }
+    ]
+  },
+  "duration": 2,
+  "order": 1,
+  "isPublished": false,
+  "createdAt": {
+    "$date": "2025-06-25T04:25:51.150Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-25T04:25:51.150Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685cea38953bbf3c848fee6e"
+  },
+  "courseId": {
+    "$oid": "685ce85e953bbf3c848fee61"
+  },
+  "title": "Đội Mũ Bảo Hiểm và Ngồi Sau Xe Máy An Toàn",
+  "description": "Giúp các em biết cách chọn, đội mũ bảo hiểm đúng quy cách và ngồi sau xe máy an toàn để bảo vệ bản thân khi tham gia giao thông cùng người lớn.\n",
+  "content": {
+    "sections": [
+      {
+        "title": "Phần 1: Vì sao phải đội mũ bảo hiểm?",
+        "text": " Khi đi xe máy, đội mũ bảo hiểm giúp bảo vệ đầu của mình. Nếu chẳng may bị ngã xe, mũ sẽ giảm nguy cơ bị đau đầu hoặc bị thương nặng.\n🔍 Các em nên chọn mũ bảo hiểm có:\nTem CR (chứng nhận đạt chuẩn an toàn)\n\n\nThương hiệu rõ ràng, nhà sản xuất uy tín\n\n\nLớp xốp dày, chắc chắn\n\n\nQuai đeo bền, không dễ rơi\n\n\nMũ vừa với đầu, không lắc lư quá nhiều\n🎯 Mẹo nhỏ: Nhờ bố mẹ chọn mũ giúp mình để đảm bảo an toàn nhé!\n"
+      },
+      {
+        "title": "Phần 2: Cách đội mũ bảo hiểm đúng cách",
+        "text": "🔎 Nhớ ba bước \"Hai ngón tay vàng\" để đội mũ đúng cách nha:\nĐội đúng hướng: Mặt trước của mũ có lưỡi trai, mặt sau che gáy nhiều hơn. Đội sao cho vành mũ cách chân mày khoảng 2 ngón tay.\n\n\nĐiều chỉnh quai mũ: Quai ôm vừa tai, không bị xoắn.\n\n\nCài khóa dưới cằm: Không chật quá, không lỏng quá – vừa khít là được!\n\n\n💡 Mũ màu sáng hoặc có phản quang sẽ giúp các chú bác lái xe khác dễ nhìn thấy các em, đặc biệt là khi trời tối.\n"
+      },
+      {
+        "title": " Phần 3: Ngồi sau xe máy an toàn",
+        "text": "🔎  Trước khi đi xe:\nMặc quần áo gọn gàng\n\n\nĐi giày hoặc dép có quai hậu\n\n\nĐội mũ bảo hiểm và cài quay đúng\n\n\n📍 Khi lên xe:\nNhìn kỹ phía sau\n\n\nLên xe từ bên trái\n\n\n🪑 Ngồi sau xe như thế nào?\nNgồi ngay ngắn, giữa yên xe\n\n\nThẳng lưng, bám chắc vào eo người lái\n\n\nĐùi khép nhẹ, chân đặt đúng chỗ\n\n\nNhìn thẳng theo hướng xe chạy\n\n\n🚫 Tuyệt đối không được:\nĐứng, nằm, quay ngược, hay ngồi phía trước\n\n\nBuông tay, giơ chân ra ngoài\n\n\nCầm ô, mang đồ to nặng\n\n\nTự ý xuống xe khi xe chưa dừng hẳn\n"
+      }
+    ]
+  },
+  "videoUrl": "https://res.cloudinary.com/dfkb8qo66/video/upload/v1750919726/Ng%E1%BB%93i_sau_xe_m%C3%A1y_an_to%C3%A0n_b4bfeb.mp4",
+  "duration": 5,
+  "order": 1,
+  "isPublished": false,
+  "createdAt": {
+    "$date": "2025-06-26T06:35:36.050Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-26T06:35:36.050Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685cec11953bbf3c848fee83"
+  },
+  "courseId": {
+    "$oid": "685ce85e953bbf3c848fee61"
+  },
+  "title": "VỆ SINH AN TOÀN THỰC PHẨM",
+  "description": "giúp bé hiểu thêm về cách vệ sinh sạch sẽ ",
+  "content": {
+    "sections": [
+      {
+        "title": "I. Vệ sinh an toàn thực phẩm là gì?",
+        "text": "Vệ sinh an toàn thực phẩm là tất cả những điều kiện và việc làm cần thiết để:\nTừ khâu sản xuất, chế biến, bảo quản, vận chuyển đến sử dụng thực phẩm\n\n\nNhằm giữ cho thực phẩm sạch sẽ, không độc hại, đảm bảo an toàn cho sức khỏe và tính mạng người ăn.\n"
+      },
+      {
+        "title": "II. Tình hình ở Việt Nam",
+        "text": "Mỗi năm, ở Việt Nam có khoảng 180 vụ ngộ độc thực phẩm.\n\n\nGây ảnh hưởng đến hơn 5.000 người, và có khoảng 30 người tử vong do ăn phải thực phẩm bẩn hoặc kém chất lượng.\n\n\n"
+      },
+      {
+        "title": " III. Ba tác nhân gây nhiễm bẩn thực phẩm",
+        "text": "Tác nhân sinh học: vi khuẩn, vi rút, ký sinh trùng.\n\n\nTác nhân hóa học: thuốc trừ sâu, chất bảo quản độc hại.\n\n\nTác nhân vật lý: dị vật như sỏi, thủy tinh, tóc, v.v.\n\n\n🔴 Những tác nhân này có thể gây ngộ độc thực phẩm cấp tính (ngay lập tức) hoặc ngộ độc mãn tính (về lâu dài), gây tiêu chảy, kiết lỵ, thương hàn, thậm chí tử vong.\n"
+      },
+      {
+        "title": " IV. Mười nguyên tắc vàng của WHO",
+        "text": "Chọn thực phẩm an toàn\n\n\nChọn đồ tươi, sạch, có nhãn mác rõ ràng.\n\n\nNấu chín kỹ\n\n\nNhiệt độ bên trong món ăn phải trên 70°C.\n\n\nĂn ngay sau khi nấu\n\n\nKhông để thức ăn lâu ngoài không khí vì dễ bị nhiễm khuẩn.\n\n\nBảo quản cẩn thận thức ăn đã nấu chín\n\n\nGiữ nóng liên tục trên 60°C hoặc lạnh dưới 5°C.\n\n\nNấu lại thật kỹ nếu đã để lâu\n\n\nNếu để ngoài hơn 2 tiếng thì phải hâm lại kỹ trước khi ăn.\n\n\nTránh nhiễm khuẩn chéo\n\n\nKhông để đồ sống tiếp xúc với đồ chín.\n\n\nRửa tay sạch trước khi nấu và ăn\n\n\nTay bẩn có thể mang vi khuẩn vào thức ăn.\n\n\nGiữ dụng cụ chế biến sạch sẽ\n\n\nDao, thớt, bàn bếp cần rửa sạch sau mỗi lần dùng.\n\n\nChe đậy thực phẩm\n\n\nDùng lồng bàn, hộp kín, tránh ruồi, gián, chuột...\n\n\nDùng nước sạch\n\n\nNước sạch giúp rửa rau, nấu ăn, và pha chế đồ uống an toàn.\n"
+      },
+      {
+        "title": "V. Ghi nhớ",
+        "text": "Vệ sinh an toàn thực phẩm giúp:\nBảo vệ sức khỏe và tính mạng con người\n\n\nGiảm bệnh tật, ngộ độc\n\n\nGóp phần nâng cao chất lượng giống nòi và cuộc sống\n"
+      },
+      {
+        "title": "VI. Hành động cùng nhau",
+        "text": "Mỗi người chúng ta, từ nhỏ đến lớn, đều có thể góp phần giữ vệ sinh thực phẩm:\n ✅ Ăn chín, uống sôi\n ✅ Không ăn hàng quán mất vệ sinh\n ✅ Giúp bố mẹ phân biệt thực phẩm sạch và bẩn\n ✅ Nhắc người lớn khi thấy thực phẩm không an toàn\n"
+      }
+    ]
+  },
+  "videoUrl": "https://res.cloudinary.com/dfkb8qo66/video/upload/v1750920198/V%E1%BB%87_sinh_an_to%C3%A0n_th%E1%BB%B1c_ph%E1%BA%A9m_epwm83.mp4",
+  "duration": 10,
+  "order": 2,
+  "isPublished": false,
+  "createdAt": {
+    "$date": "2025-06-26T06:43:29.319Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-26T06:43:29.319Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685ceeb7953bbf3c848feeab"
+  },
+  "courseId": {
+    "$oid": "685ce85e953bbf3c848fee61"
+  },
+  "title": "Phòng chống ma túy ",
+  "description": "Kỹ năng phòng tránh tệ nạn ma túy Ma túy",
+  "content": {
+    "sections": [
+      {
+        "title": "Kỹ năng phòng tránh tệ nạn ma túy Ma túy",
+        "text": "Khi đã bị ép buộc mua bán, vận chuyển, sử dụng ma túy thì không được giấu giếm. Sự việc vừa xảy ra, dù bị hăm dọa mà phải tố cáo ngay, đối tượng đã rủ dê và ép buộc với gia đình, nhà trường, công an, chính quyền địa phương để có biện pháp xử lý, ngăn chặn kịp thời. Không lo sợ trước những lời hăm dọa của các đối tượng mua bán ma túy mà phải tố cáo chúng kịp thời vì khi đó mọi việc mới được phơi bày, em sẽ được gia đình, nhà trường, thầy cô pháp luật quan tâm bảo vệ và đối tượng rủ rê, ép buộc mới bị xử lý đích đáng. Chúng sẽ không có cơ hội để ép buộc em mua bán, vận chuyển hoặc sử dụng ma túy. Kỹ năng phòng tránh từ xa, tệ nạn ma túy, sống trong sáng, lành mạnh, không đua đòi, tiêu xài hoang phí, vượt quá khả năng kinh tế của gia đình. Tìm hiểu thông tin về tác hại, hậu quả của ma túy, không tụ tập với người xấu, tham gia xây dựng môi trường học tập lành mạnh, tham gia các buổi ngoại khóa, tìm hiểu kiến thức về tác hại của ma túy tại trường hoặc cộng đồng, không nhận tiền, quà có giá trị của người khác mà không rõ lý do. Trong trường hợp người quen nhờ vận chuyển hàng hóa thì cần hỏi rõ loại hàng hóa, địa điểm và tốt nhất nên hỏi ý kiến cha mẹ, người thân trước khi nhận lời gia đình. Quan tâm sát sao lng, nghe tâm tư của con trẻ. Không thử ma túy dù chỉ một lần, \n"
+      }
+    ]
+  },
+  "videoUrl": "https://res.cloudinary.com/dfkb8qo66/video/upload/v1750920868/Video_tuy%C3%AAn_truy%E1%BB%81n_phong_ch%C3%B4ng_ma_tuy_cho_hoc_sinh_-_B_Productions_zrazqs.mp4",
+  "duration": 10,
+  "order": 0,
+  "isPublished": false,
+  "createdAt": {
+    "$date": "2025-06-26T06:54:47.826Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-26T06:55:03.052Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685cf0ba953bbf3c848feede"
+  },
+  "courseId": {
+    "$oid": "685cf063953bbf3c848feed4"
+  },
+  "title": "Đội Mũ Bảo Hiểm và Ngồi Sau Xe Máy An Toàn",
+  "description": "Giúp các em biết cách chọn, đội mũ bảo hiểm đúng quy cách và ngồi sau xe máy an toàn để bảo vệ bản thân khi tham gia giao thông cùng người lớn.",
+  "content": {
+    "sections": [
+      {
+        "title": "Phần 1: Vì sao phải đội mũ bảo hiểm?",
+        "text": " Khi đi xe máy, đội mũ bảo hiểm giúp bảo vệ đầu của mình. Nếu chẳng may bị ngã xe, mũ sẽ giảm nguy cơ bị đau đầu hoặc bị thương nặng.\n🔍 Các em nên chọn mũ bảo hiểm có:\nTem CR (chứng nhận đạt chuẩn an toàn)\n\n\nThương hiệu rõ ràng, nhà sản xuất uy tín\n\n\nLớp xốp dày, chắc chắn\n\n\nQuai đeo bền, không dễ rơi\n\n\nMũ vừa với đầu, không lắc lư quá nhiều\n"
+      },
+      {
+        "title": "Phần 2: Cách đội mũ bảo hiểm đúng cách",
+        "text": "🔎 Nhớ ba bước \"Hai ngón tay vàng\" để đội mũ đúng cách nha:\nĐội đúng hướng: Mặt trước của mũ có lưỡi trai, mặt sau che gáy nhiều hơn. Đội sao cho vành mũ cách chân mày khoảng 2 ngón tay.\n\n\nĐiều chỉnh quai mũ: Quai ôm vừa tai, không bị xoắn.\n\n\nCài khóa dưới cằm: Không chật quá, không lỏng quá – vừa khít là được!\n\n\n💡 Mũ màu sáng hoặc có phản quang sẽ giúp các chú bác lái xe khác dễ nhìn thấy các em, đặc biệt là khi trời tối.\n"
+      },
+      {
+        "title": " Phần 3: Ngồi sau xe máy an toàn",
+        "text": "🔎  Trước khi đi xe:\nMặc quần áo gọn gàng\n\n\nĐi giày hoặc dép có quai hậu\n\n\nĐội mũ bảo hiểm và cài quay đúng\n\n\n📍 Khi lên xe:\nNhìn kỹ phía sau\n\n\nLên xe từ bên trái\n\n\n🪑 Ngồi sau xe như thế nào?\nNgồi ngay ngắn, giữa yên xe\n\n\nThẳng lưng, bám chắc vào eo người lái\n\n\nĐùi khép nhẹ, chân đặt đúng chỗ\n\n\nNhìn thẳng theo hướng xe chạy\n\n\n🚫 Tuyệt đối không được:\nĐứng, nằm, quay ngược, hay ngồi phía trước\n\n\nBuông tay, giơ chân ra ngoài\n\n\nCầm ô, mang đồ to nặng\n\n\nTự ý xuống xe khi xe chưa dừng hẳn\n\n\n"
+      }
+    ]
+  },
+  "videoUrl": "https://res.cloudinary.com/dfkb8qo66/video/upload/v1750921367/Ng%E1%BB%93i_sau_xe_m%C3%A1y_an_to%C3%A0n_ozqeke.mp4",
+  "duration": 8,
+  "order": 1,
+  "isPublished": false,
+  "createdAt": {
+    "$date": "2025-06-26T07:03:22.999Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-26T07:03:22.999Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685d01bfac771a438d9eb09e"
+  },
+  "courseId": {
+    "$oid": "685d0073ac771a438d9eb088"
+  },
+  "title": "Đội Mũ Bảo Hiểm và Ngồi Sau Xe Máy An Toàn",
+  "description": "Giúp các em biết cách chọn, đội mũ bảo hiểm đúng quy cách và ngồi sau xe máy an toàn để bảo vệ bản thân khi tham gia giao thông cùng người lớn.\n",
+  "content": {
+    "sections": [
+      {
+        "title": "Phần 1: Vì sao phải đội mũ bảo hiểm?",
+        "text": " Khi đi xe máy, đội mũ bảo hiểm giúp bảo vệ đầu của mình. Nếu chẳng may bị ngã xe, mũ sẽ giảm nguy cơ bị đau đầu hoặc bị thương nặng.\n🔍 Các em nên chọn mũ bảo hiểm có:\nTem CR (chứng nhận đạt chuẩn an toàn)\n\n\nThương hiệu rõ ràng, nhà sản xuất uy tín\n\n\nLớp xốp dày, chắc chắn\n\n\nQuai đeo bền, không dễ rơi\n\n\nMũ vừa với đầu, không lắc lư quá nhiều\n"
+      },
+      {
+        "title": "Phần 2: Cách đội mũ bảo hiểm đúng cách",
+        "text": "🔎 Nhớ ba bước \"Hai ngón tay vàng\" để đội mũ đúng cách nha:\nĐội đúng hướng: Mặt trước của mũ có lưỡi trai, mặt sau che gáy nhiều hơn. Đội sao cho vành mũ cách chân mày khoảng 2 ngón tay.\n\n\nĐiều chỉnh quai mũ: Quai ôm vừa tai, không bị xoắn.\n\n\nCài khóa dưới cằm: Không chật quá, không lỏng quá – vừa khít là được!\n\n\n💡 Mũ màu sáng hoặc có phản quang sẽ giúp các chú bác lái xe khác dễ nhìn thấy các em, đặc biệt là khi trời tối.\n"
+      },
+      {
+        "title": " Phần 3: Ngồi sau xe máy an toàn",
+        "text": "🔎  Trước khi đi xe:\nMặc quần áo gọn gàng\n\n\nĐi giày hoặc dép có quai hậu\n\n\nĐội mũ bảo hiểm và cài quay đúng\n\n\n📍 Khi lên xe:\nNhìn kỹ phía sau\n\n\nLên xe từ bên trái\n\n\n🪑 Ngồi sau xe như thế nào?\nNgồi ngay ngắn, giữa yên xe\n\n\nThẳng lưng, bám chắc vào eo người lái\n\n\nĐùi khép nhẹ, chân đặt đúng chỗ\n\n\nNhìn thẳng theo hướng xe chạy\n\n\n🚫 Tuyệt đối không được:\nĐứng, nằm, quay ngược, hay ngồi phía trước\n\n\nBuông tay, giơ chân ra ngoài\n\n\nCầm ô, mang đồ to nặng\n\n\nTự ý xuống xe khi xe chưa dừng hẳn\n"
+      }
+    ]
+  },
+  "videoUrl": "https://res.cloudinary.com/dfkb8qo66/video/upload/v1750925735/Ng%E1%BB%93i_sau_xe_m%C3%A1y_an_to%C3%A0n_qyssis.mp4",
+  "duration": 10,
+  "order": 1,
+  "isPublished": false,
+  "createdBy": {
+    "$oid": "685a1fbd05372834986df9e1"
+  },
+  "createdAt": {
+    "$date": "2025-06-26T08:15:59.954Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-26T08:15:59.954Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685d05a7ac771a438d9eb0de"
+  },
+  "courseId": {
+    "$oid": "685d0073ac771a438d9eb088"
+  },
+  "title": "VỆ SINH AN TOÀN THỰC PHẨM",
+  "description": "Vệ sinh an toàn thực phẩm là gì",
+  "content": {
+    "sections": [
+      {
+        "title": "Vệ sinh an toàn thực phẩm",
+        "text": " là tất cả những điều kiện và việc làm cần thiết để:\nTừ khâu sản xuất, chế biến, bảo quản, vận chuyển đến sử dụng thực phẩm\n\n\nNhằm giữ cho thực phẩm sạch sẽ, không độc hại, đảm bảo an toàn cho sức khỏe và tính mạng người ăn.\n"
+      },
+      {
+        "title": " Tình hình ở Việt Nam",
+        "text": "Mỗi năm, ở Việt Nam có khoảng 180 vụ ngộ độc thực phẩm.\n\n\nGây ảnh hưởng đến hơn 5.000 người, và có khoảng 30 người tử vong do ăn phải thực phẩm bẩn hoặc kém chất lượng.\n"
+      }
+    ]
+  },
+  "videoUrl": "https://res.cloudinary.com/dfkb8qo66/video/upload/v1750926731/V%E1%BB%87_sinh_an_to%C3%A0n_th%E1%BB%B1c_ph%E1%BA%A9m_npneao.mp4",
+  "duration": 0,
+  "order": 0,
+  "isPublished": false,
+  "createdBy": {
+    "$oid": "685a1fbd05372834986df9e1"
+  },
+  "createdAt": {
+    "$date": "2025-06-26T08:32:39.123Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-26T08:32:39.123Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685d0efaac771a438d9ebd8b"
+  },
+  "courseId": {
+    "$oid": "685cf063953bbf3c848feed4"
+  },
+  "title": "VỆ SINH AN TOÀN THỰC PHẨM",
+  "description": "(Dành cho học sinh cấp 1–2)\n",
+  "content": {
+    "sections": [
+      {
+        "title": "I. Vệ sinh an toàn thực phẩm là gì?",
+        "text": "Vệ sinh an toàn thực phẩm là tất cả những điều kiện và việc làm cần thiết để:\nTừ khâu sản xuất, chế biến, bảo quản, vận chuyển đến sử dụng thực phẩm\n\n\nNhằm giữ cho thực phẩm sạch sẽ, không độc hại, đảm bảo an toàn cho sức khỏe và tính mạng người ăn.\n"
+      },
+      {
+        "title": "II. Tình hình ở Việt Nam",
+        "text": "Mỗi năm, ở Việt Nam có khoảng 180 vụ ngộ độc thực phẩm.\n\n\nGây ảnh hưởng đến hơn 5.000 người, và có khoảng 30 người tử vong do ăn phải thực phẩm bẩn hoặc kém chất lượng"
+      },
+      {
+        "title": "III. Ba tác nhân gây nhiễm bẩn thực phẩm",
+        "text": "Tác nhân sinh học: vi khuẩn, vi rút, ký sinh trùng.\n\n\nTác nhân hóa học: thuốc trừ sâu, chất bảo quản độc hại.\n\n\nTác nhân vật lý: dị vật như sỏi, thủy tinh, tóc, v.v.\n"
+      }
+    ]
+  },
+  "videoUrl": "https://res.cloudinary.com/dfkb8qo66/video/upload/v1750929111/V%E1%BB%87_sinh_an_to%C3%A0n_th%E1%BB%B1c_ph%E1%BA%A9m_fy3wbk.mp4",
+  "duration": 0,
+  "order": 0,
+  "isPublished": false,
+  "createdBy": {
+    "$oid": "685a1fbd05372834986df9e1"
+  },
+  "createdAt": {
+    "$date": "2025-06-26T09:12:26.629Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-26T09:12:26.629Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "686340612ab7b5312cf51249"
+  },
+  "courseId": {
+    "$oid": "685d0073ac771a438d9eb088"
+  },
+  "title": "hướng dẫn phân loại rác",
+  "description": "Để bảo vệ môi trường, tận dụng nguồn giác tái chế và nâng cao nhận thức của người dân, việc tiến hành phân loại chất thải RN sinh hoạt tại nguồn là hết sức cần thiết.",
+  "content": {
+    "sections": [
+      {
+        "title": " Lợi ích của việc phân loại chất thải RN sinh hoạt tại nguồn",
+        "text": "Để bảo vệ môi trường, tận dụng nguồn giác tái chế và nâng cao nhận thức của người dân, việc tiến hành phân loại chất thải RN sinh hoạt tại nguồn là hết sức cần thiết."
+      }
+    ]
+  },
+  "duration": 15,
+  "order": 3,
+  "isPublished": false,
+  "createdAt": {
+    "$date": "2025-07-01T01:56:49.916Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-01T01:56:49.916Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "686343d92ab7b5312cf512db"
+  },
+  "courseId": {
+    "$oid": "686343c42ab7b5312cf512d1"
+  },
+  "title": "ấdad hưng mà sẽ phải có mail của user để gửi studentCod",
+  "description": "hưng mà sẽ phải có mail của user để gửi studentCodhưng mà sẽ phải có mail của user để gửi studentCodhưng mà sẽ phải có mail của user để gửi studentCod",
+  "content": {
+    "sections": [
+      {
+        "title": "hưng mà sẽ phải có mail của user để gửi studentCod",
+        "text": "hưng mà sẽ phải có mail của user để gửi studentCodhưng mà sẽ phải có mail của user để gửi studentCodhưng mà sẽ phải có mail của user để gửi studentCodhưng mà sẽ phải có mail của user để gửi studentCod"
+      }
+    ]
+  },
+  "duration": 4,
+  "order": 4,
+  "isPublished": false,
+  "createdAt": {
+    "$date": "2025-07-01T02:11:37.110Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-01T02:11:37.110Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68634e3d2ab7b5312cf51469"
+  },
+  "courseId": {
+    "$oid": "68634e1c2ab7b5312cf5145d"
+  },
+  "title": "hập xong vẫn phải hiện info để check chứ anh nhỉ",
+  "description": "hập xong vẫn phải hiện info để check chứ anh nhỉhập xong vẫn phải hiện info để check chứ anh nhỉhập xong vẫn phải hiện info để check chứ anh nhỉ",
+  "content": {
+    "sections": [
+      {
+        "title": "hập xong vẫn phải hiện info để check chứ anh nhỉ",
+        "text": "hập xong vẫn phải hiện info để check chứ anh nhỉhập xong vẫn phải hiện info để check chứ anh nhỉhập xong vẫn phải hiện info để check chứ anh nhỉhập xong vẫn phải hiện info để check chứ anh nhỉhập xong vẫn phải hiện info để check chứ anh nhỉ"
+      }
+    ]
+  },
+  "duration": 10,
+  "order": 0,
+  "isPublished": false,
+  "createdBy": {
+    "$oid": "685a0acf48b93074f74ed155"
+  },
+  "createdAt": {
+    "$date": "2025-07-01T02:55:57.669Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-01T02:55:57.669Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "686630416ff52ee865252a80"
+  },
+  "courseId": {
+    "$oid": "68662fdd6ff52ee865252a74"
+  },
+  "title": "loại chất thải RN sinh hoạt tại nguồn",
+  "description": "Hiện nay, trung bình một phẩy mười tấn rác thải được thu gom hàng ngày. Để bảo vệ môi trường, tận dụng nguồn giác tái chế và nâng cao nhận thức của người dân",
+  "content": {
+    "sections": [
+      {
+        "title": " Lợi ích của việc phân loại chất thải RN sinh hoạt tại nguồn",
+        "text": "Hoạt động phân loại tái chế còn có thể gây quỹ trong hoạt động cộng đồng của địa phương, tham gia phân loại chất thải RN sinh hoạt tại nguồn, góp phần cùng xã hội chung tay bảo vệ môi trường và sử dụng hợp lý tài nguyên. Cách thức phân loại chất thải rn sinh hoạt tại nguồn chất thải rn sinh hoạt được phân thành ba nhóm. Thứ nhất, nhóm chất thải rn tái chế, thứ hai, nhóm chất thải rn nguy hại, thứ ba, nhóm chất thải Rn còn lại cùng tìm hiểu kỹ hơn về nhóm chất thải rn tái chế. Giấy các loại gồm tạp chí, báo, sách, vở cũ, giấy vụn hộp giấy, túi, giấy đĩa ly, giấy sạch thùng bìa các tông."
+      },
+      {
+        "title": " Lưu ý, đối với thùng bìa các tông hãy xếp gọn để giảm thể tích",
+        "text": " Nhựa các loại gồm đồ đựng bằng nhựa và các vật dụng bằng nhựa khác có ký hiệu tái chế. Lưu ý, đối với đồổ đựng bằng nhựa và các vật dụng bằng nhựa, hãy làm sạch và để ráo trước khi bỏ vào túi đựng rác để giữ gìn vệ sinh tốt hơn. Kim loại các loại gồm vỏ lon nhôm st, chảo, nồi đinh, ốc vít, dao kéo và các vật dụng khác bằng kim loại. Đối với nhóm chất thải rn tái chế, hãy sử dụng túi hoặc thùng đựng để lưu chứa tại nhà. Sau đó mang túi đựng nhóm chất thải rn tái chế đến giao cho đơn vị thu gom được chọn trên địa bàn tại đơn vị thu gom được chọn trên địa bàn."
+      }
+    ]
+  },
+  "videoUrl": "https://res.cloudinary.com/dfkb8qo66/video/upload/v1751527448/V%E1%BB%87_sinh_an_to%C3%A0n_th%E1%BB%B1c_ph%E1%BA%A9m_rs1zgl.mp4",
+  "duration": 15,
+  "order": 1,
+  "isPublished": false,
+  "createdBy": {
+    "$oid": "685a0acf48b93074f74ed155"
+  },
+  "createdAt": {
+    "$date": "2025-07-03T07:24:49.405Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-03T07:24:49.405Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "686631376ff52ee865252a92"
+  },
+  "courseId": {
+    "$oid": "68662fdd6ff52ee865252a74"
+  },
+  "title": "Nhóm chất thải rn tái chế được mang đến sẽ phân thành ba loại",
+  "description": "bỏ vào các thùng đựng khác nhau. Cùng tìm hiểu kỹ hơn về nhóm chất thải RN nguy hại gồm có pin CQ, thiết bị điện tử hư hỏng, bóng đèn huỳnh quang hư hỏng và chai lọ đựng các loại hóa chất độc hại, nguy hiểm",
+  "content": {
+    "sections": [
+      {
+        "title": " Cùng tìm hiểu kỹ hơn về nhóm chất thải RN nguy hại gồm có pin CQ, thiết bị điện tử hư hỏng, bóng đèn huỳnh quang hư hỏng và chai lọ đựng các loại hóa chất độc hại, nguy hiểm",
+        "text": " Đối với nhóm chất thải RN nguy hại, hãy mang đến thủng phân loại chất thải RN nguy hại tại điểm thu gom tập trung được quy định của địa phương. Cùng tìm hiểu kỹ hơn về nhóm chất thải RN còn lại gồm có, rác bếp như thức ăn thừa hết hạn sử dụng, vỏ quả, củ, rau, vỏ trứng, giò ốc, bã cà phê, trà, túi niilông, hộp xốp, túi giấy, hộp giấy đựng thức ăn dính dầu, mỡ, vải sợi, quần áo, giày dép cũ, rách khăn cũ, găng tay cao su, tã, băng giấy vệ sinh, giấy ăn đã sử dụng, đầu bằngăng, gốm sứ, thủy tinh bị vỡ đầu lọc thuốc lá, hộp quẹt và rác vườn."
+      },
+      {
+        "title": "Lưu ý đối với rác bếp hãy VT kiệt nước để giảm khối lượng mùi hôi và côn trùng phát sinh",
+        "text": " Đối với nhóm chất thải RN nguy hại, hãy mang đến thủng phân loại chất thải RN nguy hại tại điểm thu gom tập trung được quy định của địa phương. Cùng tìm hiểu kỹ hơn về nhóm chất thải RN còn lại gồm có, rác bếp như thức ăn thừa hết hạn sử dụng, vỏ quả, củ, rau, vỏ trứng, giò ốc, bã cà phê, trà, túi niilông, hộp xốp, túi giấy, hộp giấy đựng thức ăn dính dầu, mỡ, vải sợi, quần áo, giày dép cũ, rách khăn cũ, găng tay cao su, tã, băng giấy vệ sinh, giấy ăn đã sử dụng, đầu bằngăng, gốm sứ, thủy tinh bị vỡ đầu lọc thuốc lá, hộp quẹt và rác vườn. "
+      }
+    ]
+  },
+  "videoUrl": "https://res.cloudinary.com/dfkb8qo66/video/upload/v1751527693/V%E1%BB%87_sinh_an_to%C3%A0n_th%E1%BB%B1c_ph%E1%BA%A9m_ppnj50.mp4",
+  "duration": 10,
+  "order": 0,
+  "isPublished": false,
+  "createdBy": {
+    "$oid": "685a0acf48b93074f74ed155"
+  },
+  "createdAt": {
+    "$date": "2025-07-03T07:28:55.249Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-03T07:28:55.249Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6871f27c3e56b8e20f16f1c8"
+  },
+  "courseId": {
+    "$oid": "6871f22e0bb476e6d1044293"
+  },
+  "title": "Đội Mũ Bảo Hiểm và Ngồi Sau Xe Máy An Toàn",
+  "description": "Giúp các em biết cách chọn, đội mũ bảo hiểm đúng quy cách và ngồi sau xe máy an toàn để bảo vệ bản thân khi tham gia giao thông cùng người lớn.\n",
+  "content": {
+    "sections": [
+      {
+        "title": "Vì sao phải đội mũ bảo hiểm?",
+        "text": "Giúp các em biết cách chọn, đội mũ bảo hiểm đúng quy cách và ngồi sau xe máy an toàn để bảo vệ bản thân khi tham gia giao thông cùng người lớn.\n\n🔍 Các em nên chọn mũ bảo hiểm có:\nTem CR (chứng nhận đạt chuẩn an toàn)\n\n\nThương hiệu rõ ràng, nhà sản xuất uy tín\n\n\nLớp xốp dày, chắc chắn\n\n\nQuai đeo bền, không dễ rơi\n\n\nMũ vừa với đầu, không lắc lư quá nhiều\n\n\n🎯 Mẹo nhỏ: Nhờ bố mẹ chọn mũ giúp mình để đảm bảo an toàn nhé!\n"
+      },
+      {
+        "title": "Phần 2: Cách đội mũ bảo hiểm đúng cách",
+        "text": "🔎 Nhớ ba bước \"Hai ngón tay vàng\" để đội mũ đúng cách nha:\nĐội đúng hướng: Mặt trước của mũ có lưỡi trai, mặt sau che gáy nhiều hơn. Đội sao cho vành mũ cách chân mày khoảng 2 ngón tay.\n\n\nĐiều chỉnh quai mũ: Quai ôm vừa tai, không bị xoắn.\n\n\nCài khóa dưới cằm: Không chật quá, không lỏng quá – vừa khít là được!\n\n\n💡 Mũ màu sáng hoặc có phản quang sẽ giúp các chú bác lái xe khác dễ nhìn thấy các em, đặc biệt là khi trời tối.\n"
+      }
+    ]
+  },
+  "videoUrl": "https://res.cloudinary.com/dfkb8qo66/video/upload/v1752298055/341854103_6312142825512421_2689524847418776684_n_bvywwu.mp4",
+  "duration": 11,
+  "order": 1,
+  "isPublished": false,
+  "createdBy": {
+    "$oid": "685a0acf48b93074f74ed155"
+  },
+  "createdAt": {
+    "$date": "2025-07-12T05:28:28.061Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-12T05:28:28.061Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6871f2da3e56b8e20f16f1d2"
+  },
+  "courseId": {
+    "$oid": "6871f22e0bb476e6d1044293"
+  },
+  "title": "VỆ SINH AN TOÀN THỰC PHẨM",
+  "description": "I. Vệ sinh an toàn thực phẩm là gì?\nII. Tình hình ở Việt Nam\nIII. Ba tác nhân gây nhiễm bẩn thực phẩm\n",
+  "content": {
+    "sections": [
+      {
+        "title": " I. Vệ sinh an toàn thực phẩm là gì?",
+        "text": "Vệ sinh an toàn thực phẩm là tất cả những điều kiện và việc làm cần thiết để:\nTừ khâu sản xuất, chế biến, bảo quản, vận chuyển đến sử dụng thực phẩm\n\n\nNhằm giữ cho thực phẩm sạch sẽ, không độc hại, đảm bảo an toàn cho sức khỏe và tính mạng người ăn.\n\n\n"
+      },
+      {
+        "title": "II. Tình hình ở Việt Nam",
+        "text": "\nMỗi năm, ở Việt Nam có khoảng 180 vụ ngộ độc thực phẩm.\n\n\nGây ảnh hưởng đến hơn 5.000 người, và có khoảng 30 người tử vong do ăn phải thực phẩm bẩn hoặc kém chất lượng.\n"
+      },
+      {
+        "title": "III. Ba tác nhân gây nhiễm bẩn thực phẩm",
+        "text": "Tác nhân sinh học: vi khuẩn, vi rút, ký sinh trùng.\n\n\nTác nhân hóa học: thuốc trừ sâu, chất bảo quản độc hại.\n\n\nTác nhân vật lý: dị vật như sỏi, thủy tinh, tóc, v.v.\n\n\n🔴 Những tác nhân này có thể gây ngộ độc thực phẩm cấp tính (ngay lập tức) hoặc ngộ độc mãn tính (về lâu dài), gây tiêu chảy, kiết lỵ, thương hàn, thậm chí tử vong.\n"
+      }
+    ]
+  },
+  "videoUrl": "https://res.cloudinary.com/dfkb8qo66/video/upload/v1752298148/341854103_6312142825512421_2689524847418776684_n_lja0jh.mp4",
+  "duration": 15,
+  "order": 2,
+  "isPublished": false,
+  "createdBy": {
+    "$oid": "685a0acf48b93074f74ed155"
+  },
+  "createdAt": {
+    "$date": "2025-07-12T05:30:02.642Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-12T05:30:02.642Z"
+  },
+  "__v": 0
+}]

@@ -1,0 +1,409 @@
+[{
+  "_id": {
+    "$oid": "6843ea4a39a77ca5e2ab6ee0"
+  },
+  "userId": {
+    "$oid": "6843ef139dd755c94f218426"
+  },
+  "fullName": "Emma Smith",
+  "dateOfBirth": {
+    "$date": "2015-05-15T00:00:00.000Z"
+  },
+  "gender": "female",
+  "points": 200,
+  "level": 0,
+  "avatar": "img/default",
+  "unlockedAvatars": [],
+  "achievements": [],
+  "streak": {
+    "current": 0,
+    "longest": 0
+  },
+  "createdAt": {
+    "$date": "2025-06-07T07:29:14.107Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-26T16:25:45.216Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6843ef289dd755c94f21842d"
+  },
+  "userId": {
+    "$oid": "6843ef139dd755c94f218426"
+  },
+  "fullName": "Emma Smith",
+  "dateOfBirth": {
+    "$date": "2015-05-15T00:00:00.000Z"
+  },
+  "gender": "female",
+  "points": 0,
+  "level": 0,
+  "avatar": "img/default",
+  "unlockedAvatars": [],
+  "achievements": [],
+  "streak": {
+    "current": 0,
+    "longest": 0
+  },
+  "createdAt": {
+    "$date": "2025-06-07T07:50:00.779Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-07T07:50:00.779Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "684b1b6d05a0d54677180bad"
+  },
+  "userId": {
+    "$oid": "6843bd36d3fdb5258cd0ac9d"
+  },
+  "fullName": "Nguyễn Văn A",
+  "dateOfBirth": {
+    "$date": "2015-05-10T00:00:00.000Z"
+  },
+  "gender": "male",
+  "points": 0,
+  "level": 0,
+  "avatar": "img/default",
+  "unlockedAvatars": [],
+  "achievements": [],
+  "streak": {
+    "current": 0,
+    "longest": 0
+  },
+  "createdAt": {
+    "$date": "2025-06-12T18:24:45.760Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-12T18:24:45.760Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "684bc797f1c51f6592e89e37"
+  },
+  "userId": {
+    "$oid": "684bc797f1c51f6592e89e35"
+  },
+  "fullName": "Nguyen Van A Updated",
+  "dateOfBirth": {
+    "$date": "2015-05-20T00:00:00.000Z"
+  },
+  "gender": "male",
+  "points": 200,
+  "level": 3,
+  "avatar": "superhero_avatar_1",
+  "unlockedAvatars": [
+    "default_avatar_1",
+    "superhero_avatar_1"
+  ],
+  "achievements": [],
+  "streak": {
+    "current": 7,
+    "longest": 15
+  },
+  "createdAt": {
+    "$date": "2025-06-13T06:39:19.767Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-14T01:36:43.855Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "684bc7cef1c51f6592e89e3a"
+  },
+  "userId": {
+    "$oid": "6843bd36d3fdb5258cd0ac9d"
+  },
+  "fullName": "Nguyễn Văn A",
+  "dateOfBirth": {
+    "$date": "2015-05-10T00:00:00.000Z"
+  },
+  "gender": "male",
+  "points": 0,
+  "level": 0,
+  "avatar": "img/default",
+  "unlockedAvatars": [],
+  "achievements": [],
+  "streak": {
+    "current": 0,
+    "longest": 0
+  },
+  "createdAt": {
+    "$date": "2025-06-13T06:40:14.627Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-13T06:40:14.627Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "684cd8407a7a5173f0e008b2"
+  },
+  "userId": {
+    "$oid": "684abec19606cd01af483ef2"
+  },
+  "fullName": "Foodboiz",
+  "dateOfBirth": {
+    "$date": "2015-06-14T00:00:00.000Z"
+  },
+  "gender": "male",
+  "points": 100,
+  "level": 2,
+  "avatar": "https://res.cloudinary.com/dfkb8qo66/image/upload/v1750301489/803e338f54d0dddc277b6bdeb78886e5_nik13v.jpg",
+  "unlockedAvatars": [],
+  "achievements": [],
+  "streak": {
+    "current": 0,
+    "longest": 0
+  },
+  "createdAt": {
+    "$date": "2025-06-14T02:02:40.714Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-24T15:44:56.152Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "684cd8a97a7a5173f0e008c0"
+  },
+  "userId": {
+    "$oid": "684abec19606cd01af483ef2"
+  },
+  "fullName": "convex2",
+  "dateOfBirth": {
+    "$date": "2019-05-17T00:00:00.000Z"
+  },
+  "gender": "male",
+  "points": 250,
+  "level": 3,
+  "avatar": "https://res.cloudinary.com/dfkb8qo66/image/upload/v1750301457/4c4c7b1d37a6adc8aeb1e0d2a3edc744_zkyfy8.jpg",
+  "unlockedAvatars": [],
+  "achievements": [],
+  "streak": {
+    "current": 0,
+    "longest": 0
+  },
+  "createdAt": {
+    "$date": "2025-06-14T02:04:25.156Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-26T09:24:10.864Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6853cd5d8e0d31018b9fab05"
+  },
+  "userId": {
+    "$oid": "6853ca288e0d31018b9faa81"
+  },
+  "fullName": "Lê Văn A",
+  "dateOfBirth": {
+    "$date": "2025-06-09T00:00:00.000Z"
+  },
+  "gender": "male",
+  "points": 0,
+  "level": 0,
+  "avatar": "img/default",
+  "unlockedAvatars": [],
+  "achievements": [],
+  "streak": {
+    "current": 0,
+    "longest": 0
+  },
+  "createdAt": {
+    "$date": "2025-06-19T08:42:05.258Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-19T08:42:05.258Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6853ce0bd5b549738d58e4cd"
+  },
+  "userId": {
+    "$oid": "684a825a0f0b8e1745dc0098"
+  },
+  "fullName": "George trung",
+  "dateOfBirth": {
+    "$date": "2014-07-10T00:00:00.000Z"
+  },
+  "gender": "male",
+  "points": 0,
+  "level": 0,
+  "avatar": "https://res.cloudinary.com/dfkb8qo66/image/upload/v1750778445/cruyff_t4bdcv.png",
+  "unlockedAvatars": [],
+  "achievements": [],
+  "streak": {
+    "current": 0,
+    "longest": 0
+  },
+  "createdAt": {
+    "$date": "2025-06-19T08:44:59.934Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-24T15:20:48.267Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6853d689d5b549738d58e641"
+  },
+  "userId": {
+    "$oid": "684a825a0f0b8e1745dc0098"
+  },
+  "fullName": "trung nguyen",
+  "dateOfBirth": {
+    "$date": "2015-02-18T00:00:00.000Z"
+  },
+  "gender": "male",
+  "points": 100,
+  "level": 2,
+  "avatar": "https://res.cloudinary.com/dfkb8qo66/image/upload/v1750778419/maradona_y41joz.png",
+  "unlockedAvatars": [],
+  "achievements": [],
+  "streak": {
+    "current": 0,
+    "longest": 0
+  },
+  "createdAt": {
+    "$date": "2025-06-19T09:21:13.718Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-01T01:08:04.990Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685a632347f0097bfa43b0d4"
+  },
+  "userId": {
+    "$oid": "6857d50b9c88a288c02efb81"
+  },
+  "fullName": "Nguyễn Văn ABC",
+  "dateOfBirth": {
+    "$date": "2015-05-10T00:00:00.000Z"
+  },
+  "gender": "male",
+  "points": 0,
+  "level": 0,
+  "avatar": "img/default",
+  "unlockedAvatars": [],
+  "achievements": [],
+  "streak": {
+    "current": 0,
+    "longest": 0
+  },
+  "createdAt": {
+    "$date": "2025-06-24T08:34:43.993Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-24T08:34:43.993Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6871cdbfdc1cbf2b42ad01bf"
+  },
+  "userId": {
+    "$oid": "6871cd70dc1cbf2b42ad01a5"
+  },
+  "fullName": "Trương Văn Phát",
+  "dateOfBirth": {
+    "$date": "2019-02-13T00:00:00.000Z"
+  },
+  "gender": "male",
+  "points": 0,
+  "level": 0,
+  "avatar": "img/default",
+  "unlockedAvatars": [],
+  "achievements": [],
+  "streak": {
+    "current": 0,
+    "longest": 0
+  },
+  "createdAt": {
+    "$date": "2025-07-12T02:51:43.952Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-12T02:51:43.952Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6871d93bdc1cbf2b42ad0287"
+  },
+  "userId": {
+    "$oid": "6871d758dc1cbf2b42ad0227"
+  },
+  "fullName": "Nguyễn Công Trung",
+  "dateOfBirth": {
+    "$date": "2019-03-06T00:00:00.000Z"
+  },
+  "gender": "male",
+  "points": 0,
+  "level": 0,
+  "avatar": "https://res.cloudinary.com/dfkb8qo66/image/upload/v1752294831/cruyff_l2jo3t.png",
+  "unlockedAvatars": [],
+  "achievements": [],
+  "streak": {
+    "current": 0,
+    "longest": 0
+  },
+  "createdAt": {
+    "$date": "2025-07-12T03:40:43.573Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-12T04:33:53.522Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6871d95ddc1cbf2b42ad028e"
+  },
+  "userId": {
+    "$oid": "6871d758dc1cbf2b42ad0227"
+  },
+  "fullName": "Nguyễn Công Hoang",
+  "dateOfBirth": {
+    "$date": "2016-03-12T00:00:00.000Z"
+  },
+  "gender": "male",
+  "points": 0,
+  "level": 0,
+  "avatar": "https://res.cloudinary.com/dfkb8qo66/image/upload/v1752294818/beckenbauer_g6ttyl.png",
+  "unlockedAvatars": [],
+  "achievements": [],
+  "streak": {
+    "current": 0,
+    "longest": 0
+  },
+  "createdAt": {
+    "$date": "2025-07-12T03:41:17.846Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-12T04:33:41.572Z"
+  },
+  "__v": 0
+}]

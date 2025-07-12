@@ -1,0 +1,370 @@
+[{
+  "_id": {
+    "$oid": "6843bd36d3fdb5258cd0ac9f"
+  },
+  "userId": {
+    "$oid": "6843bd36d3fdb5258cd0ac9d"
+  },
+  "fullName": "Sarah Johnson",
+  "dateOfBirth": {
+    "$date": "1988-03-22T00:00:00.000Z"
+  },
+  "gender": "female",
+  "image": "",
+  "address": "456 Maple Avenue, Springfield, IL 62701",
+  "phoneNumber": "+84912345678",
+  "subscriptionType": "free",
+  "subscriptionExpiry": null,
+  "createdAt": {
+    "$date": "2025-06-07T04:16:54.242Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-07T04:16:54.242Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6843ef139dd755c94f218428"
+  },
+  "userId": {
+    "$oid": "6843ef139dd755c94f218426"
+  },
+  "fullName": "John Smith",
+  "dateOfBirth": {
+    "$date": "1985-06-15T00:00:00.000Z"
+  },
+  "gender": "male",
+  "image": "https://example.com/profile-image.jpg",
+  "address": "123 Main Street, City, Country",
+  "phoneNumber": "0987654321",
+  "subscriptionType": "free",
+  "subscriptionExpiry": null,
+  "createdAt": {
+    "$date": "2025-06-07T07:49:39.990Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-07T07:49:39.990Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "684505164d38c7079811f473"
+  },
+  "userId": {
+    "$oid": "684505164d38c7079811f471"
+  },
+  "fullName": "John Smith",
+  "gender": "male",
+  "subscriptionType": "free",
+  "subscriptionExpiry": null,
+  "createdAt": {
+    "$date": "2025-06-08T03:35:50.415Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-08T03:35:50.415Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "684507374d38c7079811f478"
+  },
+  "userId": {
+    "$oid": "684507364d38c7079811f476"
+  },
+  "fullName": "Test Test",
+  "gender": "male",
+  "subscriptionType": "free",
+  "subscriptionExpiry": null,
+  "createdAt": {
+    "$date": "2025-06-08T03:44:55.037Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-08T03:44:55.037Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6845094e4d38c7079811f47e"
+  },
+  "userId": {
+    "$oid": "6845094e4d38c7079811f47c"
+  },
+  "fullName": "Phat Truong",
+  "gender": "male",
+  "subscriptionType": "free",
+  "subscriptionExpiry": null,
+  "createdAt": {
+    "$date": "2025-06-08T03:53:50.526Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-08T03:53:50.526Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68450cb44d38c7079811f493"
+  },
+  "userId": {
+    "$oid": "68450cb44d38c7079811f491"
+  },
+  "fullName": "Phat Truong f",
+  "gender": "male",
+  "subscriptionType": "free",
+  "subscriptionExpiry": null,
+  "createdAt": {
+    "$date": "2025-06-08T04:08:20.404Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-08T04:08:20.404Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68457cb0a9553222688bcfa1"
+  },
+  "userId": {
+    "$oid": "68457cb0a9553222688bcf9f"
+  },
+  "fullName": "John Smith",
+  "dateOfBirth": {
+    "$date": "1985-06-15T00:00:00.000Z"
+  },
+  "gender": "male",
+  "image": "https://example.com/profile-image.jpg",
+  "address": "123 Main Street, City, Country",
+  "phoneNumber": "0987654321",
+  "subscriptionType": "free",
+  "subscriptionExpiry": null,
+  "createdAt": {
+    "$date": "2025-06-08T12:06:08.542Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-08T12:06:08.542Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6847837bd87d961d0c908c7f"
+  },
+  "userId": {
+    "$oid": "6847837bd87d961d0c908c7d"
+  },
+  "fullName": "convex",
+  "gender": "male",
+  "subscriptionType": "free",
+  "subscriptionExpiry": null,
+  "createdAt": {
+    "$date": "2025-06-10T00:59:39.429Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-10T00:59:39.429Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6847b377ed463a5e6dca596c"
+  },
+  "userId": {
+    "$oid": "6847b377ed463a5e6dca596a"
+  },
+  "fullName": "Phat Truong",
+  "gender": "male",
+  "subscriptionType": "free",
+  "subscriptionExpiry": null,
+  "createdAt": {
+    "$date": "2025-06-10T04:24:23.448Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-10T04:24:23.448Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6849b669ad2d201e5e365a27"
+  },
+  "userId": {
+    "$oid": "6849b669ad2d201e5e365a25"
+  },
+  "fullName": "agsda",
+  "gender": "male",
+  "subscriptionType": "free",
+  "subscriptionExpiry": null,
+  "createdAt": {
+    "$date": "2025-06-11T17:01:29.177Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-11T17:01:29.177Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6849b6a7ad2d201e5e365a2d"
+  },
+  "userId": {
+    "$oid": "6849b6a7ad2d201e5e365a2b"
+  },
+  "fullName": "abc",
+  "gender": "male",
+  "subscriptionType": "free",
+  "subscriptionExpiry": null,
+  "createdAt": {
+    "$date": "2025-06-11T17:02:31.394Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-11T17:02:31.394Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "684a549652d6f136c00b65c2"
+  },
+  "userId": {
+    "$oid": "684a549652d6f136c00b65c0"
+  },
+  "fullName": "abc",
+  "gender": "male",
+  "subscriptionType": "free",
+  "subscriptionExpiry": null,
+  "createdAt": {
+    "$date": "2025-06-12T04:16:22.910Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-12T04:16:22.910Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "684a825a0f0b8e1745dc009a"
+  },
+  "userId": {
+    "$oid": "684a825a0f0b8e1745dc0098"
+  },
+  "fullName": "nguyễn công trung 1",
+  "gender": "male",
+  "subscriptionType": "premium",
+  "subscriptionExpiry": {
+    "$date": "2025-07-26T07:33:06.546Z"
+  },
+  "createdAt": {
+    "$date": "2025-06-12T07:31:38.297Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-26T07:33:06.548Z"
+  },
+  "__v": 0,
+  "address": "hi",
+  "image": "https://res.cloudinary.com/dfkb8qo66/image/upload/v1750324807/beckenbauer_vc8nrn.png",
+  "phoneNumber": "0867151203"
+},
+{
+  "_id": {
+    "$oid": "684abec19606cd01af483ef4"
+  },
+  "userId": {
+    "$oid": "684abec19606cd01af483ef2"
+  },
+  "fullName": "Trương Văn Phát",
+  "gender": "male",
+  "subscriptionType": "premium",
+  "subscriptionExpiry": {
+    "$date": "2025-07-26T09:19:19.490Z"
+  },
+  "createdAt": {
+    "$date": "2025-06-12T11:49:21.487Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-26T09:19:19.491Z"
+  },
+  "__v": 0,
+  "image": "https://res.cloudinary.com/dfkb8qo66/image/upload/v1750778912/07cd7a47b5963057198240350262b836_vgojfn.jpg",
+  "address": "456 Đường Nguyễn Huệ, Quận 1, TP.HCM",
+  "dateOfBirth": {
+    "$date": "1985-07-20T00:00:00.000Z"
+  },
+  "phoneNumber": "0987654321"
+},
+{
+  "_id": {
+    "$oid": "6857d50b9c88a288c02efb83"
+  },
+  "userId": {
+    "$oid": "6857d50b9c88a288c02efb81"
+  },
+  "fullName": "Nguyễn Văn A",
+  "dateOfBirth": {
+    "$date": "1985-06-15T00:00:00.000Z"
+  },
+  "gender": "female",
+  "image": "https://example.com/profile.jpg",
+  "address": "123 Đường Lê Lợi, Quận 1, TP.HCM",
+  "phoneNumber": "0912345678",
+  "subscriptionType": "premium",
+  "subscriptionExpiry": {
+    "$date": "2025-07-22T16:03:39.664Z"
+  },
+  "createdAt": {
+    "$date": "2025-06-22T10:03:55.280Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-24T05:14:37.007Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "686645e66af7f6b14e54b1e9"
+  },
+  "userId": {
+    "$oid": "686645e66af7f6b14e54b1e7"
+  },
+  "fullName": "minh quan",
+  "gender": "male",
+  "subscriptionType": "free",
+  "subscriptionExpiry": null,
+  "createdAt": {
+    "$date": "2025-07-03T08:57:10.341Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-03T08:57:10.341Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6871d758dc1cbf2b42ad0229"
+  },
+  "userId": {
+    "$oid": "6871d758dc1cbf2b42ad0227"
+  },
+  "fullName": "Nguyễn Thị Thùy Dung",
+  "gender": "female",
+  "subscriptionType": "premium",
+  "subscriptionExpiry": {
+    "$date": "2025-08-11T04:14:44.916Z"
+  },
+  "createdAt": {
+    "$date": "2025-07-12T03:32:40.831Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-12T04:33:22.074Z"
+  },
+  "__v": 0,
+  "address": "hi,phường Tân Bình, Thành phố Hồ Chí Minh",
+  "dateOfBirth": {
+    "$date": "1999-07-29T00:00:00.000Z"
+  },
+  "image": "https://res.cloudinary.com/dfkb8qo66/image/upload/v1752294759/maradona_jx2fjg.png",
+  "phoneNumber": "0987654432"
+}]
