@@ -6,6 +6,8 @@ import passport from './config/passport.mjs';
 import cors from 'cors';
 import { errorHandler, notFoundHandler, jsonParsingErrorHandler, textPlainJsonHandler } from './middleware/errorHandler.mjs';
 dotenv.config();
+
+console.log('=== Starting app initialization ===');
 const app = express();
 
 // Debug environment variables (remove in production)
@@ -73,6 +75,8 @@ app.use(cookieParser(process.env.COOKIE_SECRET));
 
 // Session configuration function (to be called after DB connection)
 export const configureSession = async (mongoStore) => {
+    console.log('=== Configuring session ===');
+    
     app.use(session({
         secret: process.env.SESSION_SECRET,
         saveUninitialized: true,
@@ -87,17 +91,36 @@ export const configureSession = async (mongoStore) => {
     }));
 
     // Passport middleware (after session)
+    console.log('=== Setting up passport ===');
     app.use(passport.initialize());
     app.use(passport.session());
     
     // Routes (after session and passport setup)
-    const routes = await import('./routes/index.mjs');
-    console.log('Loaded routes.default:', routes.default); // Debug log
-    app.use(routes.default);
+    console.log('=== Loading routes ===');
+    try {
+        const routes = await import('./routes/index.mjs');
+        console.log('Routes module loaded successfully');
+        console.log('Routes default type:', typeof routes.default);
+        console.log('Routes default:', routes.default);
+        
+        if (!routes.default) {
+            console.error('ERROR: routes.default is undefined or null');
+            throw new Error('Routes default is undefined');
+        }
+        
+        console.log('=== Applying routes to app ===');
+        app.use(routes.default);
+        console.log('Routes applied successfully');
+    } catch (error) {
+        console.error('ERROR loading routes:', error);
+        throw error;
+    }
 
     // Error handling middleware (must be after routes)
+    console.log('=== Setting up error handlers ===');
     app.use(notFoundHandler);
     app.use(errorHandler);
+    console.log('=== App configuration complete ===');
 };
 
 export default app; 
