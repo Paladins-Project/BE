@@ -6,12 +6,8 @@ import passport from './config/passport.mjs';
 import cors from 'cors';
 import { errorHandler, notFoundHandler, jsonParsingErrorHandler, textPlainJsonHandler } from './middleware/errorHandler.mjs';
 dotenv.config();
-const app = express();
 
-// Debug environment variables (remove in production)
-console.log('Environment:', process.env.NODE_ENV);
-console.log('Frontend URL:', process.env.FRONTEND_URL);
-console.log('FE Port:', process.env.FE_PORT);
+const app = express();
 
 // Trust proxy when deployed (important for Render/Heroku)
 app.set('trust proxy', 1);
@@ -21,22 +17,17 @@ const allowedOrigins = [
   `http://localhost:${process.env.FE_PORT || 3000}`,
   `https://localhost:${process.env.FE_PORT || 3000}`,
   process.env.FRONTEND_URL,
-  // Add development URLs if needed
   'http://localhost:3000',
   'https://localhost:3000'
-].filter(Boolean); // Loại bỏ các giá trị undefined/null
-
-console.log('Allowed CORS origins:', allowedOrigins);
+].filter(Boolean);
 
 app.use(cors({
   origin: function (origin, callback) {
-    // Allow requests with no origin (like mobile apps, curl, Postman)
     if (!origin) return callback(null, true);
     
     if (allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
-      console.log('Blocked by CORS:', origin);
       callback(new Error('Not allowed by CORS'));
     }
   },
@@ -51,22 +42,34 @@ app.use(cors({
     'Access-Control-Request-Headers'
   ],
   credentials: true,
-  optionsSuccessStatus: 200, // Some legacy browsers choke on 204
+  optionsSuccessStatus: 200,
   preflightContinue: false
 }));
 
-// Handle preflight requests explicitly
-app.options('*', cors());
+// Additional CORS headers middleware for better compatibility
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.header('Access-Control-Allow-Origin', origin);
+  }
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS, PATCH');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With, Accept, Origin, Access-Control-Request-Method, Access-Control-Request-Headers');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
+  
+  next();
+});
 
-// Basic middleware setup
 app.use(express.json({
     limit: '10mb'
 }));
 
-// JSON parsing error handler
 app.use(jsonParsingErrorHandler);
 
-// Middleware to handle JSON sent with text/plain content-type
 app.use(textPlainJsonHandler);
 
 app.use(cookieParser(process.env.COOKIE_SECRET));
@@ -79,25 +82,22 @@ export const configureSession = async (mongoStore) => {
         resave: false,
         cookie: {
             maxAge: 60000 * 60, // 1 hour
-            secure: process.env.NODE_ENV === 'production', // Only send over HTTPS in production
-            httpOnly: true, // Prevent XSS attacks
-            sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax' // Allow cross-site cookies in production
+            secure: process.env.NODE_ENV === 'production',
+            httpOnly: true,
+            sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax'
         },
         store: mongoStore,
     }));
 
-    // Passport middleware (after session)
     app.use(passport.initialize());
     app.use(passport.session());
     
-    // Routes (after session and passport setup)
     const routes = await import('./routes/index.mjs');
     console.log('Loaded routes.default:', routes.default); // Debug log
     app.use(routes.default);
 
-    // Error handling middleware (must be after routes)
     app.use(notFoundHandler);
     app.use(errorHandler);
 };
 
-export default app; 
+export default app;
