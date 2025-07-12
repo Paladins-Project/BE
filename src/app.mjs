@@ -1,10 +1,18 @@
+console.log('=== app.mjs: Starting imports ===');
 import express from 'express';
+console.log('=== app.mjs: express imported ===');
 import cookieParser from 'cookie-parser';
+console.log('=== app.mjs: cookieParser imported ===');
 import session from 'express-session';
+console.log('=== app.mjs: session imported ===');
 import dotenv from 'dotenv';
+console.log('=== app.mjs: dotenv imported ===');
 import passport from './config/passport.mjs';
+console.log('=== app.mjs: passport imported ===');
 import cors from 'cors';
+console.log('=== app.mjs: cors imported ===');
 import { errorHandler, notFoundHandler, jsonParsingErrorHandler, textPlainJsonHandler } from './middleware/errorHandler.mjs';
+console.log('=== app.mjs: errorHandler imported ===');
 dotenv.config();
 
 console.log('=== Starting app initialization ===');

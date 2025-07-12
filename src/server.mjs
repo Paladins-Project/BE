@@ -1,8 +1,14 @@
+console.log('=== server.mjs: Starting imports ===');
 import mongoose from "mongoose";
+console.log('=== server.mjs: mongoose imported ===');
 import dotenv from "dotenv";
+console.log('=== server.mjs: dotenv imported ===');
 import MongoStore from "connect-mongo";
+console.log('=== server.mjs: MongoStore imported ===');
 import connectDB from "./config/database.mjs";
+console.log('=== server.mjs: connectDB imported ===');
 import app, { configureSession } from "./app.mjs";
+console.log('=== server.mjs: app and configureSession imported ===');
 
 console.log('=== Starting server initialization ===');
 dotenv.config();
