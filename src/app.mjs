@@ -92,6 +92,7 @@ export const configureSession = async (mongoStore) => {
     
     // Routes (after session and passport setup)
     const routes = await import('./routes/index.mjs');
+    console.log('Loaded routes.default:', routes.default); // Debug log
     app.use(routes.default);
 
     // Error handling middleware (must be after routes)

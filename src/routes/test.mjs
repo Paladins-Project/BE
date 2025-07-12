@@ -11,10 +11,10 @@ import {
 const router = Router();
 
 router.post('/test', createTest);
-router.put('/test/:testId', updateTest);
-router.delete('/test/:testId', deleteTest);
 router.get('/test/lesson/:lessonId', getAllTestsInLesson);
 router.get('/test/course/:courseId', getAllTestsInCourse);
 router.get('/test/:testId', getTestById);
+router.put('/test/:testId', updateTest);
+router.delete('/test/:testId', deleteTest);
 
 export default router;
