@@ -18,18 +18,17 @@ const router = Router();
 router.post("/payment/create-link", isAuthenticated, createPaymentLink);
 
 /**
+ * POST /api/payment/payos
+ * Alternative webhook endpoint (similar to demo)
+ */
+router.post("/payment/payos", handleWebhook);
+
+/**
  * GET /api/payment/status/:orderCode
- * Get payment status by order code
+ * Get payment status by orderCode
  * Requires: Authentication, valid orderCode parameter
  * Returns: Transaction status, amount, timestamps
  */
 router.get("/payment/:orderCode", isAuthenticated, getPaymentStatus);
-
-/**
- * POST /api/payment/payos
- * Alternative webhook endpoint (similar to demo)
- */
-//.\cloudflared.exe tunnel --url http://localhost:8386
-router.post("/payment/payos", handleWebhook);
 
 export default router;
