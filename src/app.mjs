@@ -42,19 +42,14 @@ const allowedOrigins = [
 
 console.log('Allowed CORS origins:', allowedOrigins);
 
-console.log('=== Applying CORS middleware ===');
+// 1. CORS middleware chính
 app.use(cors({
   origin: function (origin, callback) {
-    // Allow requests with no origin (like mobile apps, curl, Postman)
-    if (!origin) return callback(null, true);
-    
     if (allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
-    } else {
-      console.log('Blocked by CORS:', origin);
-      callback(new Error('Not allowed by CORS'));
     }
   },
+  credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
   allowedHeaders: [
     'Content-Type', 
@@ -65,17 +60,23 @@ app.use(cors({
     'Access-Control-Request-Method',
     'Access-Control-Request-Headers'
   ],
-  credentials: true,
   optionsSuccessStatus: 200, // Some legacy browsers choke on 204
   preflightContinue: false
 }));
-console.log('=== CORS middleware applied ===');
 
-// Handle preflight requests explicitly
-console.log('=== Setting up preflight CORS ===');
-// Remove the problematic line: app.options('*', cors());
-// Instead, handle preflight in the main CORS configuration
-console.log('=== Preflight CORS handled in main CORS config ===');
+// 2. Preflight requests
+app.options('/(.*)', cors());
+
+// 3. Additional CORS headers
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.header('Access-Control-Allow-Origin', origin);
+  }
+  res.header('Access-Control-Allow-Credentials', 'true');
+  next();
+});
+console.log('=== CORS middleware applied ===');
 
 // Basic middleware setup
 console.log('=== Setting up JSON middleware ===');
