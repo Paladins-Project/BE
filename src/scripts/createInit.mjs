@@ -24,13 +24,25 @@ const vietnameseNames = {
     'Nguyễn Văn An', 'Trần Minh Đức', 'Lê Hoàng Long', 'Phạm Quang Huy', 'Hoàng Văn Nam',
     'Vũ Đình Khoa', 'Đặng Tuấn Anh', 'Bùi Văn Hùng', 'Phan Minh Tuấn', 'Dương Thành Đạt',
     'Lý Quang Minh', 'Cao Văn Thành', 'Ngô Đình Duy', 'Trương Văn Khang', 'Đinh Quang Tú',
-    'Võ Minh Hải', 'Lâm Văn Thịnh', 'Tô Đình Phong', 'Đỗ Văn Tài', 'Hà Minh Quân'
+    'Võ Minh Hải', 'Lâm Văn Thịnh', 'Tô Đình Phong', 'Đỗ Văn Tài', 'Hà Minh Quân',
+    'Nguyễn Tuấn Anh', 'Trần Văn Bình', 'Lê Minh Cường', 'Phạm Văn Dũng', 'Hoàng Quốc Việt',
+    'Vũ Thanh Tùng', 'Đặng Văn Sơn', 'Bùi Tiến Dũng', 'Phan Văn Đức', 'Dương Văn Lâm',
+    'Nguyễn Hoàng Nam', 'Trần Đức Thắng', 'Lê Văn Thành', 'Phạm Hoàng Gia', 'Hoàng Minh Tuấn',
+    'Vũ Văn Kiên', 'Đặng Minh Hiếu', 'Bùi Văn Khánh', 'Phan Thanh Long', 'Dương Văn Phúc',
+    'Nguyễn Văn Tú', 'Trần Văn Trường', 'Lê Văn Vinh', 'Phạm Văn Vũ', 'Hoàng Văn Xuân',
+    'Vũ Văn Yên', 'Đặng Văn Bảo', 'Bùi Văn Chiến', 'Phan Văn Đạt', 'Dương Văn Hiếu'
   ],
   female: [
     'Nguyễn Thị Lan', 'Trần Thị Hoa', 'Lê Thị Mai', 'Phạm Thị Linh', 'Hoàng Thị Nga',
     'Vũ Thị Thúy', 'Đặng Thị Hương', 'Bùi Thị Dung', 'Phan Thị Yến', 'Dương Thị Hà',
     'Lý Thị Xuân', 'Cao Thị Bích', 'Ngô Thị Thanh', 'Trương Thị Hiền', 'Đinh Thị Thảo',
-    'Võ Thị Nhung', 'Lâm Thị Phương', 'Tô Thị Trang', 'Đỗ Thị Loan', 'Hà Thị Vân'
+    'Võ Thị Nhung', 'Lâm Thị Phương', 'Tô Thị Trang', 'Đỗ Thị Loan', 'Hà Thị Vân',
+    'Nguyễn Thị Ánh', 'Trần Thị Bình', 'Lê Thị Cúc', 'Phạm Thị Duyên', 'Hoàng Thị Em',
+    'Vũ Thị Phượng', 'Đặng Thị Giang', 'Bùi Thị Hạnh', 'Phan Thị Kiều', 'Dương Thị Lệ',
+    'Nguyễn Thị Mỹ', 'Trần Thị Ngọc', 'Lê Thị Oanh', 'Phạm Thị Phúc', 'Hoàng Thị Quỳnh',
+    'Vũ Thị Hồng', 'Đặng Thị Sen', 'Bùi Thị Tâm', 'Phan Thị Uyên', 'Dương Thị Vi',
+    'Nguyễn Thị Ngân', 'Trần Thị Thu', 'Lê Thị Trúc', 'Phạm Thị Tuyết', 'Hoàng Thị Vy',
+    'Vũ Thị Xuân', 'Đặng Thị Yến', 'Bùi Thị An', 'Phan Thị Băng', 'Dương Thị Chi'
   ]
 };
 
@@ -39,13 +51,25 @@ const kidNames = {
     'Nguyễn Minh Khang', 'Trần Hoàng Anh', 'Lê Bảo Long', 'Phạm Minh Đức', 'Hoàng Gia Bảo',
     'Vũ Quang Minh', 'Đặng Tuấn Kiệt', 'Bùi Minh Tâm', 'Phan Đức Thịnh', 'Dương Quang Huy',
     'Lý Gia Huy', 'Cao Minh Khôi', 'Ngô Hoàng Nam', 'Trương Bảo Khang', 'Đinh Quang Tú',
-    'Võ Minh Trí', 'Lâm Đức Anh', 'Tô Quang Vinh', 'Đỗ Minh Phát', 'Hà Tuấn Kiệt'
+    'Võ Minh Trí', 'Lâm Đức Anh', 'Tô Quang Vinh', 'Đỗ Minh Phát', 'Hà Tuấn Kiệt',
+    'Nguyễn Bảo Nam', 'Trần Minh Hiếu', 'Lê Quang Duy', 'Phạm Gia Khang', 'Hoàng Minh Đức',
+    'Vũ Bảo An', 'Đặng Minh Quân', 'Bùi Gia Huy', 'Phan Minh Nhật', 'Dương Bảo Lộc',
+    'Nguyễn Nhật Minh', 'Trần Gia Bảo', 'Lê Minh Khôi', 'Phạm Quang Anh', 'Hoàng Bảo Khang',
+    'Vũ Minh Hiếu', 'Đặng Quang Vinh', 'Bùi Minh Đạt', 'Phan Gia Linh', 'Dương Minh Trí',
+    'Nguyễn Gia Phúc', 'Trần Bảo Huy', 'Lê Minh Vương', 'Phạm Nhật Nam', 'Hoàng Quang Minh',
+    'Vũ Gia Khiêm', 'Đặng Bảo Long', 'Bùi Quang Huy', 'Phan Minh Phúc', 'Dương Gia Hân'
   ],
   female: [
     'Nguyễn Thùy Linh', 'Trần Khánh Linh', 'Lê Bảo Trâm', 'Phạm Thúy Hằng', 'Hoàng Minh Châu',
     'Vũ Khánh Huyền', 'Đặng Thùy Dung', 'Bùi Minh Thư', 'Phan Khánh Linh', 'Dương Thùy Trang',
     'Lý Minh Thư', 'Cao Thùy Linh', 'Ngô Khánh Vy', 'Trương Thùy Dương', 'Đinh Minh Ngọc',
-    'Võ Thùy Huyền', 'Lâm Khánh Huyền', 'Tô Thùy Trúc', 'Đỗ Minh Thư', 'Hà Thùy Linh'
+    'Võ Thùy Huyền', 'Lâm Khánh Huyền', 'Tô Thùy Trúc', 'Đỗ Minh Thư', 'Hà Thùy Linh',
+    'Nguyễn Bảo Ngọc', 'Trần Minh Anh', 'Lê Khánh Chi', 'Phạm Bảo Trân', 'Hoàng Thùy An',
+    'Vũ Minh Châu', 'Đặng Khánh My', 'Bùi Thùy Linh', 'Phan Bảo Nhi', 'Dương Minh Thư',
+    'Nguyễn Gia Hân', 'Trần Bảo Thy', 'Lê Minh Ngọc', 'Phạm Khánh Vy', 'Hoàng Bảo Anh',
+    'Vũ Thùy Dương', 'Đặng Minh Khuê', 'Bùi Khánh Linh', 'Phan Minh Anh', 'Dương Bảo Yến',
+    'Nguyễn Minh Trang', 'Trần Thùy Vi', 'Lê Bảo Hân', 'Phạm Minh Thư', 'Hoàng Khánh Ngọc',
+    'Vũ Bảo Linh', 'Đặng Thùy Trang', 'Bùi Minh Ngọc', 'Phan Khánh An', 'Dương Thùy Vy'
   ]
 };
 
@@ -136,10 +160,8 @@ function generateEmail(name, index) {
     .replace(/[đ]/g, 'd')
     .replace(/\s+/g, '');
   
-  const domains = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com'];
-  const domain = domains[Math.floor(Math.random() * domains.length)];
   const randomSuffix = Math.floor(Math.random() * 10000) + 1000;
-  return `${cleanName}${index}${randomSuffix}@${domain}`;
+  return `${cleanName}${index}${randomSuffix}@gmail.com`; // Luôn dùng @gmail.com
 }
 
 // Hàm tạo ngày sinh ngẫu nhiên
@@ -153,27 +175,111 @@ function getRandomBirthDate(minAge, maxAge) {
   return new Date(year, month, day);
 }
 
+// Hàm xóa toàn bộ dữ liệu cũ
+async function clearAllData() {
+  console.log('🧹 Clearing all existing data...');
+  
+  // Import tất cả models cần thiết
+  const { Teacher } = await import('../models/teacher.mjs');
+  const { Parent } = await import('../models/parent.mjs');
+  const { Kid } = await import('../models/kid.mjs');
+  const { Course } = await import('../models/course.mjs');
+  const { Lesson } = await import('../models/lesson.mjs');
+  const { Test } = await import('../models/test.mjs');
+  const { CourseProgress } = await import('../models/courseProgress.mjs');
+  const { Review } = await import('../models/review.mjs');
+  const { Verify } = await import('../models/verify.mjs');
+  
+  // Xóa tất cả collections
+  await Promise.all([
+    User.deleteMany({}),
+    Admin.deleteMany({}),
+    Teacher.deleteMany({}),
+    Parent.deleteMany({}),
+    Kid.deleteMany({}),
+    Course.deleteMany({}),
+    Lesson.deleteMany({}),
+    Test.deleteMany({}),
+    CourseProgress.deleteMany({}),
+    Review.deleteMany({}),
+    Transaction.deleteMany({}),
+    Verify.deleteMany({})
+  ]);
+  
+  console.log('✅ All data cleared successfully');
+}
+
+// Hàm cập nhật timestamps cho tất cả collections
+async function updateAllTimestamps() {
+  console.log('🕐 Updating timestamps to June-July 2025...');
+  
+  // Import tất cả models cần thiết
+  const { Teacher } = await import('../models/teacher.mjs');
+  const { Parent } = await import('../models/parent.mjs');
+  const { Kid } = await import('../models/kid.mjs');
+  const { Course } = await import('../models/course.mjs');
+  const { Lesson } = await import('../models/lesson.mjs');
+  const { Test } = await import('../models/test.mjs');
+  const { CourseProgress } = await import('../models/courseProgress.mjs');
+  const { Review } = await import('../models/review.mjs');
+  
+  // Cập nhật timestamps cho từng collection
+  const collections = [
+    { model: User, name: 'Users' },
+    { model: Admin, name: 'Admins' },
+    { model: Teacher, name: 'Teachers' },
+    { model: Parent, name: 'Parents' },
+    { model: Kid, name: 'Kids' },
+    { model: Course, name: 'Courses' },
+    { model: Lesson, name: 'Lessons' },
+    { model: Test, name: 'Tests' },
+    { model: CourseProgress, name: 'CourseProgress' },
+    { model: Review, name: 'Reviews' },
+    { model: Transaction, name: 'Transactions' }
+  ];
+  
+  for (const { model, name } of collections) {
+    const documents = await model.find({});
+    console.log(`Updating ${documents.length} ${name}...`);
+    
+    for (const doc of documents) {
+      const createdAt = getRandomDateInRange();
+      const updatedAt = getRandomDateInRange();
+      
+      // Đảm bảo updatedAt >= createdAt
+      const finalUpdatedAt = updatedAt >= createdAt ? updatedAt : createdAt;
+      
+      await model.findByIdAndUpdate(
+        doc._id,
+        {
+          $set: {
+            createdAt: createdAt,
+            updatedAt: finalUpdatedAt
+          }
+        },
+        { timestamps: false } // Không cho Mongoose tự động update timestamps
+      );
+    }
+  }
+  
+  console.log('✅ All timestamps updated successfully');
+}
+
 async function createInitialData() {
   try {
     // Kết nối database
     await mongoose.connect(process.env.DBCONNECTIONSTRING);
-    console.log('Connected to MongoDB');
+    console.log('🔗 Connected to MongoDB');
 
-    // Xóa dữ liệu cũ
-    console.log('Clearing old data...');
-    await Promise.all([
-      User.deleteMany({}),
-      Admin.deleteMany({}),
-      Transaction.deleteMany({}),
-      // Các collection khác sẽ được xóa bởi services khi cần
-    ]);
+    // Xóa toàn bộ dữ liệu cũ
+    await clearAllData();
 
-    console.log('Creating initial data...');
+    console.log('🚀 Creating initial data...');
 
     // 1. Tạo 1 Admin (vẫn tạo trực tiếp vì không có adminService)
-    console.log('Creating admin...');
+    console.log('👤 Creating admin...');
     const adminUser = new User({
-      password: hashPassword('admin123'),
+      password: hashPassword('123456'),
       email: 'admin@dailymate.com',
       role: 'admin',
       isActive: true,
@@ -193,7 +299,7 @@ async function createInitialData() {
     await adminProfile.save();
 
     // 2. Tạo 5 Teachers sử dụng teacherService
-    console.log('Creating teachers...');
+    console.log('👨‍🏫 Creating teachers...');
     const teachers = [];
     for (let i = 0; i < 5; i++) {
       const gender = Math.random() > 0.5 ? 'male' : 'female';
@@ -201,7 +307,7 @@ async function createInitialData() {
       
       const teacherData = {
         email: generateEmail(name, i + 1),
-        password: 'teacher123',
+        password: '123456',
         fullName: name,
         phoneNumber: generatePhoneNumber(),
         specializations: teacherSpecializations[i % teacherSpecializations.length],
@@ -211,22 +317,22 @@ async function createInitialData() {
       const result = await createTeacherAsync(teacherData);
       if (result.success) {
         teachers.push(result.data);
-        console.log(`✓ Created teacher: ${result.data.fullName}`, result.data);
+        console.log(`✅ Created teacher: ${result.data.fullName}`);
       } else {
-        console.error(`✗ Failed to create teacher: ${result.message}`);
+        console.error(`❌ Failed to create teacher: ${result.message}`);
       }
     }
 
-    // 3. Tạo 30 Parents sử dụng parentService
-    console.log('Creating parents...');
+    // 3. Tạo 51 Parents sử dụng parentService
+    console.log('👨‍👩‍👧‍👦 Creating parents...');
     const parents = [];
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 51; i++) {
       const gender = Math.random() > 0.5 ? 'male' : 'female';
       const name = vietnameseNames[gender][i % vietnameseNames[gender].length];
       
       const parentData = {
         email: generateEmail(name, i + 1),
-        password: 'parent123',
+        password: '123456',
         fullName: name,
         dateOfBirth: getRandomBirthDate(25, 45),
         gender: gender,
@@ -237,29 +343,37 @@ async function createInitialData() {
       const result = await createParentAsync(parentData);
       if (result.success) {
         parents.push(result.data);
-        console.log(`✓ Created parent: ${result.data.fullName}`);
+        console.log(`✅ Created parent: ${result.data.fullName}`);
       } else {
-        console.error(`✗ Failed to create parent: ${result.message}`);
+        console.error(`❌ Failed to create parent: ${result.message}`);
       }
     }
 
-    // 4. Tạo 40 Kids liên kết với Parents sử dụng kidService
-    console.log('Creating kids...');
+    // 4. Tạo 73 Kids liên kết với Parents sử dụng kidService
+    console.log('👶 Creating kids...');
     const kids = [];
-    let parentIndex = 0;
-    let kidsPerParent = 0;
+    const kidsPerParentCount = {}; // Đếm số kids cho mỗi parent
     
-    for (let i = 0; i < 40; i++) {
+    for (let i = 0; i < 73; i++) {
       const gender = Math.random() > 0.5 ? 'male' : 'female';
       const name = kidNames[gender][i % kidNames[gender].length];
       
-      // Chọn parent - tối đa 3 kids/parent
-      if (kidsPerParent >= 3) {
-        parentIndex++;
-        kidsPerParent = 0;
-      }
+      // Chọn parent - đảm bảo không quá 3 kids/parent
+      let selectedParent;
+      let attempts = 0;
+      do {
+        selectedParent = parents[Math.floor(Math.random() * parents.length)];
+        const parentKey = selectedParent.parentId.toString();
+        if (!kidsPerParentCount[parentKey]) {
+          kidsPerParentCount[parentKey] = 0;
+        }
+        attempts++;
+      } while (kidsPerParentCount[selectedParent.parentId.toString()] >= 3 && attempts < 100);
       
-      const selectedParent = parents[parentIndex % parents.length];
+      if (attempts >= 100) {
+        console.error('Could not find parent with less than 3 kids');
+        continue;
+      }
       
       const kidData = {
         fullName: name,
@@ -271,15 +385,15 @@ async function createInitialData() {
       const result = await createKidLinkedToParentAsync(kidData);
       if (result.success) {
         kids.push(result.data);
-        console.log(`✓ Created kid: ${result.data.fullName} (linked to parent)`);
-        kidsPerParent++;
+        kidsPerParentCount[selectedParent.parentId.toString()]++;
+        console.log(`✅ Created kid: ${result.data.fullName} (linked to parent: ${selectedParent.fullName})`);
       } else {
-        console.error(`✗ Failed to create kid: ${result.message}`);
+        console.error(`❌ Failed to create kid: ${result.message}`);
       }
     }
 
     // 5. Tạo Courses sử dụng courseService
-    console.log('Creating courses...');
+    console.log('📚 Creating courses...');
     const coursesData = JSON.parse(fs.readFileSync('json/EXE2.courses.json', 'utf8'));
     const courses = [];
     
@@ -288,8 +402,6 @@ async function createInitialData() {
       const randomTeacher = teachers[Math.floor(Math.random() * teachers.length)];
       
       const instructorId = (randomTeacher.teacherId || randomTeacher._id).toString();
-      console.log('Teacher data:', randomTeacher);
-      console.log('Using instructor ID:', instructorId);
       
       const courseCreateData = {
         title: courseData.title,
@@ -306,14 +418,14 @@ async function createInitialData() {
       const result = await createCourseAsync(courseCreateData);
       if (result.success) {
         courses.push(result.data);
-        console.log(`✓ Created course: ${result.data.title}`);
+        console.log(`✅ Created course: ${result.data.title}`);
       } else {
-        console.error(`✗ Failed to create course: ${result.message}`);
+        console.error(`❌ Failed to create course: ${result.message}`);
       }
     }
 
     // 6. Tạo Lessons sử dụng lessonService
-    console.log('Creating lessons...');
+    console.log('📖 Creating lessons...');
     const lessonsData = JSON.parse(fs.readFileSync('json/EXE2.lessons.json', 'utf8'));
     const lessons = [];
     
@@ -339,14 +451,14 @@ async function createInitialData() {
       const result = await createLessonAsync(lessonCreateData);
       if (result.success) {
         lessons.push(result.data);
-        console.log(`✓ Created lesson: ${result.data.title}`);
+        console.log(`✅ Created lesson: ${result.data.title}`);
       } else {
-        console.error(`✗ Failed to create lesson: ${result.message}`);
+        console.error(`❌ Failed to create lesson: ${result.message}`);
       }
     }
 
     // 7. Tạo Tests sử dụng testService
-    console.log('Creating tests...');
+    console.log('📝 Creating tests...');
     const testsData = JSON.parse(fs.readFileSync('json/EXE2.tests.json', 'utf8'));
     const tests = [];
     
@@ -375,150 +487,236 @@ async function createInitialData() {
       const result = await createTestAsync(testCreateData);
       if (result.success) {
         tests.push(result.data);
-        console.log(`✓ Created test: ${result.data.title}`);
+        console.log(`✅ Created test: ${result.data.title}`);
       } else {
-        console.error(`✗ Failed to create test: ${result.message}`);
+        console.error(`❌ Failed to create test: ${result.message}`);
       }
     }
 
-    // 8. Tạo 24 Transactions (vẫn tạo trực tiếp vì transactionService chỉ có get functions)
-    console.log('Creating transactions...');
-    for (let i = 0; i < 24; i++) {
-      const randomParent = parents[Math.floor(Math.random() * parents.length)];
+    // 8. Tạo 24 Transactions và cập nhật premium subscription
+    console.log('💳 Creating transactions and updating premium subscriptions...');
+    const { Parent } = await import('../models/parent.mjs');
+    const premiumParents = [];
+    
+    // Chọn ngẫu nhiên 24 parents để làm premium
+    const shuffledParents = [...parents].sort(() => Math.random() - 0.5);
+    const selectedPremiumParents = shuffledParents.slice(0, 24);
+    
+    for (let i = 0; i < selectedPremiumParents.length; i++) {
+      const parent = selectedPremiumParents[i];
       const orderCode = Math.floor(Math.random() * 900000) + 100000;
-      const statuses = ['PENDING', 'SUCCESS', 'FAILED'];
-      const status = statuses[Math.floor(Math.random() * statuses.length)];
+      const transactionDate = getRandomDateInRange();
       
       const transaction = new Transaction({
-        userId: (randomParent.userId || randomParent._id).toString(),
+        userId: parent.userId.toString(),
         orderCode: orderCode,
-        amount: Math.floor(Math.random() * 500000) + 100000,
+        amount: Math.floor(Math.random() * 300000) + 200000, // 200k-500k VND
         description: 'Nâng cấp tài khoản Premium',
         paymentMethod: 'PayOS',
-        status: status,
-        createdAt: getRandomDateInRange(),
-        updatedAt: getRandomDateInRange()
+        status: 'SUCCESS', // Tất cả đều SUCCESS để có premium
+        createdAt: transactionDate,
+        updatedAt: transactionDate
       });
       await transaction.save();
+      
+      // Cập nhật parent thành premium với subscriptionExpiry = transaction date + 1 tháng
+      const expiryDate = new Date(transactionDate);
+      expiryDate.setMonth(expiryDate.getMonth() + 1);
+      
+      await Parent.findByIdAndUpdate(
+        parent.parentId,
+        {
+          subscriptionType: 'premium',
+          subscriptionExpiry: expiryDate
+        }
+      );
+      
+      premiumParents.push({
+        ...parent,
+        subscriptionType: 'premium',
+        subscriptionExpiry: expiryDate
+      });
+      
+      console.log(`✅ Updated parent to premium: ${parent.fullName} (expires: ${expiryDate.toISOString().split('T')[0]})`);
     }
 
     // 9. Tạo CourseProgress sử dụng progressService
-    console.log('Creating course progress...');
+    console.log('📊 Creating course progress...');
     const enrollments = [];
     
-    // Đảm bảo ít nhất 20 kids enrolled và có tiến trình trong ít nhất 2 courses
-    for (let i = 0; i < Math.min(20, kids.length); i++) {
-      const kid = kids[i];
-      const numCourses = Math.floor(Math.random() * 3) + 2; // 2-4 courses per kid
+    // Tìm courses premium và free
+    const premiumCourses = courses.filter(c => c.isPremium === true);
+    const freeCourses = courses.filter(c => c.isPremium === false);
+    
+    console.log(`Found ${premiumCourses.length} premium courses and ${freeCourses.length} free courses`);
+    
+    // Tạo map để nhanh chóng kiểm tra parent nào là premium
+    const premiumParentIds = new Set(premiumParents.map(p => p.parentId.toString()));
+    
+    // Chia kids thành 2 nhóm: của premium parents và non-premium parents
+    const premiumKids = kids.filter(kid => premiumParentIds.has(kid.parentId.toString()));
+    const nonPremiumKids = kids.filter(kid => !premiumParentIds.has(kid.parentId.toString()));
+    
+    console.log(`Premium kids: ${premiumKids.length}, Non-premium kids: ${nonPremiumKids.length}`);
+    
+    // Enroll cho non-premium kids trước (chỉ free courses)
+    for (let i = 0; i < nonPremiumKids.length; i++) {
+      const kid = nonPremiumKids[i];
+      const numCourses = i < 20 ? Math.floor(Math.random() * 2) + 2 : 1; // 20 kids đầu: 2-3 courses, còn lại: 1 course
       
-      for (let j = 0; j < numCourses; j++) {
-        const randomCourse = courses[Math.floor(Math.random() * courses.length)];
+      for (let j = 0; j < numCourses && j < freeCourses.length; j++) {
+        const randomCourse = freeCourses[Math.floor(Math.random() * freeCourses.length)];
         
         // Kiểm tra xem đã enroll course này chưa
         const existingEnrollment = enrollments.find(
-          e => e.kidId === (kid.kidId || kid._id).toString() && e.courseId === randomCourse._id.toString()
+          e => e.kidId === kid.kidId.toString() && e.courseId === randomCourse._id.toString()
         );
         
         if (!existingEnrollment) {
-          const result = await enrollCourseAsync((kid.kidId || kid._id).toString(), randomCourse._id.toString());
+          const result = await enrollCourseAsync(kid.kidId.toString(), randomCourse._id.toString());
           if (result.success) {
             enrollments.push({ 
-              kidId: (kid.kidId || kid._id).toString(), 
+              kidId: kid.kidId.toString(), 
               courseId: randomCourse._id.toString(),
               progressId: result.data._id
             });
-            console.log(`✓ Enrolled kid in course: ${kid.fullName} -> ${randomCourse.title}`);
+            console.log(`✅ Enrolled non-premium kid in free course: ${kid.fullName} -> ${randomCourse.title}`);
           } else {
-            console.error(`✗ Failed to enroll: ${result.message}`);
+            console.error(`❌ Failed to enroll: ${result.message}`);
+          }
+        }
+      }
+    }
+    
+    // Enroll cho premium kids (cả free và premium courses)
+    const allCourses = [...courses];
+    for (let i = 0; i < premiumKids.length; i++) {
+      const kid = premiumKids[i];
+      const numCourses = i < 20 ? Math.floor(Math.random() * 2) + 2 : Math.floor(Math.random() * 2) + 1; // 20 kids đầu: 2-3 courses
+      
+      for (let j = 0; j < numCourses && j < allCourses.length; j++) {
+        const randomCourse = allCourses[Math.floor(Math.random() * allCourses.length)];
+        
+        // Kiểm tra xem đã enroll course này chưa
+        const existingEnrollment = enrollments.find(
+          e => e.kidId === kid.kidId.toString() && e.courseId === randomCourse._id.toString()
+        );
+        
+        if (!existingEnrollment) {
+          const result = await enrollCourseAsync(kid.kidId.toString(), randomCourse._id.toString());
+          if (result.success) {
+            enrollments.push({ 
+              kidId: kid.kidId.toString(), 
+              courseId: randomCourse._id.toString(),
+              progressId: result.data._id
+            });
+            const courseType = randomCourse.isPremium ? 'premium' : 'free';
+            console.log(`✅ Enrolled premium kid in ${courseType} course: ${kid.fullName} -> ${randomCourse.title}`);
+          } else {
+            console.error(`❌ Failed to enroll: ${result.message}`);
           }
         }
       }
     }
 
-    // Tạo thêm progress cho các kids khác
-    for (let i = 20; i < kids.length; i++) {
-      const kid = kids[i];
-      const numCourses = Math.floor(Math.random() * 2) + 1; // 1-2 courses per kid
+    // 10. Tạo Reviews chỉ từ premium parents còn hạn
+    console.log('⭐ Creating reviews from premium parents...');
+    const reviewsToCreate = 34;
+    
+    for (let i = 0; i < reviewsToCreate; i++) {
+      // Chọn ngẫu nhiên một enrollment của premium kids
+      const premiumEnrollments = enrollments.filter(e => 
+        premiumKids.some(k => k.kidId.toString() === e.kidId)
+      );
       
-      for (let j = 0; j < numCourses; j++) {
-        const randomCourse = courses[Math.floor(Math.random() * courses.length)];
-        
-        const result = await enrollCourseAsync((kid.kidId || kid._id).toString(), randomCourse._id.toString());
-        if (result.success) {
-          enrollments.push({ 
-            kidId: (kid.kidId || kid._id).toString(), 
-            courseId: randomCourse._id.toString(),
-            progressId: result.data._id
-          });
-          console.log(`✓ Enrolled kid in course: ${kid.fullName} -> ${randomCourse.title}`);
-        } else {
-          console.error(`✗ Failed to enroll: ${result.message}`);
-        }
+      if (premiumEnrollments.length === 0) {
+        console.error('No premium enrollments found for reviews');
+        continue;
       }
-    }
-
-    // 10. Tạo 34 Reviews sử dụng reviewService
-    console.log('Creating reviews...');
-    for (let i = 0; i < 34; i++) {
-      const randomCourse = courses[Math.floor(Math.random() * courses.length)];
-      const isKidReview = Math.random() > 0.5;
+      
+      const randomEnrollment = premiumEnrollments[Math.floor(Math.random() * premiumEnrollments.length)];
+      const enrolledCourse = courses.find(c => c._id.toString() === randomEnrollment.courseId);
+      
+      if (!enrolledCourse) continue;
+      
+      // Tìm parent của kid này
+      const enrolledKid = premiumKids.find(k => k.kidId.toString() === randomEnrollment.kidId);
+      if (!enrolledKid) continue;
+      
+      const parentOfKid = premiumParents.find(p => p.parentId.toString() === enrolledKid.parentId.toString());
+      if (!parentOfKid) continue;
+      
+      // Kiểm tra parent subscription còn hạn không (so với thời điểm tạo dữ liệu trong tương lai)
+      const reviewCreatedDate = getRandomDateInRange(); // Ngày tạo review trong tháng 6-7/2025
+      if (parentOfKid.subscriptionExpiry < reviewCreatedDate) {
+        console.log(`Skipping review - parent subscription expired: ${parentOfKid.fullName}`);
+        continue;
+      }
       
       let reviewData = {
-        courseId: randomCourse._id.toString(),
+        courseId: enrolledCourse._id.toString(),
         content: reviewContents[Math.floor(Math.random() * reviewContents.length)]
       };
       
-      // Tạo rating (chủ yếu tích cực: 3-5 sao, 80% là 4-5 sao)
+      // Tạo rating (chủ yếu tích cực)
       const rand = Math.random();
-      if (rand < 0.6) {
-        reviewData.star = 5; // 60% - 5 sao
+      if (rand < 0.5) {
+        reviewData.star = 5; // 50% - 5 sao
       } else if (rand < 0.8) {
-        reviewData.star = 4; // 20% - 4 sao
+        reviewData.star = 4; // 30% - 4 sao  
+      } else if (rand < 0.95) {
+        reviewData.star = 3; // 15% - 3 sao (trung bình)
       } else {
-        reviewData.star = 3; // 20% - 3 sao
+        reviewData.star = 2; // 5% - 2 sao (dưới trung bình, không có 1 sao)
       }
       
-      if (isKidReview) {
-        const randomKid = kids[Math.floor(Math.random() * kids.length)];
-        reviewData.kidId = (randomKid.kidId || randomKid._id).toString();
+      // 50/50 review từ kid hoặc parent
+      if (Math.random() > 0.5) {
+        reviewData.kidId = enrolledKid.kidId.toString();
       } else {
-        const randomParent = parents[Math.floor(Math.random() * parents.length)];
-        reviewData.parentId = (randomParent.parentId || randomParent._id).toString();
+        reviewData.parentId = parentOfKid.parentId.toString();
       }
       
       const result = await createReviewAsync(reviewData);
       if (result.success) {
-        console.log(`✓ Created review: ${reviewData.star} stars for ${randomCourse.title}`);
+        const reviewer = reviewData.kidId ? 'kid' : 'parent';
+        console.log(`✅ Created review from ${reviewer}: ${reviewData.star} stars for ${enrolledCourse.title}`);
       } else {
-        console.error(`✗ Failed to create review: ${result.message}`);
+        console.error(`❌ Failed to create review: ${result.message}`);
       }
     }
 
-    console.log('✅ Initial data created successfully using services!');
+    console.log('🎉 Initial data created successfully using services!');
     console.log('📊 Summary:');
     console.log(`- 1 Admin account created`);
     console.log(`- ${teachers.length} Teacher accounts created`);
-    console.log(`- ${parents.length} Parent accounts created`);
+    console.log(`- ${parents.length} Parent accounts created (24 premium)`);
     console.log(`- ${kids.length} Kid accounts created`);
     console.log(`- ${courses.length} Courses created`);
     console.log(`- ${lessons.length} Lessons created`);
     console.log(`- ${tests.length} Tests created`);
-    console.log(`- 24 Transactions created`);
+    console.log(`- 24 Transactions created (all SUCCESS for premium accounts)`);
     console.log(`- ${enrollments.length} Course enrollments created`);
-    console.log(`- 34 Reviews created`);
+    console.log(`- 34 Reviews created from premium parents`);
     console.log('');
     console.log('🔑 Login credentials:');
-    console.log('Admin: admin@dailymate.com / admin123');
-    console.log('Teachers: Use generated emails / teacher123');
-    console.log('Parents: Use generated emails / parent123');
-    console.log('Kids: Linked to parents via parentId');
+    console.log('Admin: admin@dailymate.com / 123456');
+    console.log('Teachers: Use generated emails (all @gmail.com) / 123456');
+    console.log('Parents: Use generated emails (all @gmail.com) / 123456');
+    console.log('Kids: Linked to parents via shared userId');
+    console.log('');
+    console.log('💎 Premium accounts: 24 parents have premium subscription (1 month from transaction date)');
+    console.log('🎯 Premium courses enrolled only by kids of premium parents');
+
+    // Cập nhật timestamps cho tất cả records
+    await updateAllTimestamps();
 
   } catch (error) {
     console.error('❌ Error creating initial data:', error);
     console.error(error.stack);
   } finally {
     await mongoose.connection.close();
-    console.log('MongoDB connection closed');
+    console.log('🔌 MongoDB connection closed');
   }
 }
 
