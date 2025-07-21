@@ -1,17 +1,17 @@
 [{
   "_id": {
-    "$oid": "684300aef8a84affee541279"
+    "$oid": "687e61c8eb0cac7fe6fcd6c3"
   },
   "userId": {
-    "$oid": "684300aef8a84affee541277"
+    "$oid": "687e61c8eb0cac7fe6fcd6bf"
   },
-  "fullName": "System Administrator",
-  "phoneNumber": "+84123456789",
+  "fullName": "Quản trị viên hệ thống",
+  "phoneNumber": "08828963924",
   "createdAt": {
-    "$date": "2025-06-06T14:52:30.624Z"
+    "$date": "2025-06-18T21:12:57.446Z"
   },
   "updatedAt": {
-    "$date": "2025-06-06T14:52:30.624Z"
+    "$date": "2025-06-18T21:12:57.446Z"
   },
   "__v": 0
 }]

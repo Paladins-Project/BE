@@ -1,75 +1,6 @@
 [{
   "_id": {
-    "$oid": "685cf063953bbf3c848feed4"
-  },
-  "title": "Giới thiệu an toàn trẻ em ",
-  "description": "nhận biết về các tình huống ",
-  "category": "Mathematics",
-  "ageGroup": "5-10",
-  "thumbnailUrl": "https://res.cloudinary.com/dfkb8qo66/image/upload/v1750921300/z6744004349505_e4e09d2e5b5242a6a248ddaefa22442a_mtda7f.jpg",
-  "pointsEarned": 50,
-  "isPremium": true,
-  "instructor": {
-    "$oid": "685a0acf48b93074f74ed155"
-  },
-  "isPublished": true,
-  "createdAt": {
-    "$date": "2025-06-26T07:01:55.040Z"
-  },
-  "updatedAt": {
-    "$date": "2025-06-26T07:01:55.040Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "685cfda2ac771a438d9eb031"
-  },
-  "title": "lớp học vui nhộn hahaa",
-  "description": "bé chơi các trò chơi ",
-  "category": "Mathematics",
-  "ageGroup": "5-10",
-  "thumbnailUrl": "https://res.cloudinary.com/dfkb8qo66/image/upload/v1750924698/Screenshot_2025-06-26_145753_mkl61t.png",
-  "pointsEarned": 0,
-  "isPremium": true,
-  "instructor": {
-    "$oid": "685a0acf48b93074f74ed155"
-  },
-  "isPublished": true,
-  "createdAt": {
-    "$date": "2025-06-26T07:58:26.671Z"
-  },
-  "updatedAt": {
-    "$date": "2025-07-01T02:09:04.664Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "685d0073ac771a438d9eb088"
-  },
-  "title": "Phản xạ thông minh",
-  "description": "xem các tình huống để phản xạ ",
-  "category": "Art",
-  "ageGroup": "5-10",
-  "thumbnailUrl": "https://res.cloudinary.com/dfkb8qo66/image/upload/v1750925417/Screenshot_2025-06-26_150811_jou5l0.png",
-  "pointsEarned": 50,
-  "isPremium": false,
-  "instructor": {
-    "$oid": "685a0acf48b93074f74ed155"
-  },
-  "isPublished": true,
-  "createdAt": {
-    "$date": "2025-06-26T08:10:27.108Z"
-  },
-  "updatedAt": {
-    "$date": "2025-06-26T08:10:27.108Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "68662fdd6ff52ee865252a74"
+    "$oid": "687e6209eb0cac7fe6fcde2b"
   },
   "title": "Khối lượng chất thải RN sinh hoạt phát sinh",
   "description": " Để bảo vệ môi trường, tận dụng nguồn giác tái chế và nâng cao nhận thức của người dân, việc tiến hành phân loại chất thải RN sinh hoạt tại nguồn là hết sức cần thiết. Lợi ích của việc phân loại chất thải RN sinh hoạt tại nguồn, giảm lượng chất thải Rn thải ra môi trường, từ đó tiết kiệm chi phí thu gom, vận chuyển, xử lý",
@@ -79,22 +10,22 @@
   "pointsEarned": 50,
   "isPremium": true,
   "instructor": {
-    "$oid": "685a0acf48b93074f74ed155"
+    "$oid": "687d9714c5dfc6b718800a45"
   },
   "isPublished": true,
   "createdAt": {
-    "$date": "2025-07-03T07:23:09.494Z"
+    "$date": "2025-07-21T15:51:37.430Z"
   },
   "updatedAt": {
-    "$date": "2025-07-03T07:23:09.494Z"
+    "$date": "2025-07-21T15:51:37.430Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "6871f22e0bb476e6d1044293"
+    "$oid": "687e6209eb0cac7fe6fcde30"
   },
-  "title": "An Toàn Giao Thông",
+  "title": "An Toàn Cho Em",
   "description": "Đội Mũ Bảo Hiểm và Ngồi Sau Xe Máy An Toàn\n",
   "category": "Social Studies",
   "ageGroup": "5-10",
@@ -102,14 +33,37 @@
   "pointsEarned": 50,
   "isPremium": true,
   "instructor": {
-    "$oid": "685a0acf48b93074f74ed155"
+    "$oid": "68789114f3188448187c2f79"
   },
   "isPublished": true,
   "createdAt": {
-    "$date": "2025-07-12T05:27:10.737Z"
+    "$date": "2025-07-21T15:51:37.587Z"
   },
   "updatedAt": {
-    "$date": "2025-07-12T05:27:10.737Z"
+    "$date": "2025-07-21T15:51:37.587Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687e6209eb0cac7fe6fcde35"
+  },
+  "title": "An Toàn Giao Thông",
+  "description": "Bé hiểu thêm về an toàn khi tham gia giao thông ",
+  "category": "Social Studies",
+  "ageGroup": "5-10",
+  "thumbnailUrl": "https://res.cloudinary.com/dfkb8qo66/image/upload/v1753062202/Screenshot_2025-07-21_084313_mlzb4q.png",
+  "pointsEarned": 50,
+  "isPremium": false,
+  "instructor": {
+    "$oid": "68789114f3188448187c2f74"
+  },
+  "isPublished": true,
+  "createdAt": {
+    "$date": "2025-07-21T15:51:37.735Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T15:51:37.735Z"
   },
   "__v": 0
 }]
