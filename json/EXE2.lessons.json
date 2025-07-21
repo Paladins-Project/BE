@@ -1,9 +1,9 @@
 [{
   "_id": {
-    "$oid": "68493f6eff0e71d3e9773a5d"
+    "$oid": "687e6209eb0cac7fe6fcde3b"
   },
   "courseId": {
-    "$oid": "68490d9f43507e546d24a1fd"
+    "$oid": "687e6209eb0cac7fe6fcde35"
   },
   "title": "Bài 1 ",
   "description": "Bài học giúp các em nhận biết những vùng riêng tư trên cơ thể, hiểu thế nào là đụng chạm an toàn và không an toàn, từ đó biết cách phản ứng và kêu cứu khi gặp tình huống nguy hiểm. Các em cũng được hướng dẫn gọi đến Tổng đài 111 hoặc 1022 nhấn phím 6 để được hỗ trợ khi cần.",
@@ -26,22 +26,22 @@
   "order": 1,
   "isPublished": true,
   "createdBy": {
-    "$oid": "60d21b4667d0d8992e610c86"
+    "$oid": "68789114f3188448187c2f79"
   },
   "createdAt": {
-    "$date": "2025-06-11T08:33:50.498Z"
+    "$date": "2025-07-21T15:51:37.943Z"
   },
   "updatedAt": {
-    "$date": "2025-06-18T16:50:54.169Z"
+    "$date": "2025-07-21T15:51:37.943Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "68494376ff0e71d3e9773a64"
+    "$oid": "687e620aeb0cac7fe6fcde41"
   },
   "courseId": {
-    "$oid": "684939c4ff0e71d3e9773a2e"
+    "$oid": "687e6209eb0cac7fe6fcde30"
   },
   "title": "Bài 1",
   "description": "Phân Loại Chất Thải Tại Nguồn – Chung Tay Vì Thành Phố Xanh Sạch",
@@ -64,22 +64,22 @@
   "order": 1,
   "isPublished": true,
   "createdBy": {
-    "$oid": "60d21b4667d0d8992e610c86"
+    "$oid": "68789113f3188448187c2f6a"
   },
   "createdAt": {
-    "$date": "2025-06-11T08:51:02.926Z"
+    "$date": "2025-07-21T15:51:38.145Z"
   },
   "updatedAt": {
-    "$date": "2025-06-18T16:39:15.581Z"
+    "$date": "2025-07-21T15:51:38.145Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "684a8d170f0b8e1745dc02c8"
+    "$oid": "687e620aeb0cac7fe6fcde47"
   },
   "courseId": {
-    "$oid": "684a8cd80f0b8e1745dc02bd"
+    "$oid": "687e6209eb0cac7fe6fcde35"
   },
   "title": "bài 1",
   "description": "Bài học giúp học sinh hiểu vệ sinh an toàn thực phẩm là gì, vì sao quan trọng và nắm vững 10 nguyên tắc vàng của WHO để đảm bảo sức khỏe mỗi ngày.",
@@ -102,22 +102,22 @@
   "order": 1,
   "isPublished": false,
   "createdBy": {
-    "$oid": "60d21b4667d0d8992e610c86"
+    "$oid": "687d9714c5dfc6b718800a45"
   },
   "createdAt": {
-    "$date": "2025-06-12T08:17:27.894Z"
+    "$date": "2025-07-21T15:51:38.344Z"
   },
   "updatedAt": {
-    "$date": "2025-06-17T14:54:10.179Z"
+    "$date": "2025-07-21T15:51:38.344Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "684a92c5f7695594fe106322"
+    "$oid": "687e620aeb0cac7fe6fcde4d"
   },
   "courseId": {
-    "$oid": "684a9244f7695594fe106314"
+    "$oid": "687e6209eb0cac7fe6fcde35"
   },
   "title": "Bài 1",
   "description": "Description",
@@ -131,22 +131,22 @@
   "order": 2,
   "isPublished": true,
   "createdBy": {
-    "$oid": "60d21b4667d0d8992e610c86"
+    "$oid": "68789114f3188448187c2f79"
   },
   "createdAt": {
-    "$date": "2025-06-12T08:41:41.871Z"
+    "$date": "2025-07-21T15:51:38.539Z"
   },
   "updatedAt": {
-    "$date": "2025-06-12T08:41:41.871Z"
+    "$date": "2025-07-21T15:51:38.539Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "684a9c78f7695594fe106377"
+    "$oid": "687e620aeb0cac7fe6fcde53"
   },
   "courseId": {
-    "$oid": "684a9c06f7695594fe10636c"
+    "$oid": "687e6209eb0cac7fe6fcde2b"
   },
   "title": "Bài 1 ",
   "description": "Đội Mũ Bảo Hiểm và Ngồi Sau Xe Máy An Toàn\n",
@@ -165,22 +165,22 @@
   "order": 1,
   "isPublished": true,
   "createdBy": {
-    "$oid": "60d21b4667d0d8992e610c86"
+    "$oid": "68789113f3188448187c2f6a"
   },
   "createdAt": {
-    "$date": "2025-06-12T09:23:04.433Z"
+    "$date": "2025-07-21T15:51:38.733Z"
   },
   "updatedAt": {
-    "$date": "2025-06-17T14:16:10.771Z"
+    "$date": "2025-07-21T15:51:38.733Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "685226e45aa77d123c2212e0"
+    "$oid": "687e620aeb0cac7fe6fcde59"
   },
   "courseId": {
-    "$oid": "685226075aa77d123c2212d5"
+    "$oid": "687e6209eb0cac7fe6fcde35"
   },
   "title": "Bài 1",
   "description": "Bài học giúp các em nhận biết tác hại nghiêm trọng của ma túy, cách phòng tránh và ứng xử khi gặp tình huống có người rủ rê sử dụng ma túy. Qua đó, các em hiểu rằng nói “KHÔNG” với ma túy là lựa chọn đúng đắn để bảo vệ sức khỏe, giữ gìn tương lai và góp phần xây dựng môi trường học đường an toàn, lành mạnh.",
@@ -199,22 +199,22 @@
   "order": 1,
   "isPublished": false,
   "createdBy": {
-    "$oid": "60d21b4667d0d8992e610c86"
+    "$oid": "687d9714c5dfc6b718800a45"
   },
   "createdAt": {
-    "$date": "2025-06-18T02:39:32.101Z"
+    "$date": "2025-07-21T15:51:38.928Z"
   },
   "updatedAt": {
-    "$date": "2025-06-19T08:38:55.410Z"
+    "$date": "2025-07-21T15:51:38.928Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "6852ea1dd9c80dd8c67891c0"
+    "$oid": "687e620beb0cac7fe6fcde5f"
   },
   "courseId": {
-    "$oid": "685226075aa77d123c2212d5"
+    "$oid": "687e6209eb0cac7fe6fcde2b"
   },
   "title": "tao cần kim cương làm cái đéo ",
   "description": "tao cần kim cương làm cái đéo tao cần kim cương làm cái đéo tao cần kim cương làm cái đéo ",
@@ -233,22 +233,22 @@
   "order": 1,
   "isPublished": false,
   "createdBy": {
-    "$oid": "60d21b4667d0d8992e610c86"
+    "$oid": "68789113f3188448187c2f6a"
   },
   "createdAt": {
-    "$date": "2025-06-18T16:32:29.877Z"
+    "$date": "2025-07-21T15:51:39.199Z"
   },
   "updatedAt": {
-    "$date": "2025-06-18T16:32:29.877Z"
+    "$date": "2025-07-21T15:51:39.199Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "685b7a4f3001edb384467aa1"
+    "$oid": "687e620beb0cac7fe6fcde65"
   },
   "courseId": {
-    "$oid": "685b6b833001edb384467a51"
+    "$oid": "687e6209eb0cac7fe6fcde2b"
   },
   "title": "Create lesson failed: \"createdBy\" is not allowed to be empty",
   "description": "Create lesson failed: \"createdBy\" is not allowed to be empty",
@@ -271,20 +271,23 @@
   "duration": 2,
   "order": 1,
   "isPublished": false,
+  "createdBy": {
+    "$oid": "68789113f3188448187c2f6a"
+  },
   "createdAt": {
-    "$date": "2025-06-25T04:25:51.150Z"
+    "$date": "2025-07-21T15:51:39.399Z"
   },
   "updatedAt": {
-    "$date": "2025-06-25T04:25:51.150Z"
+    "$date": "2025-07-21T15:51:39.399Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "685cea38953bbf3c848fee6e"
+    "$oid": "687e620beb0cac7fe6fcde6b"
   },
   "courseId": {
-    "$oid": "685ce85e953bbf3c848fee61"
+    "$oid": "687e6209eb0cac7fe6fcde35"
   },
   "title": "Đội Mũ Bảo Hiểm và Ngồi Sau Xe Máy An Toàn",
   "description": "Giúp các em biết cách chọn, đội mũ bảo hiểm đúng quy cách và ngồi sau xe máy an toàn để bảo vệ bản thân khi tham gia giao thông cùng người lớn.\n",
@@ -308,20 +311,23 @@
   "duration": 5,
   "order": 1,
   "isPublished": false,
+  "createdBy": {
+    "$oid": "68789114f3188448187c2f6f"
+  },
   "createdAt": {
-    "$date": "2025-06-26T06:35:36.050Z"
+    "$date": "2025-07-21T15:51:39.594Z"
   },
   "updatedAt": {
-    "$date": "2025-06-26T06:35:36.050Z"
+    "$date": "2025-07-21T15:51:39.594Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "685cec11953bbf3c848fee83"
+    "$oid": "687e620beb0cac7fe6fcde71"
   },
   "courseId": {
-    "$oid": "685ce85e953bbf3c848fee61"
+    "$oid": "687e6209eb0cac7fe6fcde30"
   },
   "title": "VỆ SINH AN TOÀN THỰC PHẨM",
   "description": "giúp bé hiểu thêm về cách vệ sinh sạch sẽ ",
@@ -357,20 +363,23 @@
   "duration": 10,
   "order": 2,
   "isPublished": false,
+  "createdBy": {
+    "$oid": "68789114f3188448187c2f7e"
+  },
   "createdAt": {
-    "$date": "2025-06-26T06:43:29.319Z"
+    "$date": "2025-07-21T15:51:39.788Z"
   },
   "updatedAt": {
-    "$date": "2025-06-26T06:43:29.319Z"
+    "$date": "2025-07-21T15:51:39.788Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "685ceeb7953bbf3c848feeab"
+    "$oid": "687e620beb0cac7fe6fcde77"
   },
   "courseId": {
-    "$oid": "685ce85e953bbf3c848fee61"
+    "$oid": "687e6209eb0cac7fe6fcde2b"
   },
   "title": "Phòng chống ma túy ",
   "description": "Kỹ năng phòng tránh tệ nạn ma túy Ma túy",
@@ -386,20 +395,23 @@
   "duration": 10,
   "order": 0,
   "isPublished": false,
+  "createdBy": {
+    "$oid": "68789114f3188448187c2f7e"
+  },
   "createdAt": {
-    "$date": "2025-06-26T06:54:47.826Z"
+    "$date": "2025-07-21T15:51:39.986Z"
   },
   "updatedAt": {
-    "$date": "2025-06-26T06:55:03.052Z"
+    "$date": "2025-07-21T15:51:39.986Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "685cf0ba953bbf3c848feede"
+    "$oid": "687e620ceb0cac7fe6fcde7d"
   },
   "courseId": {
-    "$oid": "685cf063953bbf3c848feed4"
+    "$oid": "687e6209eb0cac7fe6fcde30"
   },
   "title": "Đội Mũ Bảo Hiểm và Ngồi Sau Xe Máy An Toàn",
   "description": "Giúp các em biết cách chọn, đội mũ bảo hiểm đúng quy cách và ngồi sau xe máy an toàn để bảo vệ bản thân khi tham gia giao thông cùng người lớn.",
@@ -423,20 +435,23 @@
   "duration": 8,
   "order": 1,
   "isPublished": false,
+  "createdBy": {
+    "$oid": "68789113f3188448187c2f6a"
+  },
   "createdAt": {
-    "$date": "2025-06-26T07:03:22.999Z"
+    "$date": "2025-07-21T15:51:40.183Z"
   },
   "updatedAt": {
-    "$date": "2025-06-26T07:03:22.999Z"
+    "$date": "2025-07-21T15:51:40.183Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "685d01bfac771a438d9eb09e"
+    "$oid": "687e620ceb0cac7fe6fcde83"
   },
   "courseId": {
-    "$oid": "685d0073ac771a438d9eb088"
+    "$oid": "687e6209eb0cac7fe6fcde35"
   },
   "title": "Đội Mũ Bảo Hiểm và Ngồi Sau Xe Máy An Toàn",
   "description": "Giúp các em biết cách chọn, đội mũ bảo hiểm đúng quy cách và ngồi sau xe máy an toàn để bảo vệ bản thân khi tham gia giao thông cùng người lớn.\n",
@@ -461,22 +476,22 @@
   "order": 1,
   "isPublished": false,
   "createdBy": {
-    "$oid": "685a1fbd05372834986df9e1"
+    "$oid": "68789113f3188448187c2f6a"
   },
   "createdAt": {
-    "$date": "2025-06-26T08:15:59.954Z"
+    "$date": "2025-07-21T15:51:40.380Z"
   },
   "updatedAt": {
-    "$date": "2025-06-26T08:15:59.954Z"
+    "$date": "2025-07-21T15:51:40.380Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "685d05a7ac771a438d9eb0de"
+    "$oid": "687e620ceb0cac7fe6fcde89"
   },
   "courseId": {
-    "$oid": "685d0073ac771a438d9eb088"
+    "$oid": "687e6209eb0cac7fe6fcde35"
   },
   "title": "VỆ SINH AN TOÀN THỰC PHẨM",
   "description": "Vệ sinh an toàn thực phẩm là gì",
@@ -497,22 +512,22 @@
   "order": 0,
   "isPublished": false,
   "createdBy": {
-    "$oid": "685a1fbd05372834986df9e1"
+    "$oid": "68789114f3188448187c2f7e"
   },
   "createdAt": {
-    "$date": "2025-06-26T08:32:39.123Z"
+    "$date": "2025-07-21T15:51:40.575Z"
   },
   "updatedAt": {
-    "$date": "2025-06-26T08:32:39.123Z"
+    "$date": "2025-07-21T15:51:40.575Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "685d0efaac771a438d9ebd8b"
+    "$oid": "687e620ceb0cac7fe6fcde8f"
   },
   "courseId": {
-    "$oid": "685cf063953bbf3c848feed4"
+    "$oid": "687e6209eb0cac7fe6fcde30"
   },
   "title": "VỆ SINH AN TOÀN THỰC PHẨM",
   "description": "(Dành cho học sinh cấp 1–2)\n",
@@ -537,22 +552,22 @@
   "order": 0,
   "isPublished": false,
   "createdBy": {
-    "$oid": "685a1fbd05372834986df9e1"
+    "$oid": "68789114f3188448187c2f79"
   },
   "createdAt": {
-    "$date": "2025-06-26T09:12:26.629Z"
+    "$date": "2025-07-21T15:51:40.773Z"
   },
   "updatedAt": {
-    "$date": "2025-06-26T09:12:26.629Z"
+    "$date": "2025-07-21T15:51:40.773Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "686340612ab7b5312cf51249"
+    "$oid": "687e620ceb0cac7fe6fcde95"
   },
   "courseId": {
-    "$oid": "685d0073ac771a438d9eb088"
+    "$oid": "687e6209eb0cac7fe6fcde35"
   },
   "title": "hướng dẫn phân loại rác",
   "description": "Để bảo vệ môi trường, tận dụng nguồn giác tái chế và nâng cao nhận thức của người dân, việc tiến hành phân loại chất thải RN sinh hoạt tại nguồn là hết sức cần thiết.",
@@ -567,20 +582,23 @@
   "duration": 15,
   "order": 3,
   "isPublished": false,
+  "createdBy": {
+    "$oid": "68789113f3188448187c2f6a"
+  },
   "createdAt": {
-    "$date": "2025-07-01T01:56:49.916Z"
+    "$date": "2025-07-21T15:51:40.972Z"
   },
   "updatedAt": {
-    "$date": "2025-07-01T01:56:49.916Z"
+    "$date": "2025-07-21T15:51:40.972Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "686343d92ab7b5312cf512db"
+    "$oid": "687e620deb0cac7fe6fcde9b"
   },
   "courseId": {
-    "$oid": "686343c42ab7b5312cf512d1"
+    "$oid": "687e6209eb0cac7fe6fcde2b"
   },
   "title": "ấdad hưng mà sẽ phải có mail của user để gửi studentCod",
   "description": "hưng mà sẽ phải có mail của user để gửi studentCodhưng mà sẽ phải có mail của user để gửi studentCodhưng mà sẽ phải có mail của user để gửi studentCod",
@@ -595,20 +613,23 @@
   "duration": 4,
   "order": 4,
   "isPublished": false,
+  "createdBy": {
+    "$oid": "68789114f3188448187c2f74"
+  },
   "createdAt": {
-    "$date": "2025-07-01T02:11:37.110Z"
+    "$date": "2025-07-21T15:51:41.170Z"
   },
   "updatedAt": {
-    "$date": "2025-07-01T02:11:37.110Z"
+    "$date": "2025-07-21T15:51:41.170Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "68634e3d2ab7b5312cf51469"
+    "$oid": "687e620deb0cac7fe6fcdea1"
   },
   "courseId": {
-    "$oid": "68634e1c2ab7b5312cf5145d"
+    "$oid": "687e6209eb0cac7fe6fcde30"
   },
   "title": "hập xong vẫn phải hiện info để check chứ anh nhỉ",
   "description": "hập xong vẫn phải hiện info để check chứ anh nhỉhập xong vẫn phải hiện info để check chứ anh nhỉhập xong vẫn phải hiện info để check chứ anh nhỉ",
@@ -624,22 +645,22 @@
   "order": 0,
   "isPublished": false,
   "createdBy": {
-    "$oid": "685a0acf48b93074f74ed155"
+    "$oid": "68789114f3188448187c2f74"
   },
   "createdAt": {
-    "$date": "2025-07-01T02:55:57.669Z"
+    "$date": "2025-07-21T15:51:41.368Z"
   },
   "updatedAt": {
-    "$date": "2025-07-01T02:55:57.669Z"
+    "$date": "2025-07-21T15:51:41.368Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "686630416ff52ee865252a80"
+    "$oid": "687e620deb0cac7fe6fcdea7"
   },
   "courseId": {
-    "$oid": "68662fdd6ff52ee865252a74"
+    "$oid": "687e6209eb0cac7fe6fcde35"
   },
   "title": "loại chất thải RN sinh hoạt tại nguồn",
   "description": "Hiện nay, trung bình một phẩy mười tấn rác thải được thu gom hàng ngày. Để bảo vệ môi trường, tận dụng nguồn giác tái chế và nâng cao nhận thức của người dân",
@@ -660,22 +681,22 @@
   "order": 1,
   "isPublished": false,
   "createdBy": {
-    "$oid": "685a0acf48b93074f74ed155"
+    "$oid": "68789114f3188448187c2f79"
   },
   "createdAt": {
-    "$date": "2025-07-03T07:24:49.405Z"
+    "$date": "2025-07-21T15:51:41.565Z"
   },
   "updatedAt": {
-    "$date": "2025-07-03T07:24:49.405Z"
+    "$date": "2025-07-21T15:51:41.565Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "686631376ff52ee865252a92"
+    "$oid": "687e620deb0cac7fe6fcdead"
   },
   "courseId": {
-    "$oid": "68662fdd6ff52ee865252a74"
+    "$oid": "687e6209eb0cac7fe6fcde2b"
   },
   "title": "Nhóm chất thải rn tái chế được mang đến sẽ phân thành ba loại",
   "description": "bỏ vào các thùng đựng khác nhau. Cùng tìm hiểu kỹ hơn về nhóm chất thải RN nguy hại gồm có pin CQ, thiết bị điện tử hư hỏng, bóng đèn huỳnh quang hư hỏng và chai lọ đựng các loại hóa chất độc hại, nguy hiểm",
@@ -696,22 +717,22 @@
   "order": 0,
   "isPublished": false,
   "createdBy": {
-    "$oid": "685a0acf48b93074f74ed155"
+    "$oid": "68789114f3188448187c2f6f"
   },
   "createdAt": {
-    "$date": "2025-07-03T07:28:55.249Z"
+    "$date": "2025-07-21T15:51:41.762Z"
   },
   "updatedAt": {
-    "$date": "2025-07-03T07:28:55.249Z"
+    "$date": "2025-07-21T15:51:41.762Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "6871f27c3e56b8e20f16f1c8"
+    "$oid": "687e620deb0cac7fe6fcdeb3"
   },
   "courseId": {
-    "$oid": "6871f22e0bb476e6d1044293"
+    "$oid": "687e6209eb0cac7fe6fcde2b"
   },
   "title": "Đội Mũ Bảo Hiểm và Ngồi Sau Xe Máy An Toàn",
   "description": "Giúp các em biết cách chọn, đội mũ bảo hiểm đúng quy cách và ngồi sau xe máy an toàn để bảo vệ bản thân khi tham gia giao thông cùng người lớn.\n",
@@ -732,22 +753,22 @@
   "order": 1,
   "isPublished": false,
   "createdBy": {
-    "$oid": "685a0acf48b93074f74ed155"
+    "$oid": "68789114f3188448187c2f74"
   },
   "createdAt": {
-    "$date": "2025-07-12T05:28:28.061Z"
+    "$date": "2025-07-21T15:51:41.955Z"
   },
   "updatedAt": {
-    "$date": "2025-07-12T05:28:28.061Z"
+    "$date": "2025-07-21T15:51:41.955Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "6871f2da3e56b8e20f16f1d2"
+    "$oid": "687e620eeb0cac7fe6fcdeb9"
   },
   "courseId": {
-    "$oid": "6871f22e0bb476e6d1044293"
+    "$oid": "687e6209eb0cac7fe6fcde35"
   },
   "title": "VỆ SINH AN TOÀN THỰC PHẨM",
   "description": "I. Vệ sinh an toàn thực phẩm là gì?\nII. Tình hình ở Việt Nam\nIII. Ba tác nhân gây nhiễm bẩn thực phẩm\n",
@@ -772,13 +793,245 @@
   "order": 2,
   "isPublished": false,
   "createdBy": {
-    "$oid": "685a0acf48b93074f74ed155"
+    "$oid": "687d9714c5dfc6b718800a45"
   },
   "createdAt": {
-    "$date": "2025-07-12T05:30:02.642Z"
+    "$date": "2025-07-21T15:51:42.151Z"
   },
   "updatedAt": {
-    "$date": "2025-07-12T05:30:02.642Z"
+    "$date": "2025-07-21T15:51:42.151Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687e620eeb0cac7fe6fcdebf"
+  },
+  "courseId": {
+    "$oid": "687e6209eb0cac7fe6fcde30"
+  },
+  "title": "Đội Mũ Bảo Hiểm và Ngồi Sau Xe Máy An Toàn",
+  "description": "Giúp các em biết cách chọn, đội mũ bảo hiểm đúng quy cách và ngồi sau xe máy an toàn để bảo vệ bản thân khi tham gia giao thông cùng người lớn.\n",
+  "content": {
+    "sections": [
+      {
+        "title": "Vì sao phải đội mũ bảo hiểm?",
+        "text": " Khi đi xe máy, đội mũ bảo hiểm giúp bảo vệ đầu của mình. Nếu chẳng may bị ngã xe, mũ sẽ giảm nguy cơ bị đau đầu hoặc bị thương nặng.\n🔍 Các em nên chọn mũ bảo hiểm có:\nTem CR (chứng nhận đạt chuẩn an toàn)\n\n\nThương hiệu rõ ràng, nhà sản xuất uy tín\n\n\nLớp xốp dày, chắc chắn\n\n\nQuai đeo bền, không dễ rơi\n\n\nMũ vừa với đầu, không lắc lư quá nhiều\n\n\n🎯 Mẹo nhỏ: Nhờ bố mẹ chọn mũ giúp mình để đảm bảo an toàn nhé!\n\n"
+      },
+      {
+        "title": "Cách đội mũ bảo hiểm đúng cách",
+        "text": "🔎 Nhớ ba bước \"Hai ngón tay vàng\" để đội mũ đúng cách nha:\nĐội đúng hướng: Mặt trước của mũ có lưỡi trai, mặt sau che gáy nhiều hơn. Đội sao cho vành mũ cách chân mày khoảng 2 ngón tay.\n\n\nĐiều chỉnh quai mũ: Quai ôm vừa tai, không bị xoắn.\n\n\nCài khóa dưới cằm: Không chật quá, không lỏng quá – vừa khít là được!\n\n\n💡 Mũ màu sáng hoặc có phản quang sẽ giúp các chú bác lái xe khác dễ nhìn thấy các em, đặc biệt là khi trời tối.\n"
+      }
+    ]
+  },
+  "videoUrl": "https://res.cloudinary.com/dfkb8qo66/video/upload/v1753062387/Ng%E1%BB%93i_sau_xe_m%C3%A1y_an_to%C3%A0n_uucy4n.mp4",
+  "duration": 15,
+  "order": 1,
+  "isPublished": false,
+  "createdBy": {
+    "$oid": "68789113f3188448187c2f6a"
+  },
+  "createdAt": {
+    "$date": "2025-07-21T15:51:42.346Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T15:51:42.346Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687e620eeb0cac7fe6fcdec5"
+  },
+  "courseId": {
+    "$oid": "687e6209eb0cac7fe6fcde30"
+  },
+  "title": "Biển báo giao thông cơ bản dành cho học sinh",
+  "description": "Giúp em hiểu thêm về các  biển báo giao thông cơ bản khi tham gia giao thông",
+  "content": {
+    "sections": [
+      {
+        "title": "Mục tiêu bài học",
+        "text": "Giúp học sinh nhận biết và ghi nhớ một số biển báo giao thông cơ bản.\n\nHiểu ý nghĩa và biết cách tuân thủ khi nhìn thấy biển báo.\n\nHình thành ý thức an toàn khi tham gia giao thông."
+      },
+      {
+        "title": "Các nhóm biển báo giao thông cơ bản",
+        "text": " Biển báo cấm (hình tròn, viền đỏ, nền trắng)\n🚫 Ví dụ\tÝ nghĩa\nCấm xe đạp\tKhông được đi xe đạp vào khu vực có biển\nCấm người đi bộ\tNgười đi bộ không được đi vào khu vực đó\n🔇 Cấm bóp còi\tKhông được làm ồn bằng còi xe\n\n➡️ Lưu ý: Khi gặp biển báo cấm, phải dừng lại hoặc không được làm theo hành vi bị cấm."
+      }
+    ]
+  },
+  "videoUrl": "https://res.cloudinary.com/dfkb8qo66/video/upload/v1753063104/bienbaogiaothong_pp9lj7.mp4",
+  "duration": 12,
+  "order": 2,
+  "isPublished": false,
+  "createdBy": {
+    "$oid": "68789114f3188448187c2f74"
+  },
+  "createdAt": {
+    "$date": "2025-07-21T15:51:42.545Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T15:51:42.545Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687e620eeb0cac7fe6fcdecb"
+  },
+  "courseId": {
+    "$oid": "687e6209eb0cac7fe6fcde35"
+  },
+  "title": "Chú ý quan sát khi đi qua đường sắt ",
+  "description": "Đoạn nội dung nói về tình trạng nguy hiểm khi tham gia giao thông tại các điểm giao cắt giữa đường bộ và đường sắt. Nhiều người còn thiếu ý thức khi băng qua đường sắt không đúng cách, gây ra ùn tắc và tai nạn nghiêm trọng. Thành phố Đà Nẵng đã triển khai nhiều biện pháp như đóng lối đi dân sinh, xây dựng đường gom, đặt biển cảnh báo và cử người canh gác để hạn chế tai nạn. Mỗi người dân cần tuân thủ đúng luật để giữ an toàn cho bản thân và cộng đồng.\n",
+  "content": {
+    "sections": [
+      {
+        "title": "Khi đi qua đường tàu, em cần nhớ:",
+        "text": "Phải dừng lại, quan sát kỹ và nghe tín hiệu. Nếu thấy đèn đỏ nhấp nháy, còi kêu hay rào chắn đang hạ xuống thì tuyệt đối không được băng qua.\n\n\nKhi tàu chưa đi qua hết, không được chen lên hay vượt rào chắn, vì tàu chạy rất nhanh, có thể gây tai nạn.\n\n\nKhông chơi đùa, không buôn bán gần đường tàu, vì đó là nơi rất nguy hiểm.\n\n\nNếu ở chỗ không có rào chắn, em cần đứng cách xa đường ray để chờ tàu đi qua rồi mới đi tiếp.\n"
+      }
+    ]
+  },
+  "videoUrl": "https://res.cloudinary.com/dfkb8qo66/video/upload/v1753079220/Bangquaduongsat_jzkbkl.mp4",
+  "duration": 15,
+  "order": 3,
+  "isPublished": false,
+  "createdBy": {
+    "$oid": "68789114f3188448187c2f79"
+  },
+  "createdAt": {
+    "$date": "2025-07-21T15:51:42.740Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T15:51:42.740Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687e620eeb0cac7fe6fcded1"
+  },
+  "courseId": {
+    "$oid": "687e6209eb0cac7fe6fcde35"
+  },
+  "title": "Đã uống rượu bia, không lái xe",
+  "description": "Giúp bé hiểu nguy hiểm của việc uống rượu bia khi tham gia giao thông ",
+  "content": {
+    "sections": [
+      {
+        "title": "Các bạn nhỏ ơi, mỗi khi người lớn uống rượu bia mà vẫn lái xe thì rất dễ gây ra tai nạn giao thông",
+        "text": "Khi có rượu bia trong người, người lái xe sẽ:\nMắt nhìn kém hơn\n\n\nTay lái run, điều khiển xe không chắc\n\n\nĐầu óc không tỉnh táo, phản ứng chậm\n\n\nĐiều này rất nguy hiểm cho chính người lái và cả những người đi đường khác.\nVì vậy, luật giao thông đã quy định:\nĐi xe đạp mà có uống rượu bia cũng bị phạt đến 600.000 đồng.\n\n\nĐi xe máy mà uống rượu bia có thể bị phạt đến 8 triệu đồng và bị giữ bằng lái đến 2 năm.\n\n\nLái ô tô mà uống rượu bia sẽ bị phạt đến 40 triệu đồng và cũng bị giữ bằng lái.\n\n\nNếu có người thân hay bạn bè uống rượu bia, em hãy nhắc họ:\nĐã uống rượu bia thì không lái xe.\n\n\nHãy gọi taxi, đi xe buýt hoặc nhờ người khác chở về.\n\n\nHãy nhớ: An toàn giao thông là hạnh phúc của mọi nhà!\n"
+      }
+    ]
+  },
+  "videoUrl": "https://res.cloudinary.com/dfkb8qo66/video/upload/v1753079661/Ruoubia_dcshlv.mp4",
+  "duration": 15,
+  "order": 4,
+  "isPublished": false,
+  "createdBy": {
+    "$oid": "68789114f3188448187c2f74"
+  },
+  "createdAt": {
+    "$date": "2025-07-21T15:51:42.935Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T15:51:42.935Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687e620feb0cac7fe6fcded7"
+  },
+  "courseId": {
+    "$oid": "687e6209eb0cac7fe6fcde35"
+  },
+  "title": "Tai nạn giao thông và cách phòng tránh",
+  "description": " Ý thức và tuân thủ luật giao thông là cách tốt nhất để bảo vệ tính mạng chính mình và người khác",
+  "content": {
+    "sections": [
+      {
+        "title": "Các bạn nhỏ ơi, khi tham gia giao thông mà không chú ý quan sát, đi sai đường, vượt đèn đỏ, hay chạy quá nhanh thì rất dễ gây ra tai nạn.",
+        "text": "Có nhiều trường hợp nguy hiểm xảy ra như:\nCó người đi xe máy từ trong ngõ ra mà không dừng lại quan sát, khiến người khác không kịp tránh.\n\n\nCó người rẽ mà không bật đèn xi nhan, làm xe khác va vào.\n\n\nCó người vượt ẩu khi đường đang khuất tầm nhìn, khiến xe đối diện không tránh được.\n\n\nCó người uống rượu bia rồi lái xe, gây tai nạn cho cả gia đình khác.\n\n\nCó người vượt đèn đỏ, bị ô tô đâm vì đi sai luật.\n\n\nNhững tai nạn đó rất nguy hiểm và có thể làm mất đi tính mạng của nhiều người.\nVì vậy, các bạn hãy nhớ:\nĐi đúng làn đường\n\n\nNhìn trước, ngó sau khi sang đường\n\n\nKhông vượt đèn đỏ\n\n\nKhông phóng nhanh, lạng lách\n\n\nĐặc biệt: Đã uống rượu bia thì không được lái xe\n\n\nPhía trước tay lái là sự sống! Hãy bảo vệ mình và mọi người bằng cách tuân thủ luật giao thông nhé!\n"
+      }
+    ]
+  },
+  "videoUrl": "https://res.cloudinary.com/dfkb8qo66/video/upload/v1753080137/tainangiaothong_p7waiz.mp4",
+  "duration": 15,
+  "order": 5,
+  "isPublished": false,
+  "createdBy": {
+    "$oid": "68789114f3188448187c2f7e"
+  },
+  "createdAt": {
+    "$date": "2025-07-21T15:51:43.131Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T15:51:43.131Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687e620feb0cac7fe6fcdedd"
+  },
+  "courseId": {
+    "$oid": "687e6209eb0cac7fe6fcde35"
+  },
+  "title": "Điểm mù - Khu vực tử thần khi tham gia giao thông ",
+  "description": " Người tham gia giao thông cần biết cách đi lại an toàn, tránh xa các khu vực điểm mù của xe tải.\n",
+  "content": {
+    "sections": [
+      {
+        "title": "Xe tải, xe container rất to, nên có những chỗ mà chú tài xế không thể thấy được, người ta gọi là điểm mù.",
+        "text": "4 chỗ nguy hiểm các bạn cần tránh:\nĐứng sát đầu xe – Chú tài xế không nhìn thấy đâu, rất nguy hiểm!\n\n\nĐi lâu bên hông xe tải – Chú ấy không biết có bạn ở đó.\n\n\nĐi sát đuôi xe tải – Không thấy được phía sau xe đâu nhé.\n\n\nKhi xe đang rẽ – Không nên cố vượt lên vì có thể xảy ra tai nạn.\n\n\nLời khuyên:\nLuôn giữ khoảng cách an toàn với xe to.\n\n\nKhi vượt thì vượt bên trái và nhớ bật xi nhan.\n\n\nKhông chơi gần xe tải hay xe container nhé!\n\n\nAn toàn giao thông là niềm vui của mọi người!\n\n"
+      }
+    ]
+  },
+  "videoUrl": "https://res.cloudinary.com/dfkb8qo66/video/upload/v1753080398/diemmu_t6pheb.mp4",
+  "duration": 17,
+  "order": 6,
+  "isPublished": false,
+  "createdBy": {
+    "$oid": "68789114f3188448187c2f6f"
+  },
+  "createdAt": {
+    "$date": "2025-07-21T15:51:43.326Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T15:51:43.326Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687e620feb0cac7fe6fcdee3"
+  },
+  "courseId": {
+    "$oid": "687e6209eb0cac7fe6fcde30"
+  },
+  "title": " Chú ý quan sát, giữ khoảng cách an toàn khi tham gia giao thông",
+  "description": "Việc chú ý quan sát và giữ khoảng cách an toàn khi lái xe giúp chúng ta tránh những tai nạn không mong muốn.",
+  "content": {
+    "sections": [
+      {
+        "title": "Các bạn nhỏ nhớ nhé!",
+        "text": "Khi tham gia giao thông, chúng ta phải luôn:\nNhìn trước – nhìn sau – nhìn hai bên thật cẩn thận để tránh đụng vào người khác.\n\n\nGiữ khoảng cách với xe phía trước – đừng đi sát quá, nếu xe phía trước dừng đột ngột thì mình sẽ kịp dừng theo.\n\n\nVí dụ dễ nhớ:\nChạy 60 km/h → Cách xe trước ít nhất 35 mét.\n\n\nChạy 80 km/h → Cách xe trước ít nhất 55 mét.\n\n\nChạy 100 km/h → Cách xe trước ít nhất 70 mét.\n\n\nNếu trời mưa, đường trơn, hoặc xe đông, thì nhớ giữ khoảng cách xa hơn bình thường cho an toàn nhé!\nHãy nhớ: An toàn giao thông là hạnh phúc cho mọi nhà!\n"
+      }
+    ]
+  },
+  "videoUrl": "https://res.cloudinary.com/dfkb8qo66/video/upload/v1753080615/chuyquansat_anrzbp.mp4",
+  "duration": 10,
+  "order": 7,
+  "isPublished": false,
+  "createdBy": {
+    "$oid": "68789114f3188448187c2f79"
+  },
+  "createdAt": {
+    "$date": "2025-07-21T15:51:43.525Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T15:51:43.525Z"
   },
   "__v": 0
 }]

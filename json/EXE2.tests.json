@@ -1,9 +1,9 @@
 [{
   "_id": {
-    "$oid": "684a851c0f0b8e1745dc00d1"
+    "$oid": "687e620feb0cac7fe6fcdee9"
   },
   "lessonId": {
-    "$oid": "684a78e90f0b8e1745dbffed"
+    "$oid": "687e620beb0cac7fe6fcde77"
   },
   "title": "tesst khoas  hocj ",
   "description": "tesst khoas  hocj ",
@@ -24,7 +24,7 @@
       "explanation": "tesst khoas  hocj ",
       "points": 10,
       "_id": {
-        "$oid": "684a851c0f0b8e1745dc00d2"
+        "$oid": "687e620feb0cac7fe6fcdeea"
       }
     },
     {
@@ -40,7 +40,7 @@
       "explanation": "tesst khoas  hocj ",
       "points": 10,
       "_id": {
-        "$oid": "684a851c0f0b8e1745dc00d3"
+        "$oid": "687e620feb0cac7fe6fcdeeb"
       }
     },
     {
@@ -54,28 +54,28 @@
       "explanation": "tesst khoas  hocj ",
       "points": 10,
       "_id": {
-        "$oid": "684a851c0f0b8e1745dc00d4"
+        "$oid": "687e620feb0cac7fe6fcdeec"
       }
     }
   ],
   "totalPoints": 0,
   "createdBy": {
-    "$oid": "6843bd2fc9c53e526c15e0be"
+    "$oid": "68789114f3188448187c2f79"
   },
   "createdAt": {
-    "$date": "2025-06-12T07:43:24.323Z"
+    "$date": "2025-07-21T15:51:43.733Z"
   },
   "updatedAt": {
-    "$date": "2025-06-12T07:43:24.323Z"
+    "$date": "2025-07-21T15:51:43.733Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "684a88910f0b8e1745dc022c"
+    "$oid": "687e620feb0cac7fe6fcdef2"
   },
   "lessonId": {
-    "$oid": "68494a80ff0e71d3e9773a7f"
+    "$oid": "687e620feb0cac7fe6fcdedd"
   },
   "title": "preloaded using link preload but not used",
   "description": "preloaded using link preload but not used",
@@ -94,28 +94,28 @@
       "explanation": "preloaded using link preload but not used",
       "points": 10,
       "_id": {
-        "$oid": "684a88910f0b8e1745dc022d"
+        "$oid": "687e620feb0cac7fe6fcdef3"
       }
     }
   ],
   "totalPoints": 0,
   "createdBy": {
-    "$oid": "6843bd2fc9c53e526c15e0be"
+    "$oid": "68789114f3188448187c2f79"
   },
   "createdAt": {
-    "$date": "2025-06-12T07:58:09.118Z"
+    "$date": "2025-07-21T15:51:43.952Z"
   },
   "updatedAt": {
-    "$date": "2025-06-12T07:58:09.118Z"
+    "$date": "2025-07-21T15:51:43.952Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "684a9375f7695594fe10632d"
+    "$oid": "687e6210eb0cac7fe6fcdef9"
   },
   "lessonId": {
-    "$oid": "684a92c5f7695594fe106322"
+    "$oid": "687e620feb0cac7fe6fcdee3"
   },
   "title": "Test123",
   "description": "description",
@@ -136,7 +136,7 @@
       "explanation": "ăegfhags",
       "points": 10,
       "_id": {
-        "$oid": "684a9375f7695594fe10632e"
+        "$oid": "687e6210eb0cac7fe6fcdefa"
       }
     },
     {
@@ -150,28 +150,28 @@
       "explanation": "gfgfgfgfgfgf",
       "points": 10,
       "_id": {
-        "$oid": "684a9375f7695594fe10632f"
+        "$oid": "687e6210eb0cac7fe6fcdefb"
       }
     }
   ],
   "totalPoints": 0,
   "createdBy": {
-    "$oid": "6843bd2fc9c53e526c15e0be"
+    "$oid": "687d9714c5dfc6b718800a45"
   },
   "createdAt": {
-    "$date": "2025-06-12T08:44:37.165Z"
+    "$date": "2025-07-21T15:51:44.152Z"
   },
   "updatedAt": {
-    "$date": "2025-06-12T08:44:37.165Z"
+    "$date": "2025-07-21T15:51:44.152Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "684fc89eba155c1789d1497c"
+    "$oid": "687e6210eb0cac7fe6fcdf01"
   },
   "lessonId": {
-    "$oid": "684fc83fba155c1789d14973"
+    "$oid": "687e620ceb0cac7fe6fcde7d"
   },
   "title": "Cháu có muốn ăn kẹo không? Cô có nhiều loại ngon lắm nè!",
   "description": "Cháu có muốn ăn kẹo không? Cô có nhiều loại ngon lắm nè!",
@@ -192,28 +192,28 @@
       "explanation": "không nhận đồ từ người lạ ",
       "points": 10,
       "_id": {
-        "$oid": "684fc89eba155c1789d1497d"
+        "$oid": "687e6210eb0cac7fe6fcdf02"
       }
     }
   ],
   "totalPoints": 0,
   "createdBy": {
-    "$oid": "6843bd2fc9c53e526c15e0be"
+    "$oid": "68789113f3188448187c2f6a"
   },
   "createdAt": {
-    "$date": "2025-06-16T07:32:46.182Z"
+    "$date": "2025-07-21T15:51:44.354Z"
   },
   "updatedAt": {
-    "$date": "2025-06-16T07:32:46.182Z"
+    "$date": "2025-07-21T15:51:44.354Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "68517b3b51c3611da975f48a"
+    "$oid": "687e6210eb0cac7fe6fcdf08"
   },
   "lessonId": {
-    "$oid": "684a9c78f7695594fe106377"
+    "$oid": "687e620feb0cac7fe6fcdee3"
   },
   "title": "Bài kiểm tra 1",
   "description": "Kiểm tra kiến thức của bạn!",
@@ -234,7 +234,7 @@
       "explanation": "Ngồi yên và bám chắc giúp em an toàn, không bị ngã khi xe chạy. Đứng lên hay quay lưng lại rất nguy hiểm.",
       "points": 10,
       "_id": {
-        "$oid": "68517b3b51c3611da975f48b"
+        "$oid": "687e6210eb0cac7fe6fcdf09"
       }
     },
     {
@@ -250,7 +250,7 @@
       "explanation": "Mũ bảo hiểm bảo vệ phần đầu – bộ phận quan trọng nhất nếu chẳng may bị té xe. Đây là lý do mọi người phải đội mũ khi đi xe máy.",
       "points": 10,
       "_id": {
-        "$oid": "68517b3b51c3611da975f48c"
+        "$oid": "687e6210eb0cac7fe6fcdf0a"
       }
     },
     {
@@ -266,7 +266,7 @@
       "explanation": "Mũ bảo hiểm chỉ phát huy tác dụng khi được đội đúng cách và cài dây chắc chắn. Mũ lỏng hay không cài dây sẽ dễ rơi ra khi bị té.",
       "points": 10,
       "_id": {
-        "$oid": "68517b3b51c3611da975f48d"
+        "$oid": "687e6210eb0cac7fe6fcdf0b"
       }
     },
     {
@@ -282,7 +282,7 @@
       "explanation": "Áo dài tay và giày sẽ bảo vệ da khi té ngã. Dép lê dễ tuột, còn mặc đồ chơi hay không mặc gì là sai và nguy hiểm.",
       "points": 10,
       "_id": {
-        "$oid": "68517b3b51c3611da975f48e"
+        "$oid": "687e6210eb0cac7fe6fcdf0c"
       }
     },
     {
@@ -296,7 +296,7 @@
       "explanation": "Mũ bảo hiểm dùng để bảo vệ đầu khi đi xe, không phải để chơi game hay chống đau đầu.",
       "points": 10,
       "_id": {
-        "$oid": "68517b3b51c3611da975f48f"
+        "$oid": "687e6210eb0cac7fe6fcdf0d"
       }
     },
     {
@@ -310,7 +310,7 @@
       "explanation": "Mũ đúng cỡ và đạt tiêu chuẩn CR giúp bảo vệ đầu tốt nhất khi xảy ra tai nạn.",
       "points": 10,
       "_id": {
-        "$oid": "68517b3b51c3611da975f490"
+        "$oid": "687e6210eb0cac7fe6fcdf0e"
       }
     },
     {
@@ -324,7 +324,7 @@
       "explanation": "Ngủ gật trên xe rất nguy hiểm, dễ bị ngã hoặc đổ người vào người lái. Phải tỉnh táo khi ngồi xe máy.",
       "points": 10,
       "_id": {
-        "$oid": "68517b3b51c3611da975f491"
+        "$oid": "687e6210eb0cac7fe6fcdf0f"
       }
     },
     {
@@ -338,7 +338,7 @@
       "explanation": "Nếu không cài dây, mũ sẽ rơi ra khi có va chạm và không bảo vệ được đầu.",
       "points": 10,
       "_id": {
-        "$oid": "68517b3b51c3611da975f492"
+        "$oid": "687e6210eb0cac7fe6fcdf10"
       }
     },
     {
@@ -352,7 +352,7 @@
       "explanation": "Dù không thích, em vẫn bắt buộc phải đội mũ bảo hiểm để an toàn và đúng luật giao thông.\n\n",
       "points": 10,
       "_id": {
-        "$oid": "68517b3b51c3611da975f493"
+        "$oid": "687e6210eb0cac7fe6fcdf11"
       }
     },
     {
@@ -368,28 +368,28 @@
       "explanation": "Vị trí an toàn là ngồi sau người lớn, bám chắc để tránh ngã. Ngồi trước hoặc đứng là rất nguy hiểm và phạm luật.",
       "points": 10,
       "_id": {
-        "$oid": "68517b3b51c3611da975f494"
+        "$oid": "687e6210eb0cac7fe6fcdf12"
       }
     }
   ],
   "totalPoints": 0,
   "createdBy": {
-    "$oid": "6843bd2fc9c53e526c15e0be"
+    "$oid": "68789114f3188448187c2f79"
   },
   "createdAt": {
-    "$date": "2025-06-17T14:27:07.128Z"
+    "$date": "2025-07-21T15:51:44.558Z"
   },
   "updatedAt": {
-    "$date": "2025-06-17T14:27:07.128Z"
+    "$date": "2025-07-21T15:51:44.558Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "685184e151c3611da975f527"
+    "$oid": "687e6210eb0cac7fe6fcdf18"
   },
   "lessonId": {
-    "$oid": "684a8d170f0b8e1745dc02c8"
+    "$oid": "687e620aeb0cac7fe6fcde53"
   },
   "title": "Bài kiểm tra",
   "description": "Kiểm tra kiến thức của bạn!",
@@ -410,7 +410,7 @@
       "explanation": "Thực phẩm phải được nấu chín kỹ, với nhiệt độ bên trong đạt ít nhất 70°C để tiêu diệt vi khuẩn gây hại.",
       "points": 10,
       "_id": {
-        "$oid": "685184e151c3611da975f528"
+        "$oid": "687e6210eb0cac7fe6fcdf19"
       }
     },
     {
@@ -426,7 +426,7 @@
       "explanation": "Nhiệt độ này giúp hạn chế sự phát triển của vi khuẩn. 5°C làm chậm vi khuẩn, 60°C tiêu diệt chúng.\n\n",
       "points": 10,
       "_id": {
-        "$oid": "685184e151c3611da975f529"
+        "$oid": "687e6210eb0cac7fe6fcdf1a"
       }
     },
     {
@@ -442,7 +442,7 @@
       "explanation": "Các tác nhân chính gồm sinh học (vi khuẩn), hóa học (thuốc trừ sâu), vật lý (bụi, mảnh thủy tinh). Ánh sáng không gây nhiễm bẩn.\n\n",
       "points": 10,
       "_id": {
-        "$oid": "685184e151c3611da975f52a"
+        "$oid": "687e6210eb0cac7fe6fcdf1b"
       }
     },
     {
@@ -458,7 +458,7 @@
       "explanation": "Dụng cụ riêng cho thực phẩm sống và chín giúp tránh nhiễm vi khuẩn từ thực phẩm sống sang chín.\n\n",
       "points": 10,
       "_id": {
-        "$oid": "685184e151c3611da975f52b"
+        "$oid": "687e6210eb0cac7fe6fcdf1c"
       }
     },
     {
@@ -474,7 +474,7 @@
       "explanation": "Ăn ngay sau khi nấu giúp hạn chế nguy cơ nhiễm khuẩn trong thời gian bảo quản.",
       "points": 10,
       "_id": {
-        "$oid": "685184e151c3611da975f52c"
+        "$oid": "687e6210eb0cac7fe6fcdf1d"
       }
     },
     {
@@ -488,7 +488,7 @@
       "explanation": "Dao, thớt, bát đĩa đều phải sạch để tránh truyền mầm bệnh vào thực phẩm",
       "points": 10,
       "_id": {
-        "$oid": "685184e151c3611da975f52d"
+        "$oid": "687e6210eb0cac7fe6fcdf1e"
       }
     },
     {
@@ -502,7 +502,7 @@
       "explanation": "Nhiệt độ phòng tạo điều kiện cho vi khuẩn sinh sôi, dễ gây ngộ độc thực phẩm.",
       "points": 10,
       "_id": {
-        "$oid": "685184e151c3611da975f52e"
+        "$oid": "687e6210eb0cac7fe6fcdf1f"
       }
     },
     {
@@ -516,7 +516,7 @@
       "explanation": "Thực phẩm tươi sống nếu không rửa sạch hoặc chế biến đúng cách vẫn có thể chứa vi khuẩn có hại.",
       "points": 10,
       "_id": {
-        "$oid": "685184e151c3611da975f52f"
+        "$oid": "687e6210eb0cac7fe6fcdf20"
       }
     },
     {
@@ -530,28 +530,28 @@
       "explanation": "Các vụ ngộ độc nặng có thể gây tổn thương cơ thể nghiêm trọng, thậm chí tử vong nếu không xử lý kịp.",
       "points": 10,
       "_id": {
-        "$oid": "685184e151c3611da975f530"
+        "$oid": "687e6210eb0cac7fe6fcdf21"
       }
     }
   ],
   "totalPoints": 0,
   "createdBy": {
-    "$oid": "6843bd2fc9c53e526c15e0be"
+    "$oid": "68789114f3188448187c2f7e"
   },
   "createdAt": {
-    "$date": "2025-06-17T15:08:17.091Z"
+    "$date": "2025-07-21T15:51:44.764Z"
   },
   "updatedAt": {
-    "$date": "2025-06-17T15:08:17.091Z"
+    "$date": "2025-07-21T15:51:44.764Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "6852e88ae454319d3f8ce560"
+    "$oid": "687e6210eb0cac7fe6fcdf27"
   },
   "lessonId": {
-    "$oid": "685226e45aa77d123c2212e0"
+    "$oid": "687e620aeb0cac7fe6fcde59"
   },
   "title": "Bài kiểm tra 1",
   "description": "Kiểm tra kiến ",
@@ -572,7 +572,7 @@
       "explanation": "Cần sa là một loại chất gây nghiện phổ biến, thuộc nhóm ma túy nhẹ, gây ảnh hưởng đến hệ thần kinh.",
       "points": 10,
       "_id": {
-        "$oid": "6852e88ae454319d3f8ce561"
+        "$oid": "687e6210eb0cac7fe6fcdf28"
       }
     },
     {
@@ -588,7 +588,7 @@
       "explanation": "Người nghiện ma túy thường xin tiền với lý do không rõ ràng để mua ma túy hoặc thực hiện hành vi liên quan.",
       "points": 10,
       "_id": {
-        "$oid": "6852e88ae454319d3f8ce562"
+        "$oid": "687e6210eb0cac7fe6fcdf29"
       }
     },
     {
@@ -604,7 +604,7 @@
       "explanation": "Dùng chung kim tiêm không tiệt trùng là con đường nhanh nhất dẫn đến lây nhiễm HIV/AIDS.",
       "points": 10,
       "_id": {
-        "$oid": "6852e88ae454319d3f8ce563"
+        "$oid": "687e6210eb0cac7fe6fcdf2a"
       }
     },
     {
@@ -620,7 +620,7 @@
       "explanation": "Học sinh cần rời khỏi tình huống nguy hiểm, đến nơi có người lớn hoặc công an, và thông báo với gia đình, nhà trường.",
       "points": 10,
       "_id": {
-        "$oid": "6852e88ae454319d3f8ce564"
+        "$oid": "687e6210eb0cac7fe6fcdf2b"
       }
     },
     {
@@ -636,7 +636,7 @@
       "explanation": "Hiểu rõ tác hại của ma túy, sống trong sáng, không tiêu xài hoang phí giúp học sinh tránh xa các cám dỗ.",
       "points": 10,
       "_id": {
-        "$oid": "6852e88ae454319d3f8ce565"
+        "$oid": "687e6210eb0cac7fe6fcdf2c"
       }
     },
     {
@@ -650,7 +650,7 @@
       "explanation": "Ma túy ảnh hưởng trực tiếp đến hệ thần kinh trung ương. Dùng quá liều có thể gây ngừng tim, suy hô hấp và tử vong.",
       "points": 10,
       "_id": {
-        "$oid": "6852e88ae454319d3f8ce566"
+        "$oid": "687e6210eb0cac7fe6fcdf2d"
       }
     },
     {
@@ -664,7 +664,7 @@
       "explanation": "Học sinh phải báo ngay với người lớn, nhà trường, công an để được bảo vệ và xử lý kịp thời.\n\n",
       "points": 10,
       "_id": {
-        "$oid": "6852e88ae454319d3f8ce567"
+        "$oid": "687e6210eb0cac7fe6fcdf2e"
       }
     },
     {
@@ -678,7 +678,7 @@
       "explanation": "Ma túy có nhiều loại và hình dạng khác nhau: dạng cỏ, dạng viên, tem giấy, khí, tinh thể…",
       "points": 10,
       "_id": {
-        "$oid": "6852e88ae454319d3f8ce568"
+        "$oid": "687e6210eb0cac7fe6fcdf2f"
       }
     },
     {
@@ -692,7 +692,7 @@
       "explanation": "Ma túy gây rối loạn tâm lý, làm người nghiện trở nên lầm lì, dễ cáu giận, tự cách ly với mọi người.",
       "points": 10,
       "_id": {
-        "$oid": "6852e88ae454319d3f8ce569"
+        "$oid": "687e6210eb0cac7fe6fcdf30"
       }
     },
     {
@@ -706,28 +706,28 @@
       "explanation": "Báo cáo kịp thời giúp phát hiện và xử lý sớm, tránh nguy cơ lây lan tệ nạn trong môi trường học đường.",
       "points": 10,
       "_id": {
-        "$oid": "6852e88ae454319d3f8ce56a"
+        "$oid": "687e6210eb0cac7fe6fcdf31"
       }
     }
   ],
   "totalPoints": 0,
   "createdBy": {
-    "$oid": "6843bd2fc9c53e526c15e0be"
+    "$oid": "68789114f3188448187c2f7e"
   },
   "createdAt": {
-    "$date": "2025-06-18T16:25:46.079Z"
+    "$date": "2025-07-21T15:51:44.972Z"
   },
   "updatedAt": {
-    "$date": "2025-06-18T16:25:46.079Z"
+    "$date": "2025-07-21T15:51:44.972Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "6852ecddd9c80dd8c6789403"
+    "$oid": "687e6211eb0cac7fe6fcdf37"
   },
   "lessonId": {
-    "$oid": "6852ea1dd9c80dd8c67891c0"
+    "$oid": "687e620ceb0cac7fe6fcde95"
   },
   "title": "tao cần kim cương làm cái đéo 23",
   "description": "phatsilver102@gmail.com",
@@ -746,7 +746,7 @@
       "explanation": "phatsilver102@gmail.com",
       "points": 10,
       "_id": {
-        "$oid": "6852ecddd9c80dd8c6789404"
+        "$oid": "687e6211eb0cac7fe6fcdf38"
       }
     },
     {
@@ -760,28 +760,28 @@
       "explanation": "phatsilver102@gmail.com",
       "points": 10,
       "_id": {
-        "$oid": "6852ecddd9c80dd8c6789405"
+        "$oid": "687e6211eb0cac7fe6fcdf39"
       }
     }
   ],
   "totalPoints": 0,
   "createdBy": {
-    "$oid": "6843bd2fc9c53e526c15e0be"
+    "$oid": "68789114f3188448187c2f79"
   },
   "createdAt": {
-    "$date": "2025-06-18T16:44:13.023Z"
+    "$date": "2025-07-21T15:51:45.172Z"
   },
   "updatedAt": {
-    "$date": "2025-06-18T16:44:13.023Z"
+    "$date": "2025-07-21T15:51:45.172Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "6852ed59e454319d3f8ce618"
+    "$oid": "687e6211eb0cac7fe6fcdf3f"
   },
   "lessonId": {
-    "$oid": "68494376ff0e71d3e9773a64"
+    "$oid": "687e620beb0cac7fe6fcde77"
   },
   "title": "Test 1",
   "description": "Kiểm tra kiến thức ",
@@ -802,7 +802,7 @@
       "explanation": "Nhựa sạch có thể tái chế, còn các lựa chọn khác thuộc chất thải còn lại",
       "points": 10,
       "_id": {
-        "$oid": "6852ed59e454319d3f8ce619"
+        "$oid": "687e6211eb0cac7fe6fcdf40"
       }
     },
     {
@@ -818,7 +818,7 @@
       "explanation": "Đây là nhóm có nguy cơ gây hại cho sức khỏe, cần xử lý đặc biệt.",
       "points": 10,
       "_id": {
-        "$oid": "6852ed59e454319d3f8ce61a"
+        "$oid": "687e6211eb0cac7fe6fcdf41"
       }
     },
     {
@@ -834,7 +834,7 @@
       "explanation": "Giấy sạch có thể tái chế, nên thuộc nhóm chất thải tái chế.\n\n",
       "points": 10,
       "_id": {
-        "$oid": "6852ed59e454319d3f8ce61b"
+        "$oid": "687e6211eb0cac7fe6fcdf42"
       }
     },
     {
@@ -850,7 +850,7 @@
       "explanation": "Vì dính thức ăn và khó xử lý nên không thể tái chế.\n\n",
       "points": 10,
       "_id": {
-        "$oid": "6852ed59e454319d3f8ce61c"
+        "$oid": "687e6211eb0cac7fe6fcdf43"
       }
     },
     {
@@ -866,7 +866,7 @@
       "explanation": "Vỏ lon là kim loại, thuộc nhóm chất thải tái chế.",
       "points": 10,
       "_id": {
-        "$oid": "6852ed59e454319d3f8ce61d"
+        "$oid": "687e6211eb0cac7fe6fcdf44"
       }
     },
     {
@@ -880,7 +880,7 @@
       "explanation": "Giấy ăn đã dùng rồi sẽ bẩn và không thể tái chế.",
       "points": 10,
       "_id": {
-        "$oid": "6852ed59e454319d3f8ce61e"
+        "$oid": "687e6211eb0cac7fe6fcdf45"
       }
     },
     {
@@ -894,7 +894,7 @@
       "explanation": "Đây là rác hữu cơ nên được xếp vào nhóm chất thải còn lại.",
       "points": 10,
       "_id": {
-        "$oid": "6852ed59e454319d3f8ce61f"
+        "$oid": "687e6211eb0cac7fe6fcdf46"
       }
     },
     {
@@ -908,7 +908,7 @@
       "explanation": "Dụng cụ kim loại có thể tái chế nếu không dính bẩn độc hại.",
       "points": 10,
       "_id": {
-        "$oid": "6852ed59e454319d3f8ce620"
+        "$oid": "687e6211eb0cac7fe6fcdf47"
       }
     },
     {
@@ -922,7 +922,7 @@
       "explanation": "Rác xây dựng phải xử lý riêng, không được bỏ chung.",
       "points": 10,
       "_id": {
-        "$oid": "6852ed59e454319d3f8ce621"
+        "$oid": "687e6211eb0cac7fe6fcdf48"
       }
     },
     {
@@ -936,28 +936,28 @@
       "explanation": "Rác cồng kềnh cần liên hệ đơn vị thu gom riêng để xử lý đúng cách.",
       "points": 10,
       "_id": {
-        "$oid": "6852ed59e454319d3f8ce622"
+        "$oid": "687e6211eb0cac7fe6fcdf49"
       }
     }
   ],
   "totalPoints": 0,
   "createdBy": {
-    "$oid": "6843bd2fc9c53e526c15e0be"
+    "$oid": "68789113f3188448187c2f6a"
   },
   "createdAt": {
-    "$date": "2025-06-18T16:46:17.735Z"
+    "$date": "2025-07-21T15:51:45.375Z"
   },
   "updatedAt": {
-    "$date": "2025-06-18T16:46:17.735Z"
+    "$date": "2025-07-21T15:51:45.375Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "6852efc8e454319d3f8ce64d"
+    "$oid": "687e6211eb0cac7fe6fcdf4f"
   },
   "lessonId": {
-    "$oid": "68493f6eff0e71d3e9773a5d"
+    "$oid": "687e620beb0cac7fe6fcde77"
   },
   "title": "Test 1 ",
   "description": "Kiểm tra kiến thức ",
@@ -978,7 +978,7 @@
       "explanation": "Số 111 là Tổng đài miễn phí, hoạt động 24/7 để bảo vệ trẻ em khỏi những nguy hiểm và xâm hại.\n\n",
       "points": 10,
       "_id": {
-        "$oid": "6852efc8e454319d3f8ce64e"
+        "$oid": "687e6211eb0cac7fe6fcdf50"
       }
     },
     {
@@ -994,7 +994,7 @@
       "explanation": "Đây là bốn vùng riêng tư trên cơ thể mà không ai được phép chạm vào nếu không có lý do chính đáng và sự đồng ý.",
       "points": 10,
       "_id": {
-        "$oid": "6852efc8e454319d3f8ce64f"
+        "$oid": "687e6211eb0cac7fe6fcdf51"
       }
     },
     {
@@ -1010,7 +1010,7 @@
       "explanation": " Chỉ có người chăm sóc và bác sĩ khi có cha mẹ đi cùng mới được hỗ trợ vệ sinh hoặc khám cho em ở vùng riêng tư.",
       "points": 10,
       "_id": {
-        "$oid": "6852efc8e454319d3f8ce650"
+        "$oid": "687e6211eb0cac7fe6fcdf52"
       }
     },
     {
@@ -1026,7 +1026,7 @@
       "explanation": "Những hành động đó là nguy hiểm. Em cần nói ngay với người lớn để được bảo vệ kịp thời.",
       "points": 10,
       "_id": {
-        "$oid": "6852efc8e454319d3f8ce651"
+        "$oid": "687e6211eb0cac7fe6fcdf53"
       }
     },
     {
@@ -1042,7 +1042,7 @@
       "explanation": "Đụng chạm tốt là những hành động khiến em cảm thấy được yêu thương, an toàn và đến từ người em tin tưởng.",
       "points": 10,
       "_id": {
-        "$oid": "6852efc8e454319d3f8ce652"
+        "$oid": "687e6211eb0cac7fe6fcdf54"
       }
     },
     {
@@ -1056,7 +1056,7 @@
       "explanation": "Hét lên và chạy đến nơi an toàn là bước đầu tiên để bảo vệ bản thân.",
       "points": 10,
       "_id": {
-        "$oid": "6852efc8e454319d3f8ce653"
+        "$oid": "687e6211eb0cac7fe6fcdf55"
       }
     },
     {
@@ -1070,7 +1070,7 @@
       "explanation": "Em cần tiếp tục nói với thầy cô, người thân khác, hoặc gọi 111 để được giúp đỡ – đừng bao giờ im lặng.",
       "points": 10,
       "_id": {
-        "$oid": "6852efc8e454319d3f8ce654"
+        "$oid": "687e6211eb0cac7fe6fcdf56"
       }
     },
     {
@@ -1084,7 +1084,7 @@
       "explanation": "Mọi hành vi xâm hại dù do người lớn hay trẻ em khác gây ra đều có thể bị xử lý theo pháp luật, tùy mức độ.",
       "points": 10,
       "_id": {
-        "$oid": "6852efc8e454319d3f8ce655"
+        "$oid": "687e6211eb0cac7fe6fcdf57"
       }
     },
     {
@@ -1098,7 +1098,7 @@
       "explanation": "Xem hình ảnh không lành mạnh có thể khiến em bị tổn thương tinh thần, cần nói ra để được bảo vệ.",
       "points": 10,
       "_id": {
-        "$oid": "6852efc8e454319d3f8ce656"
+        "$oid": "687e6211eb0cac7fe6fcdf58"
       }
     },
     {
@@ -1112,28 +1112,28 @@
       "explanation": "Giúp bạn lên tiếng là một hành động dũng cảm, góp phần bảo vệ bạn và các bạn nhỏ khác.\n",
       "points": 10,
       "_id": {
-        "$oid": "6852efc8e454319d3f8ce657"
+        "$oid": "687e6211eb0cac7fe6fcdf59"
       }
     }
   ],
   "totalPoints": 0,
   "createdBy": {
-    "$oid": "6843bd2fc9c53e526c15e0be"
+    "$oid": "68789114f3188448187c2f7e"
   },
   "createdAt": {
-    "$date": "2025-06-18T16:56:40.773Z"
+    "$date": "2025-07-21T15:51:45.585Z"
   },
   "updatedAt": {
-    "$date": "2025-06-18T16:56:40.773Z"
+    "$date": "2025-07-21T15:51:45.585Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "685ceb31953bbf3c848fee7e"
+    "$oid": "687e6211eb0cac7fe6fcdf5f"
   },
   "lessonId": {
-    "$oid": "685cea38953bbf3c848fee6e"
+    "$oid": "687e620feb0cac7fe6fcdedd"
   },
   "title": "Đội Mũ Bảo Hiểm và Ngồi Sau Xe Máy An Toàn",
   "description": "Quai mũ bảo hiểm nên như thế nào? ",
@@ -1154,28 +1154,28 @@
       "explanation": "Đáp án: C",
       "points": 10,
       "_id": {
-        "$oid": "685ceb31953bbf3c848fee7f"
+        "$oid": "687e6211eb0cac7fe6fcdf60"
       }
     }
   ],
   "totalPoints": 0,
   "createdBy": {
-    "$oid": "685a1fbd05372834986df9e1"
+    "$oid": "687d9714c5dfc6b718800a45"
   },
   "createdAt": {
-    "$date": "2025-06-26T06:39:45.944Z"
+    "$date": "2025-07-21T15:51:45.785Z"
   },
   "updatedAt": {
-    "$date": "2025-06-26T06:39:45.944Z"
+    "$date": "2025-07-21T15:51:45.785Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "685d021bac771a438d9eb0a8"
+    "$oid": "687e6211eb0cac7fe6fcdf66"
   },
   "lessonId": {
-    "$oid": "685d01bfac771a438d9eb09e"
+    "$oid": "687e620ceb0cac7fe6fcde8f"
   },
   "title": "Quai mũ bảo hiểm nên như thế nào?",
   "description": " Quai mũ bảo hiểm nên như thế nào?\n",
@@ -1196,28 +1196,28 @@
       "explanation": "➡️ Đáp án: C\n",
       "points": 10,
       "_id": {
-        "$oid": "685d021bac771a438d9eb0a9"
+        "$oid": "687e6211eb0cac7fe6fcdf67"
       }
     }
   ],
   "totalPoints": 0,
   "createdBy": {
-    "$oid": "685a1fbd05372834986df9e1"
+    "$oid": "68789114f3188448187c2f7e"
   },
   "createdAt": {
-    "$date": "2025-06-26T08:17:31.306Z"
+    "$date": "2025-07-21T15:51:45.980Z"
   },
   "updatedAt": {
-    "$date": "2025-06-26T08:17:31.306Z"
+    "$date": "2025-07-21T15:51:45.980Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "685d0d42ac771a438d9eb8e3"
+    "$oid": "687e6212eb0cac7fe6fcdf6d"
   },
   "lessonId": {
-    "$oid": "685d05a7ac771a438d9eb0de"
+    "$oid": "687e620deb0cac7fe6fcdead"
   },
   "title": "Quai mũ bảo hiểm nên như thế nào?",
   "description": "Quai mũ bảo hiểm nên như thế nào?",
@@ -1238,7 +1238,7 @@
       "explanation": "C. Ôm sát dưới cằm, không quá chặt",
       "points": 10,
       "_id": {
-        "$oid": "685d0d42ac771a438d9eb8e4"
+        "$oid": "687e6212eb0cac7fe6fcdf6e"
       }
     },
     {
@@ -1252,28 +1252,28 @@
       "explanation": "➡️ Phải lên từ phía bên trái và quan sát trước khi trèo.\n",
       "points": 10,
       "_id": {
-        "$oid": "685d0d42ac771a438d9eb8e5"
+        "$oid": "687e6212eb0cac7fe6fcdf6f"
       }
     }
   ],
   "totalPoints": 0,
   "createdBy": {
-    "$oid": "685a1fbd05372834986df9e1"
+    "$oid": "687d9714c5dfc6b718800a45"
   },
   "createdAt": {
-    "$date": "2025-06-26T09:05:06.356Z"
+    "$date": "2025-07-21T15:51:46.181Z"
   },
   "updatedAt": {
-    "$date": "2025-06-26T09:05:06.356Z"
+    "$date": "2025-07-21T15:51:46.181Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "685d0fbdac771a438d9ebd95"
+    "$oid": "687e6212eb0cac7fe6fcdf75"
   },
   "lessonId": {
-    "$oid": "685d0efaac771a438d9ebd8b"
+    "$oid": "687e620aeb0cac7fe6fcde4d"
   },
   "title": "Tác nhân nào sau đây là tác nhân sinh học gây nhiễm bẩn thực phẩm?",
   "description": "Tác nhân nào sau đây là tác nhân sinh học gây nhiễm bẩn thực phẩm?",
@@ -1294,7 +1294,7 @@
       "explanation": "ấ",
       "points": 10,
       "_id": {
-        "$oid": "685d0fbdac771a438d9ebd96"
+        "$oid": "687e6212eb0cac7fe6fcdf76"
       }
     },
     {
@@ -1308,7 +1308,7 @@
       "explanation": "a",
       "points": 10,
       "_id": {
-        "$oid": "685d0fbdac771a438d9ebd97"
+        "$oid": "687e6212eb0cac7fe6fcdf77"
       }
     },
     {
@@ -1324,7 +1324,7 @@
       "explanation": "B. Vì dễ bị vi khuẩn xâm nhập\n",
       "points": 10,
       "_id": {
-        "$oid": "685d0fbdac771a438d9ebd98"
+        "$oid": "687e6212eb0cac7fe6fcdf78"
       }
     },
     {
@@ -1338,28 +1338,28 @@
       "explanation": "B. Vì dễ bị vi khuẩn xâm nhập",
       "points": 10,
       "_id": {
-        "$oid": "685d0fbdac771a438d9ebd99"
+        "$oid": "687e6212eb0cac7fe6fcdf79"
       }
     }
   ],
   "totalPoints": 0,
   "createdBy": {
-    "$oid": "685a1fbd05372834986df9e1"
+    "$oid": "68789114f3188448187c2f6f"
   },
   "createdAt": {
-    "$date": "2025-06-26T09:15:41.287Z"
+    "$date": "2025-07-21T15:51:46.383Z"
   },
   "updatedAt": {
-    "$date": "2025-06-26T09:15:41.287Z"
+    "$date": "2025-07-21T15:51:46.383Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "68634e562ab7b5312cf51473"
+    "$oid": "687e6212eb0cac7fe6fcdf7f"
   },
   "lessonId": {
-    "$oid": "68634e3d2ab7b5312cf51469"
+    "$oid": "687e6209eb0cac7fe6fcde3b"
   },
   "title": "hập xong vẫn phải hiện info để check chứ anh nhỉ",
   "description": "hập xong vẫn phải hiện info để check chứ anh nhỉhập xong vẫn phải hiện info để check chứ anh nhỉ",
@@ -1380,28 +1380,28 @@
       "explanation": "hập xong vẫn phải hiện info để check chứ anh nhỉ",
       "points": 10,
       "_id": {
-        "$oid": "68634e562ab7b5312cf51474"
+        "$oid": "687e6212eb0cac7fe6fcdf80"
       }
     }
   ],
   "totalPoints": 0,
   "createdBy": {
-    "$oid": "685a1fbd05372834986df9e1"
+    "$oid": "68789114f3188448187c2f6f"
   },
   "createdAt": {
-    "$date": "2025-07-01T02:56:22.967Z"
+    "$date": "2025-07-21T15:51:46.580Z"
   },
   "updatedAt": {
-    "$date": "2025-07-01T02:56:22.967Z"
+    "$date": "2025-07-21T15:51:46.580Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "686630e36ff52ee865252a8a"
+    "$oid": "687e6212eb0cac7fe6fcdf86"
   },
   "lessonId": {
-    "$oid": "686630416ff52ee865252a80"
+    "$oid": "687e620eeb0cac7fe6fcdecb"
   },
   "title": " Rác nào sau đây thuộc nhóm chất thải tái chế?",
   "description": " Rác nào sau đây thuộc nhóm chất thải tái chế?",
@@ -1422,7 +1422,7 @@
       "explanation": "B. Hộp nhựa sạch => Nhựa sạch có thể tái chế, còn các lựa chọn khác thuộc chất thải còn lại\n",
       "points": 10,
       "_id": {
-        "$oid": "686630e36ff52ee865252a8b"
+        "$oid": "687e6212eb0cac7fe6fcdf87"
       }
     },
     {
@@ -1438,28 +1438,28 @@
       "explanation": " Đáp án: C. Nhóm chất thải nguy hại\n👉 Giải thích: Đây là nhóm có nguy cơ gây hại cho sức khỏe, cần xử lý đặc biệt",
       "points": 10,
       "_id": {
-        "$oid": "686630e36ff52ee865252a8c"
+        "$oid": "687e6212eb0cac7fe6fcdf88"
       }
     }
   ],
   "totalPoints": 0,
   "createdBy": {
-    "$oid": "685a1fbd05372834986df9e1"
+    "$oid": "68789114f3188448187c2f74"
   },
   "createdAt": {
-    "$date": "2025-07-03T07:27:31.921Z"
+    "$date": "2025-07-21T15:51:46.779Z"
   },
   "updatedAt": {
-    "$date": "2025-07-03T07:27:31.921Z"
+    "$date": "2025-07-21T15:51:46.779Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "686631c76ff52ee865252a9c"
+    "$oid": "687e6212eb0cac7fe6fcdf8e"
   },
   "lessonId": {
-    "$oid": "686630416ff52ee865252a80"
+    "$oid": "687e620aeb0cac7fe6fcde4d"
   },
   "title": "Hộp xốp đựng thức ăn sau khi dùng xong được xếp vào nhóm nào?",
   "description": "Hộp xốp đựng thức ăn sau khi dùng xong được xếp vào nhóm nào?",
@@ -1480,7 +1480,7 @@
       "explanation": "✅ Đáp án: D. Chất thải còn lại\n 👉 Giải thích: Vì dính thức ăn và khó xử lý nên không thể tái chế.\n",
       "points": 10,
       "_id": {
-        "$oid": "686631c76ff52ee865252a9d"
+        "$oid": "687e6212eb0cac7fe6fcdf8f"
       }
     },
     {
@@ -1496,7 +1496,7 @@
       "explanation": "✅ Đáp án: C. Vỏ lon nước ngọt\n 👉 Giải thích: Vỏ lon là kim loại, thuộc nhóm chất thải tái chế.",
       "points": 10,
       "_id": {
-        "$oid": "686631c76ff52ee865252a9e"
+        "$oid": "687e6212eb0cac7fe6fcdf90"
       }
     },
     {
@@ -1510,28 +1510,28 @@
       "explanation": "❌ Sai\n 👉 Giải thích: Giấy ăn đã dùng rồi sẽ bẩn và không thể tái chế.\n",
       "points": 10,
       "_id": {
-        "$oid": "686631c76ff52ee865252a9f"
+        "$oid": "687e6212eb0cac7fe6fcdf91"
       }
     }
   ],
   "totalPoints": 0,
   "createdBy": {
-    "$oid": "685a1fbd05372834986df9e1"
+    "$oid": "68789114f3188448187c2f6f"
   },
   "createdAt": {
-    "$date": "2025-07-03T07:31:19.020Z"
+    "$date": "2025-07-21T15:51:46.980Z"
   },
   "updatedAt": {
-    "$date": "2025-07-03T07:31:19.020Z"
+    "$date": "2025-07-21T15:51:46.980Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "6871f3453e56b8e20f16f1dc"
+    "$oid": "687e6213eb0cac7fe6fcdf97"
   },
   "lessonId": {
-    "$oid": "6871f27c3e56b8e20f16f1c8"
+    "$oid": "687e620ceb0cac7fe6fcde95"
   },
   "title": "Câu 1. Quai mũ bảo hiểm nên như thế nào?",
   "description": "Hiểu cách đổi mũ khi tham gia giao thông",
@@ -1552,28 +1552,28 @@
       "explanation": "➡️ Đáp án: C\n",
       "points": 10,
       "_id": {
-        "$oid": "6871f3453e56b8e20f16f1dd"
+        "$oid": "687e6213eb0cac7fe6fcdf98"
       }
     }
   ],
   "totalPoints": 0,
   "createdBy": {
-    "$oid": "685a1fbd05372834986df9e1"
+    "$oid": "68789113f3188448187c2f6a"
   },
   "createdAt": {
-    "$date": "2025-07-12T05:31:49.219Z"
+    "$date": "2025-07-21T15:51:47.175Z"
   },
   "updatedAt": {
-    "$date": "2025-07-12T05:31:49.219Z"
+    "$date": "2025-07-21T15:51:47.175Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "6871f3a23e56b8e20f16f1e9"
+    "$oid": "687e6213eb0cac7fe6fcdf9e"
   },
   "lessonId": {
-    "$oid": "6871f2da3e56b8e20f16f1d2"
+    "$oid": "687e620eeb0cac7fe6fcded1"
   },
   "title": "Mỗi người chúng ta, từ nhỏ đến lớn, đều có thể góp phần giữ vệ sinh thực phẩm:",
   "description": "Mỗi người chúng ta, từ nhỏ đến lớn, đều có thể góp phần giữ vệ sinh thực phẩm:\n",
@@ -1592,19 +1592,595 @@
       "explanation": "nếu không giữ gìn vệ sinh thì sức khỏe của chúng ta có thể bị ảnh hưởng",
       "points": 10,
       "_id": {
-        "$oid": "6871f3a23e56b8e20f16f1ea"
+        "$oid": "687e6213eb0cac7fe6fcdf9f"
       }
     }
   ],
   "totalPoints": 0,
   "createdBy": {
-    "$oid": "685a1fbd05372834986df9e1"
+    "$oid": "68789114f3188448187c2f79"
   },
   "createdAt": {
-    "$date": "2025-07-12T05:33:22.170Z"
+    "$date": "2025-07-21T15:51:47.372Z"
   },
   "updatedAt": {
-    "$date": "2025-07-12T05:33:22.170Z"
+    "$date": "2025-07-21T15:51:47.372Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687e6213eb0cac7fe6fcdfa5"
+  },
+  "lessonId": {
+    "$oid": "687e620ceb0cac7fe6fcde89"
+  },
+  "title": " Mũ bảo hiểm giúp chúng ta làm gì?",
+  "description": " Mũ bảo hiểm giúp chúng ta làm gì?\n",
+  "timeLimit": 30,
+  "passingScore": 70,
+  "attempts": 3,
+  "questions": [
+    {
+      "questionText": " Mũ bảo hiểm giúp chúng ta làm gì?\n",
+      "questionType": "multiple-choice",
+      "options": [
+        " Giữ cho tóc không bị rối",
+        "Bảo vệ đầu khi bị ngã xe",
+        "Làm cho mình trông đẹp hơn",
+        "Làm cho mình trông ngầu hơn "
+      ],
+      "correctAnswer": "Bảo vệ đầu khi bị ngã xe",
+      "explanation": " Giải thích: Mũ bảo hiểm có lớp cứng để bảo vệ đầu, giúp hạn chế chấn thương nếu chẳng may bị té ngã.\n",
+      "points": 10,
+      "_id": {
+        "$oid": "687e6213eb0cac7fe6fcdfa6"
+      }
+    },
+    {
+      "questionText": " Mũ bảo hiểm tốt sẽ có gì?\n",
+      "questionType": "multiple-choice",
+      "options": [
+        "Có màu sắc đẹp là được",
+        "Có tem CR và ghi rõ tên nhà sản xuất",
+        " Có hình siêu nhân thật ngầu",
+        "Được nhiều anh boi phố đội "
+      ],
+      "correctAnswer": "Có tem CR và ghi rõ tên nhà sản xuất",
+      "explanation": " Tem CR cho biết mũ đã được kiểm tra an toàn. Có tem này thì mới là mũ bảo hiểm chuẩn.\n",
+      "points": 10,
+      "_id": {
+        "$oid": "687e6213eb0cac7fe6fcdfa7"
+      }
+    },
+    {
+      "questionText": " Khi đội mũ bảo hiểm, phần vành trước mũ cách chân mày khoảng:\n",
+      "questionType": "multiple-choice",
+      "options": [
+        "Một ngón tay",
+        "Hai ngón ta",
+        " Ba ngón tay",
+        " Năm ngón tay"
+      ],
+      "correctAnswer": "Hai ngón ta",
+      "explanation": " Giải thích: Hai ngón tay là khoảng cách đúng để mũ bảo vệ trán và không bị lệch khi đi xe.",
+      "points": 10,
+      "_id": {
+        "$oid": "687e6213eb0cac7fe6fcdfa8"
+      }
+    },
+    {
+      "questionText": " Khi ngồi sau xe máy, em nên làm gì?\n",
+      "questionType": "multiple-choice",
+      "options": [
+        "Ngồi thẳng, ôm eo hoặc bám chắc người lái",
+        " Quay ngang người cho vui",
+        "Buông tay để chơi mạo hiểm",
+        "Ngồi ngược ra phía sau xe"
+      ],
+      "correctAnswer": "Ngồi thẳng, ôm eo hoặc bám chắc người lái",
+      "explanation": " Giải thích: Ngồi thẳng và bám chắc giúp em an toàn, không bị ngã khi xe đi qua chỗ xóc",
+      "points": 10,
+      "_id": {
+        "$oid": "687e6213eb0cac7fe6fcdfa9"
+      }
+    }
+  ],
+  "totalPoints": 0,
+  "createdBy": {
+    "$oid": "687d9714c5dfc6b718800a45"
+  },
+  "createdAt": {
+    "$date": "2025-07-21T15:51:47.574Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T15:51:47.574Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687e6213eb0cac7fe6fcdfaf"
+  },
+  "lessonId": {
+    "$oid": "687e620eeb0cac7fe6fcdeb9"
+  },
+  "title": "Nhận diện các biển báo ",
+  "description": "biển báo cấm, biển báo nguy hiểm ",
+  "timeLimit": 30,
+  "passingScore": 70,
+  "attempts": 3,
+  "questions": [
+    {
+      "questionText": " Biển báo chỉ dẫn luôn có nền màu vàng để dễ nhìn hơn.",
+      "questionType": "true-false",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correctAnswer": "False",
+      "explanation": "Biển chỉ dẫn có nền màu xanh dương, không phải màu vàng.\n",
+      "points": 10,
+      "_id": {
+        "$oid": "687e6213eb0cac7fe6fcdfb0"
+      }
+    },
+    {
+      "questionText": "Biển báo cấm có hình gì?",
+      "questionType": "multiple-choice",
+      "options": [
+        "Hình tròn, viền đỏ",
+        "Hình tam giác, viền vàng",
+        "Hình vuông, nền xanh",
+        "Hình chữ nhật, nền xanh"
+      ],
+      "correctAnswer": "Hình tròn, viền đỏ",
+      "explanation": "Biển báo cấm luôn có hình tròn, viền đỏ để người đi đường dễ nhận biết là \"KHÔNG ĐƯỢC LÀM\".",
+      "points": 10,
+      "_id": {
+        "$oid": "687e6213eb0cac7fe6fcdfb1"
+      }
+    }
+  ],
+  "totalPoints": 0,
+  "createdBy": {
+    "$oid": "68789113f3188448187c2f6a"
+  },
+  "createdAt": {
+    "$date": "2025-07-21T15:51:47.773Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T15:51:47.773Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687e6213eb0cac7fe6fcdfb7"
+  },
+  "lessonId": {
+    "$oid": "687e620ceb0cac7fe6fcde89"
+  },
+  "title": " Khi đi qua đường sắt, em cần làm gì đầu tiên?",
+  "description": " Khi đi qua đường sắt, em cần làm gì đầu tiên?\n",
+  "timeLimit": 30,
+  "passingScore": 70,
+  "attempts": 3,
+  "questions": [
+    {
+      "questionText": " Khi đi qua đường sắt, em cần làm gì đầu tiên?\n",
+      "questionType": "multiple-choice",
+      "options": [
+        "Nhìn điện thoại cho đỡ chán",
+        "Chú ý quan sát và nghe tín hiệu cảnh báo",
+        " Chạy thật nhanh qua cho kịp",
+        "Hỏi người khác xem có tàu không"
+      ],
+      "correctAnswer": "Chú ý quan sát và nghe tín hiệu cảnh báo",
+      "explanation": "Phải nhìn và nghe kỹ để biết có tàu hay không. Nếu tàu sắp tới, tuyệt đối không được đi qua.",
+      "points": 10,
+      "_id": {
+        "$oid": "687e6213eb0cac7fe6fcdfb8"
+      }
+    },
+    {
+      "questionText": " Tại sao không được vượt rào chắn khi tàu chưa đi qua hết?\n",
+      "questionType": "multiple-choice",
+      "options": [
+        " Vì tàu chạy nhanh, dễ gây tai nạn nguy hiểm",
+        "Vì đi nhanh cho đỡ chờ lâu",
+        "Vì muốn đi trước người khác",
+        " Vì tàu có còi to dễ sợ"
+      ],
+      "correctAnswer": " Vì tàu chạy nhanh, dễ gây tai nạn nguy hiểm",
+      "explanation": "Tàu rất nhanh và nặng, khi đã gần không thể dừng ngay. Vượt rào chắn dễ gây tai nạn nghiêm trọng",
+      "points": 10,
+      "_id": {
+        "$oid": "687e6213eb0cac7fe6fcdfb9"
+      }
+    },
+    {
+      "questionText": " Khi thấy biển báo “Chú ý tàu hỏa”, em nên:\n",
+      "questionType": "multiple-choice",
+      "options": [
+        "Chạy qua nhanh",
+        " Dừng lại quan sát, lắng nghe xem có tàu không ",
+        "Chơi đùa gần đường ray cho vui",
+        "Bấm còi cho tàu biết mình đang đến"
+      ],
+      "correctAnswer": " Dừng lại quan sát, lắng nghe xem có tàu không ",
+      "explanation": "Biển “Chú ý tàu hỏa” là để nhắc mọi người dừng lại quan sát, bảo vệ bản thân.\n",
+      "points": 10,
+      "_id": {
+        "$oid": "687e6213eb0cac7fe6fcdfba"
+      }
+    },
+    {
+      "questionText": "Vì sao phải đứng cách xa đường ray khi chờ tàu?\n",
+      "questionType": "multiple-choice",
+      "options": [
+        "Để không bị bụi",
+        "Vì tàu chạy nhanh có thể hút ngã nếu đứng gần quá",
+        "Để nhìn tàu cho rõ hơn",
+        "Để khỏi bị người khác chen lấn"
+      ],
+      "correctAnswer": "Vì tàu chạy nhanh có thể hút ngã nếu đứng gần quá",
+      "explanation": "Để khỏi bị người khác chen lấn",
+      "points": 10,
+      "_id": {
+        "$oid": "687e6213eb0cac7fe6fcdfbb"
+      }
+    },
+    {
+      "questionText": "Nguyên nhân chính gây tai nạn ở đường sắt là gì?\n",
+      "questionType": "multiple-choice",
+      "options": [
+        "Vì tàu chạy quá nhanh",
+        "Vì mọi người không chú ý quan sát và không tuân thủ quy định ",
+        "Vì thời tiết xấu",
+        "Vì tàu quá dài"
+      ],
+      "correctAnswer": "Vì mọi người không chú ý quan sát và không tuân thủ quy định ",
+      "explanation": "Tai nạn xảy ra khi người đi đường vượt ẩu, không tuân thủ quy định an toàn.\n",
+      "points": 10,
+      "_id": {
+        "$oid": "687e6213eb0cac7fe6fcdfbc"
+      }
+    }
+  ],
+  "totalPoints": 0,
+  "createdBy": {
+    "$oid": "68789114f3188448187c2f6f"
+  },
+  "createdAt": {
+    "$date": "2025-07-21T15:51:47.978Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T15:51:47.978Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687e6214eb0cac7fe6fcdfc2"
+  },
+  "lessonId": {
+    "$oid": "687e620feb0cac7fe6fcded7"
+  },
+  "title": " Vì sao không nên lái xe khi đã uống rượu bia?",
+  "description": " Vì sao không nên lái xe khi đã uống rượu bia?\n",
+  "timeLimit": 30,
+  "passingScore": 70,
+  "attempts": 3,
+  "questions": [
+    {
+      "questionText": " Vì sao không nên lái xe khi đã uống rượu bia?\n",
+      "questionType": "multiple-choice",
+      "options": [
+        "Vì dễ bị cảnh sát phạt",
+        "Vì uống rượu bia sẽ làm đầu óc không tỉnh táo, dễ gây tai nạn",
+        "Vì uống rượu bia sẽ làm khát nước",
+        "Vì đi xe sau khi uống rượu sẽ bị mệt"
+      ],
+      "correctAnswer": "Vì uống rượu bia sẽ làm đầu óc không tỉnh táo, dễ gây tai nạn",
+      "explanation": "Rượu bia khiến mắt nhìn kém, tay lái run, não hoạt động chậm, dễ gây tai nạn.",
+      "points": 10,
+      "_id": {
+        "$oid": "687e6214eb0cac7fe6fcdfc3"
+      }
+    },
+    {
+      "questionText": " Chất cồn trong rượu bia ảnh hưởng như thế nào đến việc lái xe?\n",
+      "questionType": "multiple-choice",
+      "options": [
+        "Giúp lái xe hăng hái hơn",
+        "Làm người lái xe buồn ngủ, chậm phản ứng, dễ gây nguy hiểm",
+        " Không ảnh hưởng gì nếu uống ít",
+        "Làm người lái xe đi nhanh hơn"
+      ],
+      "correctAnswer": "Làm người lái xe buồn ngủ, chậm phản ứng, dễ gây nguy hiểm",
+      "explanation": " Khi có cồn, cơ thể mệt mỏi, phản ứng chậm, dễ xảy ra sự cố.\n",
+      "points": 10,
+      "_id": {
+        "$oid": "687e6214eb0cac7fe6fcdfc4"
+      }
+    },
+    {
+      "questionText": " Nếu đã uống rượu bia, em nên làm gì để về nhà an toàn?\n",
+      "questionType": "multiple-choice",
+      "options": [
+        "Lái xe thật chậm",
+        "Đợi đến khi hết say rồi lái",
+        " Gọi taxi, xe buýt, nhờ người thân hoặc bạn không uống rượu chở về ",
+        " Đi bộ về dù xa hay gần"
+      ],
+      "correctAnswer": " Gọi taxi, xe buýt, nhờ người thân hoặc bạn không uống rượu chở về ",
+      "explanation": "Không tự lái xe khi đã uống rượu bia, nên nhờ người khác giúp.\n",
+      "points": 10,
+      "_id": {
+        "$oid": "687e6214eb0cac7fe6fcdfc5"
+      }
+    }
+  ],
+  "totalPoints": 0,
+  "createdBy": {
+    "$oid": "68789114f3188448187c2f74"
+  },
+  "createdAt": {
+    "$date": "2025-07-21T15:51:48.177Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T15:51:48.177Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687e6214eb0cac7fe6fcdfcb"
+  },
+  "lessonId": {
+    "$oid": "687e620beb0cac7fe6fcde71"
+  },
+  "title": " Khi đi xe máy từ trong ngõ ra đường lớn, em nên làm gì?",
+  "description": " Khi đi xe máy từ trong ngõ ra đường lớn, em nên làm gì?\n",
+  "timeLimit": 30,
+  "passingScore": 70,
+  "attempts": 3,
+  "questions": [
+    {
+      "questionText": " Khi đi xe máy từ trong ngõ ra đường lớn, em nên làm gì?\n",
+      "questionType": "multiple-choice",
+      "options": [
+        "Chạy thẳng ra ngay cho nhanh",
+        "Dừng lại, nhìn trái nhìn phải rồi mới đi",
+        "Nhắm mắt đi qua cho đỡ sợ",
+        "Bấm còi cho người khác tránh"
+      ],
+      "correctAnswer": "Dừng lại, nhìn trái nhìn phải rồi mới đi",
+      "explanation": " Khi đi từ ngõ ra đường lớn, cần dừng lại quan sát để tránh va chạm.\n",
+      "points": 10,
+      "_id": {
+        "$oid": "687e6214eb0cac7fe6fcdfcc"
+      }
+    },
+    {
+      "questionText": " Khi muốn rẽ trái hay phải khi lái xe, em cần làm gì?\n",
+      "questionType": "multiple-choice",
+      "options": [
+        "Bấm còi thật to",
+        " Bật xi nhan để báo cho mọi người biết ",
+        " Rẽ nhanh không cần báo hiệu",
+        "Nhìn gương chiếu hậu là đủ"
+      ],
+      "correctAnswer": " Bật xi nhan để báo cho mọi người biết ",
+      "explanation": "Bật xi nhan giúp xe khác biết hướng mình đi để tránh va chạm.\n",
+      "points": 10,
+      "_id": {
+        "$oid": "687e6214eb0cac7fe6fcdfcd"
+      }
+    },
+    {
+      "questionText": "Có được vượt xe ở đoạn đường cong khuất tầm nhìn không?\n",
+      "questionType": "multiple-choice",
+      "options": [
+        "Có, nếu đi nhanh",
+        "Có, nếu phía trước đang vội",
+        "Không, rất nguy hiểm vì không nhìn thấy xe đối diện ",
+        "Có, nếu bấm còi liên tục"
+      ],
+      "correctAnswer": "Không, rất nguy hiểm vì không nhìn thấy xe đối diện ",
+      "explanation": "Đường cong khuất tầm nhìn, vượt xe dễ gây tai nạn.\n",
+      "points": 10,
+      "_id": {
+        "$oid": "687e6214eb0cac7fe6fcdfce"
+      }
+    },
+    {
+      "questionText": "Vượt đèn đỏ giúp mình đi nhanh hơn mà không gây nguy hiểm.\n",
+      "questionType": "true-false",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correctAnswer": "False",
+      "explanation": " Vượt đèn đỏ là nguyên nhân chính gây tai nạn giao thông.\n",
+      "points": 10,
+      "_id": {
+        "$oid": "687e6214eb0cac7fe6fcdfcf"
+      }
+    },
+    {
+      "questionText": " Khi đi xe máy sang đường, chỉ cần nhìn phía trước là đủ.\n",
+      "questionType": "true-false",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correctAnswer": "False",
+      "explanation": " Phải quan sát cả hai bên và phía trước để đảm bảo an toàn.\n",
+      "points": 10,
+      "_id": {
+        "$oid": "687e6214eb0cac7fe6fcdfd0"
+      }
+    }
+  ],
+  "totalPoints": 0,
+  "createdBy": {
+    "$oid": "68789114f3188448187c2f74"
+  },
+  "createdAt": {
+    "$date": "2025-07-21T15:51:48.376Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T15:51:48.376Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687e6214eb0cac7fe6fcdfd6"
+  },
+  "lessonId": {
+    "$oid": "687e620eeb0cac7fe6fcdec5"
+  },
+  "title": " Điểm mù của xe là gì?",
+  "description": " Điểm mù của xe là gì?\n",
+  "timeLimit": 30,
+  "passingScore": 70,
+  "attempts": 3,
+  "questions": [
+    {
+      "questionText": " Điểm mù của xe là gì?\n",
+      "questionType": "multiple-choice",
+      "options": [
+        "Là vùng không có ánh sáng",
+        " Là khu vực người lái xe không thể nhìn thấy dù dùng gương ",
+        "Là nơi xe dễ bị trượt bánh",
+        "Là khu vực xe bị hỏng đèn"
+      ],
+      "correctAnswer": " Là khu vực người lái xe không thể nhìn thấy dù dùng gương ",
+      "explanation": "Điểm mù là vùng mà người lái xe không thể quan sát được qua kính chiếu hậu hay gương bên.\n",
+      "points": 10,
+      "_id": {
+        "$oid": "687e6214eb0cac7fe6fcdfd7"
+      }
+    },
+    {
+      "questionText": " Xe tải và xe container có điểm mù nhiều hơn hay ít hơn xe máy",
+      "questionType": "multiple-choice",
+      "options": [
+        "Ít hơn",
+        "Bằng nhau",
+        " Nhiều hơn",
+        "Không có điểm mù"
+      ],
+      "correctAnswer": " Nhiều hơn",
+      "explanation": "Xe tải, container to và cao nên có nhiều khu vực tài xế không quan sát được",
+      "points": 10,
+      "_id": {
+        "$oid": "687e6214eb0cac7fe6fcdfd8"
+      }
+    },
+    {
+      "questionText": "Có mấy vị trí điểm mù chính của xe tải hoặc xe container?",
+      "questionType": "multiple-choice",
+      "options": [
+        "2 vị trí",
+        "4 vị trí",
+        "3 vị trí",
+        " vị trí"
+      ],
+      "correctAnswer": "4 vị trí",
+      "explanation": "Điểm mù gồm phía trước đầu xe, hai bên hông, phía sau và khi chuyển hướng rẽ.\n",
+      "points": 10,
+      "_id": {
+        "$oid": "687e6214eb0cac7fe6fcdfd9"
+      }
+    }
+  ],
+  "totalPoints": 0,
+  "createdBy": {
+    "$oid": "68789114f3188448187c2f6f"
+  },
+  "createdAt": {
+    "$date": "2025-07-21T15:51:48.571Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T15:51:48.571Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687e6214eb0cac7fe6fcdfdf"
+  },
+  "lessonId": {
+    "$oid": "687e620aeb0cac7fe6fcde41"
+  },
+  "title": " Tại sao khi tham gia giao thông phải chú ý quan sát?",
+  "description": " Tại sao khi tham gia giao thông phải chú ý quan sát?\n",
+  "timeLimit": 30,
+  "passingScore": 70,
+  "attempts": 3,
+  "questions": [
+    {
+      "questionText": " Tại sao khi tham gia giao thông phải chú ý quan sát?\n",
+      "questionType": "multiple-choice",
+      "options": [
+        "Để đi nhanh hơn",
+        " Để tránh va chạm và bảo vệ an toàn",
+        "Để đỡ mệt khi lái xe",
+        "Để gây ấn tượng với người khác"
+      ],
+      "correctAnswer": " Để tránh va chạm và bảo vệ an toàn",
+      "explanation": "Quan sát giúp phát hiện sớm nguy hiểm, tránh tai nạn.\n",
+      "points": 10,
+      "_id": {
+        "$oid": "687e6214eb0cac7fe6fcdfe0"
+      }
+    },
+    {
+      "questionText": "Giữ khoảng cách an toàn khi tham gia giao thông để làm gì?\n",
+      "questionType": "multiple-choice",
+      "options": [
+        "Để xe khác chen vào",
+        "Để có đủ thời gian phanh khi cần thiết",
+        "Để tránh bị cảnh sát phạt",
+        "Để chạy nhanh hơn"
+      ],
+      "correctAnswer": "Để có đủ thời gian phanh khi cần thiết",
+      "explanation": "Giữ khoảng cách giúp có đủ thời gian xử lý khi có sự cố phía trước.\n",
+      "points": 10,
+      "_id": {
+        "$oid": "687e6214eb0cac7fe6fcdfe1"
+      }
+    },
+    {
+      "questionText": " Khi chạy xe với tốc độ 60 km/h, khoảng cách an toàn tối thiểu là bao nhiêu?\n",
+      "questionType": "multiple-choice",
+      "options": [
+        "20 mét",
+        "25 mét",
+        "30 mét",
+        "35 mét"
+      ],
+      "correctAnswer": "35 mét",
+      "explanation": " Đây là mức khoảng cách an toàn theo quy định để kịp dừng khi gặp tình huống bất ngờ.\n",
+      "points": 10,
+      "_id": {
+        "$oid": "687e6214eb0cac7fe6fcdfe2"
+      }
+    }
+  ],
+  "totalPoints": 0,
+  "createdBy": {
+    "$oid": "68789114f3188448187c2f74"
+  },
+  "createdAt": {
+    "$date": "2025-07-21T15:51:48.768Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T15:51:48.768Z"
   },
   "__v": 0
 }]

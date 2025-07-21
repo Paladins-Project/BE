@@ -1,36 +1,154 @@
 [{
   "_id": {
-    "$oid": "68451f726361cbc88b0d7122"
+    "$oid": "68789113f3188448187c2f6a"
   },
   "userId": {
-    "$oid": "68451f726361cbc88b0d7120"
+    "$oid": "68789113f3188448187c2f68"
   },
-  "fullName": "Nguyễn Văn A",
-  "phoneNumber": "0123456789",
+  "fullName": "Nguyễn Văn An",
+  "phoneNumber": "09749972586",
   "specializations": [
-    "Math",
-    "Physics"
+    "Toán học",
+    "Khoa học",
+    "Công nghệ"
   ],
-  "bio": "Experienced teacher with 5 years in education",
+  "bio": "Giáo viên giàu kinh nghiệm trong lĩnh vực Toán học, Khoa học, Công nghệ. Yêu thích việc dạy học và luôn nỗ lực mang lại trải nghiệm học tập tốt nhất cho học sinh.",
   "coursesCreated": [
     {
-      "$oid": "68590a46849a8f963c973914"
+      "$oid": "6878912bf3188448187c3166"
+    },
+    {
+      "$oid": "6878912bf3188448187c316b"
     }
   ],
   "createdAt": {
-    "$date": "2025-06-08T05:28:18.332Z"
+    "$date": "2025-07-17T05:58:43.813Z"
   },
   "updatedAt": {
-    "$date": "2025-06-23T08:03:19.045Z"
+    "$date": "2025-07-17T05:58:43.813Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "685a0acf48b93074f74ed155"
+    "$oid": "68789114f3188448187c2f6f"
   },
   "userId": {
-    "$oid": "685a0acf48b93074f74ed153"
+    "$oid": "68789114f3188448187c2f6d"
+  },
+  "fullName": "Trần Minh Đức",
+  "phoneNumber": "08563873171",
+  "specializations": [
+    "Ngữ văn",
+    "Lịch sử",
+    "Địa lý"
+  ],
+  "bio": "Giáo viên giàu kinh nghiệm trong lĩnh vực Ngữ văn, Lịch sử, Địa lý. Yêu thích việc dạy học và luôn nỗ lực mang lại trải nghiệm học tập tốt nhất cho học sinh.",
+  "coursesCreated": [
+    {
+      "$oid": "6878912af3188448187c315c"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-07-17T05:58:44.073Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-17T05:58:44.073Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68789114f3188448187c2f74"
+  },
+  "userId": {
+    "$oid": "68789114f3188448187c2f72"
+  },
+  "fullName": "Lê Thị Mai",
+  "phoneNumber": "09696801658",
+  "specializations": [
+    "Tiếng Anh",
+    "Giao tiếp",
+    "Văn hóa"
+  ],
+  "bio": "Giáo viên giàu kinh nghiệm trong lĩnh vực Tiếng Anh, Giao tiếp, Văn hóa. Yêu thích việc dạy học và luôn nỗ lực mang lại trải nghiệm học tập tốt nhất cho học sinh.",
+  "coursesCreated": [
+    {
+      "$oid": "6878912bf3188448187c3170"
+    },
+    {
+      "$oid": "687e6209eb0cac7fe6fcde35"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-07-17T05:58:44.337Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T15:51:37.786Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68789114f3188448187c2f79"
+  },
+  "userId": {
+    "$oid": "68789114f3188448187c2f77"
+  },
+  "fullName": "Phạm Quang Huy",
+  "phoneNumber": "09376822493",
+  "specializations": [
+    "Khoa học tự nhiên",
+    "Thí nghiệm",
+    "Khám phá"
+  ],
+  "bio": "Giáo viên giàu kinh nghiệm trong lĩnh vực Khoa học tự nhiên, Thí nghiệm, Khám phá. Yêu thích việc dạy học và luôn nỗ lực mang lại trải nghiệm học tập tốt nhất cho học sinh.",
+  "coursesCreated": [
+    {
+      "$oid": "6878912bf3188448187c3161"
+    },
+    {
+      "$oid": "687e6209eb0cac7fe6fcde30"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-07-17T05:58:44.588Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T15:51:37.637Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68789114f3188448187c2f7e"
+  },
+  "userId": {
+    "$oid": "68789114f3188448187c2f7c"
+  },
+  "fullName": "Hoàng Văn Nam",
+  "phoneNumber": "08578382798",
+  "specializations": [
+    "Nghệ thuật",
+    "Sáng tạo",
+    "Âm nhạc"
+  ],
+  "bio": "Giáo viên giàu kinh nghiệm trong lĩnh vực Nghệ thuật, Sáng tạo, Âm nhạc. Yêu thích việc dạy học và luôn nỗ lực mang lại trải nghiệm học tập tốt nhất cho học sinh.",
+  "coursesCreated": [],
+  "createdAt": {
+    "$date": "2025-07-17T05:58:44.834Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-17T05:58:44.834Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687d9714c5dfc6b718800a45"
+  },
+  "userId": {
+    "$oid": "687d9714c5dfc6b718800a43"
   },
   "fullName": "nguyễn công trung",
   "phoneNumber": "0867151203",
@@ -38,78 +156,20 @@
     "math",
     "logical thinking for children"
   ],
-  "bio": "good teacher",
+  "bio": "https://www.facebook.com/nguyen.cong.trung.602999/",
   "coursesCreated": [
     {
-      "$oid": "685a259d05372834986df9f3"
+      "$oid": "687d9b43c5dfc6b718800acb"
     },
     {
-      "$oid": "685a426a05372834986dfb0f"
-    },
-    {
-      "$oid": "685b64c18177b97e0e650fd2"
-    },
-    {
-      "$oid": "685b6b833001edb384467a51"
-    },
-    {
-      "$oid": "685ce85e953bbf3c848fee61"
-    },
-    {
-      "$oid": "685cf063953bbf3c848feed4"
-    },
-    {
-      "$oid": "685cfda2ac771a438d9eb031"
-    },
-    {
-      "$oid": "685d003aac771a438d9eb081"
-    },
-    {
-      "$oid": "685d0073ac771a438d9eb088"
-    },
-    {
-      "$oid": "686343c42ab7b5312cf512d1"
-    },
-    {
-      "$oid": "68634e1c2ab7b5312cf5145d"
-    },
-    {
-      "$oid": "68662fdd6ff52ee865252a74"
-    },
-    {
-      "$oid": "6871f1600bb476e6d1044212"
-    },
-    {
-      "$oid": "6871f22e0bb476e6d1044293"
+      "$oid": "687e6209eb0cac7fe6fcde2b"
     }
   ],
   "createdAt": {
-    "$date": "2025-06-24T02:17:51.499Z"
+    "$date": "2025-07-21T01:25:40.656Z"
   },
   "updatedAt": {
-    "$date": "2025-07-12T05:27:10.780Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "685a1fbd05372834986df9e1"
-  },
-  "userId": {
-    "$oid": "685a1fbd05372834986df9df"
-  },
-  "fullName": "nguyễn công trung 2",
-  "phoneNumber": "0867151203",
-  "specializations": [
-    "match"
-  ],
-  "bio": "ok",
-  "coursesCreated": [],
-  "createdAt": {
-    "$date": "2025-06-24T03:47:09.447Z"
-  },
-  "updatedAt": {
-    "$date": "2025-06-24T04:22:51.701Z"
+    "$date": "2025-07-21T15:51:37.481Z"
   },
   "__v": 0
 }]
